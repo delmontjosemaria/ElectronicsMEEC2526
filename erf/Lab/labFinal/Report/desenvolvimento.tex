@@ -1,13 +1,229 @@
 % ==============================================
 % ELEMENTO: DESENVOLVIMENTO
 % ==============================================
-\section{Desenvolvimento do LNA com elementos concentrados e distribuídos}
+\section{Desenvolvimento}
 \label{sec:desenvolvimento}
 
-\subsection{Design}
+% ======== Dimensionamento ========
+\subsection{Transistor Bias network}
 
-\subsection{Simulações}
+O primeiro passo deste projeto foi o dimensionamento do circuito de polarização do transistor, garantindo os valores definidos
+pelo professor, $I_C = 4 mA$ e $V_{CE} = 5 V$.
 
-\subsection{Circuito Final}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.25\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{IMAGENS/LNA_antes_thevnin.png}
+        \caption{Circuito inicial.}
+        \label{fig:LNA_inicial}
+    \end{subfigure}
+    \hspace{3cm}
+    \begin{subfigure}[b]{0.25\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{IMAGENS/LNA_depois_thevnin.png}
+        \caption{Circuito após Thévenin.}
+        \label{fig:LNA_depois}
+    \end{subfigure}
+    \caption{Circuito LNA.}
+    \label{fig:LNA_comparacao}
+\end{figure}
 
-\subsection{Análise dos Resultados}
+Para isso, foi utilizado o circutio da figura \ref{fig:LNA_inicial}, e depois, aplicando o teorema de Thévenin, obteve-se o circuito da figura \ref{fig:LNA_depois},
+sendo este o circuito que foi utilizado para o dimensionamento, pois é amis fácil de analizar.
+
+\begin{equation}
+    V_{th} = V_{B} = V_{CC} \cdot \frac{R_2}{R_1 + R_2} \hspace{3cm} R_B = R_1 \parallel R_2
+    \label{eq:thevenin}
+\end{equation}
+
+
+Analziando o circuito, é possível obter as seguintes expressões:
+\begin{gather}
+    I_B = \frac{I_C}{\beta} \hspace{1cm} I_E = I_C + I_B \hspace{1cm} V_E = I_E \cdot R_E \label{eq:correntes} \\
+    R_B >> \Delta V_{BE} \hspace{1cm} V_{CC} = I_C \cdot R_C + V_{CE} + V_E \hspace{1cm} V_{th} = R_B \cdot I_B + V_{BE} + V_E \label{eq:malhas}
+\end{gather}
+
+Aqui, para facilitar as contas, assumimos que $R_B = R_E \cdot 10$, sendo um valor seguro para o circuito. Além disso,
+ao invés de usar-mos o valor típico de $\Delta V_{BE}$ e assumirmos que é 0.7 V, como o transistor é de alta frequência, o valor de $V_{BE}$ é superior,
+escolhendo assim 0.9 V. Ao analizar-mos o data sheet do transistor obtivemos o valor de $\beta$ para a frequência de operação,
+que é de $72.532$.
+Fixa-mos então apenas uma das resistências, escolhemos $R_E = 250 \Omega$, e também o valor de $V_{CC} = 10 V$, e com os valores
+definidos anteriormente, $I_C = 4 mA$ e $V_{CE} = 5 V$, é possível calcular os valores das outras variáveis.
+
+
+\vspace{1cm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{IMAGENS/dimensionamento.png}
+    \caption{Código usado para o dimensionamento do circuito de polarização do transistor.}
+    \label{fig:sub1}
+\end{figure}
+\vspace{0.2cm}
+
+
+Para facilitar o processo de cálculo, foi criado um código em Python, que é mostrado na figura \ref{fig:sub1}, onde apenas é necessário
+introduzir os valores definidos anteriormente, e o código calcula os valores de $R_1$, $R_2$ e $R_C$ para o circuito de polarização do transistor, assim
+sendo mais fácil de obtê-los e de retificar valores futuros caso necessário.
+
+Os valores obtidos foram os seguintes: $R_1 = 12.19 k\Omega$, $R_2 = 3.15 k\Omega$ e $R_C = 996.6 k\Omega$. 
+Colocamos estes valores no circuito do LTspice, e simulamos o circuito para verificar se os valores de $I_C$ e $V_{CE}$ estavam corretos.
+Após alguns ajustes manuais para obter os valores mais próximos possíveis dos definidos, obtivemos os seguintes valores: 
+\begin{center}
+    $R_1 = 9 k\Omega$ \hspace{1cm} $R_2 = 1.85 k\Omega$ \hspace{1cm} $R_C = 1.05 k\Omega$ \hspace{1cm} $R_E = 155 \Omega$
+\end{center}
+
+
+
+% ======== LTspice ========
+\subsection{Implementação em LTspice e obtenção dos parâmetros S do transistor}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{IMAGENS/transistor_ltspice.png}
+    \caption{Circuito do transistor BFP420 em LTspice.}
+    \label{fig:LNA_inicial}
+\end{figure}
+\vspace{0.2cm}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{IMAGENS/LNA_LTspice.png}
+    \caption{Circuito simulado no LTspice.}
+    \label{fig:lna_ltspice}
+\end{figure}
+\vspace{0.2cm}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{IMAGENS/dimensionamento_ltspice.png}
+    \caption{Circuito simulado no LTspice.}
+    \label{fig:dimensionamento_ltspice}
+\end{figure}
+\vspace{0.2cm}
+
+Assim, comfirmamos o valor de $I_C = 4.065 mA$ e $V_{CE} = 5.093 V$, o que é muito próximo dos valores
+definidos inicialmente, e portanto, o circuito de polarização do transistor está dimensionado corretamente.
+
+Assim prosseguimos para a obtenção dos parâmetros S do transistor, que são essenciais para o projeto do LNA, e que serão utilizados posteriormente para a análise de estabilidade e adaptação do circuito.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{IMAGENS/S_ltspice.png}
+    \caption{Parâmetros S do transistor no LTspice.}
+    \label{fig:parametros_s_ltspice}
+\end{figure}
+\vspace{0.2cm}
+
+Com esta anáise, obtivemos os parâmetros S do transistor para diversas frequências distintas. Começando pela frequência 
+de $1 GHz$ até $10 GHz$, de $0.5GHz$ em $0.5GHz$. Entre as frequências de $3 GHz$ e $6 GHz$ tiramos de $0.2GHz$ em $0.25GHz$, pois estas frequências são
+as do funcionameno do transistor, e portanto, é necesário obter mais dados para este intervalo para posteriormente decidir
+a frequência de operação.
+
+% ======== AppCAD ========
+\subsection{Análise dos coeficientes de reflexão em AppCAD}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{IMAGENS/ficheiro_s2p.png}
+    \caption{Valores dos parâmetros S para as frequências de 1 GHz a 10 GHz.}
+    \label{fig:ficheiro_s2p}
+\end{figure}
+\vspace{0.2cm}
+
+Com estes valores o próximo passo foi introduzir estes dados no software AppCAD, para obter os coeficientes de reflexão simultaneamente adaptados ($\Gamma_{MS}$ e $\Gamma_{ML}$), garantindo a estabilidade e o ganho pretendido.
+Para isso, foi necessário criar um ficheiro .s2p com os valores dos parâmetros S (figura \ref{fig:ficheiro_s2p}), e depois analizar para que valores de frequência o circuito era estável.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{IMAGENS/k_appcad.png}
+    \caption{Valor de K para as frequências de 1 GHz a 10 GHz.}
+    \label{fig:valores_estabilidade_k}
+\end{figure}
+\vspace{0.2cm}
+
+Com a figura \ref{fig:valores_estabilidade_k} é possível verificar que o circuito é estável para frequências
+superiores a $5.5 GHz$, e portanto, a frequência de operação escolhida para o projeto do LNA foi de $6 GHz$.
+
+Este valor de frequência é bastante próximo do limite superior do transistor, e portanto, foi ponderada a troca
+da corrennte de polarização $I_C$ para $7 mA$ ao invés dos $4 mA$. O aumento desta corrente permite que
+o transistor tenha um valor de $k > 1$ em frequências mais baixas, comparado com o valor usado.
+Isto acontece pois a trancondutância do transistor é diretamente proporcional à corrente no coletor, assim fazendo que
+ao aumentar essa corrente o trnasistor tenha uma maior amplificação.
+
+Contudo, $6 GHz$ apesar de estar no limite ainda está dentro da gama de valores de frequência que o transistor aguenta,
+por isso decidiu manter-se os valores atuais.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{IMAGENS/gamma_appcad.png}
+    \caption{Coeficientes de reflexão para $F = 6GHz$.}
+    \label{fig:valores_estabilidade_k}
+\end{figure}
+\vspace{0.2cm}
+
+Com a frequência atribuida, o próximo passo era retirar os valores dos coeficientes de reflexão da
+entrada e da saída, $\Gamma_{MS}$ e $\Gamma_{ML}$, respetivamente.
+
+Podemos observar pela figura \ref{fig:valores_estabilidade_k} que os valores são, em impedância $Z_{S}$ e $Z_{L}$:
+\begin{center}
+    $Z_{S} = 0.33 +j0.70$ \hspace{1cm} $Z_{L} = 0.12 - j0.54$
+\end{center}
+
+
+
+% ======== Carta de Smith ========
+\subsection{Adaptação do circuito}
+
+O próximo passo era realizar a adaptação do circuito usando a Carta de smith.
+
+% ======== Carta de Smith : C & B ========
+\subsubsection{Utilizando Condensadores e Bobines}
+
+A perimeira adaptação a ser feita foi com Condensadores e bobines.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{IMAGENS/CS_CB.png}
+    \caption{Carta de Smith}
+    \label{fig:carta_smith}
+\end{figure}
+
+\textbf{Adaptação de {$Z_{S}$}:}
+
+Para Zs, o primeiro passo foi começar no centro da carta, no ponto $Z_{c} = 1 + j0$. Deste ponto seguimos
+pela circunferência de admitância com parte real $Re = 1$, até chegar ao ponto de impedância $Z_{aux} = 0.33 + j0.47$.
+Depois, seguimos pela cirfunferência de impedância com parte real $Re = 0.33$ até ao ponto $Z_{S} = 0.33 +j0.70$.
+
+Assim, vamos calcular o valor da bobina em série com os pontos $Z_{c}$ e $Z_{aux}$. Primeiro, passamos para admitância os pontos $Z_{c} = 1 + j0$
+e $Z_{aux} = 0.33 + j0.47$, onde ficamos com:
+\begin{center}
+    $Y_C = \frac{1}{Z_{c}} =  1 + j0$ \hspace{1cm} e \hspace{1cm} $Y_{aux} = \frac{1}{Z_{aux}} =  1 - j1.43$.
+\end{center}
+
+\vspace{1cm}
+Com a diferença entre os potnos sendo $Y_{aux} - Y_C = -j1.43$ , podemos então calcular o valor da bobine em série usando a expressão (sendo $\omega = 2 \cdot \pi \cdot f$, com $f = 6 GHz$):
+
+\begin{center}
+    $L = \frac{Z_0}{1.43 * \omega}$
+\end{center}
+
+Obtendo assim o valor $L = 0.93 nH$
+
+Para o segundo
+
+
+% ======== Carta de Smith : L & S ========
+\subsubsection{Utilizando Linhas e Stubs}
+
+\subsubsection{Adaptação de \texorpdfstring{$Z_{S}$}{ZS} usando Linhas e Stubs}
+
+
+\subsubsection{Adaptação de \texorpdfstring{$Z_{L}$}{ZL} usando Linhas e Stubs}
+
+
+
+
+% ======== Cadence ========
+\subsection{Implementação em Cadence e obtenção dos parâmetros S do circuito real}

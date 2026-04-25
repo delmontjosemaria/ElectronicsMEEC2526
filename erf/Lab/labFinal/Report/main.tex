@@ -3,26 +3,36 @@
 % ==============================================
 \documentclass[10pt, a4paper]{article}
 
+
 % ========== CONFIGURAÇÕES GERAIS ==========
 \input{config.tex}
 
 \begin{document}
 
+
 % ========== CAPA ==========
 \input{capa.tex}
 
+
 % ========== ÍNDICE ==========
 \newpage
-\renewcommand{\contentsname}{Índice}
+\renewcommand{\contentsname}{Índice de Conteúdos}
 \tableofcontents
+\vspace{1cm}
+
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\renewcommand{\listfigurename}{Índice de Figuras}
+\listoffigures
+
+\let\addcontentsline\oldaddcontentsline
+
 \thispagestyle{fancy}
 
-% ========== SECÇÕES DO RELATÓRIO ==========
+
+% ========== SEÇÕES DO RELATÓRIO ==========
 \newpage
 \input{introducao.tex}
-
-%\newpage
-%\input{inicio.tex}
 
 \newpage
 \input{desenvolvimento.tex}

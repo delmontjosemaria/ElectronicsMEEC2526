@@ -6,8 +6,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[portuguese]{babel}
-\usepackage{lmodern}  % ADICIONAR ESTA LINHA - CORRIGE ERRO DE FONTES
-\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{lmodern}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm, headheight=33pt, includehead]{geometry}
 
 
 
@@ -31,7 +31,6 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
-\usepackage{siunitx}
 
 
 
@@ -102,6 +101,17 @@
 
 
 
+% ========== CONFIGURAÇÕES DE ÍNDICE DE FIGURAS ==========
+% Título em preto
+\renewcommand{\cftloftitlefont}{\color{black}\Huge\bfseries}
+
+% Entradas das figuras em azul
+\renewcommand{\cftfigfont}{\color{RoyalBlue}}
+\renewcommand{\cftfigpagefont}{\color{RoyalBlue}}
+\renewcommand{\cftfigleader}{\color{RoyalBlue}\cftdotfill{\cftdotsep}}
+
+
+
 % ========== CONFIGURAÇÕES DE LISTAS ==========
 \setlist[itemize]{leftmargin=*, nosep}
 \setlist[enumerate]{leftmargin=*, nosep}
@@ -122,7 +132,7 @@
     filecolor=RoyalBlue,
     urlcolor=RoyalBlue,
     citecolor=RoyalBlue,
-    pdftitle={Relatório},
+    pdftitle={Relatório CSF},
     pdfauthor={Miguel},
     pdfcreator={LaTeX with lmodern}
 }
@@ -133,9 +143,9 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\includegraphics[height=1cm]{IMAGENS/logo_fct.png}}
-\fancyhead[R]{\footnotesize ERF}
+\fancyhead[R]{\footnotesize CSF}
 %\fancyfoot[L]{\footnotesize \today}
-\fancyfoot[L]{\footnotesize 10 de Maio de 2026}
+\fancyfoot[L]{\footnotesize 22 de dezembro de 2025}
 \fancyfoot[R]{\footnotesize Página \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -156,5 +166,5 @@
 
 
 % ========== REFERÊNCIAS ==========
-%\bibliographystyle{apalike}
-%\bibliography{referencias}
+\bibliographystyle{apalike}
+\bibliography{referencias}

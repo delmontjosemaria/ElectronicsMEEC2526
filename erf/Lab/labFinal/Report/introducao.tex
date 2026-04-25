@@ -4,3 +4,36 @@
 \section{Introdução}
 \label{sec:introducao}
 
+Os sistemas modernos de telecomunicações utilizam altas frequências com altas taxas
+de dados. No caminho do receptor, o bloco crítico é o LNA, pois ele precisa lidar com
+sinais de amplitude muito baixa. O LNA possui especificações rigorosas em termos de ganho,
+ruído, IM3, P-1dB...
+
+\begin{center}
+    \includegraphics[width=1\textwidth]{IMAGENS/LNA.png}\par
+\end{center}
+\vspace{1cm}
+
+
+Este trabalho tem como objetivo:
+\begin{itemize}
+    \item Projetar um LNA para a banda ISM (Industrial, Científica e Médica), visando a compreensão aprofundada dos aspetos do projeto;
+    \item Ganhar experiência e prática na análise de Cartas de Smith (Smith Charts);
+    \item Utilizar software LTspice para simular o comportamento do LNA e obter os parâmetros S, que são essenciais para o projeto;
+    \item Aprender a usar o software AppCAD para simular o comportamento do LNA e obter os valores para as adaptações;
+    \item Utilizar o software Cadence para projetar o LNA com parâmetros reais, incluindo a análise de ruído, e obter os novos parâmetros S.
+\end{itemize}
+
+A fase inicial do projeto foca-se na definição do ponto de operação (\textit{biasing}), estabelecendo as correntes e tensões necessárias para o adequado dimensionamento do LNA. O fluxo de trabalho estruturou-se de acordo com as seguintes etapas:
+
+\begin{itemize}
+    \item \textbf{Caracterização e Simulação Inicial:} Utilização do software \textit{LTspice} para extrair os parâmetros de espalhamento ($S_{11}$, $S_{21}$, $S_{12}$, $S_{22}$) do transístor (BFP420) e escolhendo a frequência de operação;
+    
+    \item \textbf{Análise de Estabilidade:} Com base nos parâmetros obtidos, recorre-se ao \textit{AppCAD} para calcular os coeficientes de reflexão simultaneamente ($\Gamma_{MS}$ e $\Gamma_{ML}$), garantindo a estabilidade e o ganho pretendido.
+    
+    \item \textbf{Adaptação:} Utilização da Carta de Smith para projetar as redes de adaptação de entrada e saída, explorando tanto o uso de componentes discretos ($L$ e $C$) como de linhas de transmissão e \textit{stubs}.
+    
+    \item \textbf{Validação e Confirmação:} Retorno ao \textit{LTspice} para confirmar, na frequência escolhida, se a linha está devidamente adaptada e de acordo com os parâmetros estipulados no enunciado do trabalho.
+    
+    \item \textbf{Refinamento em Ambiente Cadence:} Transição para o software \textit{Cadence} com a introdução de modelos de componentes não-ideais. Nesta fase, são contabilizados os efeitos parasitas e o ruído, procedendo-se a uma nova iteração de extração de parâmetros $S$ e ajuste na Carta de Smith, validando finalmente se o comportamento real do circuito cumpre os requisitos.
+\end{itemize}
