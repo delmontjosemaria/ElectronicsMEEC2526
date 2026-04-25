@@ -1,0 +1,36 @@
+% ==============================================
+% MAIN DOCUMENT - RELATÓRIO CSF
+% ==============================================
+\documentclass[10pt, a4paper]{article}
+
+% ========== CONFIGURAÇÕES GERAIS ==========
+\input{config.tex}
+
+\begin{document}
+
+% ========== CAPA ==========
+\input{capa.tex}
+
+% ========== ÍNDICE ==========
+\newpage
+\renewcommand{\contentsname}{Índice}
+\tableofcontents
+\thispagestyle{fancy}
+
+% ========== SECÇÕES DO RELATÓRIO ==========
+\newpage
+\input{introducao.tex}
+
+%\newpage
+%\input{inicio.tex}
+
+\newpage
+\input{desenvolvimento.tex}
+
+\newpage
+\input{conclusao.tex}
+
+\newpage
+\input{referencias.tex}
+
+\end{document}

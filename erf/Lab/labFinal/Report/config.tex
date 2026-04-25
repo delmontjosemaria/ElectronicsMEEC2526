@@ -1,0 +1,160 @@
+% ==============================================
+% CONFIGURAÇÕES DO DOCUMENTO - CORRIGIDO
+% ==============================================
+
+% ========== PACOTES ESSENCIAIS ==========
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{lmodern}  % ADICIONAR ESTA LINHA - CORRIGE ERRO DE FONTES
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+
+
+% ========== PACOTES DE FORMATAÇÃO ==========
+\usepackage{titlesec}
+\usepackage{indentfirst}
+\usepackage{pdfpages}
+\usepackage{titletoc}
+\usepackage[titles]{tocloft}
+\usepackage[nottoc]{tocbibind}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{afterpage}
+\usepackage{indentfirst}
+
+
+
+% ========== PACOTES MATEMÁTICOS ==========
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{siunitx}
+
+
+
+% ========== PACOTES GRÁFICOS ==========
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+
+
+
+% ========== PACOTES DE TABELAS ==========
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+
+
+
+% ========== PACOTES DE CORES E LINKS ==========
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+
+
+
+% ========== CONFIGURAÇÕES DE SEÇÕES ==========
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\thesection}
+  {1em}
+  {}
+  
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsubsection}
+  {1em}
+  {}
+
+
+
+% ========== CONFIGURAÇÕES DE ÍNDICE ==========
+\usepackage[titles]{tocloft} % ADICIONAR ESTE PACOTE
+
+% Cor azul para tudo no índice (RoyalBlue)
+\renewcommand{\cfttoctitlefont}{\color{black}\Huge\bfseries} % Título em preto
+
+% Seções principais
+\renewcommand{\cftsecfont}{\color{RoyalBlue}\bfseries}
+\renewcommand{\cftsecpagefont}{\color{RoyalBlue}}
+\renewcommand{\cftsecleader}{\color{RoyalBlue}\cftdotfill{\cftdotsep}} % Pontos azuis
+
+% Subseções
+\renewcommand{\cftsubsecfont}{\color{RoyalBlue}}
+\renewcommand{\cftsubsecpagefont}{\color{RoyalBlue}}
+\renewcommand{\cftsubsecleader}{\color{RoyalBlue}\cftdotfill{\cftdotsep}} % Pontos azuis
+
+% Subsubseções
+\renewcommand{\cftsubsubsecfont}{\color{RoyalBlue}}
+\renewcommand{\cftsubsubsecpagefont}{\color{RoyalBlue}}
+\renewcommand{\cftsubsubsecleader}{\color{RoyalBlue}\cftdotfill{\cftdotsep}} % Pontos azuis
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+
+
+% ========== CONFIGURAÇÕES DE LISTAS ==========
+\setlist[itemize]{leftmargin=*, nosep}
+\setlist[enumerate]{leftmargin=*, nosep}
+
+
+
+% ========== CONFIGURAÇÕES DE PARÁGRAFOS ==========
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{0.5em}
+\renewcommand{\baselinestretch}{1}  % Espaçamento 1.2
+
+
+
+% ========== CONFIGURAÇÕES DE HYPERREF ==========
+\hypersetup{
+    colorlinks=true,
+    linkcolor=RoyalBlue,
+    filecolor=RoyalBlue,
+    urlcolor=RoyalBlue,
+    citecolor=RoyalBlue,
+    pdftitle={Relatório},
+    pdfauthor={Miguel},
+    pdfcreator={LaTeX with lmodern}
+}
+
+
+
+% ========== CABEÇALHOS E RODAPÉS ==========
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=1cm]{IMAGENS/logo_fct.png}}
+\fancyhead[R]{\footnotesize ERF}
+%\fancyfoot[L]{\footnotesize \today}
+\fancyfoot[L]{\footnotesize 10 de Maio de 2026}
+\fancyfoot[R]{\footnotesize Página \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+% ========== COMANDOS PERSONALIZADOS ==========
+\newcommand{\titulo}[1]{{\Large\bfseries #1}\par\medskip}
+\newcommand{\destaque}[1]{\textbf{#1}}
+\newcommand{\espaco}{\vspace{1em}}
+
+
+
+% ========== CORREÇÃO PARA FONTES SCALABLE ==========
+% Força uso de fontes escaláveis
+\usepackage{type1cm}  % Para tamanhos de fonte arbitrários
+
+
+
+% ========== REFERÊNCIAS ==========
+%\bibliographystyle{apalike}
+%\bibliography{referencias}

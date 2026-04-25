@@ -1,0 +1,16 @@
+LTspice 24.1.10 for Windows
+Circuit: C:\Users\migue\Desktop\1º Ano - 2º Semestre\ERf\Lab Final\LNA.net
+Start Time: Wed Apr  8 15:55:21 2026
+solver = Normal
+Maximum thread count: 8
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.185 seconds.
+
+Files loaded:
+C:\Users\migue\Desktop\1º Ano - 2º Semestre\ERf\Lab Final\LNA.net
+C:\Users\migue\AppData\Local\LTspice\lib\cmp\standard.dio
+C:\Users\migue\AppData\Local\LTspice\lib\cmp\standard.bjt
+

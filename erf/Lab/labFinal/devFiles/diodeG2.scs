@@ -1,0 +1,5 @@
+// simulator lang=spice
+simulator lang=spectre
+
+model diodeG2 diode
++ is=3.50e-15		n=1.02		rs=10
