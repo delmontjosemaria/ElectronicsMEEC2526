@@ -55,7 +55,7 @@ def sar_converter(Vxp, Vxn, Nmsb, Nlsb, valores_CiMSB, valores_CiLSB, C6, Ctot, 
     else:
         bit.append(1)
 
-    for j in range(1,Nmsb):
+    for j in range(Nmsb):
         if bit[j-1] == 1:
             Vxp -= (valores_CiMSB[j-1] / Ctot) * Vref/2
             Vxn += (valores_CiMSB[j-1] / Ctot) * Vref/2
@@ -74,7 +74,7 @@ def sar_converter(Vxp, Vxn, Nmsb, Nlsb, valores_CiMSB, valores_CiLSB, C6, Ctot, 
                 bit.append(0)
 
     # C6
-    if bit[Nmsb-1] == 1:
+    if bit[5] == 1:
         Vxp -= (C6 / Ctot) * Vref/2
         Vxn += (C6 / Ctot) * Vref/2
         
@@ -83,7 +83,7 @@ def sar_converter(Vxp, Vxn, Nmsb, Nlsb, valores_CiMSB, valores_CiLSB, C6, Ctot, 
         else:
             bit.append(0)
 
-    elif bit[Nmsb-1] == 0:
+    elif bit[5] == 0:
         Vxp += (C6 / Ctot) * Vref/2
         Vxn -= (C6 / Ctot) * Vref/2
 
@@ -94,10 +94,10 @@ def sar_converter(Vxp, Vxn, Nmsb, Nlsb, valores_CiMSB, valores_CiLSB, C6, Ctot, 
 
     atenuacao = Cb / (CtotalLSB + Cpl + Cb)
         
-    for j in range(1,Nlsb):
+    for j in range(Nmsb+2,Nmsb+2+Nlsb):
         if bit[j-1] == 1:
-            Vxp -= (valores_CiLSB[j-1] / Ctot) * Vref/2 * atenuacao
-            Vxn += (valores_CiLSB[j-1] / Ctot) * Vref/2 * atenuacao
+            Vxp -= (valores_CiLSB[j-Nmsb-2] / Ctot) * Vref/2 * atenuacao
+            Vxn += (valores_CiLSB[j-Nmsb-2] / Ctot) * Vref/2 * atenuacao
 
             if Vxp-Vxn > 0:
                 bit.append(1)
@@ -105,19 +105,21 @@ def sar_converter(Vxp, Vxn, Nmsb, Nlsb, valores_CiMSB, valores_CiLSB, C6, Ctot, 
                 bit.append(0)
 
         elif bit[j-1] == 0:
-            Vxp += (valores_CiLSB[j-1] / Ctot) * Vref/2 * atenuacao
-            Vxn -= (valores_CiLSB[j-1] / Ctot) * Vref/2 * atenuacao
+            Vxp += (valores_CiLSB[j-Nmsb-2] / Ctot) * Vref/2 * atenuacao
+            Vxn -= (valores_CiLSB[j-Nmsb-2] / Ctot) * Vref/2 * atenuacao
 
             if Vxp-Vxn > 0:
                 bit.append(1)
             else:
                 bit.append(0)
+    return bit
 
-    # Pegamos apenas nos primeiros 12 bits decididos
-    codigo = 0
-    for b in bit[:12]: 
-        codigo = (codigo << 1) | b
-    return codigo
+def converter_para_decimal(lista_bits):
+    codigo_decimal = 0
+    for b in lista_bits:
+        codigo_decimal = codigo_decimal << 1
+        codigo_decimal = codigo_decimal | b
+    return codigo_decimal
 
 for i in range(amostras):
     Vin = Vin_inicial[i]
@@ -125,8 +127,8 @@ for i in range(amostras):
     Vin = (Vref/2) - (Vin/2)
     Vxp = Vip
     Vxn = Vin
-    res_decimal = sar_converter(Vxp, Vxn, Nmsb, Nlsb, valores_CiMSB, valores_CiLSB, C6, Ctot, Vref)
-    codigos.append(res_decimal)
+    res_sar = sar_converter(Vxp, Vxn, Nmsb, Nlsb, valores_CiMSB, valores_CiLSB, C6, Ctot, Vref)
+    codigos.append(converter_para_decimal(res_sar))
 
 plt.figure(figsize=(10,6))
 plt.step(Vin_inicial, codigos)
