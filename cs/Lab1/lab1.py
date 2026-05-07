@@ -1,68 +1,137 @@
-VREFP = 10.0
-VREFN = 0.0
+import math
+import random
+import matplotlib.pyplot as plt
+import numpy as np
 
-RESOLUTION = 12 
+Nbits = 12
+Vref = 1.0
+Vlsb = (2 * Vref) / (2**Nbits)
+codigos = []
 
-#Existe o C6, que está antes do CB mas não faz parte do conjunto híbrido
-M = 7
-L = 6
+SC = 0e-2
+Soffset = 0e-3
+Cu = 1.0
+Cpb = 0
+Cpl = 0
+Cpm = 0
 
-#Condensador unitário
-C_u = 1 
+multiplicadores_split_MSB = [16, 8, 4, 2, 1]
+multiplicadores_split_C6 = [1]
+multiplicadores_split_LSB = [16, 8, 4, 2, 1]
 
-#Condensador de ponte
-C_b = 2*C_u
+Nmsb = len(multiplicadores_split_MSB)
+C6 = len(multiplicadores_split_C6)
+Nlsb = len(multiplicadores_split_LSB)
 
-weightsMSB = [C_u*2**i for i in range(M, 2*M)]
-weightsMSB = weightsMSB[::-1]
-weightC6 = 2**(M-1)*C_u
-weightsLSB = [C_b*(2**L - 1)/2**(i-L) for i in range(1, L)]
-weightsLSB = weightsLSB[::-1]
-weights = weightsMSB + [weightC6] + weightsLSB
+def randn():
+    return random.gauss(0, 1)
 
-VLSB = (VREFP-VREFN)/2**RESOLUTION
+valores_Cia = [m * (Cu + SC * randn())/2 for m in multiplicadores_split_MSB]
+valores_Cib = [m * (Cu + SC * randn())/2 for m in multiplicadores_split_MSB]
+valores_CiMSB = [valores_Cia[i] + valores_Cib[i] for i in range(len(valores_Cia))]
+valores_CiLSB = [m * (Cu + SC * randn()) for m in multiplicadores_split_LSB]
 
-def comparator(v_xp:float, v_xn:float):
-    return 1 if v_xp > v_xn else 0
+C6 = 1.0 * Cu
+Cb = 2**Nlsb / (2**Nlsb - 1) * Cu + Cpb
+Cdl = (2**Nlsb - 1)*(Cb-Cu) - Cpl
 
-def sarAdcActivity(vip:float, vin:float):
-    preword = []
-    bitCount = 0
-    
-    #fase de sampling, todos os condensadores estão carregados
-    vxp = vip
-    vxn = vin
-    out = 2
-    
-    while (bitCount < RESOLUTION):
-        #primeira comparação, logo à entrada do sinal
-        out = comparator(vxp, vxn)
-        
-        #comparações híbridas, deve haver redundância dos bits a serem verificados
-        if bitCount < M:
-            if out == 1:
-                vxp-=weights[bitCount]*VLSB
-            elif out == 0:
-                vxn-=weights[bitCount]*VLSB
+CtotalMSB = sum(valores_Cia) + sum(valores_Cib) + Cpm
+CtotalLSB = sum(valores_CiLSB) + Cdl + Cpl
+
+C_ramo_LSB = (Cb * (CtotalLSB)) / (Cb + CtotalLSB)
+Ctot = CtotalMSB + C6 + C_ramo_LSB
+
+
+# Simulação do processo de conversão
+amostras = 8000
+Vin_inicial = np.linspace(-Vref, Vref, amostras)
+
+
+
+def sar_converter(Vxp, Vxn, Nmsb, Nlsb, valores_CiMSB, valores_CiLSB, C6, Ctot, Vref):
+    bit = []
+    if (Vxp - Vxn) < 0:
+        bit.append(0)
+    else:
+        bit.append(1)
+
+    for j in range(1,Nmsb):
+        if bit[j-1] == 1:
+            Vxp -= (valores_CiMSB[j-1] / Ctot) * Vref/2
+            Vxn += (valores_CiMSB[j-1] / Ctot) * Vref/2
+            if Vxp-Vxn > 0:
+                bit.append(1)
             else:
-                break
-        else:
-            #faz a comparação dos condensadores para o monotónico, mas vistas a partir do CB (sub-radix) exceto o C6. 
-            if out == 1:
-                vxp-=weightsLSB[bitCount]*VLSB
-            elif out == 0:
-                vxn-=weightsLSB[bitCount]*VLSB
-            else:
-                break
+                bit.append(0)
             
-        preword.append(out)
-        bitCount += 1
-    
-    
-    
-    return preword
-    
-    
-def decActivity(preword:list):
-    return preword
-    
+        elif bit[j-1] == 0:
+            Vxp += (valores_CiMSB[j-1] / Ctot) * Vref/2
+            Vxn -= (valores_CiMSB[j-1] / Ctot) * Vref/2
+
+            if Vxp-Vxn > 0:
+                bit.append(1)
+            else:
+                bit.append(0)
+
+    # C6
+    if bit[Nmsb-1] == 1:
+        Vxp -= (C6 / Ctot) * Vref/2
+        Vxn += (C6 / Ctot) * Vref/2
+        
+        if Vxp-Vxn > 0:
+            bit.append(1)
+        else:
+            bit.append(0)
+
+    elif bit[Nmsb-1] == 0:
+        Vxp += (C6 / Ctot) * Vref/2
+        Vxn -= (C6 / Ctot) * Vref/2
+
+        if Vxp-Vxn > 0:
+            bit.append(1)
+        else:
+            bit.append(0)
+
+    atenuacao = Cb / (CtotalLSB + Cpl + Cb)
+        
+    for j in range(1,Nlsb):
+        if bit[j-1] == 1:
+            Vxp -= (valores_CiLSB[j-1] / Ctot) * Vref/2 * atenuacao
+            Vxn += (valores_CiLSB[j-1] / Ctot) * Vref/2 * atenuacao
+
+            if Vxp-Vxn > 0:
+                bit.append(1)
+            else:
+                bit.append(0)
+
+        elif bit[j-1] == 0:
+            Vxp += (valores_CiLSB[j-1] / Ctot) * Vref/2 * atenuacao
+            Vxn -= (valores_CiLSB[j-1] / Ctot) * Vref/2 * atenuacao
+
+            if Vxp-Vxn > 0:
+                bit.append(1)
+            else:
+                bit.append(0)
+
+    # Pegamos apenas nos primeiros 12 bits decididos
+    codigo = 0
+    for b in bit[:12]: 
+        codigo = (codigo << 1) | b
+    return codigo
+
+for i in range(amostras):
+    Vin = Vin_inicial[i]
+    Vip = (Vref/2) + (Vin/2)
+    Vin = (Vref/2) - (Vin/2)
+    Vxp = Vip
+    Vxn = Vin
+    res_decimal = sar_converter(Vxp, Vxn, Nmsb, Nlsb, valores_CiMSB, valores_CiLSB, C6, Ctot, Vref)
+    codigos.append(res_decimal)
+
+plt.figure(figsize=(10,6))
+plt.step(Vin_inicial, codigos)
+plt.title("Característica de Transferência do ADC")
+plt.xlabel("Vin (V)")
+plt.ylabel("Código Decimal")
+plt.grid(True)
+plt.show()
