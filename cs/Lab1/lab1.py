@@ -32,8 +32,8 @@ valores_CiMSB = [valores_Cia[i] + valores_Cib[i] for i in range(len(valores_Cia)
 valores_CiLSB = [m * (Cu + SC * randn()) for m in multiplicadores_split_LSB]
 
 C6 = 1.0 * Cu
-Cb = 2**Nlsb / (2**Nlsb - 1) * Cu + Cpb
-Cdl = (2**Nlsb - 1)*(Cb-Cu) - Cpl
+Cb = 2*Nlsb / (2*Nlsb - 1) * Cu + Cpb
+Cdl = (2*Nlsb - 1)(Cb-Cu) - Cpl
 
 CtotalMSB = sum(valores_Cia) + sum(valores_Cib) + Cpm
 CtotalLSB = sum(valores_CiLSB) + Cdl + Cpl
@@ -48,7 +48,7 @@ Vin_inicial = np.linspace(-Vref, Vref, amostras)
 
 
 
-def sar_converter(Vxp, Vxn, Nmsb, Nlsb, valores_CiMSB, valores_CiLSB, C6, Ctot, Vref):
+"""def sar_converter(Vxp, Vxn, Nmsb, Nlsb, valores_CiMSB, valores_CiLSB, C6, Ctot, Vref):
     bit = []
     if (Vxp - Vxn) < 0:
         bit.append(0)
@@ -112,7 +112,51 @@ def sar_converter(Vxp, Vxn, Nmsb, Nlsb, valores_CiMSB, valores_CiLSB, C6, Ctot, 
                 bit.append(1)
             else:
                 bit.append(0)
-    return bit
+    return bit"""
+
+def sar_converter(Vxp, Vxn, Nmsb, Nlsb, valores_CiMSB, valores_CiLSB, C6, Ctot, Vref):
+    bit = []
+
+    for j in range(Nmsb):
+        # Usamos o ÚLTIMO bit decidido para ajustar a tensão
+        v_step = (valores_CiMSB[j] / Ctot) * (Vref / 2)
+        if bit[-1] == 1:
+            Vxp -= v_step
+            Vxn += v_step
+        else:
+            Vxp += v_step
+            Vxn -= v_step
+        
+        # Agora decidimos o PRÓXIMO bit
+        bit.append(1 if (Vxp - Vxn) > 0 else 0)
+
+    # 3. Bit de Transição C6
+    v_step_c6 = (C6 / Ctot) * (Vref / 2)
+    if bit[-1] == 1:
+        Vxp -= v_step_c6
+        Vxn += v_step_c6
+    else:
+        Vxp += v_step_c6
+        Vxn -= v_step_c6
+    bit.append(1 if (Vxp - Vxn) > 0 else 0)
+
+    # 4. Array LSB (com atenuacao)
+    # Nota: CtotalLSB e Cb devem estar acessíveis ou passados como argumento
+    # Aqui vou usar a fórmula direta para facilitar
+    atenuacao = Cb / (CtotalLSB + Cb)
+    
+    for j in range(Nlsb):
+        v_step_lsb = (valores_CiLSB[j] / Ctot) * (Vref / 2) * atenuacao
+        if bit[-1] == 1:
+            Vxp -= v_step_lsb
+            Vxn += v_step_lsb
+        else:
+            Vxp += v_step_lsb
+            Vxn -= v_step_lsb
+        bit.append(1 if (Vxp - Vxn) > 0 else 0)
+
+    # Retornamos apenas os primeiros 12 bits para garantir o range 0-4095
+    return bit[:12]
 
 def converter_para_decimal(lista_bits):
     codigo_decimal = 0
