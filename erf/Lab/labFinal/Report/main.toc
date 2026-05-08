@@ -1,0 +1,16 @@
+\babel@toc {portuguese}{}\relax 
+\contentsline {section}{\numberline {1}Introdução}{2}{section.1}%
+\contentsline {section}{\numberline {2}Desenvolvimento}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Transistor Bias network}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Implementação em LTspice e obtenção dos parâmetros S do transistor}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Análise dos coeficientes de reflexão em AppCAD}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Adaptação do circuito no LTspice}{8}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Adaptação do circuito no LTspice usando Condensadores e Bobinas}{8}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Adaptação do circuito no LTspice usando Linhas e Stubs}{11}{subsubsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.5}Implementação no Cadence e obtenção dos parâmetros S do circuito real}{15}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Adaptação do circuito no Cadence}{15}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Adaptação do circuito no Cadence usando Condensadores e Bobinas}{15}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Adaptação do circuito no Cadence usando Linhas e Stubs}{15}{subsubsection.2.6.2}%
+\contentsline {section}{\numberline {3}Conclusão}{16}{section.3}%
+\contentsline {section}{\numberline {4}Referências}{17}{section.4}%
+\contentsfinish 
