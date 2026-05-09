@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.9)  9 MAY 2026 12:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.9)  9 MAY 2026 12:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -940,50 +940,6 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 LaTeX Warning: Reference `fig:lna_ltspice' on page 14 undefined on input line 470.
 
-./desenvolvimento.tex:470: Missing $ inserted.
-<inserted text> 
-                $
-l.470 ...e} para o s√≠mbolo \texttt{LNA_lab1_adap}
-                                                  , utilizado para facilitar...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./desenvolvimento.tex:470: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.470 ...e} para o s√≠mbolo \texttt{LNA_lab1_adap}
-                                                  , utilizado para facilitar...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 470.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 470.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 470.
-
-
-LaTeX Warning: Command \^ invalid in math mode on input line 470.
-
-./desenvolvimento.tex:471: Missing $ inserted.
-<inserted text> 
-                $
-l.471 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (218.35695pt too wide) in paragraph at lines 466--471
-\T1/lmr/m/n/10 fi-gura [] para o sÌm-bolo \T1/lmtt/m/n/10 LNA$[]\OML/lmm/m/it/10 ab\OT1/lmr/m/n/10 1[]\OML/lmm/m/it/10 dap; utilizadoparafacilitaraan\OT1/lmr/m/n/10 ·\OML/lmm/m/it/10 lise:Nestafase; ofocoprim\OT1/lmr/m/n/10 ·\OML/lmm/m/it/10 rion\OT1/lmr/m/n/10 „\OML/lmm/m/it/10 oeramospar\OT1/lmr/m/n/10 ‚\OML/lmm/m/it/10 metrosS; masos[]eganhodocircuito:$ 
- []
-
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 471.
@@ -1029,24 +985,20 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             Before: <no file>
 (rerunfilecheck)             After:  DC7ACC8E0FDD025B25CC7852884AF7E3;4072.
- )
-(\end occurred inside a group at level 1)
-
-### simple group (level 1) entered at line 470 ({)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 16907 strings out of 467541
- 273316 string characters out of 5422531
+ 16900 strings out of 467541
+ 273229 string characters out of 5422531
  708868 words of memory out of 6000000
- 45457 multiletter control sequences out of 15000+600000
- 702206 words of font info for 98 fonts, out of 8000000 for 9000
+ 45452 multiletter control sequences out of 15000+600000
+ 700607 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,15n,93p,1285b,628s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on main.pdf (19 pages, 2087170 bytes).
+ 77i,15n,93p,1285b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (19 pages, 2073477 bytes).
 PDF statistics:
- 296 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
+ 291 PDF objects out of 1000 (max. 8388607)
+ 179 compressed objects within 2 object streams
  55 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 
