@@ -477,13 +477,26 @@ do circuito da figura \ref{fig:lna_ltspice} para o símbolo \texttt{LNA\_lab1\_a
 \end{figure}
 
 A partir destes gráficos, conseguimos nortear a adaptação do circuito para obter um melhor compromisso entre o ganho e o ruído. É possível observar que o menor ruído gerado pelo LNA ($NF_{\text{min}}$) é aproximadamente $2\,033 \text{dB}$, e o parâmetro \texttt{rn} 
-(\textit{normalized resistance noise}) é relativamente baixo para a frequência designada, o que indica que o ruído não deverá apresentar grandes oscilações da \textit{noise figure} para adaptações menos precisas em torno do ponto $\Gamma_{\text{min}}$, o que é benéfico
+(\textit{normalized resistance noise}) é relativamente baixo para a frequência designada, o que indica que o ruído não deverá apresentar grandes oscilações da \textit{noise figure} para adaptações menos precisas em torno do ponto do coeficiente de reflexão ótimo para o mínimo ruído, $\Gamma_{\text{min}}$, o que é benéfico
 para adaptações em cartas de Smith, em que fazemos algumas aproximações mais grosseiras.
 
 \vspace{1cm}
 % ======== Cadence adaptação ========
 \subsection{Adaptação do circuito no Cadence}
-Uma análise semelhante 
+Uma análise semelhante à feita na figura \ref{fig:gain_noise_figure6G} foi feita para frequências entre $3\,\text{GHz}$ e $7\,\text{GHz}$. O objetivo era fazer um \textit{sweep} dos valores para introduzir no ApppCAD e obter um coeficiente de reflexão melhor
+e ainda próximo dos $6\,\text{GHz}$, embora o resultado não tenha sido significativamente diferente do $\Gamma_{\text{min}}$ obtido na análise anterior. Considerando que para minimizar o ruído, o \textit{matching} é feito à entrada ($\Gamma_{\text{min}} = \Gamma_{\text{S}}$), por meio da equação 
+
+\begin{equation}
+    \Gamma_{L} = \overline{S_{22} + \dfrac{S_{12} \times S_{21} \times \Gamma_{S}}{1 - S_{11} \times \Gamma_{S}}}
+    \label{eq:gammaL_gammaS}
+\end{equation}
+
+obtemos o coeficiente de reflexão de saída $\Gamma_{L}$, o que vai permitir obter os valores de impedância de carga e fonte na carta de Smith para realizar a adaptação, por meio da relação 
+
+\begin{equation}
+    Z_{S,L} = \dfrac{1 + \Gamma_{S,L}}{1 - \Gamma_{S,L}}
+    \label{eq:zl_zs}
+\end{equation}
 
 \vspace{1cm}
 % ======== Cadence adaptação: C & B ========
