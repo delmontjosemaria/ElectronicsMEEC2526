@@ -463,7 +463,18 @@ sendo este $S_{21} \approx 10.86\,\text{dB}$
 % ======== Cadence ========
 \vspace{1cm}
 \subsection{Implementação no Cadence e obtenção dos parâmetros S do circuito real}
+Até aqui, a análise foi feita utilizando o LTspice, que enquanto simulador de circuitos elétricos, não permite uma análise que tenha em conta características 
+importantes no design de um LNA, como o ruído, o que pode levar a resultados menos precisos. Transferimos assim o circuito e os seus componentes parametrizados (como o diodo e o transistor ilustrados
+na figura \ref{fig:transistor_ltspice} com os ficheiros \texttt{diode.scs} e \texttt{transistor.scs}, respectivamente) para o Cadence,
+que é um software de simulação mais avançado e permite uma análise mais detalhada e precisa do circuito, incluindo a análise de ruído e a obtenção dos parâmetros S do circuito real. Fizemos uma abstração 
+do circuito da figura \ref{fig:lna_ltspice} para o símbolo \texttt{LNA_lab1_adap}, utilizado para facilitar a análise. Nesta fase, o foco primário não eram os parâmetros S, mas os \textit{noise figure} e ganho do circuito. 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagens/ganho_noiseFigure6G.png}
+    \caption{Análise do ganho e da \textit{noise figure} do LNA na frequência de 6 GHz.}
+    \label{fig:gain_noise_figure6G}
+\end{figure}
 
 \vspace{1cm}
 % ======== Cadence adaptação ========
@@ -479,5 +490,6 @@ sendo este $S_{21} \approx 10.86\,\text{dB}$
 % ======== Cadence adaptação: L & S ========
 \subsubsection{Adaptação do circuito no Cadence usando Linhas e Stubs}
 
+% ======== Cadence análise de parâmetros S e readaptação ========
 \vspace{1cm}
 \subsection{Circuito com ajustes de ganho e ruído}
