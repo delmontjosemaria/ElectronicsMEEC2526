@@ -1,12 +1,12 @@
 # Fdb version 4
 ["bibtex main"] 0 "main.aux" "main.bbl" "main" 0 -1
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1775001600 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1778326151.00691 9864 0960929dc5cd8a2bcf09a20369ec6aef "pdflatex"
+  "main.aux" 1778355625.57767 9916 1a169b4166e2243876dce79e0962c2cc "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1778326148.39802 "/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" "main.pdf" "main" 1778326151.216 2
+["pdflatex"] 1778355623.24264 "/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" "main.pdf" "main" 1778355625.90411 2
   "/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" 1778284374.65118 837 380963ff54391aeed1e8e7fdd4ab3ef4 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -194,17 +194,17 @@
   "Imagens/ltspice_LS_S22.png" 1778284374.57618 7556 cd9387f5870b774f2a9ddaad7e82fa69 ""
   "Imagens/ltspice_LS_s.png" 1778284374.57618 70950 241aa7877aa3b697141d7e72bf306043 ""
   "Imagens/transistor_ltspice.png" 1778284374.58418 97725 61f9e9e190f1d1a793765912ca5d19b7 ""
-  "capa.tex" 1778287093.20859 1630 bae7997132e191ddfdb4e0c7e92fcc08 ""
+  "capa.tex" 1778350098.06922 1663 671e68bd1fe7b8daf4a8e9008fe64d56 ""
   "conclusao.tex" 1778284374.63718 164 9909e82d961155bcde286567e6a33db0 ""
   "config.tex" 1778287093.2089 4180 ea59386c654c1383762415fb7b26ce61 ""
-  "desenvolvimento.tex" 1778326144.24752 23307 2b6c6d868f095e413ecbd7475ec21603 ""
+  "desenvolvimento.tex" 1778355620.01069 24004 b2e0d10269f4299d9b204f3dae31fa84 ""
   "introducao.tex" 1778287093.20863 2910 3ec8f5d1450602d4071145307422fcb3 ""
-  "main.aux" 1778326151.00691 9864 0960929dc5cd8a2bcf09a20369ec6aef "pdflatex"
-  "main.bbl" 1778326114.94104 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
-  "main.lof" 1778326151.00996 2507 6606f3334567aa2a3f8244367d44c54e "pdflatex"
-  "main.out" 1778326151.0089 4072 dc7acc8e0fdd025b25cc7852884af7e3 "pdflatex"
+  "main.aux" 1778355625.57767 9916 1a169b4166e2243876dce79e0962c2cc "pdflatex"
+  "main.bbl" 1778355496.53216 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
+  "main.lof" 1778355625.58028 2532 8cf860d771c9cbc2eab18c6ba682535d "pdflatex"
+  "main.out" 1778355625.57967 4072 dc7acc8e0fdd025b25cc7852884af7e3 "pdflatex"
   "main.tex" 1778284374.65118 837 380963ff54391aeed1e8e7fdd4ab3ef4 ""
-  "main.toc" 1778326151.00996 1712 221ab3a70beaa475d1263e7d5f778421 "pdflatex"
+  "main.toc" 1778355625.58028 1712 221ab3a70beaa475d1263e7d5f778421 "pdflatex"
   "referencias.tex" 1778284374.65118 170 2301aa12f00c67516b61a2eafa6b14f7 ""
   (generated)
   "main.aux"

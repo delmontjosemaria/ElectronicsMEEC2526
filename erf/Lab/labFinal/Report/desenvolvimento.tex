@@ -464,22 +464,26 @@ sendo este $S_{21} \approx 10.86\,\text{dB}$
 \vspace{1cm}
 \subsection{Implementação no Cadence e obtenção dos parâmetros S do circuito real}
 Até aqui, a análise foi feita utilizando o LTspice, que enquanto simulador de circuitos elétricos, não permite uma análise que tenha em conta características 
-importantes no design de um LNA, como o ruído, o que pode levar a resultados menos precisos. Transferimos assim o circuito e os seus componentes parametrizados (como o diodo e o transistor ilustrados
+importantes no design de um LNA como o ruído, o que pode levar a resultados menos precisos. Transferimos assim o circuito e os seus componentes parametrizados (como o diodo e o transistor ilustrados
 na figura\ref{fig:transistor_ltspice} com os ficheiros \texttt{diode.scs} e \texttt{transistor.scs}, respectivamente) para o Cadence,
 que é um software de simulação mais avançado e permite uma análise mais detalhada e precisa do circuito, incluindo a análise de ruído e a obtenção dos parâmetros S do circuito real. Fizemos uma abstração 
-do circuito da figura \ref{fig:lna_ltspice} para o símbolo \texttt{LNA\_lab1\_adap}, utilizado para facilitar a análise. Nesta fase, o foco primário não eram os parâmetros S, mas os \textit{noise figure} e ganho do circuito.
+do circuito da figura \ref{fig:lna_ltspice} para o símbolo \texttt{LNA\_lab1\_adap}, utilizado para facilitar a análise. Nesta fase, o foco primário não eram os parâmetros S, mas os \textit{noise figure} e ganho do circuito. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Imagens/ganho_noiseFigure6G.png}
-    \caption{Análise do ganho e da \textit{noise figure} do LNA na frequência de 6 GHz.}
+    \caption{Análise do $\Gamma_{\text{min}}$, $NF_{\text{min}}$ e \texttt{rn} do LNA à frequência de 6 GHz.}
     \label{fig:gain_noise_figure6G}
 \end{figure}
+
+A partir destes gráficos, conseguimos nortear a adaptação do circuito para obter um melhor compromisso entre o ganho e o ruído. É possível observar que o menor ruído gerado pelo LNA ($NF_{\text{min}}$) é aproximadamente $2\,033 \text{dB}$, e o parâmetro \texttt{rn} 
+(\textit{normalized resistance noise}) é relativamente baixo para a frequência designada, o que indica que o ruído não deverá apresentar grandes oscilações da \textit{noise figure} para adaptações menos precisas em torno do ponto $\Gamma_{\text{min}}$, o que é benéfico
+para adaptações em cartas de Smith, em que fazemos algumas aproximações mais grosseiras.
 
 \vspace{1cm}
 % ======== Cadence adaptação ========
 \subsection{Adaptação do circuito no Cadence}
-
+Uma análise semelhante 
 
 \vspace{1cm}
 % ======== Cadence adaptação: C & B ========
