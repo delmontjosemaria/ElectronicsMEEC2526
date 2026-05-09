@@ -523,3 +523,37 @@ Os cículos de ganho e de ruído podem ser vistos na figura \ref{fig:gamma_maxmi
 
 Tendo a condição de ter um ganho de pelo menos $10\,\text{dB}$, foi determinado um coeficiente de reflexão de entrada $\Gamma_S$ que corresponde à impedância de entrada $Z_S = 0.4 - 0.5j$.
 Este ponto permite tanto uma proporção de ganho-ruído favorável, como também permite a redução do número de componentes necessários para a adaptação, visto que o comprimento da linha de transmissão necessária para adaptar este ponto é nulo.
+A partir da equação \ref{eq:gammaL_gammaS} e \ref{eq:eq:zl_zs}, obtemos o coeficiente de reflexão de saída $\Gamma_L$, que corresponde a uma impedância de carga $Z_L = 0.67 + 0.52j$.
+Com estes valores, foi realizada a adaptação do circuito. As características das linhas de transmissão e stubs podem ser vistas na figura \ref{fig:cadence_LS_circuito_maxmat}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagens/cadence_LS_circuito_maxmat.png}
+    \caption{Circuito adaptado com Linhas e Stubs ajustado para ganho e ruído.}
+    \label{fig:cadence_LS_circuito_maxmat}
+\end{figure}
+
+As características de ganho e ruído do circuito adaptado podem ser vistas na figura \ref{fig:cadence_LS_values_maxmat}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Imagens/sParams_lna_maxmat2.png}
+        \caption{Parâmetros S}
+        \label{fig:sparam_maxmat}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Imagens/noiseFigure_lna_maxmat.png}
+        \caption{Noise Figure}
+        \label{fig:nf_maxmat}
+    \end{subfigure}
+    \caption{Características do circuito adaptado com Linhas e Stubs ajustado.}
+    \label{fig:cadence_LS_values_maxmat}
+\end{figure}
+
+Este circuito apresenta um ganho de $10.15\,\text{dB}$ e um \textit{noise figure} de $2.26\,\text{dB}$, estando a $0.74\,\text{dB}$ do ganho máximo e a $0.23\,\text{dB}$ do \textit{noise figure} mínimo.
+Apesar destes valores estarem de acordo com o esperado, é possível observar na figura \ref{fig:sparam_maxmat} um ligeiro desvio na frequência de operação ideal, estando desviada dos $6\,\text{GHz}$ em aproximadamente $0.2\,\text{MHz}$.
+Este desvio pode ser atribuído a pequenas imprecisões na adaptação, visto que não foi realizada em computador, no entanto não deixa de estar fora do esperado, porque todas as adaptações anteriores foram feitas com o mesmo método, e não apresentaram este tipo de desvio.
