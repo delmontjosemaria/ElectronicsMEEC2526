@@ -510,3 +510,16 @@ obtemos o coeficiente de reflexão de saída $\Gamma_{L}$, o que vai permitir ob
 % ======== Cadence análise de parâmetros S e readaptação ========
 \vspace{1cm}
 \subsection{Circuito com ajustes de ganho e ruído}
+Tendo um cicuíto adaptado para o ganho máximo e outro para o ruído mínimo, o próximo passo é obter um cicuíto que tenha a maior relação ganho-ruído possível, ou seja, um circuito que tenha um ganho relativamente alto, mas que ao mesmo tempo tenha um ruído relativamente baixo.
+Com a ajuda do appCAD e usando os parametros obtidos ao longo do trabalho, é possível visualizar tanto a queda de ganho como o aumento do ruído ao longo da carta de smith, demonstrada com círculos, que correspodem a uma queda de 0.5 dB e um aumento de 0.25 dB, respetivamente.
+Os cículos de ganho e de ruído podem ser vistos na figura \ref{fig:gamma_maxmin_appcad}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagens/gamma_maxmat_appcad.png}
+    \caption{Análise dos círculos de ganho e do ruído do LNA à frequência de 6 GHz.}
+    \label{fig:gamma_maxmin_appcad}
+\end{figure}
+
+Tendo a condição de ter um ganho de pelo menos $10\,\text{dB}$, foi determinado um coeficiente de reflexão de entrada $\Gamma_S$ que corresponde à impedância de entrada $Z_S = 0.4 - 0.5j$.
+Este ponto permite tanto uma proporção de ganho-ruído favorável, como também permite a redução do número de componentes necessários para a adaptação, visto que o comprimento da linha de transmissão necessária para adaptar este ponto é nulo.
