@@ -29,7 +29,7 @@ pelo professor, $I_C = 4 mA$ e $V_{CE} = 5 V$.
     \label{fig:LNA_comparacao}
 \end{figure}
 
-Para isso, foi utilizado o circutio da figura \ref{fig:LNA_inicial}, e depois, aplicando o teorema de Thévenin, obteve-se o circuito da figura \ref{fig:LNA_depois},
+Para isso, foi utilizado o circuito da figura \ref{fig:LNA_inicial}, e depois, aplicando o teorema de Thévenin, obteve-se o circuito da figura \ref{fig:LNA_depois},
 sendo este o circuito que foi utilizado para o dimensionamento, pois é mais fácil de analisar.
 
 \begin{equation}
@@ -38,13 +38,13 @@ sendo este o circuito que foi utilizado para o dimensionamento, pois é mais fá
 \end{equation}
 
 
-Analziando o circuito, é possível obter as seguintes expressões:
+Analizando o circuito, é possível obter as seguintes expressões:
 \begin{gather}
     I_B = \frac{I_C}{\beta} \hspace{1cm} I_E = I_C + I_B \hspace{1cm} V_E = I_E \cdot R_E \label{eq:correntes} \\
     R_B >> \Delta V_{BE} \hspace{1cm} V_{CC} = I_C \cdot R_C + V_{CE} + V_E \hspace{1cm} V_{th} = R_B \cdot I_B + V_{BE} + V_E \label{eq:malhas}
 \end{gather}
 
-Aqui, para facilitar as contas, assumimos que $R_B = R_E \cdot 10$, sendo um valor seguro para o circuito, pois garnate um fator de estabilidade $S$ baixo,
+Aqui, para facilitar as contas, assumimos que $R_B = R_E \cdot 10$, sendo um valor seguro para o circuito, pois garante um fator de estabilidade $S$ baixo,
 tornado o transistor menos sensivel a variações. Além disso,
 ao invés de usar-mos o valor típico de $\Delta V_{BE}$ e assumirmos que é 0.7 V, como o transistor é de alta frequência, o valor de $V_{BE}$ é superior,
 escolhendo assim 0.9 V. Ao analisar-mos o data sheet do transistor obtivemos o valor de $\beta$ para a frequência de operação,
@@ -201,7 +201,7 @@ Podemos observar pela figura \ref{fig:valores_estabilidade_k} que os valores sã
 \end{center}
 
 \vspace{0.5cm}
-Estes valores já se encontram normalizados à impednância característica da linha, $Z = 50 \Omega$.
+Estes valores já se encontram normalizados à impedância característica da linha, $Z = 50 \Omega$.
 
 
 
