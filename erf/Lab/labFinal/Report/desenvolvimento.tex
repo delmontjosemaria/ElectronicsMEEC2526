@@ -476,7 +476,7 @@ do circuito da figura \ref{fig:lna_ltspice} para o símbolo \texttt{LNA\_lab1\_a
     \label{fig:gain_noise_figure6G}
 \end{figure}
 
-A partir destes gráficos, conseguimos nortear a adaptação do circuito para obter um melhor compromisso entre o ganho e o ruído. É possível observar que o menor ruído gerado pelo LNA ($NF_{\text{min}}$) é aproximadamente $2\,033 \text{dB}$, e o parâmetro \texttt{rn} 
+A partir destes gráficos, conseguimos nortear a adaptação do circuito para obter um melhor compromisso entre o ganho e o ruído. É possível observar que o menor ruído gerado pelo LNA ($NF_{\text{min}}$) é aproximadamente $2,033~\text{dB}$, e o parâmetro \texttt{rn} 
 (\textit{normalized resistance noise}) é relativamente baixo para a frequência designada, o que indica que o ruído não deverá apresentar grandes oscilações da \textit{noise figure} para adaptações menos precisas em torno do ponto do coeficiente de reflexão ótimo para o mínimo ruído, $\Gamma_{\text{min}}$, o que é benéfico
 para adaptações em cartas de Smith, em que fazemos algumas aproximações mais grosseiras.
 
@@ -487,7 +487,7 @@ Uma análise semelhante à feita na figura \ref{fig:gain_noise_figure6G} foi fei
 e ainda próximo dos $6\,\text{GHz}$, embora o resultado não tenha sido significativamente diferente do $\Gamma_{\text{min}}$ obtido na análise anterior. Considerando que para minimizar o ruído, o \textit{matching} é feito à entrada ($\Gamma_{\text{min}} = \Gamma_{\text{S}}$), por meio da equação 
 
 \begin{equation}
-    \Gamma_{L} = \overline{S_{22} + \dfrac{S_{12} \times S_{21} \times \Gamma_{S}}{1 - S_{11} \times \Gamma_{S}}}
+    \Gamma_{L} = \overline{(S_{22} + \dfrac{S_{12} \cdot S_{21} \cdot \Gamma_{S}}{1 - S_{11} \cdot \Gamma_{S}})}
     \label{eq:gammaL_gammaS}
 \end{equation}
 
@@ -510,3 +510,4 @@ obtemos o coeficiente de reflexão de saída $\Gamma_{L}$, o que vai permitir ob
 % ======== Cadence análise de parâmetros S e readaptação ========
 \vspace{1cm}
 \subsection{Circuito com ajustes de ganho e ruído}
+Para este
