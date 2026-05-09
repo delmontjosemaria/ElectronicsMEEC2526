@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.9)  9 MAY 2026 21:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.9)  9 MAY 2026 21:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -954,17 +954,25 @@ Package pdftex.def Info: Imagens/ganho_noiseFigure6G.png  used on input line 474
 
 LaTeX Warning: Reference `fig:gain_noise_figure6G' on page 15 undefined on input line 486.
 
+
+LaTeX Warning: Reference `fig:gamma_maxmin_appcad' on page 15 undefined on input line 515.
+
+File: Imagens/logo_fct.png Graphic file (type png)
+<use Imagens/logo_fct.png>
+Package pdftex.def Info: Imagens/logo_fct.png  used on input line 516.
+(pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
+[15 <./Imagens/ganho_noiseFigure6G.png>]
+<Imagens/gamma_maxmat_appcad.png, id=180, 1299.85625pt x 669.50125pt>
+File: Imagens/gamma_maxmat_appcad.png Graphic file (type png)
+<use Imagens/gamma_maxmat_appcad.png>
+Package pdftex.def Info: Imagens/gamma_maxmat_appcad.png  used on input line 519.
+(pdftex.def)             Requested size: 386.95897pt x 199.29913pt.
 )
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 40.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [15 <./Imagens/ganho_noiseFigure6G.png>]
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 40.
-(pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [16] (./conclusao.tex)
+ [16 <./Imagens/gamma_maxmat_appcad.png>] (./conclusao.tex)
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 43.
@@ -996,18 +1004,18 @@ Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             After:  DC7ACC8E0FDD025B25CC7852884AF7E3;4072.
  ) 
 Here is how much of TeX's memory you used:
- 16905 strings out of 467541
- 273284 string characters out of 5422531
+ 16914 strings out of 467541
+ 273591 string characters out of 5422531
  708868 words of memory out of 6000000
- 45454 multiletter control sequences out of 15000+600000
+ 45462 multiletter control sequences out of 15000+600000
  700607 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,15n,93p,1285b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (20 pages, 2077724 bytes).
+Output written on main.pdf (20 pages, 2451145 bytes).
 PDF statistics:
- 297 PDF objects out of 1000 (max. 8388607)
- 184 compressed objects within 2 object streams
- 58 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 299 PDF objects out of 1000 (max. 8388607)
+ 185 compressed objects within 2 object streams
+ 59 named destinations out of 1000 (max. 500000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 
