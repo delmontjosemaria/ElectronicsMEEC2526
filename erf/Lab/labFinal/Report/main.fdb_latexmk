@@ -1,12 +1,12 @@
 # Fdb version 4
 ["bibtex main"] 0 "main.aux" "main.bbl" "main" 0 -1
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1775001600 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1778287920.20493 9520 9eb142f6c0824cfe1d416ab25acc7c1d "pdflatex"
+  "main.aux" 1778288749.79503 9520 9eb142f6c0824cfe1d416ab25acc7c1d "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1778287918.83172 "/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" "main.pdf" "main" 1778287920.47428 2
+["pdflatex"] 1778288748.48587 "/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" "main.pdf" "main" 1778288749.99081 2
   "/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" 1778284374.65118 837 380963ff54391aeed1e8e7fdd4ab3ef4 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -193,14 +193,14 @@
   "capa.tex" 1778287093.20859 1630 bae7997132e191ddfdb4e0c7e92fcc08 ""
   "conclusao.tex" 1778284374.63718 164 9909e82d961155bcde286567e6a33db0 ""
   "config.tex" 1778287093.2089 4180 ea59386c654c1383762415fb7b26ce61 ""
-  "desenvolvimento.tex" 1778287916.9115 22002 0ff24042a6dd1a190ad122c2db224a7c ""
+  "desenvolvimento.tex" 1778288748.20567 22042 49e54e4835c6810a8486bde957d3a3d4 ""
   "introducao.tex" 1778287093.20863 2910 3ec8f5d1450602d4071145307422fcb3 ""
-  "main.aux" 1778287920.20493 9520 9eb142f6c0824cfe1d416ab25acc7c1d "pdflatex"
+  "main.aux" 1778288749.79503 9520 9eb142f6c0824cfe1d416ab25acc7c1d "pdflatex"
   "main.bbl" 1778287918.71993 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
-  "main.lof" 1778287920.20737 2349 0dbb0a98f45d3311eb168a9fed3f415a "pdflatex"
-  "main.out" 1778287920.20593 4072 dc7acc8e0fdd025b25cc7852884af7e3 "pdflatex"
+  "main.lof" 1778288749.79722 2349 0dbb0a98f45d3311eb168a9fed3f415a "pdflatex"
+  "main.out" 1778288749.79603 4072 dc7acc8e0fdd025b25cc7852884af7e3 "pdflatex"
   "main.tex" 1778284374.65118 837 380963ff54391aeed1e8e7fdd4ab3ef4 ""
-  "main.toc" 1778287920.20737 1712 221ab3a70beaa475d1263e7d5f778421 "pdflatex"
+  "main.toc" 1778288749.79722 1712 221ab3a70beaa475d1263e7d5f778421 "pdflatex"
   "referencias.tex" 1778284374.65118 170 2301aa12f00c67516b61a2eafa6b14f7 ""
   (generated)
   "main.aux"
