@@ -1,12 +1,12 @@
 # Fdb version 4
 ["bibtex main"] 0 "main.aux" "main.bbl" "main" 0 -1
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1775001600 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1778373052.61028 10740 e7b8c87c35d3d33f4288cceba12e826d "pdflatex"
+  "main.aux" 1778374013.00792 11688 b7c8a5803bd935f3ca9b004905c24025 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1778373050.83141 "/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" "main.pdf" "main" 1778373052.82395 2
+["pdflatex"] 1778374010.9477 "/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" "main.pdf" "main" 1778374013.22139 2
   "/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" 1778284374.65118 837 380963ff54391aeed1e8e7fdd4ab3ef4 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -183,7 +183,8 @@
   "Imagens/gamma_maxmat_appcad.png" 1778359675.77887 430102 ee71a1c451af4bdac9f8de420a4e53e0 ""
   "Imagens/ganho_noiseFigure6G.png" 1778284374.56818 394765 d425766ecac0d62dff6464ce8efd7c1c ""
   "Imagens/k_appcad.png" 1778284374.57118 26560 2600168e35675c373ab446f086e27577 ""
-  "Imagens/lna_CB_noiseSchematic.png" 1778284374.57118 141368 8546285a3c90080a19c20a2cfe12b51c ""
+  "Imagens/lna_CB_noiseSchematic.png" 1778373198.15621 26831 8b3bdb5bcdc858181e991efd061df263 ""
+  "Imagens/lna_LS_maxmatSchematic.png" 1778373246.18884 28703 cd82204e550b82bb075df26bb4995911 ""
   "Imagens/logo_fct.png" 1778284374.57418 5444 453e07b36ee1a36409bda229baa6ac08 ""
   "Imagens/ltspice_CB.png" 1778284374.57418 47980 cee1a2764c148f65b309248044d9c82e ""
   "Imagens/ltspice_CB_S11.png" 1778284374.57418 7724 27dbc6a3bc085a3ca8f86e5b137e9f81 ""
@@ -195,18 +196,20 @@
   "Imagens/ltspice_LS_S21.png" 1778284374.57618 7581 129ed7755493b9b2a960c782349f9cbc ""
   "Imagens/ltspice_LS_S22.png" 1778284374.57618 7556 cd9387f5870b774f2a9ddaad7e82fa69 ""
   "Imagens/ltspice_LS_s.png" 1778284374.57618 70950 241aa7877aa3b697141d7e72bf306043 ""
+  "Imagens/noiseFigure_lna_maxmat.png" 1778284374.57818 250953 07dd4b24c58dc0994d96763e7704e8c9 ""
+  "Imagens/sParams_lna_maxmat2.png" 1778284374.58318 281680 ed96e9fb95d521d0a6da6d5d0a298d8c ""
   "Imagens/transistor_ltspice.png" 1778284374.58418 97725 61f9e9e190f1d1a793765912ca5d19b7 ""
   "capa.tex" 1778350098.06922 1663 671e68bd1fe7b8daf4a8e9008fe64d56 ""
   "conclusao.tex" 1778284374.63718 164 9909e82d961155bcde286567e6a33db0 ""
   "config.tex" 1778287093.2089 4180 ea59386c654c1383762415fb7b26ce61 ""
-  "desenvolvimento.tex" 1778373048.06131 26859 1758aa8d56dfb6e0ca55993eb6140692 ""
+  "desenvolvimento.tex" 1778374003.45307 28665 1e74ba49b6e19550cd55c38314d67c3c ""
   "introducao.tex" 1778287093.20863 2910 3ec8f5d1450602d4071145307422fcb3 ""
-  "main.aux" 1778373052.61028 10740 e7b8c87c35d3d33f4288cceba12e826d "pdflatex"
-  "main.bbl" 1778373048.15831 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
-  "main.lof" 1778373052.61228 2833 380e5c244aeac1cd59454fb38bda4303 "pdflatex"
-  "main.out" 1778373052.61228 4072 dc7acc8e0fdd025b25cc7852884af7e3 "pdflatex"
+  "main.aux" 1778374013.00792 11688 b7c8a5803bd935f3ca9b004905c24025 "pdflatex"
+  "main.bbl" 1778373948.20441 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
+  "main.lof" 1778374013.00892 3127 0ca4c7a8b454622571703bd0c5ee13d6 "pdflatex"
+  "main.out" 1778374013.00892 4072 dc7acc8e0fdd025b25cc7852884af7e3 "pdflatex"
   "main.tex" 1778284374.65118 837 380963ff54391aeed1e8e7fdd4ab3ef4 ""
-  "main.toc" 1778373052.61228 1712 0a91a2d84eeead52eb6e67c9be31fbaf "pdflatex"
+  "main.toc" 1778374013.00892 1712 0a91a2d84eeead52eb6e67c9be31fbaf "pdflatex"
   "referencias.tex" 1778284374.65118 170 2301aa12f00c67516b61a2eafa6b14f7 ""
   (generated)
   "main.aux"
