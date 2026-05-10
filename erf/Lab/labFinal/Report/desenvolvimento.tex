@@ -188,14 +188,14 @@ por isso decidiu manter-se os valores atuais.
     \centering
     \includegraphics[width=0.7\textwidth]{IMAGENS/gamma_appcad.png}
     \caption{Coeficientes de reflexão para $F = 6GHz$.}
-    \label{fig:valores_estabilidade_k}
+    \label{fig:gamma_appcad}
 \end{figure}
 \vspace{0.2cm}
 
 Com a frequência atribuida, o próximo passo era retirar os valores dos coeficientes de reflexão da
 entrada e da saída, $\Gamma_{MS}$ e $\Gamma_{ML}$, respetivamente.
 
-Podemos observar pela figura \ref{fig:valores_estabilidade_k} que os valores são, em impedância $Z_{S}$ e $Z_{L}$:
+Podemos observar pela figura \ref{fig:gamma_appcad} que os valores são, em impedância $Z_{S}$ e $Z_{L}$:
 \begin{center}
     $Z_{S} = 0,33 +j0,70$ \hspace{1cm} $Z_{L} = 0,12 - j0,54$
 \end{center}
@@ -573,8 +573,8 @@ de $0,25~\text{dB}$ do menor ruído possível.
 
 Tendo em conta a restrição de um ganho mínimo de $10\,\text{dB}$, foi determinado um $\Gamma_S$ que corresponderia à impedância de entrada $Z_S = 0,4 - 0,5j$, por inspeção.
 Este ponto permite tanto uma proporção de ganho-ruído favorável, como também permite a redução do número de componentes necessários para a adaptação, visto que o comprimento da linha de transmissão necessária para adaptar este ponto é nulo.
-A partir da equação \ref{eq:gammaL_gammaS} e \ref{eq:eq:zl_zs}, obtemos o coeficiente de reflexão de saída $\Gamma_L$, que corresponde a uma impedância de carga $Z_L = 0,67 + 0,52j$.
-Com estes valores, foi realizada a adaptação do circuito. As características das linhas de transmissão e stubs podem ser vistas na figura \ref{fig:cadence_LS_circuito_maxmat}.
+A partir da equação \ref{eq:gammaL_gammaS} e \ref{eq:zl_zs}, obtemos o coeficiente de reflexão de saída $\Gamma_L$, que corresponde a uma impedância de carga $Z_L = 0,67 + 0,52j$.
+Com estes valores, foi realizada a adaptação do circuito. As características das linhas de transmissão e stubs podem ser vistas na figura \ref{fig:lna_LS_maxmatSchematic}.
 
 \begin{figure}[H]
     \centering
