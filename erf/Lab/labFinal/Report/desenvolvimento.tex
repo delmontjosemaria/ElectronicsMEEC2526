@@ -503,16 +503,58 @@ obtemos o coeficiente de reflexão de saída $\Gamma_{L}$, o que vai permitir ob
 \subsubsection{Adaptação do circuito no Cadence usando Condensadores e Bobinas}
 Com base nos valores de $Z_{S}$ e $Z_{L}$ obtidos, foi possível realizar a adaptação do circuito usando condensadores e bobinas, seguindo o mesmo processo descrito para a adaptação no LTspice.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Imagens/lna_CB_noiseSchematic.png}
-    \caption{Esquemático adaptação com Condensadores e Bobinas no Cadence.}
+    \caption{Esquemático da adaptação com condensadores e bobinas no Cadence.}
     \label{fig:lna_CB_noiseSchematic}
 \end{figure}
+
+Como, nesta fase, o foco era mais a análise do ruído do circuito, a adaptação foi analisada mais do ponto de vista da comparação entre o $NF$ e o $NF_{\text{min}}$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagens/noiseFigure_vs_NFmin2.png}
+    \caption{Comparação entre o $NF$ do circuito adaptado e o $NF_{\text{min}}$.}
+    \label{fig:noiseFigure_vs_NFminCB}
+\end{figure}
+
+Como podemos observar pela figura \ref{fig:noiseFigure_vs_NFminCB}, o gráfico do $NF$ do circuito adaptado com condensadores e bobinas cruza o gráfico do $NF_{\text{min}}$ na frequência de operação, indicando que o circuito está adaptado para o ruído mínimo.
 
 \vspace{1cm}
 % ======== Cadence adaptação: L & S ========
 \subsubsection{Adaptação do circuito no Cadence usando Linhas e Stubs}
+De modo semelhante à adaptação com condensadores e bobinas, foi realizada a adaptação por meio de linhas de transmissão e \textit{stubs}, com um processo ligeiramente diferente do utilizado para o LTSpice. Em causa está a necessidade de
+se considerarem mais parâmetros físicos, como as dimensões das pistas, permissividade relativa do material, grossura do substrato, entre outras. Para tal, servimo-nos da ferramenta online \texttt{mcalc}, com o propósito de auxiliar em 
+prerrogativas similares. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagens/mcalc.jpeg}
+    \caption{Ferramenta online \texttt{mcalc} para o cálculo de linhas de transmissão.}
+    \label{fig:mcalc}
+\end{figure}
+
+Considerando um substrato de $0,8\,\text{mm}$ de grossura, com uma permissividade relativa de $\epsilon_r = 4,6$, e uma impedância característica de $50\,\Omega$, foram calculados os valores das linhas de transmissão e stubs necessários 
+para a adaptação, que podem ser vistos na figura \ref{fig:lna_LS_noiseSchematic}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagens/lna_LS_noiseSchematic.png}
+    \caption{Esquemático adaptação com Linhas e Stubs no Cadence.}
+    \label{fig:lna_LS_noiseSchematic}
+\end{figure}
+
+De modo análogo, prosseguimos à comparação entre o $NF$ do circuito adaptado e o $NF_{\text{min}}$, para validar a adaptação.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagens/noiseFigure_vs_NFmin3.png}
+    \caption{Comparação entre o $NF$ do circuito adaptado com Linhas e Stubs e o $NF_{\text{min}}$.}
+    \label{fig:noiseFigure_vs_NFminLS}
+\end{figure}
+
+Assim, como podemos observar pela figura \ref{fig:noiseFigure_vs_NFminLS}, o gráfico do $NF$ do circuito adaptado com linhas e stubs também cruza o gráfico do $NF_{\text{min}}$ na frequência de operação, indicando que o circuito está adaptado para o ruído mínimo.
 
 % ======== Cadence análise de parâmetros S e readaptação ========
 \vspace{1cm}

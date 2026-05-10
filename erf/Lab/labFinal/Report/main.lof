@@ -18,9 +18,13 @@
 \contentsline {figure}{\numberline {17}{\ignorespaces Parâmetros S do circuito adaptado com Linhas e Stubs}}{14}{figure.caption.17}%
 \contentsline {figure}{\numberline {18}{\ignorespaces Valores dos parâmetros S do circuito adaptado com Linhas e Stubs}}{14}{figure.caption.18}%
 \contentsline {figure}{\numberline {19}{\ignorespaces Análise do $\Gamma _{\text {min}}$, $NF_{\text {min}}$ e \texttt {rn} do LNA à frequência de 6 GHz.}}{15}{figure.caption.19}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Esquemático adaptação com Condensadores e Bobinas no Cadence.}}{16}{figure.caption.20}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Análise dos círculos de ganho e do ruído do LNA à frequência de 6 GHz.}}{17}{figure.caption.21}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Circuito adaptado com Linhas e Stubs ajustado para ganho e ruído.}}{17}{figure.caption.22}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Características do circuito adaptado com Linhas e Stubs ajustado.}}{18}{figure.caption.23}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Esquemático da adaptação com condensadores e bobinas no Cadence.}}{16}{figure.caption.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Comparação entre o $NF$ do circuito adaptado e o $NF_{\text {min}}$.}}{16}{figure.caption.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Ferramenta online \texttt {mcalc} para o cálculo de linhas de transmissão.}}{17}{figure.caption.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Esquemático adaptação com Linhas e Stubs no Cadence.}}{17}{figure.caption.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Comparação entre o $NF$ do circuito adaptado com Linhas e Stubs e o $NF_{\text {min}}$.}}{18}{figure.caption.24}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Análise dos círculos de ganho e do ruído do LNA à frequência de 6 GHz.}}{18}{figure.caption.25}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Circuito adaptado com Linhas e Stubs ajustado para ganho e ruído.}}{19}{figure.caption.26}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Características do circuito adaptado com Linhas e Stubs ajustado.}}{19}{figure.caption.27}%
 \contentsfinish 
 \contentsfinish 
