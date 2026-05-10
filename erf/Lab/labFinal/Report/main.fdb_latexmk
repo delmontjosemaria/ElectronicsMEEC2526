@@ -1,12 +1,12 @@
 # Fdb version 4
-["bibtex main"] 1778430010.89445 "main.aux" "main.bbl" "main" 1778430011.16723 2
+["bibtex main"] 1778430093.89074 "main.aux" "main.bbl" "main" 1778430094.17351 2
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/apalike.bst" 1291972791 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1778430002 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.aux" 1778430093 12935 4318a18c67f0389375714e31ba92d776 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1778430004.53349 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" "main.pdf" "main" 1778430010.32323 2
+["pdflatex"] 1778430088.14078 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" "main.pdf" "main" 1778430094.17385 0
   "C:/Users/denpo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1767757308 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/denpo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1766267780 13333512 126b710cd2ad74c195a58a310fbc7402 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -210,12 +210,12 @@
   "config.tex" 1778427746 4349 ea59386c654c1383762415fb7b26ce61 ""
   "desenvolvimento.tex" 1778430003 31923 e3f80b30b564c788b10affba8cc950a5 ""
   "introducao.tex" 1778427746 2948 3ec8f5d1450602d4071145307422fcb3 ""
-  "main.aux" 1778430002 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "main.bbl" 1778430011 0 d41d8cd98f00b204e9800998ecf8427e "bibtex main"
-  "main.lof" 0 -1 0 "pdflatex"
-  "main.out" 0 -1 0 "pdflatex"
+  "main.aux" 1778430093 12935 4318a18c67f0389375714e31ba92d776 "pdflatex"
+  "main.bbl" 1778430094 52 0eba253fc001332e731e8aba3f23127b "bibtex main"
+  "main.lof" 1778430093 3744 3b2246bbbf3cb195265927f0bec3dfa5 "pdflatex"
+  "main.out" 1778430093 4071 1ae181f5b52ef10051e73d894a2317e2 "pdflatex"
   "main.tex" 1777057016 837 380963ff54391aeed1e8e7fdd4ab3ef4 ""
-  "main.toc" 0 -1 0 "pdflatex"
+  "main.toc" 1778430093 1661 89b78ebb936940d4de19f54ac70ab120 "pdflatex"
   "referencias.tex" 1766097432 170 2301aa12f00c67516b61a2eafa6b14f7 ""
   (generated)
   "main.aux"
