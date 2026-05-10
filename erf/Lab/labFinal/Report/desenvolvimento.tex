@@ -501,7 +501,14 @@ obtemos o coeficiente de reflexão de saída $\Gamma_{L}$, o que vai permitir ob
 \vspace{1cm}
 % ======== Cadence adaptação: C & B ========
 \subsubsection{Adaptação do circuito no Cadence usando Condensadores e Bobinas}
+Com base nos valores de $Z_{S}$ e $Z_{L}$ obtidos, foi possível realizar a adaptação do circuito usando condensadores e bobinas, seguindo o mesmo processo descrito para a adaptação no LTspice.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagens/lna_CB_noiseSchematic.png}
+    \caption{Esquemático adaptação com Condensadores e Bobinas no Cadence.}
+    \label{fig:lna_CB_noiseSchematic}
+\end{figure}
 
 \vspace{1cm}
 % ======== Cadence adaptação: L & S ========
@@ -510,9 +517,10 @@ obtemos o coeficiente de reflexão de saída $\Gamma_{L}$, o que vai permitir ob
 % ======== Cadence análise de parâmetros S e readaptação ========
 \vspace{1cm}
 \subsection{Circuito com ajustes de ganho e ruído}
-Tendo um cicuíto adaptado para o ganho máximo e outro para o ruído mínimo, o próximo passo é obter um cicuíto que tenha a maior relação ganho-ruído possível, ou seja, um circuito que tenha um ganho relativamente alto, mas que ao mesmo tempo tenha um ruído relativamente baixo.
-Com a ajuda do appCAD e usando os parametros obtidos ao longo do trabalho, é possível visualizar tanto a queda de ganho como o aumento do ruído ao longo da carta de smith, demonstrada com círculos, que correspodem a uma queda de 0.5 dB e um aumento de 0.25 dB, respetivamente.
-Os cículos de ganho e de ruído podem ser vistos na figura \ref{fig:gamma_maxmin_appcad}.
+Tendo um cicuíto adaptado para o ganho máximo e outro para o ruído mínimo, a próxima abordagem seriaobter um cicuíto que tivesse a maior relação ganho-ruído possível, ou seja, um circuito que 
+com um ganho relativamente alto, e simultaneamente um ruído relativamente baixo. Com recurso ao AppCAD, e usando os parâmetros S obtidos ao longo do trabalho, é possível visualizar tanto a queda 
+de ganho como o aumento do ruído ao longo da carta de Smith por meio de círculos de magnitude, cujos raios correspodem a uma queda de $0,5~\text{dB}$ do ganho máximo disponível (MAG) e um aumento 
+de $0,25~\text{dB}$ do menor ruído possível.
 
 \begin{figure}[H]
     \centering
@@ -521,5 +529,5 @@ Os cículos de ganho e de ruído podem ser vistos na figura \ref{fig:gamma_maxmi
     \label{fig:gamma_maxmin_appcad}
 \end{figure}
 
-Tendo a condição de ter um ganho de pelo menos $10\,\text{dB}$, foi determinado um coeficiente de reflexão de entrada $\Gamma_S$ que corresponde à impedância de entrada $Z_S = 0.4 - 0.5j$.
+Tendo em conta a restrição de um ganho mínimo de $10\,\text{dB}$, foi determinado um $\Gamma_S$ que corresponderia à impedância de entrada $Z_S = 0.4 - 0.5j$, por inspeção.
 Este ponto permite tanto uma proporção de ganho-ruído favorável, como também permite a redução do número de componentes necessários para a adaptação, visto que o comprimento da linha de transmissão necessária para adaptar este ponto é nulo.
