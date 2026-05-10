@@ -3,3 +3,27 @@
 % ==============================================
 \section{Conclusão}
 \label{sec:conclusao}
+
+Após a realização deste trabalho, foi possível concluir com sucesso o projeto de um LNA para a banda ISM, atendendo aos requisitos de ganho, 
+estabilidade e \textit{noise figure} especificados. 
+
+Inicialmente, a definição do ponto de operação do transístor BFP420 permitiu estabelecer as condições de polarização adequadas, assegurando o 
+funcionamento na região ativa com compromisso razoável entre ganho e consumo. As simulações iniciais no LTspice forneceram os parâmetros S 
+necessários para as etapas seguintes, tendo em consideração a frequência de operação escolhida de $6~GHz$.
+
+A análise de estabilidade, realizada com o auxílio do AppCAD, mostrou-se indispensável para evitar oscilações indesejadas. O cálculo dos coeficientes 
+de reflexão à entrada e à saída ($\Gamma_S$ e $\Gamma_L$, respectivamente) permitiu verificar a estabilidade condicional do dispositivo, 
+orientando as estratégias de adaptação pela carta de Smith, tanto para condensadores e bobinas como para linhas de transmissão e \textit{stubs},
+garantindo assim a maior transmissão de potência possível.
+
+A validação inicial no LTspice confirmou que, na frequência central escolhida, as redes de adaptação dimensionadas garantiam uma boa correspondência de impedâncias, 
+com $S_{11}$ como $S_{22}$ inferiores a $-10~dB$ e $S_{21}$ próximo do MAG. Já na transição para o ambiente Cadence, com a introdução de modelos não-ideais e efeitos 
+parasitas, constituiu um passo fundamental para aproximar a simulação da realidade e para as novas abordagens, que visavam a redução do ruído, um fator que não era contemplado
+na abordagem do LTSpice, e o compromisso entre o ganho e o ruído, respectivamente. 
+
+A nova extração dos parâmetros S revelou desvios dos picos em relação aos resultados ideais (de aproximadamente $0,2~GHz$), sobretudo devido às capacitâncias e indutâncias 
+parasitas e às aproximações feitas por inspeção, ao invés do recurso a métodos mais computadorizados para a redução desse tipo de erros. 
+
+Em suma, este trabalho permitiu não só projetar um LNA funcional para a banda ISM, mas também adquirir competências práticas fundamentais: uso proficiente 
+de ferramentas como LTspice, AppCAD e Cadence; interpretação e aplicação da Carta de Smith; e compreensão da importância da estabilidade, do ruído e dos efeitos 
+parasitas no projeto de radiofrequência. Os objetivos iniciais foram plenamente alcançados, ficando demonstrada a viabilidade do circuito proposto.
