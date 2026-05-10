@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.20)  10 MAY 2026 19:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.20)  10 MAY 2026 22:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -523,38 +523,11 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 138.
 Package: type1cm 2002/09/05 v0.04 BlueSky/Y&Y Type1 CM font definitions (DPC, patched RF)
 )
 \bibdata{referencias}
-(main.bbl
-
-main.bbl:1: LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 \begin{thebibliography}{}
-                             
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 1.
-(C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+(main.bbl))
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 10.
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-main.bbl:1: Undefined control sequence.
-<inserted text> ...arindent \begingroup \@svsechd 
-                                                  \unskip {\hspace {\@tempsk...
-l.1 \begin{thebibliography}{}
-                             
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-)) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count333
 )
@@ -650,17 +623,10 @@ Package hyperref Info: Link coloring ON on input line 10.
 \openout3 = `main.out'.
 
  (capa.tex
-<Imagens/logo_fct.png, id=3, 288.07625pt x 68.255pt>
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 4.
-(pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [1{C:/Users/denpo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}
-
- <./Imagens/logo_fct.png>]
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 12.
+<IMAGENS/logo_fct.png, id=3, 288.07625pt x 68.255pt>
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 12.
 (pdftex.def)             Requested size: 241.84843pt x 57.30463pt.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 24.
  (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
@@ -688,12 +654,9 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 51.
+ [1
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.63 \end{titlepage}
-                     [1{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}])
+{C:/Users/denpo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc} <./IMAGENS/logo_fct.png>])
 No file main.toc.
 \tf@toc=\write4
 \openout4 = `main.toc'.
@@ -702,9 +665,9 @@ No file main.lof.
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 34.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 34.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
@@ -712,10 +675,10 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.34 \newpage
               [1] (introducao.tex
-<Imagens/LNA.png, id=20, 453.94594pt x 167.87718pt>
-File: Imagens/LNA.png Graphic file (type png)
-<use Imagens/LNA.png>
-Package pdftex.def Info: Imagens/LNA.png  used on input line 13.
+<IMAGENS/LNA.png, id=17, 453.94594pt x 167.87718pt>
+File: IMAGENS/LNA.png Graphic file (type png)
+<use IMAGENS/LNA.png>
+Package pdftex.def Info: IMAGENS/LNA.png  used on input line 13.
 (pdftex.def)             Requested size: 483.69687pt x 178.88138pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 30.
@@ -724,20 +687,20 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 30.
 )
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 37.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 37.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [2{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc} <./Imagens/LNA.png>] (desenvolvimento.tex
-<Imagens/LNA_antes_thevnin.png, id=36, 176.91093pt x 270.25969pt>
-File: Imagens/LNA_antes_thevnin.png Graphic file (type png)
-<use Imagens/LNA_antes_thevnin.png>
-Package pdftex.def Info: Imagens/LNA_antes_thevnin.png  used on input line 17.
+ [2{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc} <./IMAGENS/LNA.png>] (desenvolvimento.tex
+<IMAGENS/LNA_antes_thevnin.png, id=33, 176.91093pt x 270.25969pt>
+File: IMAGENS/LNA_antes_thevnin.png Graphic file (type png)
+<use IMAGENS/LNA_antes_thevnin.png>
+Package pdftex.def Info: IMAGENS/LNA_antes_thevnin.png  used on input line 17.
 (pdftex.def)             Requested size: 120.92421pt x 184.735pt.
-<Imagens/LNA_depois_thevnin.png, id=37, 173.14688pt x 260.47313pt>
-File: Imagens/LNA_depois_thevnin.png Graphic file (type png)
-<use Imagens/LNA_depois_thevnin.png>
-Package pdftex.def Info: Imagens/LNA_depois_thevnin.png  used on input line 24.
+<IMAGENS/LNA_depois_thevnin.png, id=34, 173.14688pt x 260.47313pt>
+File: IMAGENS/LNA_depois_thevnin.png Graphic file (type png)
+<use IMAGENS/LNA_depois_thevnin.png>
+Package pdftex.def Info: IMAGENS/LNA_depois_thevnin.png  used on input line 24.
 (pdftex.def)             Requested size: 120.92421pt x 181.9166pt.
 
 
@@ -746,125 +709,125 @@ LaTeX Warning: Reference `fig:LNA_inicial' on page 3 undefined on input line 32.
 
 LaTeX Warning: Reference `fig:LNA_depois' on page 3 undefined on input line 32.
 
-<Imagens/dimensionamento.png, id=38, 746.79pt x 531.48563pt>
-File: Imagens/dimensionamento.png Graphic file (type png)
-<use Imagens/dimensionamento.png>
-Package pdftex.def Info: Imagens/dimensionamento.png  used on input line 59.
+<IMAGENS/dimensionamento.png, id=35, 746.79pt x 531.48563pt>
+File: IMAGENS/dimensionamento.png Graphic file (type png)
+<use IMAGENS/dimensionamento.png>
+Package pdftex.def Info: IMAGENS/dimensionamento.png  used on input line 59.
 (pdftex.def)             Requested size: 338.58632pt x 240.96669pt.
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 64.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 64.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[3{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <./Imagens/LNA_antes_thevnin.png> <./Imagens/LNA_depois_thevnin.png>]
+[3{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <./IMAGENS/LNA_antes_thevnin.png> <./IMAGENS/LNA_depois_thevnin.png>]
 
 LaTeX Warning: Reference `fig:sub1' on page 4 undefined on input line 66.
 
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 100.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 100.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[4 <./Imagens/dimensionamento.png>]
-<Imagens/transistor_ltspice.png, id=60, 1445.4pt x 676.02562pt>
-File: Imagens/transistor_ltspice.png Graphic file (type png)
-<use Imagens/transistor_ltspice.png>
-Package pdftex.def Info: Imagens/transistor_ltspice.png  used on input line 107.
+[4 <./IMAGENS/dimensionamento.png>]
+<IMAGENS/transistor_ltspice.png, id=57, 1445.4pt x 676.02562pt>
+File: IMAGENS/transistor_ltspice.png Graphic file (type png)
+<use IMAGENS/transistor_ltspice.png>
+Package pdftex.def Info: IMAGENS/transistor_ltspice.png  used on input line 107.
 (pdftex.def)             Requested size: 435.32422pt x 203.60352pt.
-<Imagens/LNA_LTspice.png, id=61, 1445.4pt x 694.84593pt>
-File: Imagens/LNA_LTspice.png Graphic file (type png)
-<use Imagens/LNA_LTspice.png>
-Package pdftex.def Info: Imagens/LNA_LTspice.png  used on input line 115.
+<IMAGENS/LNA_LTspice.png, id=58, 1445.4pt x 694.84593pt>
+File: IMAGENS/LNA_LTspice.png Graphic file (type png)
+<use IMAGENS/LNA_LTspice.png>
+Package pdftex.def Info: IMAGENS/LNA_LTspice.png  used on input line 115.
 (pdftex.def)             Requested size: 435.32422pt x 209.27177pt.
-<Imagens/dimensionamento_ltspice.png, id=62, 1445.4pt x 679.03688pt>
-File: Imagens/dimensionamento_ltspice.png Graphic file (type png)
-<use Imagens/dimensionamento_ltspice.png>
-Package pdftex.def Info: Imagens/dimensionamento_ltspice.png  used on input line 123.
+<IMAGENS/dimensionamento_ltspice.png, id=59, 1445.4pt x 679.03688pt>
+File: IMAGENS/dimensionamento_ltspice.png Graphic file (type png)
+<use IMAGENS/dimensionamento_ltspice.png>
+Package pdftex.def Info: IMAGENS/dimensionamento_ltspice.png  used on input line 123.
 (pdftex.def)             Requested size: 435.32422pt x 204.51045pt.
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 128.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 128.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [5 <./Imagens/transistor_ltspice.png> <./Imagens/LNA_LTspice.png>]
-<Imagens/S_ltspice.png, id=73, 1445.4pt x 677.53125pt>
-File: Imagens/S_ltspice.png Graphic file (type png)
-<use Imagens/S_ltspice.png>
-Package pdftex.def Info: Imagens/S_ltspice.png  used on input line 136.
+ [5 <./IMAGENS/transistor_ltspice.png> <./IMAGENS/LNA_LTspice.png>]
+<IMAGENS/S_ltspice.png, id=69, 1445.4pt x 677.53125pt>
+File: IMAGENS/S_ltspice.png Graphic file (type png)
+<use IMAGENS/S_ltspice.png>
+Package pdftex.def Info: IMAGENS/S_ltspice.png  used on input line 136.
 (pdftex.def)             Requested size: 435.32422pt x 204.05698pt.
-<Imagens/ficheiro_s2p.png, id=74, 484.05844pt x 441.14813pt>
-File: Imagens/ficheiro_s2p.png Graphic file (type png)
-<use Imagens/ficheiro_s2p.png>
-Package pdftex.def Info: Imagens/ficheiro_s2p.png  used on input line 157.
+<IMAGENS/ficheiro_s2p.png, id=70, 484.05844pt x 441.14813pt>
+File: IMAGENS/ficheiro_s2p.png Graphic file (type png)
+<use IMAGENS/ficheiro_s2p.png>
+Package pdftex.def Info: IMAGENS/ficheiro_s2p.png  used on input line 157.
 (pdftex.def)             Requested size: 338.58632pt x 308.58618pt.
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 162.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 162.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [6 <./Imagens/dimensionamento_ltspice.png> <./Imagens/S_ltspice.png>]
+ [6 <./IMAGENS/dimensionamento_ltspice.png> <./IMAGENS/S_ltspice.png>]
 
 LaTeX Warning: Reference `fig:ficheiro_s2p' on page 7 undefined on input line 164.
 
-<Imagens/k_appcad.png, id=83, 989.19562pt x 566.115pt>
-File: Imagens/k_appcad.png Graphic file (type png)
-<use Imagens/k_appcad.png>
-Package pdftex.def Info: Imagens/k_appcad.png  used on input line 168.
+<IMAGENS/k_appcad.png, id=80, 989.19562pt x 566.115pt>
+File: IMAGENS/k_appcad.png Graphic file (type png)
+<use IMAGENS/k_appcad.png>
+Package pdftex.def Info: IMAGENS/k_appcad.png  used on input line 168.
 (pdftex.def)             Requested size: 338.58632pt x 193.77228pt.
 
 LaTeX Warning: Reference `fig:valores_estabilidade_k' on page 7 undefined on input line 174.
 
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 176.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 176.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[7 <./Imagens/ficheiro_s2p.png> <./Imagens/k_appcad.png>]
-<Imagens/gamma_appcad.png, id=93, 983.17313pt x 521.69907pt>
-File: Imagens/gamma_appcad.png Graphic file (type png)
-<use Imagens/gamma_appcad.png>
-Package pdftex.def Info: Imagens/gamma_appcad.png  used on input line 189.
+[7 <./IMAGENS/ficheiro_s2p.png> <./IMAGENS/k_appcad.png>]
+<IMAGENS/gamma_appcad.png, id=90, 983.17313pt x 521.69907pt>
+File: IMAGENS/gamma_appcad.png Graphic file (type png)
+<use IMAGENS/gamma_appcad.png>
+Package pdftex.def Info: IMAGENS/gamma_appcad.png  used on input line 189.
 (pdftex.def)             Requested size: 338.58632pt x 179.65999pt.
 
 
 LaTeX Warning: Reference `fig:valores_estabilidade_k' on page 8 undefined on input line 198.
 
-<Imagens/CS_CB.png, id=94, 441.14813pt x 479.54156pt>
-File: Imagens/CS_CB.png Graphic file (type png)
-<use Imagens/CS_CB.png>
-Package pdftex.def Info: Imagens/CS_CB.png  used on input line 220.
+<IMAGENS/CS_CB.png, id=91, 441.14813pt x 479.54156pt>
+File: IMAGENS/CS_CB.png Graphic file (type png)
+<use IMAGENS/CS_CB.png>
+Package pdftex.def Info: IMAGENS/CS_CB.png  used on input line 220.
 (pdftex.def)             Requested size: 338.58632pt x 368.07007pt.
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 224.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 224.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[8 <./Imagens/gamma_appcad.png>]
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 256.
+[8 <./IMAGENS/gamma_appcad.png>]
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 256.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [9 <./Imagens/CS_CB.png>]
-<Imagens/ltspice_CB.png, id=110, 1445.4pt x 592.46344pt>
-File: Imagens/ltspice_CB.png Graphic file (type png)
-<use Imagens/ltspice_CB.png>
-Package pdftex.def Info: Imagens/ltspice_CB.png  used on input line 277.
+ [9 <./IMAGENS/CS_CB.png>]
+<IMAGENS/ltspice_CB.png, id=107, 1445.4pt x 592.46344pt>
+File: IMAGENS/ltspice_CB.png Graphic file (type png)
+<use IMAGENS/ltspice_CB.png>
+Package pdftex.def Info: IMAGENS/ltspice_CB.png  used on input line 277.
 (pdftex.def)             Requested size: 386.95897pt x 158.61122pt.
-<Imagens/ltspice_CB_s.png, id=111, 1445.4pt x 679.03688pt>
-File: Imagens/ltspice_CB_s.png Graphic file (type png)
-<use Imagens/ltspice_CB_s.png>
-Package pdftex.def Info: Imagens/ltspice_CB_s.png  used on input line 284.
+<IMAGENS/ltspice_CB_s.png, id=108, 1445.4pt x 679.03688pt>
+File: IMAGENS/ltspice_CB_s.png Graphic file (type png)
+<use IMAGENS/ltspice_CB_s.png>
+Package pdftex.def Info: IMAGENS/ltspice_CB_s.png  used on input line 284.
 (pdftex.def)             Requested size: 386.95897pt x 181.78821pt.
-<Imagens/ltspice_CB_S11.png, id=112, 220.57407pt x 93.34875pt>
-File: Imagens/ltspice_CB_S11.png Graphic file (type png)
-<use Imagens/ltspice_CB_S11.png>
-Package pdftex.def Info: Imagens/ltspice_CB_S11.png  used on input line 294.
+<IMAGENS/ltspice_CB_S11.png, id=109, 220.57407pt x 93.34875pt>
+File: IMAGENS/ltspice_CB_S11.png Graphic file (type png)
+<use IMAGENS/ltspice_CB_S11.png>
+Package pdftex.def Info: IMAGENS/ltspice_CB_S11.png  used on input line 294.
 (pdftex.def)             Requested size: 154.78653pt x 65.5089pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 295.
-<Imagens/ltspice_CB_S22.png, id=113, 218.31563pt x 93.34875pt>
-File: Imagens/ltspice_CB_S22.png Graphic file (type png)
-<use Imagens/ltspice_CB_S22.png>
-Package pdftex.def Info: Imagens/ltspice_CB_S22.png  used on input line 301.
+<IMAGENS/ltspice_CB_S22.png, id=110, 218.31563pt x 93.34875pt>
+File: IMAGENS/ltspice_CB_S22.png Graphic file (type png)
+<use IMAGENS/ltspice_CB_S22.png>
+Package pdftex.def Info: IMAGENS/ltspice_CB_S22.png  used on input line 301.
 (pdftex.def)             Requested size: 154.78653pt x 66.18405pt.
-<Imagens/ltspice_CB_S21.png, id=114, 219.82124pt x 92.59593pt>
-File: Imagens/ltspice_CB_S21.png Graphic file (type png)
-<use Imagens/ltspice_CB_S21.png>
-Package pdftex.def Info: Imagens/ltspice_CB_S21.png  used on input line 308.
+<IMAGENS/ltspice_CB_S21.png, id=111, 219.82124pt x 92.59593pt>
+File: IMAGENS/ltspice_CB_S21.png Graphic file (type png)
+<use IMAGENS/ltspice_CB_S21.png>
+Package pdftex.def Info: IMAGENS/ltspice_CB_S21.png  used on input line 308.
 (pdftex.def)             Requested size: 154.78653pt x 65.20241pt.
 
 
@@ -873,60 +836,60 @@ LaTeX Warning: Reference `fig:LTspice_CB_s' on page 10 undefined on input line 3
 
 LaTeX Warning: Reference `fig:valores_s_cb_ltspice' on page 10 undefined on input line 318.
 
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 322.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 322.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[10 <./Imagens/ltspice_CB.png> <./Imagens/ltspice_CB_s.png>]
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 350.
+[10 <./IMAGENS/ltspice_CB.png> <./IMAGENS/ltspice_CB_s.png>]
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 350.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [11 <./Imagens/ltspice_CB_S11.png> <./Imagens/ltspice_CB_S22.png> <./Imagens/ltspice_CB_S21.png>]
-<Imagens/CS_LS_ZS.png, id=136, 438.8897pt x 484.05844pt>
-File: Imagens/CS_LS_ZS.png Graphic file (type png)
-<use Imagens/CS_LS_ZS.png>
-Package pdftex.def Info: Imagens/CS_LS_ZS.png  used on input line 354.
+ [11 <./IMAGENS/ltspice_CB_S11.png> <./IMAGENS/ltspice_CB_S22.png> <./IMAGENS/ltspice_CB_S21.png>]
+<IMAGENS/CS_LS_ZS.png, id=132, 438.8897pt x 484.05844pt>
+File: IMAGENS/CS_LS_ZS.png Graphic file (type png)
+<use IMAGENS/CS_LS_ZS.png>
+Package pdftex.def Info: IMAGENS/CS_LS_ZS.png  used on input line 354.
 (pdftex.def)             Requested size: 314.40001pt x 346.7639pt.
-<Imagens/CS_LS_ZL.png, id=137, 439.6425pt x 481.04718pt>
-File: Imagens/CS_LS_ZL.png Graphic file (type png)
-<use Imagens/CS_LS_ZL.png>
-Package pdftex.def Info: Imagens/CS_LS_ZL.png  used on input line 384.
+<IMAGENS/CS_LS_ZL.png, id=133, 439.6425pt x 481.04718pt>
+File: IMAGENS/CS_LS_ZL.png Graphic file (type png)
+<use IMAGENS/CS_LS_ZL.png>
+Package pdftex.def Info: IMAGENS/CS_LS_ZL.png  used on input line 384.
 (pdftex.def)             Requested size: 314.40001pt x 344.01953pt.
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 388.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 388.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [12 <./Imagens/CS_LS_ZS.png>]
-<Imagens/ltspice_LS.png, id=144, 1445.4pt x 600.74437pt>
-File: Imagens/ltspice_LS.png Graphic file (type png)
-<use Imagens/ltspice_LS.png>
-Package pdftex.def Info: Imagens/ltspice_LS.png  used on input line 414.
+ [12 <./IMAGENS/CS_LS_ZS.png>]
+<IMAGENS/ltspice_LS.png, id=141, 1445.4pt x 600.74437pt>
+File: IMAGENS/ltspice_LS.png Graphic file (type png)
+<use IMAGENS/ltspice_LS.png>
+Package pdftex.def Info: IMAGENS/ltspice_LS.png  used on input line 414.
 (pdftex.def)             Requested size: 386.95897pt x 160.82816pt.
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 418.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 418.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [13 <./Imagens/CS_LS_ZL.png>]
-<Imagens/ltspice_LS_s.png, id=151, 1445.4pt x 678.28406pt>
-File: Imagens/ltspice_LS_s.png Graphic file (type png)
-<use Imagens/ltspice_LS_s.png>
-Package pdftex.def Info: Imagens/ltspice_LS_s.png  used on input line 422.
+ [13 <./IMAGENS/CS_LS_ZL.png>]
+<IMAGENS/ltspice_LS_s.png, id=148, 1445.4pt x 678.28406pt>
+File: IMAGENS/ltspice_LS_s.png Graphic file (type png)
+<use IMAGENS/ltspice_LS_s.png>
+Package pdftex.def Info: IMAGENS/ltspice_LS_s.png  used on input line 422.
 (pdftex.def)             Requested size: 386.95897pt x 181.58667pt.
-<Imagens/ltspice_LS_S11.png, id=152, 219.06844pt x 91.09032pt>
-File: Imagens/ltspice_LS_S11.png Graphic file (type png)
-<use Imagens/ltspice_LS_S11.png>
-Package pdftex.def Info: Imagens/ltspice_LS_S11.png  used on input line 432.
+<IMAGENS/ltspice_LS_S11.png, id=149, 219.06844pt x 91.09032pt>
+File: IMAGENS/ltspice_LS_S11.png Graphic file (type png)
+<use IMAGENS/ltspice_LS_S11.png>
+Package pdftex.def Info: IMAGENS/ltspice_LS_S11.png  used on input line 432.
 (pdftex.def)             Requested size: 154.78653pt x 64.36182pt.
-<Imagens/ltspice_LS_S22.png, id=153, 219.82124pt x 93.34875pt>
-File: Imagens/ltspice_LS_S22.png Graphic file (type png)
-<use Imagens/ltspice_LS_S22.png>
-Package pdftex.def Info: Imagens/ltspice_LS_S22.png  used on input line 439.
+<IMAGENS/ltspice_LS_S22.png, id=150, 219.82124pt x 93.34875pt>
+File: IMAGENS/ltspice_LS_S22.png Graphic file (type png)
+<use IMAGENS/ltspice_LS_S22.png>
+Package pdftex.def Info: IMAGENS/ltspice_LS_S22.png  used on input line 439.
 (pdftex.def)             Requested size: 154.78653pt x 65.73253pt.
-<Imagens/ltspice_LS_S21.png, id=154, 221.32687pt x 92.59593pt>
-File: Imagens/ltspice_LS_S21.png Graphic file (type png)
-<use Imagens/ltspice_LS_S21.png>
-Package pdftex.def Info: Imagens/ltspice_LS_S21.png  used on input line 446.
+<IMAGENS/ltspice_LS_S21.png, id=151, 221.32687pt x 92.59593pt>
+File: IMAGENS/ltspice_LS_S21.png Graphic file (type png)
+<use IMAGENS/ltspice_LS_S21.png>
+Package pdftex.def Info: IMAGENS/ltspice_LS_S21.png  used on input line 446.
 (pdftex.def)             Requested size: 154.78653pt x 64.76158pt.
 
 
@@ -945,75 +908,75 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 LaTeX Warning: Reference `fig:lna_ltspice' on page 14 undefined on input line 470.
 
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 471.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 471.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[14 <./Imagens/ltspice_LS.png> <./Imagens/ltspice_LS_s.png> <./Imagens/ltspice_LS_S11.png> <./Imagens/ltspice_LS_S22.png> <./Imagens/ltspice_LS_S21.png>]
-<Imagens/ganho_noiseFigure6G.png, id=167, 3452.9pt x 1445.4pt>
-File: Imagens/ganho_noiseFigure6G.png Graphic file (type png)
-<use Imagens/ganho_noiseFigure6G.png>
-Package pdftex.def Info: Imagens/ganho_noiseFigure6G.png  used on input line 474.
+[14 <./IMAGENS/ltspice_LS.png> <./IMAGENS/ltspice_LS_s.png> <./IMAGENS/ltspice_LS_S11.png> <./IMAGENS/ltspice_LS_S22.png> <./IMAGENS/ltspice_LS_S21.png>]
+<IMAGENS/ganho_noiseFigure6G.png, id=164, 3452.9pt x 1445.4pt>
+File: IMAGENS/ganho_noiseFigure6G.png Graphic file (type png)
+<use IMAGENS/ganho_noiseFigure6G.png>
+Package pdftex.def Info: IMAGENS/ganho_noiseFigure6G.png  used on input line 474.
 (pdftex.def)             Requested size: 386.95897pt x 161.97191pt.
 
 
 LaTeX Warning: Reference `fig:gain_noise_figure6G' on page 15 undefined on input line 486.
 
-<Imagens/lna_CB_noiseSchematic.png, id=168, 2213.26875pt x 1220.56pt>
-File: Imagens/lna_CB_noiseSchematic.png Graphic file (type png)
-<use Imagens/lna_CB_noiseSchematic.png>
-Package pdftex.def Info: Imagens/lna_CB_noiseSchematic.png  used on input line 508.
+<IMAGENS/lna_CB_noiseSchematic.png, id=165, 2213.26875pt x 1220.56pt>
+File: IMAGENS/lna_CB_noiseSchematic.png Graphic file (type png)
+<use IMAGENS/lna_CB_noiseSchematic.png>
+Package pdftex.def Info: IMAGENS/lna_CB_noiseSchematic.png  used on input line 508.
 (pdftex.def)             Requested size: 386.95897pt x 213.39633pt.
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 511.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 511.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[15{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc} <./Imagens/ganho_noiseFigure6G.png>]
-<Imagens/noiseFigure_vs_NFmin2.png, id=181, 3452.9pt x 1445.4pt>
-File: Imagens/noiseFigure_vs_NFmin2.png Graphic file (type png)
-<use Imagens/noiseFigure_vs_NFmin2.png>
-Package pdftex.def Info: Imagens/noiseFigure_vs_NFmin2.png  used on input line 517.
+[15{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc} <./IMAGENS/ganho_noiseFigure6G.png>]
+<IMAGENS/noiseFigure_vs_NFmin2.png, id=178, 3452.9pt x 1445.4pt>
+File: IMAGENS/noiseFigure_vs_NFmin2.png Graphic file (type png)
+<use IMAGENS/noiseFigure_vs_NFmin2.png>
+Package pdftex.def Info: IMAGENS/noiseFigure_vs_NFmin2.png  used on input line 517.
 (pdftex.def)             Requested size: 386.95897pt x 161.97191pt.
 
 
 LaTeX Warning: Reference `fig:noiseFigure_vs_NFminCB' on page 16 undefined on input line 522.
 
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 530.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 530.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[16 <./Imagens/lna_CB_noiseSchematic.png> <./Imagens/noiseFigure_vs_NFmin2.png>]
-<Imagens/mcalc.jpeg, id=192, 1243.64626pt x 666.49pt>
-File: Imagens/mcalc.jpeg Graphic file (type jpg)
-<use Imagens/mcalc.jpeg>
-Package pdftex.def Info: Imagens/mcalc.jpeg  used on input line 533.
+[16 <./IMAGENS/lna_CB_noiseSchematic.png> <./IMAGENS/noiseFigure_vs_NFmin2.png>]
+<IMAGENS/mcalc.jpeg, id=189, 1243.64626pt x 666.49pt>
+File: IMAGENS/mcalc.jpeg Graphic file (type jpg)
+<use IMAGENS/mcalc.jpeg>
+Package pdftex.def Info: IMAGENS/mcalc.jpeg  used on input line 533.
 (pdftex.def)             Requested size: 386.95897pt x 207.3725pt.
 
 
 LaTeX Warning: Reference `fig:lna_LS_noiseSchematic' on page 17 undefined on input line 539.
 
-<Imagens/lna_LS_noiseSchematic.png, id=193, 2744.2525pt x 1211.52625pt>
-File: Imagens/lna_LS_noiseSchematic.png Graphic file (type png)
-<use Imagens/lna_LS_noiseSchematic.png>
-Package pdftex.def Info: Imagens/lna_LS_noiseSchematic.png  used on input line 543.
+<IMAGENS/lna_LS_noiseSchematic.png, id=190, 2744.2525pt x 1211.52625pt>
+File: IMAGENS/lna_LS_noiseSchematic.png Graphic file (type png)
+<use IMAGENS/lna_LS_noiseSchematic.png>
+Package pdftex.def Info: IMAGENS/lna_LS_noiseSchematic.png  used on input line 543.
 (pdftex.def)             Requested size: 386.95897pt x 170.83261pt.
-<Imagens/noiseFigure_vs_NFmin3.png, id=194, 3452.9pt x 1445.4pt>
-File: Imagens/noiseFigure_vs_NFmin3.png Graphic file (type png)
-<use Imagens/noiseFigure_vs_NFmin3.png>
-Package pdftex.def Info: Imagens/noiseFigure_vs_NFmin3.png  used on input line 552.
+<IMAGENS/noiseFigure_vs_NFmin3.png, id=191, 3452.9pt x 1445.4pt>
+File: IMAGENS/noiseFigure_vs_NFmin3.png Graphic file (type png)
+<use IMAGENS/noiseFigure_vs_NFmin3.png>
+Package pdftex.def Info: IMAGENS/noiseFigure_vs_NFmin3.png  used on input line 552.
 (pdftex.def)             Requested size: 386.95897pt x 161.97191pt.
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 556.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 556.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[17 <./Imagens/mcalc.jpeg> <./Imagens/lna_LS_noiseSchematic.png>]
+[17 <./IMAGENS/mcalc.jpeg> <./IMAGENS/lna_LS_noiseSchematic.png>]
 
 LaTeX Warning: Reference `fig:noiseFigure_vs_NFminLS' on page 18 undefined on input line 557.
 
-<Imagens/gamma_maxmat_appcad.png, id=203, 1299.85625pt x 669.50125pt>
-File: Imagens/gamma_maxmat_appcad.png Graphic file (type png)
-<use Imagens/gamma_maxmat_appcad.png>
-Package pdftex.def Info: Imagens/gamma_maxmat_appcad.png  used on input line 569.
+<IMAGENS/gamma_maxmat_appcad.png, id=199, 1299.85625pt x 669.50125pt>
+File: IMAGENS/gamma_maxmat_appcad.png Graphic file (type png)
+<use IMAGENS/gamma_maxmat_appcad.png>
+Package pdftex.def Info: IMAGENS/gamma_maxmat_appcad.png  used on input line 569.
 (pdftex.def)             Requested size: 386.95897pt x 199.29913pt.
 
 LaTeX Warning: Reference `eq:gammaL_gammaS' on page 18 undefined on input line 576.
@@ -1024,44 +987,44 @@ LaTeX Warning: Reference `eq:eq:zl_zs' on page 18 undefined on input line 576.
 
 LaTeX Warning: Reference `fig:cadence_LS_circuito_maxmat' on page 18 undefined on input line 577.
 
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 578.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 578.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[18 <./Imagens/noiseFigure_vs_NFmin3.png> <./Imagens/gamma_maxmat_appcad.png>]
-<Imagens/lna_LS_maxmatSchematic.png, id=212, 2529.45pt x 1144.275pt>
-File: Imagens/lna_LS_maxmatSchematic.png Graphic file (type png)
-<use Imagens/lna_LS_maxmatSchematic.png>
-Package pdftex.def Info: Imagens/lna_LS_maxmatSchematic.png  used on input line 581.
+[18 <./IMAGENS/noiseFigure_vs_NFmin3.png> <./IMAGENS/gamma_maxmat_appcad.png>]
+<IMAGENS/lna_LS_maxmatSchematic.png, id=209, 2529.45pt x 1144.275pt>
+File: IMAGENS/lna_LS_maxmatSchematic.png Graphic file (type png)
+<use IMAGENS/lna_LS_maxmatSchematic.png>
+Package pdftex.def Info: IMAGENS/lna_LS_maxmatSchematic.png  used on input line 581.
 (pdftex.def)             Requested size: 386.95897pt x 175.03857pt.
-<Imagens/sParams_lna_maxmat2.png, id=213, 3452.9pt x 1445.4pt>
-File: Imagens/sParams_lna_maxmat2.png Graphic file (type png)
-<use Imagens/sParams_lna_maxmat2.png>
-Package pdftex.def Info: Imagens/sParams_lna_maxmat2.png  used on input line 590.
+<IMAGENS/sParams_lna_maxmat2.png, id=210, 3452.9pt x 1445.4pt>
+File: IMAGENS/sParams_lna_maxmat2.png Graphic file (type png)
+<use IMAGENS/sParams_lna_maxmat2.png>
+Package pdftex.def Info: IMAGENS/sParams_lna_maxmat2.png  used on input line 590.
 (pdftex.def)             Requested size: 241.84843pt x 101.23244pt.
-<Imagens/noiseFigure_lna_maxmat.png, id=214, 3452.9pt x 1445.4pt>
-File: Imagens/noiseFigure_lna_maxmat.png Graphic file (type png)
-<use Imagens/noiseFigure_lna_maxmat.png>
-Package pdftex.def Info: Imagens/noiseFigure_lna_maxmat.png  used on input line 597.
+<IMAGENS/noiseFigure_lna_maxmat.png, id=211, 3452.9pt x 1445.4pt>
+File: IMAGENS/noiseFigure_lna_maxmat.png Graphic file (type png)
+<use IMAGENS/noiseFigure_lna_maxmat.png>
+Package pdftex.def Info: IMAGENS/noiseFigure_lna_maxmat.png  used on input line 597.
 (pdftex.def)             Requested size: 241.84843pt x 101.23244pt.
 
 
 LaTeX Warning: Reference `fig:sparam_maxmat' on page 19 undefined on input line 606.
 
 )
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 40.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 40.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [19 <./Imagens/lna_LS_maxmatSchematic.png> <./Imagens/sParams_lna_maxmat2.png> <./Imagens/noiseFigure_lna_maxmat.png>] (conclusao.tex)
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 43.
+ [19 <./IMAGENS/lna_LS_maxmatSchematic.png> <./IMAGENS/sParams_lna_maxmat2.png> <./IMAGENS/noiseFigure_lna_maxmat.png>] (conclusao.tex)
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 43.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
  [20] (referencias.tex)
-File: Imagens/logo_fct.png Graphic file (type png)
-<use Imagens/logo_fct.png>
-Package pdftex.def Info: Imagens/logo_fct.png  used on input line 46.
+File: IMAGENS/logo_fct.png Graphic file (type png)
+<use IMAGENS/logo_fct.png>
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 46.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
  [21] (main.aux)
  ***********
@@ -1082,20 +1045,20 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  DC7ACC8E0FDD025B25CC7852884AF7E3;4072.
+(rerunfilecheck)             After:  1AE181F5B52EF10051E73D894A2317E2;4071.
  ) 
 Here is how much of TeX's memory you used:
- 16989 strings out of 467871
- 280258 string characters out of 5418375
- 707981 words of memory out of 5000000
- 45492 multiletter control sequences out of 15000+600000
+ 16985 strings out of 467871
+ 280112 string characters out of 5418375
+ 707569 words of memory out of 5000000
+ 45488 multiletter control sequences out of 15000+600000
  700607 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,15n,93p,1261b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (23 pages, 3600456 bytes).
+Output written on main.pdf (22 pages, 3599781 bytes).
 PDF statistics:
- 338 PDF objects out of 1000 (max. 8388607)
+ 335 PDF objects out of 1000 (max. 8388607)
  69 named destinations out of 1000 (max. 500000)
  176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
