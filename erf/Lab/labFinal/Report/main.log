@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.9)  10 MAY 2026 02:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.20)  10 MAY 2026 16:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex
-(/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex
+**c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex
+(c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex
 LaTeX2e <2025-11-01>
-L3 programming layer <2026-01-19>
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+L3 programming layer <2025-11-06>
+(C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+(C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
 File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count275
@@ -23,34 +23,43 @@ File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
-) (./config.tex (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+) (config.tex (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
-) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2026/01/26 v26.2 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2025/11/09 v25.15 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
 \babel@savecnt=\count283
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2083.
-LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
-LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
-LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2050.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2052.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2054.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2055.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2056.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2058.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2083.
 \U@D=\dimen149
-\l@unhyphenated=\language89
- (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\l@unhyphenated=\language79
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count284
- (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/pt/babel-portuguese.tex)
+Package babel Info: Configuration files are deprecated, as
+(babel)             they can break document portability.
+(babel)             Reported on input line 4175.
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/pt\babel-portuguese.tex)
 Package babel Info: Importing font and identification data for portuguese
-(babel)             from babel-pt.ini. Reported on input line 4330.
- (/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuguese.ldf
-Language: portuges 2026/01/24 v1.2u Portuguese support from the babel system
-Package babel Info: Making " an active character on input line 132.
-)) (/usr/share/texlive/texmf-dist/tex/latex/lm/lmodern.sty
+(babel)             from babel-pt.ini. Reported on input line 4298.
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/babel-portuges\portuguese.ldf
+Language: portuges 2021/07/09 v1.2t Portuguese support from the babel system
+Package babel Info: Making " an active character on input line 143.
+)) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -84,14 +93,14 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
-) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
 \Gm@cnth=\count285
@@ -106,7 +115,7 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen156
 \Gm@layoutvoffset=\dimen157
 \Gm@dimlist=\toks20
-) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box53
 \beforetitleunit=\skip51
@@ -117,13 +126,13 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \titlewidth=\dimen160
 \titlewidthlast=\dimen161
 \titlewidthfirst=\dimen162
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
 Package: pdfpages 2025/07/23 v0.6g Insert pages of external PDF documents (AM)
- (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
 \calc@Acount=\count288
 \calc@Bcount=\count289
@@ -135,19 +144,19 @@ LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
 \calc@Ccount=\count290
 \calc@Cskip=\skip55
-) (/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 \ESO@tempdima=\dimen165
 \ESO@tempdimb=\dimen166
- (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
@@ -157,16 +166,16 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-)) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+)) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count291
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
@@ -177,7 +186,7 @@ Package graphics Info: Driver file: pdftex.def on input line 106.
 \AM@pagewidth=\dimen169
 \AM@pageheight=\dimen170
 \AM@fboxrule=\dimen171
- (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
 File: pppdftex.def 2025/07/23 v0.6g Pdfpages driver for pdfTeX (AM)
 )
 \pdfpages@includegraphics@status=\count292
@@ -188,10 +197,10 @@ File: pppdftex.def 2025/07/23 v0.6g Pdfpages driver for pdfTeX (AM)
 \AM@lof@heading=\toks24
 \c@AM@survey=\count294
 \AM@templatesizebox=\box55
-) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titletoc.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titletoc.sty
 Package: titletoc 2025/01/04 v2.17 TOC entries
 \ttl@leftsep=\dimen172
-) (/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 51.
 \cftparskip=\skip56
@@ -227,14 +236,14 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cftbeforetabskip=\skip84
 \cfttabindent=\skip85
 \cfttabnumwidth=\skip86
-) (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/tocbibind\tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has section divisions on input line 50.
 
 
 Package tocbibind Note: Using section or other style headings.
 
-) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@headwidth=\skip87
 \f@nch@offset@elh=\skip88
@@ -251,17 +260,17 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthC=\skip99
 \f@nch@widthR=\skip100
 \@temptokenb=\toks25
-) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-) (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
- (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-))) (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+))) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip101
 \enit@outerparindent=\dimen173
@@ -269,26 +278,26 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@inbox=\box56
 \enit@count@id=\count297
 \enitdp@description=\count298
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/tools\afterpage.sty
 Package: afterpage 2023/07/04 v1.08 After-Page Package (DPC)
 \AP@output=\toks27
 \AP@partial=\box57
 \AP@footins=\box58
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip102
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
- (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks28
 \ex@=\dimen174
-)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen175
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count299
@@ -338,27 +347,27 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \mathdisplay@stack=\toks32
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
-) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+)) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count311
 \float@exts=\toks33
 \float@box=\box61
 \@float@everytoks=\toks34
 \@floatcapt=\box62
-) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
- (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
- (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen183
 \captionmargin=\dimen184
@@ -378,12 +387,8 @@ Package caption Info: New subtype `subfigure' on input line 238.
 \c@subfigure=\count314
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count315
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-
-LaTeX Warning: You have requested release `2026/06/01' of LaTeX,
-               but only release `2025-11-01' is available.
-
-Package: array 2026/01/25 v2.7a Tabular extension package (FMi)
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen191
 \ar@mcellbox=\box63
 \extrarowheight=\dimen192
@@ -391,7 +396,7 @@ Package: array 2026/01/25 v2.7a Tabular extension package (FMi)
 \extratabsurround=\skip105
 \backup@length=\skip106
 \ar@cellbox=\box64
-) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen193
 \lightrulewidth=\dimen194
@@ -410,103 +415,103 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count318
 \@lastruleclass=\count319
 \@thisrulewidth=\dimen261
-) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip107
 \multirow@cntb=\count320
 \multirow@dima=\skip108
 \bigstrutjot=\dimen262
-) (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
 Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
 \everycr=\toks36
 \minrowclearance=\skip109
 \rownum=\count321
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
- (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+)) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
- (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count322
-) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
 \@linkdim=\dimen263
 \Hy@linkcounter=\count323
 \Hy@pagecounter=\count324
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count325
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Hyper figures OFF on input line 4201.
-Package hyperref Info: Link nesting OFF on input line 4206.
-Package hyperref Info: Hyper index ON on input line 4209.
-Package hyperref Info: Plain pages OFF on input line 4216.
-Package hyperref Info: Backreferencing OFF on input line 4221.
+Package hyperref Info: Hyper figures OFF on input line 4195.
+Package hyperref Info: Link nesting OFF on input line 4200.
+Package hyperref Info: Hyper index ON on input line 4203.
+Package hyperref Info: Plain pages OFF on input line 4210.
+Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4468.
+Package hyperref Info: Bookmarks ON on input line 4462.
 \c@Hy@tempcnt=\count326
- (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4807.
+LaTeX Info: Redefining \url on input line 4801.
 \XeTeXLinkMargin=\dimen264
- (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count327
 \Field@Width=\dimen265
 \Fld@charsize=\dimen266
-Package hyperref Info: Hyper figures OFF on input line 6084.
-Package hyperref Info: Link nesting OFF on input line 6089.
-Package hyperref Info: Hyper index ON on input line 6092.
-Package hyperref Info: backreferencing OFF on input line 6099.
-Package hyperref Info: Link coloring OFF on input line 6104.
-Package hyperref Info: Link coloring with OCG OFF on input line 6109.
-Package hyperref Info: PDF/A mode OFF on input line 6114.
+Package hyperref Info: Hyper figures OFF on input line 6078.
+Package hyperref Info: Link nesting OFF on input line 6083.
+Package hyperref Info: Hyper index ON on input line 6086.
+Package hyperref Info: backreferencing OFF on input line 6093.
+Package hyperref Info: Link coloring OFF on input line 6098.
+Package hyperref Info: Link coloring with OCG OFF on input line 6103.
+Package hyperref Info: PDF/A mode OFF on input line 6108.
 \Hy@abspage=\count328
 \c@Item=\count329
 \c@Hfootnote=\count330
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
 \Fld@listcount=\count331
 \c@bookmark@seq@number=\count332
- (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
@@ -514,13 +519,13 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \Hy@SectionHShift=\skip110
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 138.
- (/usr/share/texlive/texmf-dist/tex/latex/type1cm/type1cm.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/type1cm\type1cm.sty
 Package: type1cm 2002/09/05 v0.04 BlueSky/Y&Y Type1 CM font definitions (DPC, patched RF)
 )
 \bibdata{referencias}
-(./main.bbl
+(main.bbl
 
-./main.bbl:1: LaTeX Error: Missing \begin{document}.
+main.bbl:1: LaTeX Error: Missing \begin{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -532,10 +537,10 @@ You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 1.
-(/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmr.fd
+(C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-./main.bbl:1: Undefined control sequence.
+main.bbl:1: Undefined control sequence.
 <inserted text> ...arindent \begingroup \@svsechd 
                                                   \unskip {\hspace {\@tempsk...
 l.1 \begin{thebibliography}{}
@@ -549,10 +554,20 @@ and I'll forget about whatever was undefined.
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-)) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+)) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count333
-) (./main.aux)
+) (main.aux
+Package babel Info: 'portuguese' activates 'portuges' shorthands.
+(babel)             Reported on input line 10.
+
+
+LaTeX Warning: Label `fig:LNA_inicial' multiply defined.
+
+
+LaTeX Warning: Label `fig:valores_estabilidade_k' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -573,8 +588,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
-Package babel Info: 'portuguese' activates 'portuges' shorthands.
-(babel)             Reported on input line 10.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -610,7 +623,7 @@ Package babel Info: 'portuguese' activates 'portuges' shorthands.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count334
 \scratchdimen=\dimen267
@@ -623,16 +636,16 @@ Package babel Info: 'portuguese' activates 'portuges' shorthands.
 \MPnumerator=\count338
 \makeMPintoPDFobject=\count339
 \everyMPtoPDFconversion=\toks38
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-)) (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
-Package: pdflscape 2025-06-23 v0.14 Display of landscape pages in PDF
- (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
-Package: pdflscape-nometadata 2025-06-23 v0.14 Display of landscape pages in PDF (HO)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+)) (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF (HO)
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
@@ -641,16 +654,17 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 10.
+ (main.out) (main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
- (./capa.tex
-<Imagens/logo_fct.png, id=4, 288.07625pt x 68.255pt>
+ (capa.tex
+<Imagens/logo_fct.png, id=63, 288.07625pt x 68.255pt>
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 4.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
+ [1{C:/Users/denpo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}
 
  <./Imagens/logo_fct.png>]
 File: Imagens/logo_fct.png Graphic file (type png)
@@ -658,23 +672,23 @@ File: Imagens/logo_fct.png Graphic file (type png)
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 12.
 (pdftex.def)             Requested size: 241.84843pt x 57.30463pt.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 24.
- (/usr/share/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 51.
- (/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmr.fd
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 51.
- (/usr/share/texlive/texmf-dist/tex/latex/lm/omllmm.fd
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 51.
- (/usr/share/texlive/texmf-dist/tex/latex/lm/omslmsy.fd
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 51.
- (/usr/share/texlive/texmf-dist/tex/latex/lm/omxlmex.fd
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -688,12 +702,22 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.63 \end{titlepage}
-                     [1{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}])
-No file main.toc.
+                     [1{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]) (main.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 1.
+)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
-No file main.lof.
+ (main.lof
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 20.
+ (C:\Users\denpo\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+))
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
@@ -706,42 +730,29 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.34 \newpage
-              [1] (./introducao.tex
-<Imagens/LNA.png, id=21, 453.94594pt x 167.87718pt>
+              [1{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}] (introducao.tex
+<Imagens/LNA.png, id=157, 453.94594pt x 167.87718pt>
 File: Imagens/LNA.png Graphic file (type png)
 <use Imagens/LNA.png>
 Package pdftex.def Info: Imagens/LNA.png  used on input line 13.
 (pdftex.def)             Requested size: 483.69687pt x 178.88138pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 30.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 30.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 30.
 )
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 37.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [2{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./Imagens/LNA.png>] (./desenvolvimento.tex
-<Imagens/LNA_antes_thevnin.png, id=37, 176.91093pt x 270.25969pt>
+ [2 <./Imagens/LNA.png>] (desenvolvimento.tex
+<Imagens/LNA_antes_thevnin.png, id=167, 176.91093pt x 270.25969pt>
 File: Imagens/LNA_antes_thevnin.png Graphic file (type png)
 <use Imagens/LNA_antes_thevnin.png>
 Package pdftex.def Info: Imagens/LNA_antes_thevnin.png  used on input line 17.
 (pdftex.def)             Requested size: 120.92421pt x 184.735pt.
-<Imagens/LNA_depois_thevnin.png, id=38, 173.14688pt x 260.47313pt>
+<Imagens/LNA_depois_thevnin.png, id=168, 173.14688pt x 260.47313pt>
 File: Imagens/LNA_depois_thevnin.png Graphic file (type png)
 <use Imagens/LNA_depois_thevnin.png>
 Package pdftex.def Info: Imagens/LNA_depois_thevnin.png  used on input line 24.
 (pdftex.def)             Requested size: 120.92421pt x 181.9166pt.
-
-
-LaTeX Warning: Reference `fig:LNA_inicial' on page 3 undefined on input line 32.
-
-
-LaTeX Warning: Reference `fig:LNA_depois' on page 3 undefined on input line 32.
-
-<Imagens/dimensionamento.png, id=39, 746.79pt x 531.48563pt>
+<Imagens/dimensionamento.png, id=171, 746.79pt x 531.48563pt>
 File: Imagens/dimensionamento.png Graphic file (type png)
 <use Imagens/dimensionamento.png>
 Package pdftex.def Info: Imagens/dimensionamento.png  used on input line 59.
@@ -750,26 +761,23 @@ File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 64.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./Imagens/LNA_antes_thevnin.png> <./Imagens/LNA_depois_thevnin.png>]
-
-LaTeX Warning: Reference `fig:sub1' on page 4 undefined on input line 66.
-
+ [3{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <./Imagens/LNA_antes_thevnin.png> <./Imagens/LNA_depois_thevnin.png>]
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 100.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[4 <./Imagens/dimensionamento.png>]
-<Imagens/transistor_ltspice.png, id=61, 1445.4pt x 676.02562pt>
+ [4 <./Imagens/dimensionamento.png>]
+<Imagens/transistor_ltspice.png, id=190, 1445.4pt x 676.02562pt>
 File: Imagens/transistor_ltspice.png Graphic file (type png)
 <use Imagens/transistor_ltspice.png>
 Package pdftex.def Info: Imagens/transistor_ltspice.png  used on input line 107.
 (pdftex.def)             Requested size: 435.32422pt x 203.60352pt.
-<Imagens/LNA_LTspice.png, id=62, 1445.4pt x 694.84593pt>
+<Imagens/LNA_LTspice.png, id=191, 1445.4pt x 694.84593pt>
 File: Imagens/LNA_LTspice.png Graphic file (type png)
 <use Imagens/LNA_LTspice.png>
 Package pdftex.def Info: Imagens/LNA_LTspice.png  used on input line 115.
 (pdftex.def)             Requested size: 435.32422pt x 209.27177pt.
-<Imagens/dimensionamento_ltspice.png, id=63, 1445.4pt x 679.03688pt>
+<Imagens/dimensionamento_ltspice.png, id=192, 1445.4pt x 679.03688pt>
 File: Imagens/dimensionamento_ltspice.png Graphic file (type png)
 <use Imagens/dimensionamento_ltspice.png>
 Package pdftex.def Info: Imagens/dimensionamento_ltspice.png  used on input line 123.
@@ -779,12 +787,12 @@ File: Imagens/logo_fct.png Graphic file (type png)
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 128.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
  [5 <./Imagens/transistor_ltspice.png> <./Imagens/LNA_LTspice.png>]
-<Imagens/S_ltspice.png, id=74, 1445.4pt x 677.53125pt>
+<Imagens/S_ltspice.png, id=200, 1445.4pt x 677.53125pt>
 File: Imagens/S_ltspice.png Graphic file (type png)
 <use Imagens/S_ltspice.png>
 Package pdftex.def Info: Imagens/S_ltspice.png  used on input line 136.
 (pdftex.def)             Requested size: 435.32422pt x 204.05698pt.
-<Imagens/ficheiro_s2p.png, id=75, 484.05844pt x 441.14813pt>
+<Imagens/ficheiro_s2p.png, id=201, 484.05844pt x 441.14813pt>
 File: Imagens/ficheiro_s2p.png Graphic file (type png)
 <use Imagens/ficheiro_s2p.png>
 Package pdftex.def Info: Imagens/ficheiro_s2p.png  used on input line 157.
@@ -794,32 +802,22 @@ File: Imagens/logo_fct.png Graphic file (type png)
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 162.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
  [6 <./Imagens/dimensionamento_ltspice.png> <./Imagens/S_ltspice.png>]
-
-LaTeX Warning: Reference `fig:ficheiro_s2p' on page 7 undefined on input line 164.
-
-<Imagens/k_appcad.png, id=84, 989.19562pt x 566.115pt>
+<Imagens/k_appcad.png, id=209, 989.19562pt x 566.115pt>
 File: Imagens/k_appcad.png Graphic file (type png)
 <use Imagens/k_appcad.png>
 Package pdftex.def Info: Imagens/k_appcad.png  used on input line 168.
 (pdftex.def)             Requested size: 338.58632pt x 193.77228pt.
-
-LaTeX Warning: Reference `fig:valores_estabilidade_k' on page 7 undefined on input line 174.
-
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 176.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[7 <./Imagens/ficheiro_s2p.png> <./Imagens/k_appcad.png>]
-<Imagens/gamma_appcad.png, id=94, 983.17313pt x 521.69907pt>
+ [7 <./Imagens/ficheiro_s2p.png> <./Imagens/k_appcad.png>]
+<Imagens/gamma_appcad.png, id=217, 983.17313pt x 521.69907pt>
 File: Imagens/gamma_appcad.png Graphic file (type png)
 <use Imagens/gamma_appcad.png>
 Package pdftex.def Info: Imagens/gamma_appcad.png  used on input line 189.
 (pdftex.def)             Requested size: 338.58632pt x 179.65999pt.
-
-
-LaTeX Warning: Reference `fig:valores_estabilidade_k' on page 8 undefined on input line 198.
-
-<Imagens/CS_CB.png, id=95, 441.14813pt x 479.54156pt>
+<Imagens/CS_CB.png, id=219, 441.14813pt x 479.54156pt>
 File: Imagens/CS_CB.png Graphic file (type png)
 <use Imagens/CS_CB.png>
 Package pdftex.def Info: Imagens/CS_CB.png  used on input line 220.
@@ -828,62 +826,55 @@ File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 224.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[8 <./Imagens/gamma_appcad.png>]
+ [8 <./Imagens/gamma_appcad.png>]
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 256.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
  [9 <./Imagens/CS_CB.png>]
-<Imagens/ltspice_CB.png, id=111, 1445.4pt x 592.46344pt>
+<Imagens/ltspice_CB.png, id=231, 1445.4pt x 592.46344pt>
 File: Imagens/ltspice_CB.png Graphic file (type png)
 <use Imagens/ltspice_CB.png>
 Package pdftex.def Info: Imagens/ltspice_CB.png  used on input line 277.
 (pdftex.def)             Requested size: 386.95897pt x 158.61122pt.
-<Imagens/ltspice_CB_s.png, id=112, 1445.4pt x 679.03688pt>
+<Imagens/ltspice_CB_s.png, id=232, 1445.4pt x 679.03688pt>
 File: Imagens/ltspice_CB_s.png Graphic file (type png)
 <use Imagens/ltspice_CB_s.png>
 Package pdftex.def Info: Imagens/ltspice_CB_s.png  used on input line 284.
 (pdftex.def)             Requested size: 386.95897pt x 181.78821pt.
-<Imagens/ltspice_CB_S11.png, id=113, 220.57407pt x 93.34875pt>
+<Imagens/ltspice_CB_S11.png, id=233, 220.57407pt x 93.34875pt>
 File: Imagens/ltspice_CB_S11.png Graphic file (type png)
 <use Imagens/ltspice_CB_S11.png>
 Package pdftex.def Info: Imagens/ltspice_CB_S11.png  used on input line 294.
 (pdftex.def)             Requested size: 154.78653pt x 65.5089pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 295.
-<Imagens/ltspice_CB_S22.png, id=114, 218.31563pt x 93.34875pt>
+<Imagens/ltspice_CB_S22.png, id=234, 218.31563pt x 93.34875pt>
 File: Imagens/ltspice_CB_S22.png Graphic file (type png)
 <use Imagens/ltspice_CB_S22.png>
 Package pdftex.def Info: Imagens/ltspice_CB_S22.png  used on input line 301.
 (pdftex.def)             Requested size: 154.78653pt x 66.18405pt.
-<Imagens/ltspice_CB_S21.png, id=115, 219.82124pt x 92.59593pt>
+<Imagens/ltspice_CB_S21.png, id=235, 219.82124pt x 92.59593pt>
 File: Imagens/ltspice_CB_S21.png Graphic file (type png)
 <use Imagens/ltspice_CB_S21.png>
 Package pdftex.def Info: Imagens/ltspice_CB_S21.png  used on input line 308.
 (pdftex.def)             Requested size: 154.78653pt x 65.20241pt.
-
-
-LaTeX Warning: Reference `fig:LTspice_CB_s' on page 10 undefined on input line 318.
-
-
-LaTeX Warning: Reference `fig:valores_s_cb_ltspice' on page 10 undefined on input line 318.
-
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 322.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[10 <./Imagens/ltspice_CB.png> <./Imagens/ltspice_CB_s.png>]
+ [10 <./Imagens/ltspice_CB.png> <./Imagens/ltspice_CB_s.png>]
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 350.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
  [11 <./Imagens/ltspice_CB_S11.png> <./Imagens/ltspice_CB_S22.png> <./Imagens/ltspice_CB_S21.png>]
-<Imagens/CS_LS_ZS.png, id=137, 438.8897pt x 484.05844pt>
+<Imagens/CS_LS_ZS.png, id=254, 438.8897pt x 484.05844pt>
 File: Imagens/CS_LS_ZS.png Graphic file (type png)
 <use Imagens/CS_LS_ZS.png>
 Package pdftex.def Info: Imagens/CS_LS_ZS.png  used on input line 354.
 (pdftex.def)             Requested size: 314.40001pt x 346.7639pt.
-<Imagens/CS_LS_ZL.png, id=138, 439.6425pt x 481.04718pt>
+<Imagens/CS_LS_ZL.png, id=255, 439.6425pt x 481.04718pt>
 File: Imagens/CS_LS_ZL.png Graphic file (type png)
 <use Imagens/CS_LS_ZL.png>
 Package pdftex.def Info: Imagens/CS_LS_ZL.png  used on input line 384.
@@ -893,7 +884,7 @@ File: Imagens/logo_fct.png Graphic file (type png)
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 388.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
  [12 <./Imagens/CS_LS_ZS.png>]
-<Imagens/ltspice_LS.png, id=145, 1445.4pt x 600.74437pt>
+<Imagens/ltspice_LS.png, id=261, 1445.4pt x 600.74437pt>
 File: Imagens/ltspice_LS.png Graphic file (type png)
 <use Imagens/ltspice_LS.png>
 Package pdftex.def Info: Imagens/ltspice_LS.png  used on input line 414.
@@ -903,58 +894,41 @@ File: Imagens/logo_fct.png Graphic file (type png)
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 418.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
  [13 <./Imagens/CS_LS_ZL.png>]
-<Imagens/ltspice_LS_s.png, id=152, 1445.4pt x 678.28406pt>
+<Imagens/ltspice_LS_s.png, id=267, 1445.4pt x 678.28406pt>
 File: Imagens/ltspice_LS_s.png Graphic file (type png)
 <use Imagens/ltspice_LS_s.png>
 Package pdftex.def Info: Imagens/ltspice_LS_s.png  used on input line 422.
 (pdftex.def)             Requested size: 386.95897pt x 181.58667pt.
-<Imagens/ltspice_LS_S11.png, id=153, 219.06844pt x 91.09032pt>
+<Imagens/ltspice_LS_S11.png, id=268, 219.06844pt x 91.09032pt>
 File: Imagens/ltspice_LS_S11.png Graphic file (type png)
 <use Imagens/ltspice_LS_S11.png>
 Package pdftex.def Info: Imagens/ltspice_LS_S11.png  used on input line 432.
 (pdftex.def)             Requested size: 154.78653pt x 64.36182pt.
-<Imagens/ltspice_LS_S22.png, id=154, 219.82124pt x 93.34875pt>
+<Imagens/ltspice_LS_S22.png, id=269, 219.82124pt x 93.34875pt>
 File: Imagens/ltspice_LS_S22.png Graphic file (type png)
 <use Imagens/ltspice_LS_S22.png>
 Package pdftex.def Info: Imagens/ltspice_LS_S22.png  used on input line 439.
 (pdftex.def)             Requested size: 154.78653pt x 65.73253pt.
-<Imagens/ltspice_LS_S21.png, id=155, 221.32687pt x 92.59593pt>
+<Imagens/ltspice_LS_S21.png, id=270, 221.32687pt x 92.59593pt>
 File: Imagens/ltspice_LS_S21.png Graphic file (type png)
 <use Imagens/ltspice_LS_S21.png>
 Package pdftex.def Info: Imagens/ltspice_LS_S21.png  used on input line 446.
 (pdftex.def)             Requested size: 154.78653pt x 64.76158pt.
 
 
-LaTeX Warning: Reference `fig:LTspice_LS_s' on page 14 undefined on input line 456.
-
-
-LaTeX Warning: Reference `fig:valores_s_ls_ltspice' on page 14 undefined on input line 456.
-
-
 LaTeX Warning: Reference `fig:transistor_ltspice' on page 14 undefined on input line 468.
-
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 468.
-(/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-
-LaTeX Warning: Reference `fig:lna_ltspice' on page 14 undefined on input line 470.
 
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 471.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
 [14 <./Imagens/ltspice_LS.png> <./Imagens/ltspice_LS_s.png> <./Imagens/ltspice_LS_S11.png> <./Imagens/ltspice_LS_S22.png> <./Imagens/ltspice_LS_S21.png>]
-<Imagens/ganho_noiseFigure6G.png, id=168, 3452.9pt x 1445.4pt>
+<Imagens/ganho_noiseFigure6G.png, id=283, 3452.9pt x 1445.4pt>
 File: Imagens/ganho_noiseFigure6G.png Graphic file (type png)
 <use Imagens/ganho_noiseFigure6G.png>
 Package pdftex.def Info: Imagens/ganho_noiseFigure6G.png  used on input line 474.
 (pdftex.def)             Requested size: 386.95897pt x 161.97191pt.
-
-
-LaTeX Warning: Reference `fig:gain_noise_figure6G' on page 15 undefined on input line 486.
-
-<Imagens/lna_CB_noiseSchematic.png, id=169, 2213.26875pt x 1220.56pt>
+<Imagens/lna_CB_noiseSchematic.png, id=285, 2213.26875pt x 1220.56pt>
 File: Imagens/lna_CB_noiseSchematic.png Graphic file (type png)
 <use Imagens/lna_CB_noiseSchematic.png>
 Package pdftex.def Info: Imagens/lna_CB_noiseSchematic.png  used on input line 508.
@@ -963,36 +937,28 @@ File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 511.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[15 <./Imagens/ganho_noiseFigure6G.png>]
-<Imagens/noiseFigure_vs_NFmin2.png, id=181, 3452.9pt x 1445.4pt>
+ [15{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc} <./Imagens/ganho_noiseFigure6G.png>]
+<Imagens/noiseFigure_vs_NFmin2.png, id=294, 3452.9pt x 1445.4pt>
 File: Imagens/noiseFigure_vs_NFmin2.png Graphic file (type png)
 <use Imagens/noiseFigure_vs_NFmin2.png>
 Package pdftex.def Info: Imagens/noiseFigure_vs_NFmin2.png  used on input line 517.
 (pdftex.def)             Requested size: 386.95897pt x 161.97191pt.
-
-
-LaTeX Warning: Reference `fig:noiseFigure_vs_NFminCB' on page 16 undefined on input line 522.
-
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 530.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[16 <./Imagens/lna_CB_noiseSchematic.png> <./Imagens/noiseFigure_vs_NFmin2.png>]
-<Imagens/mcalc.jpeg, id=192, 1243.64626pt x 666.49pt>
+ [16 <./Imagens/lna_CB_noiseSchematic.png> <./Imagens/noiseFigure_vs_NFmin2.png>]
+<Imagens/mcalc.jpeg, id=302, 1243.64626pt x 666.49pt>
 File: Imagens/mcalc.jpeg Graphic file (type jpg)
 <use Imagens/mcalc.jpeg>
 Package pdftex.def Info: Imagens/mcalc.jpeg  used on input line 533.
 (pdftex.def)             Requested size: 386.95897pt x 207.3725pt.
-
-
-LaTeX Warning: Reference `fig:lna_LS_noiseSchematic' on page 17 undefined on input line 539.
-
-<Imagens/lna_LS_noiseSchematic.png, id=193, 2744.2525pt x 1211.52625pt>
+<Imagens/lna_LS_noiseSchematic.png, id=304, 2744.2525pt x 1211.52625pt>
 File: Imagens/lna_LS_noiseSchematic.png Graphic file (type png)
 <use Imagens/lna_LS_noiseSchematic.png>
 Package pdftex.def Info: Imagens/lna_LS_noiseSchematic.png  used on input line 543.
 (pdftex.def)             Requested size: 386.95897pt x 170.83261pt.
-<Imagens/noiseFigure_vs_NFmin3.png, id=194, 3452.9pt x 1445.4pt>
+<Imagens/noiseFigure_vs_NFmin3.png, id=305, 3452.9pt x 1445.4pt>
 File: Imagens/noiseFigure_vs_NFmin3.png Graphic file (type png)
 <use Imagens/noiseFigure_vs_NFmin3.png>
 Package pdftex.def Info: Imagens/noiseFigure_vs_NFmin3.png  used on input line 552.
@@ -1001,17 +967,12 @@ File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 556.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
-[17 <./Imagens/mcalc.jpeg> <./Imagens/lna_LS_noiseSchematic.png>]
-
-LaTeX Warning: Reference `fig:noiseFigure_vs_NFminLS' on page 18 undefined on input line 557.
-
-<Imagens/gamma_maxmat_appcad.png, id=203, 1299.85625pt x 669.50125pt>
+ [17 <./Imagens/mcalc.jpeg> <./Imagens/lna_LS_noiseSchematic.png>]
+<Imagens/gamma_maxmat_appcad.png, id=313, 1299.85625pt x 669.50125pt>
 File: Imagens/gamma_maxmat_appcad.png Graphic file (type png)
 <use Imagens/gamma_maxmat_appcad.png>
 Package pdftex.def Info: Imagens/gamma_maxmat_appcad.png  used on input line 569.
 (pdftex.def)             Requested size: 386.95897pt x 199.29913pt.
-
-LaTeX Warning: Reference `eq:gammaL_gammaS' on page 18 undefined on input line 576.
 
 
 LaTeX Warning: Reference `eq:eq:zl_zs' on page 18 undefined on input line 576.
@@ -1024,74 +985,63 @@ File: Imagens/logo_fct.png Graphic file (type png)
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 578.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
 [18 <./Imagens/noiseFigure_vs_NFmin3.png> <./Imagens/gamma_maxmat_appcad.png>]
-<Imagens/lna_LS_maxmatSchematic.png, id=213, 2529.45pt x 1144.275pt>
+<Imagens/lna_LS_maxmatSchematic.png, id=320, 2529.45pt x 1144.275pt>
 File: Imagens/lna_LS_maxmatSchematic.png Graphic file (type png)
 <use Imagens/lna_LS_maxmatSchematic.png>
 Package pdftex.def Info: Imagens/lna_LS_maxmatSchematic.png  used on input line 581.
 (pdftex.def)             Requested size: 386.95897pt x 175.03857pt.
-<Imagens/sParams_lna_maxmat2.png, id=214, 3452.9pt x 1445.4pt>
+<Imagens/sParams_lna_maxmat2.png, id=321, 3452.9pt x 1445.4pt>
 File: Imagens/sParams_lna_maxmat2.png Graphic file (type png)
 <use Imagens/sParams_lna_maxmat2.png>
 Package pdftex.def Info: Imagens/sParams_lna_maxmat2.png  used on input line 590.
 (pdftex.def)             Requested size: 241.84843pt x 101.23244pt.
-<Imagens/noiseFigure_lna_maxmat.png, id=215, 3452.9pt x 1445.4pt>
+<Imagens/noiseFigure_lna_maxmat.png, id=322, 3452.9pt x 1445.4pt>
 File: Imagens/noiseFigure_lna_maxmat.png Graphic file (type png)
 <use Imagens/noiseFigure_lna_maxmat.png>
 Package pdftex.def Info: Imagens/noiseFigure_lna_maxmat.png  used on input line 597.
 (pdftex.def)             Requested size: 241.84843pt x 101.23244pt.
-
-
-LaTeX Warning: Reference `fig:sparam_maxmat' on page 19 undefined on input line 606.
-
 )
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 40.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [19 <./Imagens/lna_LS_maxmatSchematic.png> <./Imagens/sParams_lna_maxmat2.png> <./Imagens/noiseFigure_lna_maxmat.png>] (./conclusao.tex)
+ [19 <./Imagens/lna_LS_maxmatSchematic.png> <./Imagens/sParams_lna_maxmat2.png> <./Imagens/noiseFigure_lna_maxmat.png>] (conclusao.tex)
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 43.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [20] (./referencias.tex)
+ [20] (referencias.tex)
 File: Imagens/logo_fct.png Graphic file (type png)
 <use Imagens/logo_fct.png>
 Package pdftex.def Info: Imagens/logo_fct.png  used on input line 46.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
- [21] (./main.aux)
+ [21] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
-L3 programming layer <2026-01-19>
+L3 programming layer <2025-11-06>
  ***********
 
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  DC7ACC8E0FDD025B25CC7852884AF7E3;4072.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: DC7ACC8E0FDD025B25CC7852884AF7E3;4072.
  ) 
 Here is how much of TeX's memory you used:
- 16993 strings out of 467541
- 276158 string characters out of 5422531
- 708868 words of memory out of 6000000
- 45531 multiletter control sequences out of 15000+600000
+ 17019 strings out of 467871
+ 281004 string characters out of 5418375
+ 721728 words of memory out of 5000000
+ 45512 multiletter control sequences out of 15000+600000
  700607 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,15n,93p,1285b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (23 pages, 3428333 bytes).
+ 77i,15n,93p,1261b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (23 pages, 3619638 bytes).
 PDF statistics:
- 336 PDF objects out of 1000 (max. 8388607)
- 203 compressed objects within 3 object streams
+ 444 PDF objects out of 1000 (max. 8388607)
  69 named destinations out of 1000 (max. 500000)
- 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 296 words of extra memory for PDF output out of 10000 (max. 10000000)
 
