@@ -1,12 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1778449868.82263 "main.aux" "main.bbl" "main" 1778449869.12412 2
+["bibtex main"] 1778449980.15628 "main.aux" "main.bbl" "main" 1778451730.33812 0
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/apalike.bst" 1291972791 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1778449860 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.aux" 1778449986 13017 5ba11aeadb114835d0a62bda1ac5e61b "pdflatex"
+  "referencias.bib" 0 -1 0 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1778449842.84295 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" "main.pdf" "main" 1778449849.60584 0
+["pdflatex"] 1778451724.17234 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" "main.pdf" "main" 1778451730.33892 0
   "C:/Users/denpo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1767757308 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/denpo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1766267780 13333512 126b710cd2ad74c195a58a310fbc7402 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -207,16 +208,16 @@
   "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" 1778449350 884 4aa27203a48133834a6a4368ba9d4fb8 ""
   "capa.tex" 1778449350 1727 1d374f082497409dddbeca68d9270510 ""
   "conclusao.tex" 1778449350 2684 2ad48048cb742a72b939bdcc0f0bea97 ""
-  "config.tex" 1778449841 4378 bac4a49a272a6055320ca57bdad2329f ""
+  "config.tex" 1778450315 4312 8d8c23f22d53b13aab2768cb3d799bf0 ""
   "desenvolvimento.tex" 1778449835 31898 06fb76fd71e6ca428e4a95b927d7cf07 ""
   "introducao.tex" 1778449350 2950 94a866b3ee56d9e9d61f0ca4bd9415df ""
-  "main.aux" 1778449860 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "main.bbl" 1778449869 0 d41d8cd98f00b204e9800998ecf8427e "bibtex main"
-  "main.lof" 0 -1 0 "pdflatex"
-  "main.out" 0 -1 0 "pdflatex"
+  "main.aux" 1778451729 12870 65542b48f502bcd804e9e83714dc9f8f "pdflatex"
+  "main.bbl" 1778449980 52 0eba253fc001332e731e8aba3f23127b "bibtex main"
+  "main.lof" 1778451729 3744 3b2246bbbf3cb195265927f0bec3dfa5 "pdflatex"
+  "main.out" 1778451729 4071 1cbf641c77427fdd71a0c9dadfe5d4a1 "pdflatex"
   "main.tex" 1778449350 884 4aa27203a48133834a6a4368ba9d4fb8 ""
-  "main.toc" 0 -1 0 "pdflatex"
-  "referencias.tex" 1778449350 176 48f78c346237961710b5c24dc76456be ""
+  "main.toc" 1778451729 1647 a84c89fcdad2d3938f756aa7575f3228 "pdflatex"
+  "referencias.tex" 1778451720 256 e1ba5582ce77fc11da07fad3dc6a3e0f ""
   (generated)
   "main.aux"
   "main.lof"
