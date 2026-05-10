@@ -46,9 +46,9 @@ Analizando o circuito, é possível obter as seguintes expressões:
 
 Aqui, para facilitar as contas, assumimos que $R_B = R_E \cdot 10$, sendo um valor seguro para o circuito, pois garante um fator de estabilidade $S$ baixo,
 tornado o transistor menos sensivel a variações. Além disso,
-ao invés de usar-mos o valor típico de $\Delta V_{BE}$ e assumirmos que é 0.7 V, como o transistor é de alta frequência, o valor de $V_{BE}$ é superior,
-escolhendo assim 0.9 V. Ao analisar-mos o data sheet do transistor obtivemos o valor de $\beta$ para a frequência de operação,
-que é de $72.532$.
+ao invés de usar-mos o valor típico de $\Delta V_{BE}$ e assumirmos que é 0,7 V, como o transistor é de alta frequência, o valor de $V_{BE}$ é superior,
+escolhendo assim 0,9 V. Ao analisar-mos o data sheet do transistor obtivemos o valor de $\beta$ para a frequência de operação,
+que é de $72,532$.
 Fixa-mos então apenas uma das resistências, escolhemos $R_E = 250 \Omega$, e também o valor de $V_{CC} = 10 V$, e com os valores
 definidos anteriormente, $I_C = 4 mA$ e $V_{CE} = 5 V$, é possível calcular os valores das outras variáveis.
 
@@ -67,11 +67,11 @@ Para facilitar o processo de cálculo, foi criado um código em Python, que é m
 introduzir os valores definidos anteriormente, e o código calcula os valores de $R_1$, $R_2$ e $R_C$ para o circuito de polarização do transistor, assim
 sendo mais fácil de obtê-los e de retificar valores futuros caso necessário.
 
-Os valores obtidos foram os seguintes: $R_1 = 12.19 k\Omega$, $R_2 = 3.15 k\Omega$ e $R_C = 996.6 \Omega$. 
+Os valores obtidos foram os seguintes: $R_1 = 12,19 k\Omega$, $R_2 = 3,15 k\Omega$ e $R_C = 996,6 \Omega$. 
 Colocamos estes valores no circuito do LTspice, e simulamos o circuito para verificar se os valores de $I_C$ e $V_{CE}$ estavam corretos.
 Após alguns ajustes manuais para obter os valores mais próximos possíveis dos definidos, obtivemos os seguintes valores: 
 \begin{center}
-    $R_1 = 9 k\Omega$ \hspace{1cm} $R_2 = 1.85 k\Omega$ \hspace{1cm} $R_C = 1.05 k\Omega$ \hspace{1cm} $R_E = 155 \Omega$
+    $R_1 = 9 k\Omega$ \hspace{1cm} $R_2 = 1,85 k\Omega$ \hspace{1cm} $R_C = 1,05 k\Omega$ \hspace{1cm} $R_E = 155 \Omega$
 \end{center}
 
 \vspace{1cm}
@@ -126,7 +126,7 @@ RF amplificado, sem a componente $V_{CC}$.
 \end{figure}
 \vspace{0.2cm}
 
-Assim, confirmamos o valor de $I_C = 4.065 mA$ e $V_{CE} = 5.093 V$, o que é muito próximo dos valores
+Assim, confirmamos o valor de $I_C = 4,065 mA$ e $V_{CE} = 5,093 V$, o que é muito próximo dos valores
 definidos inicialmente, e portanto, o circuito de polarização do transistor está dimensionado corretamente.
 
 Assim prosseguimos para a obtenção dos parâmetros S do transistor, que são essenciais para o projeto do LNA, e que serão utilizados posteriormente para a análise de estabilidade e adaptação do circuito.
@@ -172,7 +172,7 @@ Para isso, foi necessário criar um ficheiro .s2p com os valores dos parâmetros
 \vspace{0.2cm}
 
 Com a figura \ref{fig:valores_estabilidade_k} é possível verificar que o circuito é estável para frequências
-superiores a $5.5 GHz$, e portanto, a frequência de operação escolhida para o projeto do LNA foi de $6 GHz$.
+superiores a $5,5 GHz$, e portanto, a frequência de operação escolhida para o projeto do LNA foi de $6 GHz$.
 
 Este valor de frequência é bastante próximo do limite superior do transistor, e portanto, foi ponderada a troca
 da corrennte de polarização $I_C$ para $7 mA$ ao invés dos $4 mA$. O aumento desta corrente permite que
@@ -197,7 +197,7 @@ entrada e da saída, $\Gamma_{MS}$ e $\Gamma_{ML}$, respetivamente.
 
 Podemos observar pela figura \ref{fig:valores_estabilidade_k} que os valores são, em impedância $Z_{S}$ e $Z_{L}$:
 \begin{center}
-    $Z_{S} = 0.33 +j0.70$ \hspace{1cm} $Z_{L} = 0.12 - j0.54$
+    $Z_{S} = 0,33 +j0,70$ \hspace{1cm} $Z_{L} = 0,12 - j0,54$
 \end{center}
 
 \vspace{0.5cm}
@@ -224,48 +224,48 @@ A primeira adaptação a ser feita foi com Condensadores e bobinas.
 
 \textbf{Adaptação de Entrada ($Z_{S}$):}
 
-Para $Z_S$, partindo da origem ($Z_C = 1 + j0$), seguimos até ao ponto $Z_{aux} = 0.12 - j0.32$ pela
+Para $Z_S$, partindo da origem ($Z_C = 1 + j0$), seguimos até ao ponto $Z_{aux} = 0,12 - j0,32$ pela
 circunferência de admitância no sentido horário (adicionando suscetância positiva), o que corresponde a um
-condensador em paralelo. Desse ponto, seguimos pela circunferência de impedância ($Re = 0.12$) no sentido
-anti-horário (adicionando reatância negativa) até atingir $Z_S = 0.12 - j0.54$, o que corresponde a um
+condensador em paralelo. Desse ponto, seguimos pela circunferência de impedância ($Re = 0,12$) no sentido
+anti-horário (adicionando reatância negativa) até atingir $Z_S = 0,12 - j0,54$, o que corresponde a um
 condensador em série.
 
-Calculando o condensador em paralelo ($\Delta b = j2.74$):
+Calculando o condensador em paralelo ($\Delta b = j2,74$):
 \begin{center}
-    $Y_{aux} = \frac{1}{0.12 - j0.32} \approx 1 + j2.74$ \hspace{1cm} $C_p = \frac{2.74}{\omega \cdot Z_0} \approx 1.45\,pF$
+    $Y_{aux} = \frac{1}{0,12 - j0,32} \approx 1 + j2,74$ \hspace{1cm} $C_p = \frac{2,74}{\omega \cdot Z_0} \approx 1,45\,pF$
 \end{center}
 
 Para o condensador em série, calculamos a diferença de reatância:
 \begin{center}
-    $\Delta x = \text{Im}(Z_S) - \text{Im}(Z_{aux}) = -0.54 - (-0.32) = -0.22$
+    $\Delta x = \text{Im}(Z_S) - \text{Im}(Z_{aux}) = -0,54 - (-0,32) = -0,22$
 \end{center}
-Usando a expressão $C_s = \frac{1}{0.22 \cdot \omega \cdot Z_0}$, obtemos $C_s \approx 2.41\,pF$.
+Usando a expressão $C_s = \frac{1}{0,22 \cdot \omega \cdot Z_0}$, obtemos $C_s \approx 2,41\,pF$.
 
 \vspace{0.5cm}
 \textbf{Adaptação de Saída ($Z_{L}$):}
 
 Para $Z_L$, o primeiro passo foi partir do centro da carta ($Z_{C} = 1 + j0$). Deste ponto seguimos pela
 circunferência de admitância ($Re = 1$) no sentido anti-horário até chegar ao ponto auxiliar
-$Z_{aux} = 0.33 + j0.47$, o que corresponde à introdução de uma bobina em paralelo. 
-De seguida, avançou-se pela circunferência de impedância ($Re = 0.33$) no sentido horário até ao ponto
-de carga ótima $Z_{L} = 0.33 + j0.70$, o que equivale a adicionar uma bobina em série.
+$Z_{aux} = 0,33 + j0,47$, o que corresponde à introdução de uma bobina em paralelo. 
+De seguida, avançou-se pela circunferência de impedância ($Re = 0,33$) no sentido horário até ao ponto
+de carga ótima $Z_{L} = 0,33 + j0,70$, o que equivale a adicionar uma bobina em série.
 
 Assim, calculamos a bobina em paralelo através das admitâncias:
 \begin{center}
-    $Y_C = 1 + j0$ \hspace{1cm} $Y_{aux} = \frac{1}{0.33 + j0.47} \approx 1 - j1.43$
+    $Y_C = 1 + j0$ \hspace{1cm} $Y_{aux} = \frac{1}{0,33 + j0,47} \approx 1 - j1,43$
 \end{center}
-Com $\Delta b = -j1.43$, obtemos $L_p = \frac{Z_0}{1.43 \cdot \omega} \approx 0.93\,nH$.
+Com $\Delta b = -j1,43$, obtemos $L_p = \frac{Z_0}{1,43 \cdot \omega} \approx 0,93\,nH$.
 
-Para a bobina em série, subtraímos as impedâncias: $\Delta x = Z_L - Z_{aux} = j0.70 - j0.47 = j0.23$.
-Obtemos $L_s = \frac{Z_0 \cdot 0.23}{\omega} \approx 0.305\,nH$.
+Para a bobina em série, subtraímos as impedâncias: $\Delta x = Z_L - Z_{aux} = j0,70 - j0,47 = j0,23$.
+Obtemos $L_s = \frac{Z_0 \cdot 0,23}{\omega} \approx 0,305\,nH$.
 
 \vspace{1cm}
 \textbf{Adaptação em LTspice:}
 
 Com os valores calculados, procedeu-se à implementação no LTspice para validar a adaptação.
-Na rede de entrada (fonte), foram adicionados os dois condensadores calculados ($C_p = 1.45\,pF$ e $C_s = 2.41\,pF$)
+Na rede de entrada (fonte), foram adicionados os dois condensadores calculados ($C_p = 1,45\,pF$ e $C_s = 2,41\,pF$)
 antes do condensador de bloqueio $C_3$. Na rede de saída (carga), foram colocadas as bobinas
-($L_p = 0.93\,nH$ e $L_s = 0.305\,nH$) após o condensador de bloqueio $C_2$. 
+($L_p = 0,93\,nH$ e $L_s = 0,305\,nH$) após o condensador de bloqueio $C_2$. 
 
 Esta disposição garante que os componentes de adaptação não interferem com a polarização DC do
 transístor, mantendo o ponto de operação estável enquanto realizam a transformação de impedância para
@@ -317,7 +317,7 @@ $50\,\Omega$ na frequência de $6\,GHz$.
 \vspace{1cm}
 Através das figuras \ref{fig:LTspice_CB_s} e \ref{fig:valores_s_cb_ltspice} conseguimos confirmar a adaptação calculada
 anteriormente. Como podemos observar, na frequência escolhida, $f = 6~GHz$, temos os valores do parâmetro de entrada e de saída,
-$S_{11}$ e $S_{22}$ inferiores aos $-10~dB$, sendo estes $-25.45~dB$ e $-22.01~dB$ respetivamente, e o valor do ganho $S_{21} = 10.93~dB$, que é um valor
+$S_{11}$ e $S_{22}$ inferiores aos $-10~dB$, sendo estes $-25,45~dB$ e $-22.01~dB$ respetivamente, e o valor do ganho $S_{21} = 10,93~dB$, que é um valor
 considerado bom para o LNA.
 
 
@@ -342,7 +342,7 @@ circuito aberto é determinado pela distância necessária na Carta de Smith at�
 Depois, para adicionar no LTspice apenas é necessário calcular o atraso da linha, sendo a expressão:
 
 \begin{center}
-    $T_d = \frac{\text{Wavelength (em }\lambda\text{)}}{\text{frequência}}$
+    $T_d = \frac{Wavelength (em \lambda)}{\text{frequência}}$
 \end{center}
 
 
@@ -357,22 +357,22 @@ Depois, para adicionar no LTspice apenas é necessário calcular o atraso da lin
 \end{figure}
 
 
-Primeiro vamos adaptar a impedãncia de entrada $Z_S = 0.12-j0.54$
+Primeiro vamos adaptar a impedãncia de entrada $Z_S = 0,12-j0,54$
 
-Assim, passamos o valor para admitânica e obtemos o valor $Y_S = 0.39 + j1.76$ com o comprimento
-de onda em direção ao gerador de $\lambda_{L1} = 0.177~\lambda$
+Assim, passamos o valor para admitânica e obtemos o valor $Y_S = 0,39 + j1,76$ com o comprimento
+de onda em direção ao gerador de $\lambda_{L1} = 0,177~\lambda$
 
-Assim, seguindo até ao ponto de interseção, o valor obtido é $\lambda_{L2} = 0.203~\lambda$. Como seguimos pelo sentido
-anti-horário e passamos pelo $0~\lambda$ na cartam, o valor a colocar na linha é:
+Assim, seguindo até ao ponto de interseção, o valor obtido é $\lambda_{L2} = 0,203~\lambda$. Como seguimos pelo sentido
+anti-horário e passamos pelo $0~\lambda$ na carta, o valor a colocar na linha é:
 \begin{center}
-    $0.500\lambda - (\lambda_{L2} - \lambda_{L1}) = 0.500\lambda - (0.203\lambda - 0.177\lambda) = 0.474\lambda$
+    $0,500\lambda - (\lambda_{L2} - \lambda_{L1}) = 0,500\lambda - (0,203\lambda - 0.177\lambda) = 0,474\lambda$
 \end{center}
 
-Para o stub, apenas precisamos de ver o valor da parte imaginária desse ponto, que corresponde a $\lambda_{S} = 0.198~\lambda$.
+Para o stub, apenas precisamos de ver o valor da parte imaginária desse ponto, que corresponde a $\lambda_{S} = 0,198~\lambda$.
 
 Calculando os atrasos $T_d$ para colocar na análise, obtemos os seguintes valores:
 \begin{center}
-    $T_{dL} = \frac{0.474}{6~GHz} = 79.00~pS \hspace{3cm} T_{dS} = \frac{0.198}{6~GHz} = 33.00~pS$
+    $T_{dL} = \frac{0,474}{6~GHz} = 79,00~pS \hspace{3cm} T_{dS} = \frac{0,198}{6~GHz} = 33,00~pS$
 \end{center}
 
 
@@ -387,22 +387,22 @@ Calculando os atrasos $T_d$ para colocar na análise, obtemos os seguintes valor
 \end{figure}
 
 
-Finalmente vamos adaptar a impedãncia de saída $Z_L = 0.33+j0.70$.
+Finalmente vamos adaptar a impedãncia de saída $Z_L = 0,33+j0,70$.
 
-Como dito anteriomente, passamos o valor para admitânica e obtemos o valor $Y_L = 0.55 - j1.17$, com
-um comprimento de onda correspondente é $\lambda_{L1} = 0.351~\lambda$
+Como dito anteriomente, passamos o valor para admitânica e obtemos o valor $Y_L = 0,55 - j1,17$, com
+um comprimento de onda correspondente é $\lambda_{L1} = 0,351~\lambda$
 
-Assim, seguindo até ao ponto de interseção, o valor obtido é $\lambda_{L2} = 0.181~\lambda$. Assim, o valor a colocar na linha
+Assim, seguindo até ao ponto de interseção, o valor obtido é $\lambda_{L2} = 0,181~\lambda$. Assim, o valor a colocar na linha
 é:
 \begin{center}
-    $\lambda_{L1} - \lambda_{L2} = 0.351\lambda - 0.181\lambda = 0.170\lambda$
+    $\lambda_{L1} - \lambda_{L2} = 0,351\lambda - 0,181\lambda = 0,170\lambda$
 \end{center}
 
-Para o stub, apenas precisamos de ver o valor da parte imaginária desse ponto, que corresponde a $\lambda_{S} = 0.165~\lambda$.
+Para o stub, apenas precisamos de ver o valor da parte imaginária desse ponto, que corresponde a $\lambda_{S} = 0,165~\lambda$.
 
 Calculando os atrasos $T_d$ para colocar na análise, obtemos os seguintes valores:
 \begin{center}
-    $T_{dL} = \frac{0.170}{6~GHz} = 28.33~pS \hspace{3cm} T_{dS} = \frac{0.165}{6~GHz} = 27.50~pS$
+    $T_{dL} = \frac{0,170}{6~GHz} = 28,33~pS \hspace{3cm} T_{dS} = \frac{0,165}{6~GHz} = 27,50~pS$
 \end{center}
 
 
@@ -455,8 +455,8 @@ Calculando os atrasos $T_d$ para colocar na análise, obtemos os seguintes valor
 
 Assim, como podemos observar pelas figuras \ref{fig:LTspice_LS_s} e \ref{fig:valores_s_ls_ltspice}, os valores encontram-se
 bem adaptados para a frequência esoclhida de $f = 6\,\text{GHz}$, pois nessa frequência temos $S_{11}$ e $S_{22}$ menores que $-10\,\text{dB}$ 
-($-16.32\,\text{dB}$ e $-18.49\,\text{dB}$, respetivamente), enquanto o ganho continua semelhante ao da adaptação com condensadores e bobinas,
-sendo este $S_{21} \approx 10.86\,\text{dB}$
+($-16,32\,\text{dB}$ e $-18,49\,\text{dB}$, respetivamente), enquanto o ganho continua semelhante ao da adaptação com condensadores e bobinas,
+sendo este $S_{21} \approx 10,86\,\text{dB}$
 
 
 
@@ -571,9 +571,9 @@ de $0,25~\text{dB}$ do menor ruído possível.
     \label{fig:gamma_maxmin_appcad}
 \end{figure}
 
-Tendo em conta a restrição de um ganho mínimo de $10\,\text{dB}$, foi determinado um $\Gamma_S$ que corresponderia à impedância de entrada $Z_S = 0.4 - 0.5j$, por inspeção.
+Tendo em conta a restrição de um ganho mínimo de $10\,\text{dB}$, foi determinado um $\Gamma_S$ que corresponderia à impedância de entrada $Z_S = 0,4 - 0,5j$, por inspeção.
 Este ponto permite tanto uma proporção de ganho-ruído favorável, como também permite a redução do número de componentes necessários para a adaptação, visto que o comprimento da linha de transmissão necessária para adaptar este ponto é nulo.
-A partir da equação \ref{eq:gammaL_gammaS} e \ref{eq:eq:zl_zs}, obtemos o coeficiente de reflexão de saída $\Gamma_L$, que corresponde a uma impedância de carga $Z_L = 0.67 + 0.52j$.
+A partir da equação \ref{eq:gammaL_gammaS} e \ref{eq:eq:zl_zs}, obtemos o coeficiente de reflexão de saída $\Gamma_L$, que corresponde a uma impedância de carga $Z_L = 0,67 + 0,52j$.
 Com estes valores, foi realizada a adaptação do circuito. As características das linhas de transmissão e stubs podem ser vistas na figura \ref{fig:cadence_LS_circuito_maxmat}.
 
 \begin{figure}[H]
