@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.9)  15 MAY 2026 00:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.9)  15 MAY 2026 11:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/cs/Relatório/main.tex
-(/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/cs/Relatório/main.tex
+**/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/cs/Relatorio/main.tex
+(/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/cs/Relatorio/main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -745,14 +745,14 @@ Package rerunfilecheck Info: File `main.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  16537 strings out of 467541
- 264658 string characters out of 5422531
- 703392 words of memory out of 6000000
+ 264655 string characters out of 5422531
+ 703601 words of memory out of 6000000
  45145 multiletter control sequences out of 15000+600000
  682665 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,15n,93p,1275b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,15n,93p,1274b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb>
-Output written on main.pdf (6 pages, 155051 bytes).
+Output written on main.pdf (6 pages, 154796 bytes).
 PDF statistics:
  90 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream

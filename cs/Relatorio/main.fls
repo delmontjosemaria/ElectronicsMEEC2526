@@ -1,8 +1,8 @@
-PWD /home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/cs/Relatório
+PWD /home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/cs/Relatorio
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/cs/Relatório/main.tex
+INPUT /home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/cs/Relatorio/main.tex
 OUTPUT main.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls

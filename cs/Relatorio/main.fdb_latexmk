@@ -1,5 +1,5 @@
 # Fdb version 4
-["bibtex main"] 0 "main.aux" "main.bbl" "main" 1778802505.87148 0
+["bibtex main"] 0 "main.aux" "main.bbl" "main" 1778840552.65379 0
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1775001600 24635 604dafcc79f521a11ea73e506e1fbd98 ""
   "main.aux" 0 -1 0 "pdflatex"
   "referencias.bib" 0 -1 0 ""
@@ -7,8 +7,8 @@
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1778802505.18389 "/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/cs/Relatório/main.tex" "main.pdf" "main" 1778802505.87167 0
-  "/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/cs/Relatório/main.tex" 1778802455.52977 620 2e6bca1649c6a1452af2abbca7f36d9a ""
+["pdflatex"] 1778840551.20237 "/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/cs/Relatorio/main.tex" "main.pdf" "main" 1778840552.65416 0
+  "/home/delmontmaria/Documentos/Trabalhos/Eletron/ElectronicsMEEC2526/cs/Relatorio/main.tex" 1778802455.52977 620 2e6bca1649c6a1452af2abbca7f36d9a ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc" 1254269338 3031 6c4d3515bf7115d8518af1c9ab97ca44 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -146,16 +146,16 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1778286897 4890470 1b5ac50b279f6b412843febab407b531 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1778286456 3517946 d5b83cfbf9cf3706f1e0d4b60a879d80 ""
   "IMAGENS/logo_fct.png" 1778802397.11404 5444 453e07b36ee1a36409bda229baa6ac08 ""
-  "capa.tex" 1778802397.11427 1615 20112dd161105f2b3e647c06e40b7d9a ""
+  "capa.tex" 1778840467.22648 1615 87ff98c6681029277c790cc7b286972d ""
   "conclusao.tex" 1778802397.11427 164 9909e82d961155bcde286567e6a33db0 ""
-  "config.tex" 1778802484.19428 3764 7be88b0034af2d6800c9cc6fb3f1eafa ""
+  "config.tex" 1778840550.65546 3793 96d808f35d10e04c2fb53e14bcdeacd5 ""
   "desenvolvimento.tex" 1778802397.11441 180 727913323a6a68f7782ecc3f9476a282 ""
   "introducao.tex" 1778802397.11458 167 98c4dec19d4dcb3c13f44510e738d61b ""
-  "main.aux" 1778802505.64229 970 1179197acff608531cf4510a8f0d5649 "pdflatex"
+  "main.aux" 1778840552.18644 970 1179197acff608531cf4510a8f0d5649 "pdflatex"
   "main.bbl" 1778802453.76064 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
-  "main.out" 1778802505.64229 409 8fb91aafa57da11feaafbf392a5271b5 "pdflatex"
+  "main.out" 1778840552.18744 409 8fb91aafa57da11feaafbf392a5271b5 "pdflatex"
   "main.tex" 1778802455.52977 620 2e6bca1649c6a1452af2abbca7f36d9a ""
-  "main.toc" 1778802505.64409 309 7fde5d0ff609b1bc9f24efa109484756 "pdflatex"
+  "main.toc" 1778840552.18885 309 7fde5d0ff609b1bc9f24efa109484756 "pdflatex"
   "referencias.tex" 1778802504.91937 91 a9756e4f80ab8fecbf085a266aef3c56 ""
   (generated)
   "main.aux"
