@@ -57,7 +57,7 @@ desta expressão, podemos assumir que a carga associada ao nó $V_{XP}$ e à par
         Q^{\Phi_S} & = C_{MSB_a} \left(V^{\Phi_S}_{X} - V_{REF_N}\right) + C_{MSB_b} \left(V^{\Phi_S}_{X} - V_{REF_P}\right) \\ 
                      & + C_6 \left(V^{\Phi_S}_{X} - V_{REF_N}\right) \\ 
                      & + C_B \left(V^{\Phi_S}_{X} - V^{\Phi_S}_{aux}\right) \\
-                   & = V_{I_{P,N}} \left(C_{MSB} + C_B\right) - V_{REF_N} \left(C_{MSB_a + C_6}\right) - V_{REF_P}C_{MSB_b}
+                   & = V_{I_{P,N}} \left(C_{MSB} + C_B\right) - V_{REF_N} \left(C_{MSB_a} + C_6\right) - V_{REF_P}C_{MSB_b}
     \end{aligned}
     \label{eq:carga_phase1}
 \end{equation}
@@ -67,9 +67,10 @@ ao passo que a carga na fase a seguir, $\Phi_n$, que é genérica, para que se a
 \begin{equation}
     \begin{aligned}
         Q^{\Phi_n} & = C_{MSB_a} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P} - \overline{SW} \cdot V_{REF_N}\right) + C_{MSB_b} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_N} - \overline{SW} \cdot V_{REF_P}\right)\\
-                      & + C_6 \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P} - \overline{SW} \cdot V_{REF_N}\right) \\
-                      & + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right) \\ 
-                   & = \left(C_{MSB} + C_6\right)\left(V^{\Phi_n}_{X} - SW \cdot V_{REF_N} - \overline{SW} \cdot V_{REF_P}\right) + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right)
+                      & + C_6 \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P} - \overline{SW} \cdot V_{REF_N}\right)\\
+                      & + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right)\\ 
+                   & = \left(C_{MSB_a} + C_6\right)\left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P} - \overline{SW} \cdot V_{REF_N}\right)\\
+                      & + C_{MSB_b} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_N} - \overline{SW} \cdot V_{REF_P}\right) + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right)
     \end{aligned}
     \label{eq:carga_phase2}
 \end{equation}
@@ -78,11 +79,22 @@ ao passo que a carga na fase a seguir, $\Phi_n$, que é genérica, para que se a
 as equações \ref{eq:carga_phase1} a \ref{eq:carga_phase2} para obter
 
 \begin{equation}
-        V_{I_{P,N}} \left(C_{MSB} + C_B\right) - V_{REF_N} \left(C_{MSB_a + C_6}\right) - V_{REF_P}C_{MSB_b} = \left(C_{MSB} + C_6\right)\left(V^{\Phi_n}_{X} - SW \cdot V_{REF_N} - \overline{SW} \cdot V_{REF_P}\right) + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right)
+    \begin{aligned}
+        V_{I_{P,N}} \left(C_{MSB} + C_B\right) & = \left(C_{MSB_a} + C_6\right)\left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P} - \overline{SW} \cdot V_{REF_N} + V_{REF_N}\right)\\
+                      & + C_{MSB_b} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_N} - \overline{SW} \cdot V_{REF_P} + V_{REF_P} \right) + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right)
+    \end{aligned}
     \label{eq:conservacao_carga}
 \end{equation}
 
+ou, simplificando $\overline{SW} = 1 - SW$, temos
 
+\begin{equation}
+    \begin{aligned}
+        V_{I_{P,N}} \left(C_{MSB} + C_B\right) & = \left(C_{MSB_a} + C_6\right)\left(V^{\Phi_n}_{X} - SW \cdot (V_{REF_P} - V_{REF_N}) \right)\\
+                      & + C_{MSB_b} \left(V^{\Phi_n}_{X} - SW \cdot (V_{REF_N} - V_{REF_P}) \right) + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right)
+    \end{aligned}
+    \label{eq:conservacao_carga2}
+\end{equation}
 
 \subsection{Modelação comportamental sem e com erros}
 \label{subsection:behavorial_modeling}
@@ -92,13 +104,6 @@ as equações \ref{eq:carga_phase1} a \ref{eq:carga_phase2} para obter
     \includegraphics[width=0.8\textwidth]{IMAGENS/INL_DNL_0.jpg}
     \caption{INL e DNL sem quaisquer erros.}
     \label{fig:inl_dnl_0}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{IMAGENS/sndr_vs_mismatch.jpg}
-    \caption{Mismatch entre os condensadores e influência na SNDR.}
-    \label{fig:sndr_vs_mismatch}
 \end{figure}
 
 \begin{figure}[H]
@@ -119,7 +124,7 @@ as equações \ref{eq:carga_phase1} a \ref{eq:carga_phase2} para obter
 \label{subsection:monte_carlo}
 
 Tendo em conta a variabilidade da capacitância dos condensadores no processo de fabrico, é necessário ter uma noção do comportamento do ADC perante esta possibilidade.
-Um dos métodos usados para a previsão do comportamento é a análise Monte Carlo. Nesta análise verificámos o comportamento do ADC perante a variação dos condensadores com um desvio padrão de 0\% a 0.12\%.
+Um dos métodos usados para a previsão do comportamento é a análise Monte Carlo. Nesta análise verificámos o comportamento do ADC perante a variação dos condensadores com um desvio padrão de 0\% a 0,12\%.
 Foram simulados 1000 casos para cada desvio padrão, com 10 desvio padrão diferentes, inseridos dentro do intervalo referido.
 Em cada caso foi retirado o valor da SNDR, que será registado de modo a obter uma distribuição da SNDR para cada desvio padrão. Para cada desvio padrão será calculada a SNDR máxima, média e mínima.
 Esta análise pode ser vista na figura \ref{fig:sndr_vs_mismatch}.
@@ -131,7 +136,7 @@ Esta análise pode ser vista na figura \ref{fig:sndr_vs_mismatch}.
     \label{fig:sndr_vs_mismatch}
 \end{figure}
 
-Como é expetável, a SNDR média diminui à medida que o desvio padrão aumenta, tendo uma queda de 2dB para um desvio padrão de 0.10\%.
+Como é expetável, a SNDR média diminui à medida que o desvio padrão aumenta, tendo uma queda de 2dB para um desvio padrão de 0,10\%.
 No entanto, esta queda é pequena em comparação com o pior caso neste desvio, que ronda os 7dB. A distância observada entre a SNDR média e a SNDR mínima indica que a probabilidade de uma queda acentuda da SNDR é relativamente baixa.
 
 

@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1779296600.26357 "main.aux" "main.bbl" "main" 1779308194.73519 0
+["bibtex main"] 1779312647.19495 "main.aux" "main.bbl" "main" 1779312720.21365 0
   "./referencias.bib" 1778963871 821 0069d48b628d5cdce48531f561b2529e ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/apalike.bst" 1291972791 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1779308193 4641 4b71d5a7bab49437ff56b69d4f93f8d9 "pdflatex"
+  "main.aux" 1779312719 4751 80feb4f7d72ebaca492ec3d2127cf87b "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1779308191.01548 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/cs/Relatorio/main.tex" "main.pdf" "main" 1779308194.7362 0
+["pdflatex"] 1779312717.22052 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/cs/Relatorio/main.tex" "main.pdf" "main" 1779312720.21482 0
   "C:/Users/denpo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1767757308 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/denpo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1766267780 13333512 126b710cd2ad74c195a58a310fbc7402 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -59,7 +59,6 @@
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb" 1256929440 30789 39c6b966e509dbc60e7a1aaaf85d08a0 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb" 1256929440 119235 05e5c8d6d60439433e50047898c2c0e0 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb" 1256929440 113634 9384aebdf26f9881e046a4b5574566db ""
-  "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5.pfb" 1256929440 120387 4904c2679a7b90fe9e17171d6c7c9dd0 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb" 1256929440 121145 00b210fbe9efd7ce850c04e64670de9a ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb" 1256929440 122174 a2d5e73f396ddbeb3bdf5c79aea0993d ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb" 1256929440 112593 fda2373ba4420af33949610de4c28fe8 ""
@@ -170,13 +169,13 @@
   "capa.tex" 1779246148 1677 0b0d68ca18d56f777278027df249fa63 ""
   "conclusao.tex" 1779248899 560 f2004baba6679415f104db2d3d23cffd ""
   "config.tex" 1779246136 3944 a29cebfb72634978f3e01a223f720917 ""
-  "desenvolvimento.tex" 1779297547 7289 aff6a7b8f315f0be57bb7ac53935084b ""
+  "desenvolvimento.tex" 1779312716 9176 be2490ccd67c4672b9754a26922aff77 ""
   "introducao.tex" 1779308186 1921 961cd86018156e418a8524aeda8ea615 ""
-  "main.aux" 1779308193 4641 4b71d5a7bab49437ff56b69d4f93f8d9 "pdflatex"
-  "main.bbl" 1779296600 335 ed2945d23bd53de9ff47cec55d1ccb37 "bibtex main"
-  "main.out" 1779308193 1692 03c8da3c7cb183a1353b0d2cce025763 "pdflatex"
+  "main.aux" 1779312719 4751 80feb4f7d72ebaca492ec3d2127cf87b "pdflatex"
+  "main.bbl" 1779312647 335 ed2945d23bd53de9ff47cec55d1ccb37 "bibtex main"
+  "main.out" 1779312719 1692 03c8da3c7cb183a1353b0d2cce025763 "pdflatex"
   "main.tex" 1778963993 711 dd64eac6a38dcf204bf0a069a811c602 ""
-  "main.toc" 1779308193 828 af20de8571f56ecc399da649f505556a "pdflatex"
+  "main.toc" 1779312719 828 df06cd4237bfbcea5b684f679a5707f6 "pdflatex"
   "referencias.tex" 1779008247 38 0c1c60d9fdf54c858b860560db73eb53 ""
   (generated)
   "main.aux"
