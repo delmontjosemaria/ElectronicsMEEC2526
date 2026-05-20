@@ -109,12 +109,12 @@ Analisando agora a porção LSB do \textit{array}, deparamo-nos com um paradigma
 Tal como no caso MSB, servimo-nos do mesmo nó genérico $V_X$, a mesma variável auxiliar $V_{aux}$, que na fase $\Phi_S$ é também igual a 0 e que está associada ao nó verde da imagem \ref{fig:lsb_analysis}
 e do facto de que o CDAC é simétrico, para permitir uma análise a apenas um dos lados. 
 
-Seja $C_{LSB} = \sum_{i = 1}^{5} C_{i} + C_{dl}$. Assim, podemos inferir que a carga associada ao nó na fase de \textit{sampling} é dada por
+Seja $C_{LSB} = \sum_{i = 1}^{5} C_{i}$, e $C_{LSB_{tot}} = C_{LSB} + C_{dl}$. Assim, podemos inferir que a carga associada ao nó na fase de \textit{sampling} é dada por
 
 \begin{equation}
     \begin{aligned}
-        Q^{\Phi_S}_{LSB} & = C_{LSB} \left(V^{\Phi_S}_{aux} - V_{REF_N}\right) + C_B \left(V^{\Phi_S}_{aux} - V^{\Phi_S}_{X}\right) \\
-                         & = - \left(V_{I_{P,N}} CB + V_{REF_N} C_{LSB}\right)
+        Q^{\Phi_S}_{LSB} & = C_{LSB_{tot}} \left(V^{\Phi_S}_{aux} - V_{REF_N}\right) + C_B \left(V^{\Phi_S}_{aux} - V^{\Phi_S}_{X}\right) \\
+                         & = - \left(V_{I_{P,N}} CB + V_{REF_N} C_{LSB_{tot}}\right)
     \end{aligned}
     \label{eq:cargaLSB_phase1}
 \end{equation}
@@ -123,12 +123,34 @@ Analogamente, para a fase seguinte é dada por
 
 \begin{equation}
     \begin{aligned}
-        Q^{\Phi_n}_{LSB} & = C_{LSB} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P}\right)\\
+        Q^{\Phi_n}_{LSB} & = C_{LSB} \left(V^{\Phi_n}_{aux} - SW \cdot V_{REF_P}\right)\\
                          & + C_{dl} \left(V^{\Phi_n}_{aux} - V_{REF_N}\right)\\
-                         & + C_B \left(V^{\Phi_n}_{aux} - V^{\Phi_n}_{X}\right)
+                         & + C_B \left(V^{\Phi_n}_{aux} - V^{\Phi_n}_{X}\right)\\
     \end{aligned}
     \label{eq:cargaLSB_phase2}
 \end{equation}
+
+Pela lei da conservação da carga, igualamos as equações \ref{eq:cargaLSB_phase1} a \ref{eq:cargaLSB_phase2} e obtemos
+
+\begin{equation}
+    \begin{aligned}
+        - \left(V_{I_{P,N}} CB + V_{REF_N} C_{LSB_{tot}}\right) & = C_{LSB} \left(V^{\Phi_n}_{aux} - SW \cdot V_{REF_P}\right)\\
+                         & + C_{dl} \left(V^{\Phi_n}_{aux} - V_{REF_N}\right)\\
+                         & + C_B \left(V^{\Phi_n}_{aux} - V^{\Phi_n}_{X}\right)\\ 
+    \end{aligned}
+    \label{eq:conservacao_cargaLSB}
+\end{equation}
+
+o que nos permite isolar $V^{\Phi_n}_{aux}$, obtendo 
+
+\begin{equation}
+    \begin{aligned}
+        V^{\Phi_n}_{aux} = \dfrac{C_{LSB}\left(SW \cdot V_{REF_P} - V_{REF_N}\right) + C_B \left(V^{\Phi_n}_{X} - V_{I_{P,N}}\right)}{C_{LSB_{tot}} + C_B} 
+    \end{aligned}
+    \label{eq:conservacao_cargaLSB2}
+\end{equation}
+
+Ao substituir na equação 
 
 \subsection{Modelação comportamental sem e com erros}
 \label{subsection:behavorial_modeling}
