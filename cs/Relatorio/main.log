@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.20)  20 MAY 2026 04:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.20)  20 MAY 2026 05:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -706,11 +706,11 @@ Package pdftex.def Info: IMAGENS/sarADC_schematic.png  used on input line 19.
 <IMAGENS/INL_DNL_0.jpg, id=78, 1606.0pt x 815.045pt>
 File: IMAGENS/INL_DNL_0.jpg Graphic file (type jpg)
 <use IMAGENS/INL_DNL_0.jpg>
-Package pdftex.def Info: IMAGENS/INL_DNL_0.jpg  used on input line 45.
+Package pdftex.def Info: IMAGENS/INL_DNL_0.jpg  used on input line 52.
 (pdftex.def)             Requested size: 386.95897pt x 196.37341pt.
 File: IMAGENS/logo_fct.png Graphic file (type png)
 <use IMAGENS/logo_fct.png>
-Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 49.
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 56.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
 
 
@@ -720,25 +720,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-20.05278pt}.
 
-[3{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <./IMAGENS/sarADC_schematic.png>]
-<IMAGENS/sndr_vs_mismatch.jpg, id=88, 1606.0pt x 815.045pt>
+[3{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc} <./IMAGENS/sarADC_schematic.png>]
+<IMAGENS/sndr_vs_mismatch.jpg, id=89, 1606.0pt x 815.045pt>
 File: IMAGENS/sndr_vs_mismatch.jpg Graphic file (type jpg)
 <use IMAGENS/sndr_vs_mismatch.jpg>
-Package pdftex.def Info: IMAGENS/sndr_vs_mismatch.jpg  used on input line 52.
+Package pdftex.def Info: IMAGENS/sndr_vs_mismatch.jpg  used on input line 59.
 (pdftex.def)             Requested size: 386.95897pt x 196.37341pt.
-<IMAGENS/weird_INL_DNL.jpg, id=89, 1606.0pt x 815.045pt>
+<IMAGENS/weird_INL_DNL.jpg, id=90, 1606.0pt x 815.045pt>
 File: IMAGENS/weird_INL_DNL.jpg Graphic file (type jpg)
 <use IMAGENS/weird_INL_DNL.jpg>
-Package pdftex.def Info: IMAGENS/weird_INL_DNL.jpg  used on input line 59.
+Package pdftex.def Info: IMAGENS/weird_INL_DNL.jpg  used on input line 66.
 (pdftex.def)             Requested size: 386.95897pt x 196.37341pt.
-<IMAGENS/INL_DNL_codigo.jpg, id=90, 1606.0pt x 815.045pt>
+<IMAGENS/INL_DNL_codigo.jpg, id=91, 1606.0pt x 815.045pt>
 File: IMAGENS/INL_DNL_codigo.jpg Graphic file (type jpg)
 <use IMAGENS/INL_DNL_codigo.jpg>
-Package pdftex.def Info: IMAGENS/INL_DNL_codigo.jpg  used on input line 66.
+Package pdftex.def Info: IMAGENS/INL_DNL_codigo.jpg  used on input line 73.
 (pdftex.def)             Requested size: 386.95897pt x 196.37341pt.
 File: IMAGENS/logo_fct.png Graphic file (type png)
 <use IMAGENS/logo_fct.png>
-Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 70.
+Package pdftex.def Info: IMAGENS/logo_fct.png  used on input line 77.
 (pdftex.def)             Requested size: 120.08568pt x 28.45274pt.
 
 
@@ -749,10 +749,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-20.05278pt}.
 
 [4 <./IMAGENS/INL_DNL_0.jpg> <./IMAGENS/sndr_vs_mismatch.jpg> <./IMAGENS/weird_INL_DNL.jpg>]
-<IMAGENS/vxp_vs_vxn.jpg, id=98, 1606.0pt x 815.045pt>
+<IMAGENS/vxp_vs_vxn.jpg, id=99, 1606.0pt x 815.045pt>
 File: IMAGENS/vxp_vs_vxn.jpg Graphic file (type jpg)
 <use IMAGENS/vxp_vs_vxn.jpg>
-Package pdftex.def Info: IMAGENS/vxp_vs_vxn.jpg  used on input line 82.
+Package pdftex.def Info: IMAGENS/vxp_vs_vxn.jpg  used on input line 89.
 (pdftex.def)             Requested size: 386.95897pt x 196.37341pt.
 )
 File: IMAGENS/logo_fct.png Graphic file (type png)
@@ -802,17 +802,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 03C8DA3C7CB183A1353B0D2CCE025763;1692.
  ) 
 Here is how much of TeX's memory you used:
- 16637 strings out of 467871
- 271188 string characters out of 5418375
- 706534 words of memory out of 5000000
+ 16638 strings out of 467871
+ 271201 string characters out of 5418375
+ 708534 words of memory out of 5000000
  45191 multiletter control sequences out of 15000+600000
  686928 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,15n,93p,1250b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb>
-Output written on main.pdf (8 pages, 722762 bytes).
+<C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb>
+Output written on main.pdf (8 pages, 728625 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
+ 191 PDF objects out of 1000 (max. 8388607)
  23 named destinations out of 1000 (max. 500000)
  108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

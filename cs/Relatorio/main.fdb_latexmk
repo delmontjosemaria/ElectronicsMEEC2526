@@ -1,16 +1,17 @@
 # Fdb version 4
-["bibtex main"] 1779245748.48482 "main.aux" "main.bbl" "main" 1779248450.38039 0
+["bibtex main"] 1779250883.1268 "main.aux" "main.bbl" "main" 1779250887.85746 0
   "./referencias.bib" 1778963871 821 0069d48b628d5cdce48531f561b2529e ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/apalike.bst" 1291972791 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1779248449 4030 0737668af6d5934e57dd4ccace089fda "pdflatex"
+  "main.aux" 1779250886 4030 0737668af6d5934e57dd4ccace089fda "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1779248447.50606 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/cs/Relatorio/main.tex" "main.pdf" "main" 1779248450.3814 0
+["pdflatex"] 1779250883.67827 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/cs/Relatorio/main.tex" "main.pdf" "main" 1779250887.85957 0
   "C:/Users/denpo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1767757308 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/denpo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1766267780 13333512 126b710cd2ad74c195a58a310fbc7402 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
+  "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc" 1256929440 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc" 1256929440 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc" 1256929440 2840 216e6e45ad352e2456e1149f28885bee ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc" 1256929440 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -52,6 +53,7 @@
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb" 1256929440 121021 836464b5fe0c782d94085eb083550ccc ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb" 1256929440 116908 9a7a12d1e4df280ea0ab4aad83cdef88 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb" 1256929440 112766 6259d69aa3d87a505f375e49d8f6bf3a ""
+  "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb" 1256929440 23055 2e5b42921de910eaa97b85df04ca4891 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb" 1256929440 30388 702fae6a5f0e6e9c48a1d872b442ffcf ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb" 1256929440 31443 ba2241b179aa231f73e052863720cb42 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb" 1256929440 30789 39c6b966e509dbc60e7a1aaaf85d08a0 ""
@@ -164,15 +166,15 @@
   "IMAGENS/weird_INL_DNL.jpg" 1778960834 72853 9c1e199dbc3a6666db18631808ba6d62 ""
   "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/cs/Relatorio/main.tex" 1778963993 711 dd64eac6a38dcf204bf0a069a811c602 ""
   "capa.tex" 1779246148 1677 0b0d68ca18d56f777278027df249fa63 ""
-  "conclusao.tex" 1779242124 572 51f5dd0798a899b97d1601ab955fa66b ""
+  "conclusao.tex" 1779248899 560 f2004baba6679415f104db2d3d23cffd ""
   "config.tex" 1779246136 3944 a29cebfb72634978f3e01a223f720917 ""
-  "desenvolvimento.tex" 1779248445 3943 f309a73b44ce9ce36d825fbf33a818c7 ""
+  "desenvolvimento.tex" 1779250878 4744 a1eb7ec974bcf9d5a3c6070aab0562a4 ""
   "introducao.tex" 1779243917 1915 ff38c015e2a10beaf9f1fbbdac9024fc ""
-  "main.aux" 1779248449 4030 0737668af6d5934e57dd4ccace089fda "pdflatex"
-  "main.bbl" 1779245748 335 ed2945d23bd53de9ff47cec55d1ccb37 "bibtex main"
-  "main.out" 1779248449 1692 03c8da3c7cb183a1353b0d2cce025763 "pdflatex"
+  "main.aux" 1779250886 4030 0737668af6d5934e57dd4ccace089fda "pdflatex"
+  "main.bbl" 1779250883 335 ed2945d23bd53de9ff47cec55d1ccb37 "bibtex main"
+  "main.out" 1779250886 1692 03c8da3c7cb183a1353b0d2cce025763 "pdflatex"
   "main.tex" 1778963993 711 dd64eac6a38dcf204bf0a069a811c602 ""
-  "main.toc" 1779248449 828 5feab2dbb8b540462751cba11ae008ed "pdflatex"
+  "main.toc" 1779250886 828 5feab2dbb8b540462751cba11ae008ed "pdflatex"
   "referencias.tex" 1779008247 38 0c1c60d9fdf54c858b860560db73eb53 ""
   (generated)
   "main.aux"

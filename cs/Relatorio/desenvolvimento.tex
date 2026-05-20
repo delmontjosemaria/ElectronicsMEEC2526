@@ -35,7 +35,14 @@ cai para $2^{n_{MSB}} + 2^{n_{LSB}}$, o que significa que é necessário menos e
 a fase, sem contar que menos condensadores implica área menor. A desvantagem, porém, é que pela utilização do $C_B$, as 
 capacitâncias parasíticas propagam-se e provocam erros de ganho.
 
-A operação para a redistribuição de carga baseia-se na lei da conservação de carga. 
+A operação para a redistribuição de carga baseia-se na lei da conservação de carga, e a comparação de valores começa logo na 
+fase de \textit{sampling}, em que é tomada a primeira decisão sobre se $V_{XP} > V_{XN}$. A análise, tal como a arquitetura, seguirá uma
+estrutura dividida, mas aqui em três partes, no que seria um 5-1-5: os primeiros cinco bits são reservados ao \textit{sub-array} MSB, o 1 
+refere-se ao $C_6$, que está do lado dos MSBs, mas tem uma aparência mais monotónica que híbrida, e por fim o \textit{sub-array} LSB. 
+
+Partimos assim para a análise do \textit{array} MSB, e particularmente ao nó $V_{XP}$, já que a adaptação dos cálculos para $V_{XN}$ mostra-se 
+trivial. Seja $C_{MSB} = C_{MSB_{a}} + C_{MSB_{b}}$, e $C_{MSB_{a,b}} = \sum_{i = 7}^{11} C_{i_{a,b}}$. A partir desta expressão, podemos deduzir 
+que a tensão no nó $V_{XP}$
 
 \subsection{Modelação comportamental sem e com erros}
 \label{subsection:behavorial_modeling}

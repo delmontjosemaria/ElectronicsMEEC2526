@@ -318,6 +318,7 @@ INPUT .\IMAGENS\logo_fct.png
 INPUT .\IMAGENS\logo_fct.png
 INPUT .\IMAGENS\logo_fct.png
 INPUT C:\Users\denpo\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
+INPUT C:\Users\denpo\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathex.enc
 INPUT .\IMAGENS\sndr_vs_mismatch.jpg
 INPUT .\IMAGENS\sndr_vs_mismatch.jpg
 INPUT .\IMAGENS\sndr_vs_mismatch.jpg
@@ -380,6 +381,8 @@ INPUT C:\Users\denpo\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx12.
 INPUT C:\Users\denpo\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx12.pfb
 INPUT C:\Users\denpo\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbxi10.pfb
 INPUT C:\Users\denpo\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbxi10.pfb
+INPUT C:\Users\denpo\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmex10.pfb
+INPUT C:\Users\denpo\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmex10.pfb
 INPUT C:\Users\denpo\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
 INPUT C:\Users\denpo\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
 INPUT C:\Users\denpo\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi5.pfb
