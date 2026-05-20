@@ -4,5 +4,19 @@
 \section{Introdução}
 \label{sec:introducao}
 
-O objetivo deste projeto é o desenvolvimento de um modelo de alto nível de um conversor analógico digital de
-um registador de aproximações sucessivas de 12 bits (SAR ADC), com base no comportamento descrito pelo ADC de~\cite{manxin_etal}
+A crescente necessidade por sistemas \textit{wireless} de banda larga e de baixo consumo energético, e a migração dos
+nós IoT para tecnologias CMOS cada vez mais avançadas (como as de 90 ou até 55 nm) tem chamado mais a atenção da
+indústria eletrónica por investimento na área de pesquisa e desenvolvimento. Estes nós contam com blocos de lógica digital  
+que é rápida e barata, mas a bateria limitada e tempo de trabalho exigido jogam contra os blocos analógicos. É, assim, 
+interessante investir em conversores analógico digital (ADC) de consumo e área reduzidos. É assim que surge a abordagem por 
+um ADC de registador de aproximações sucessivas (SAR ADC), por serem maioritariamente digitais e compostos por elementos passivos 
+(capacitores), o que faz com que sejam energeticamente eficientes. 
+
+O  seu principal problema, ou o problema com a sua variante mais tradicional, deve-se ao facto de a área aumentar exponencialmente 
+com a resolução do ADC. Um \textit{array} binário de capacitores de 12 bits precisaria, por exemplo, de $2^{12}$ $C_{unit}$, o que aumenta não só 
+a sua dimensão mas também o seu custo de produção.
+
+O objetivo deste trabalho consiste no desenvolvimento de um modelo de alto nível de um SAR ADC de 12 bits, baseado na abordagem proposta 
+por \cite{manxin_etal}, que contempla a utilização de uma arquitetura dividida (\textit{split array}) com recurso a um condensador de ponte ($C_B$), que reduz 
+enormemente o número de capacitores. Pretende-se também efetuar uma análise de sensibilidade a erros, como o de \textit{offset} e
+\textit{mismatch}, ou seja, desvio dos valores unitários para os condensadores, com recurso a simulações via Monte Carlo. 

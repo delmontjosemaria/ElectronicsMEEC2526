@@ -1,21 +1,50 @@
 % ==============================================
 % ELEMENTO: DESENVOLVIMENTO
 % ==============================================
-\section{Desenvolvimento}
+\section{Modelação do SAR ADC de 12 bits}
 \label{sec:desenvolvimento}
+
+Desenvolver um modelo de alto nível para um SAR ADC, quanto mais o que consta no \textit{paper} de \cite{manxin_etal}, 
+envolve, antes de qualquer simulação, a compreensão da sua estrutura e de uma análise matemática para faciltar a análise. 
+
+\subsection{Arquitetura do conversor e redistribuição de carga}
+\label{subsection:hyb_arq_charg_red}
+
+Ao contrário das abordagens mais convencionais do SAR ADC, que se servem de um \textit{array} de condensadores
+binário (CDAC), este utiliza uma arquitetura dividida (\textit{split}-CDAC) em duas partes por um condensador
+de ponte ($C_B$). 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/sarADC_schematic.png}
+    \caption{Esquemático do SAR ADC de 12 bits do \textit{paper} e a arquitetura \textit{split}-CDAC.}
+    \label{fig:sarADC_schematic}
+\end{figure}
+
+Assim, como vemos na figura \ref{fig:sarADC_schematic}, o \textit{sub-array} monotónico, com os condensadores [$C_1 - C_5$],
+lida com os bits menos significativos (LSBs). Não inclui $C_{dl}$, que é um condensador programável para fazer ajustes
+e garantir a linearidade. O \textit{sub-array} "híbrido" (que não o é inteiramente por causa do $C_6$) e que contempla 
+os condensadores [$C_6 - C_{13_{a/b}}$] refere-se aos bits mais significativos (MSBs). É importante notar que, no exemplo 
+do artigo, as chaves com as notações de letras (a e b, especificamente) por uma questão de redundância: existem mais passos 
+de comparação que os 12 bits finais, e essa redundância permite absorver erros de \textit{settling time} do DAC para uma 
+conversão mais rápida e é ultimamente resolvida graças ao bloco DEC.
+
+A vantagem desta abordagem consiste na redução de área e consumo energético. Se considerarmos um CDAC binário, temos que 
+para uma resolução de N bits, seriam necessários $2^{N-1}$ condensadores. Com \textit{split}-CDAC, o número de condensadores
+cai para $2^{n_{MSB}} + 2^{n_{LSB}}$, o que significa que é necessário menos energia para os \textit{switches} de acordo com 
+a fase, sem contar que menos condensadores implica área menor. A desvantagem, porém, é que pela utilização do $C_B$, as 
+capacitâncias parasíticas propagam-se e provocam erros de ganho.
+
+A operação para a redistribuição de carga baseia-se na lei da conservação de carga. 
+
+\subsection{Modelação comportamental sem e com erros}
+\label{subsection:behavorial_modeling}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{IMAGENS/INL_DNL_0.jpg}
-    \caption{INL e DNL.}
+    \caption{INL e DNL sem quaisquer erros.}
     \label{fig:inl_dnl_0}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{IMAGENS/INL_DNL_codigo.jpg}
-    \caption{INL e DNL do código.}
-    \label{fig:inl_dnl_codigo}
 \end{figure}
 
 \begin{figure}[H]
@@ -28,13 +57,29 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{IMAGENS/weird_INL_DNL.jpg}
-    \caption{INL e DNL com erros.}
+    \caption{INL e DNL considerando o efeito dos erros.}
     \label{fig:weird_inl_dnl}
 \end{figure}
 
 \begin{figure}[H]
     \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/INL_DNL_codigo.jpg}
+    \caption{INL e DNL do código.}
+    \label{fig:inl_dnl_codigo}
+\end{figure}
+
+\subsection{Análise Monte Carlo}
+\label{subsection:monte_carlo}
+
+\subsection{Comparação de resultados}
+\label{subsection:analise_e_discussao}
+
+\subsection{Estimativa de área e potência}
+\label{subsection:extra_analysis}
+
+\begin{figure}[H]
+    \centering
     \includegraphics[width=0.8\textwidth]{IMAGENS/vxp_vs_vxn.jpg}
-    \caption{Tensão do nó de sample positivo e comparaçao ao nó de sample negativo.}
+    \caption{Evolução do nó $V_{XP}$ e do nó $V_{XN}$.}
     \label{fig:vxp_vs_vxn}
 \end{figure}
