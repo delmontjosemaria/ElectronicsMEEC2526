@@ -37,8 +37,8 @@ capacitâncias parasíticas propagam-se e provocam erros de ganho.
 
 A operação para a redistribuição de carga baseia-se na lei da conservação de carga, e a comparação de valores começa logo na 
 fase de \textit{sampling} ($\Phi_S$), em que é tomada a primeira decisão sobre se $V_{XP} > V_{XN}$. A análise, tal como a arquitetura, seguirá uma
-estrutura dividida, mas aqui em três partes, no que seria um 5-1-5: os primeiros cinco bits são reservados ao \textit{sub-array} MSB, o 1 
-refere-se ao $C_6$, que está do lado dos MSBs, mas tem uma aparência mais monotónica que híbrida, e por fim o \textit{sub-array} LSB. 
+estrutura dividida, mas aqui em três partes, no que seria um 5-1-5: os primeiros cinco bits são reservados ao \textit{sub-array} MSB, o $C_6$ (que está 
+do lado dos MSBs, mas tem uma aparência mais monotónica que híbrida) e por fim o \textit{sub-array} LSB. 
 
 \begin{figure}[H]
     \centering
@@ -54,36 +54,36 @@ desta expressão, podemos assumir que a carga associada ao nó $V_{XP}$ e à par
 
 \begin{equation}
     \begin{aligned}
-        Q^{\Phi_S} & = C_{MSB_a} \left(V^{\Phi_S}_{X} - V_{REF_N}\right) + C_{MSB_b} \left(V^{\Phi_S}_{X} - V_{REF_P}\right) \\ 
+        Q^{\Phi_S}_{MSB} & = C_{MSB_a} \left(V^{\Phi_S}_{X} - V_{REF_N}\right) + C_{MSB_b} \left(V^{\Phi_S}_{X} - V_{REF_P}\right) \\ 
                      & + C_6 \left(V^{\Phi_S}_{X} - V_{REF_N}\right) \\ 
                      & + C_B \left(V^{\Phi_S}_{X} - V^{\Phi_S}_{aux}\right) \\
                    & = V_{I_{P,N}} \left(C_{MSB} + C_B\right) - V_{REF_N} \left(C_{MSB_a} + C_6\right) - V_{REF_P}C_{MSB_b}
     \end{aligned}
-    \label{eq:carga_phase1}
+    \label{eq:cargaMSB_phase1}
 \end{equation}
 
 ao passo que a carga na fase a seguir, $\Phi_n$, que é genérica, para que se aplique a todos os casos, é dada por 
 
 \begin{equation}
     \begin{aligned}
-        Q^{\Phi_n} & = C_{MSB_a} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P} - \overline{SW} \cdot V_{REF_N}\right) + C_{MSB_b} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_N} - \overline{SW} \cdot V_{REF_P}\right)\\
+        Q^{\Phi_n}_{MSB} & = C_{MSB_a} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P} - \overline{SW} \cdot V_{REF_N}\right) + C_{MSB_b} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_N} - \overline{SW} \cdot V_{REF_P}\right)\\
                       & + C_6 \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P} - \overline{SW} \cdot V_{REF_N}\right)\\
                       & + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right)\\ 
                    & = \left(C_{MSB_a} + C_6\right)\left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P} - \overline{SW} \cdot V_{REF_N}\right)\\
                       & + C_{MSB_b} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_N} - \overline{SW} \cdot V_{REF_P}\right) + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right)
     \end{aligned}
-    \label{eq:carga_phase2}
+    \label{eq:cargaMSB_phase2}
 \end{equation}
 
 É importante notar que a generalização implica a utilização do $SW$, que representa o \textit{switch control} associado ao bit em análise. Pela lei da conservação da carga, igualamos
-as equações \ref{eq:carga_phase1} a \ref{eq:carga_phase2} para obter
+as equações \ref{eq:cargaMSB_phase1} a \ref{eq:cargaMSB_phase2} para obter
 
 \begin{equation}
     \begin{aligned}
         V_{I_{P,N}} \left(C_{MSB} + C_B\right) & = \left(C_{MSB_a} + C_6\right)\left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P} - \overline{SW} \cdot V_{REF_N} + V_{REF_N}\right)\\
                       & + C_{MSB_b} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_N} - \overline{SW} \cdot V_{REF_P} + V_{REF_P} \right) + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right)
     \end{aligned}
-    \label{eq:conservacao_carga}
+    \label{eq:conservacao_cargaMSB}
 \end{equation}
 
 ou, simplificando $\overline{SW} = 1 - SW$, temos
@@ -93,7 +93,41 @@ ou, simplificando $\overline{SW} = 1 - SW$, temos
         V_{I_{P,N}} \left(C_{MSB} + C_B\right) & = \left(C_{MSB_a} + C_6\right)\left(V^{\Phi_n}_{X} - SW \cdot (V_{REF_P} - V_{REF_N}) \right)\\
                       & + C_{MSB_b} \left(V^{\Phi_n}_{X} - SW \cdot (V_{REF_N} - V_{REF_P}) \right) + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right)
     \end{aligned}
-    \label{eq:conservacao_carga2}
+    \label{eq:conservacao_cargaMSB2}
+\end{equation}
+
+Analisando agora a porção LSB do \textit{array}, deparamo-nos com um paradigma mais trivial, já que se trata de um \textit{array} monotónico, e que não exige tanta abstração como no caso do 
+\textit{sub-array} MSB. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/LSB_analysis.png}
+    \caption{Análise do \textit{sub-array} LSB, com os nós destacados.}
+    \label{fig:lsb_analysis}
+\end{figure}
+
+Tal como no caso MSB, servimo-nos do mesmo nó genérico $V_X$, a mesma variável auxiliar $V_{aux}$, que na fase $\Phi_S$ é também igual a 0 e que está associada ao nó verde da imagem \ref{fig:lsb_analysis}
+e do facto de que o CDAC é simétrico, para permitir uma análise a apenas um dos lados. 
+
+Seja $C_{LSB} = \sum_{i = 1}^{5} C_{i} + C_{dl}$. Assim, podemos inferir que a carga associada ao nó na fase de \textit{sampling} é dada por
+
+\begin{equation}
+    \begin{aligned}
+        Q^{\Phi_S}_{LSB} & = C_{LSB} \left(V^{\Phi_S}_{aux} - V_{REF_N}\right) + C_B \left(V^{\Phi_S}_{aux} - V^{\Phi_S}_{X}\right) \\
+                         & = - \left(V_{I_{P,N}} CB + V_{REF_N} C_{LSB}\right)
+    \end{aligned}
+    \label{eq:cargaLSB_phase1}
+\end{equation}
+
+Analogamente, para a fase seguinte é dada por
+
+\begin{equation}
+    \begin{aligned}
+        Q^{\Phi_n}_{LSB} & = C_{LSB} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P}\right)\\
+                         & + C_{dl} \left(V^{\Phi_n}_{aux} - V_{REF_N}\right)\\
+                         & + C_B \left(V^{\Phi_n}_{aux} - V^{\Phi_n}_{X}\right)
+    \end{aligned}
+    \label{eq:cargaLSB_phase2}
 \end{equation}
 
 \subsection{Modelação comportamental sem e com erros}

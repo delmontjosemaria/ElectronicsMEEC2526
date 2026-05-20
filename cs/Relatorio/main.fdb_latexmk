@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1779312647.19495 "main.aux" "main.bbl" "main" 1779312720.21365 0
+["bibtex main"] 1779314113.61111 "main.aux" "main.bbl" "main" 1779314512.22684 0
   "./referencias.bib" 1778963871 821 0069d48b628d5cdce48531f561b2529e ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/apalike.bst" 1291972791 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1779312719 4751 80feb4f7d72ebaca492ec3d2127cf87b "pdflatex"
+  "main.aux" 1779314511 5272 6ee8d9a9f92c6f81649bff64af2cdebe "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1779312717.22052 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/cs/Relatorio/main.tex" "main.pdf" "main" 1779312720.21482 0
+["pdflatex"] 1779314509.53816 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/cs/Relatorio/main.tex" "main.pdf" "main" 1779314512.22769 0
   "C:/Users/denpo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1767757308 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/denpo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1766267780 13333512 126b710cd2ad74c195a58a310fbc7402 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -159,6 +159,7 @@
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "IMAGENS/INL_DNL_0.jpg" 1778960834 56128 db7e9050fd2df828e99094390b13a2d1 ""
   "IMAGENS/INL_DNL_codigo.jpg" 1778960834 99890 ce2004619ffdcfc0459689e0299ed1ba ""
+  "IMAGENS/LSB_analysis.png" 1779313256 20865 98eb73ed8d36d5dbd3c262521d53b589 ""
   "IMAGENS/MSB_analysis.png" 1779285053 34003 4d012bc0558d5e47b76145c2294b65e0 ""
   "IMAGENS/logo_fct.png" 1778960834 5444 453e07b36ee1a36409bda229baa6ac08 ""
   "IMAGENS/sarADC_schematic.png" 1779244212 107911 4b98a797ce5abe67eddfdfe8af58497d ""
@@ -169,13 +170,13 @@
   "capa.tex" 1779246148 1677 0b0d68ca18d56f777278027df249fa63 ""
   "conclusao.tex" 1779248899 560 f2004baba6679415f104db2d3d23cffd ""
   "config.tex" 1779246136 3944 a29cebfb72634978f3e01a223f720917 ""
-  "desenvolvimento.tex" 1779312716 9176 be2490ccd67c4672b9754a26922aff77 ""
+  "desenvolvimento.tex" 1779314509 10829 7008f4e33ecef292ff86971985687fc1 ""
   "introducao.tex" 1779308186 1921 961cd86018156e418a8524aeda8ea615 ""
-  "main.aux" 1779312719 4751 80feb4f7d72ebaca492ec3d2127cf87b "pdflatex"
-  "main.bbl" 1779312647 335 ed2945d23bd53de9ff47cec55d1ccb37 "bibtex main"
-  "main.out" 1779312719 1692 03c8da3c7cb183a1353b0d2cce025763 "pdflatex"
+  "main.aux" 1779314511 5272 6ee8d9a9f92c6f81649bff64af2cdebe "pdflatex"
+  "main.bbl" 1779314113 335 ed2945d23bd53de9ff47cec55d1ccb37 "bibtex main"
+  "main.out" 1779314511 1692 03c8da3c7cb183a1353b0d2cce025763 "pdflatex"
   "main.tex" 1778963993 711 dd64eac6a38dcf204bf0a069a811c602 ""
-  "main.toc" 1779312719 828 df06cd4237bfbcea5b684f679a5707f6 "pdflatex"
+  "main.toc" 1779314511 828 9be9287f1fc03a7468fcb85a12509e83 "pdflatex"
   "referencias.tex" 1779008247 38 0c1c60d9fdf54c858b860560db73eb53 ""
   (generated)
   "main.aux"
