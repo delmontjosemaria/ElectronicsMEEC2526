@@ -2,10 +2,10 @@
 \contentsline {section}{\numberline {1}Introdução}{2}{section.1}%
 \contentsline {section}{\numberline {2}Modelação do SAR ADC de 12 bits}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Arquitetura do conversor e redistribuição de carga}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Modelação comportamental sem e com erros}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Análise Monte Carlo}{5}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Comparação de resultados}{5}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Estimativa de área e potência}{5}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Conclusão}{6}{section.3}%
-\contentsline {section}{Refer\^encias}{7}{section.3}%
+\contentsline {subsection}{\numberline {2.2}Modelação comportamental sem e com erros}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Análise Monte Carlo}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Comparação de resultados}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Estimativa de área e potência}{6}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Conclusão}{7}{section.3}%
+\contentsline {section}{Refer\^encias}{8}{section.3}%
 \contentsfinish 

@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1779282711.90915 "main.aux" "main.bbl" "main" 1779283472.61188 0
+["bibtex main"] 1779296600.26357 "main.aux" "main.bbl" "main" 1779297550.86665 0
   "./referencias.bib" 1778963871 821 0069d48b628d5cdce48531f561b2529e ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/apalike.bst" 1291972791 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1779283471 4030 0737668af6d5934e57dd4ccace089fda "pdflatex"
+  "main.aux" 1779297549 4641 4b71d5a7bab49437ff56b69d4f93f8d9 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1779283469.5864 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/cs/Relatorio/main.tex" "main.pdf" "main" 1779283472.61291 0
+["pdflatex"] 1779297547.81945 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/cs/Relatorio/main.tex" "main.pdf" "main" 1779297550.86782 0
   "C:/Users/denpo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1767757308 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/denpo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1766267780 13333512 126b710cd2ad74c195a58a310fbc7402 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -59,6 +59,7 @@
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb" 1256929440 30789 39c6b966e509dbc60e7a1aaaf85d08a0 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb" 1256929440 119235 05e5c8d6d60439433e50047898c2c0e0 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb" 1256929440 113634 9384aebdf26f9881e046a4b5574566db ""
+  "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5.pfb" 1256929440 120387 4904c2679a7b90fe9e17171d6c7c9dd0 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb" 1256929440 121145 00b210fbe9efd7ce850c04e64670de9a ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb" 1256929440 122174 a2d5e73f396ddbeb3bdf5c79aea0993d ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb" 1256929440 112593 fda2373ba4420af33949610de4c28fe8 ""
@@ -159,6 +160,7 @@
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "IMAGENS/INL_DNL_0.jpg" 1778960834 56128 db7e9050fd2df828e99094390b13a2d1 ""
   "IMAGENS/INL_DNL_codigo.jpg" 1778960834 99890 ce2004619ffdcfc0459689e0299ed1ba ""
+  "IMAGENS/MSB_analysis.png" 1779285053 34003 4d012bc0558d5e47b76145c2294b65e0 ""
   "IMAGENS/logo_fct.png" 1778960834 5444 453e07b36ee1a36409bda229baa6ac08 ""
   "IMAGENS/sarADC_schematic.png" 1779244212 107911 4b98a797ce5abe67eddfdfe8af58497d ""
   "IMAGENS/sndr_vs_mismatch.jpg" 1778960834 92902 bf42ae24efeaea5918ca72c49c1e1a19 ""
@@ -168,13 +170,13 @@
   "capa.tex" 1779246148 1677 0b0d68ca18d56f777278027df249fa63 ""
   "conclusao.tex" 1779248899 560 f2004baba6679415f104db2d3d23cffd ""
   "config.tex" 1779246136 3944 a29cebfb72634978f3e01a223f720917 ""
-  "desenvolvimento.tex" 1779283081 4977 41533b80ae5896e35efdb5a058696b5c ""
+  "desenvolvimento.tex" 1779297547 7289 aff6a7b8f315f0be57bb7ac53935084b ""
   "introducao.tex" 1779243917 1915 ff38c015e2a10beaf9f1fbbdac9024fc ""
-  "main.aux" 1779283471 4030 0737668af6d5934e57dd4ccace089fda "pdflatex"
-  "main.bbl" 1779282712 335 ed2945d23bd53de9ff47cec55d1ccb37 "bibtex main"
-  "main.out" 1779283471 1692 03c8da3c7cb183a1353b0d2cce025763 "pdflatex"
+  "main.aux" 1779297549 4641 4b71d5a7bab49437ff56b69d4f93f8d9 "pdflatex"
+  "main.bbl" 1779296600 335 ed2945d23bd53de9ff47cec55d1ccb37 "bibtex main"
+  "main.out" 1779297549 1692 03c8da3c7cb183a1353b0d2cce025763 "pdflatex"
   "main.tex" 1778963993 711 dd64eac6a38dcf204bf0a069a811c602 ""
-  "main.toc" 1779283471 828 5feab2dbb8b540462751cba11ae008ed "pdflatex"
+  "main.toc" 1779297549 828 af20de8571f56ecc399da649f505556a "pdflatex"
   "referencias.tex" 1779008247 38 0c1c60d9fdf54c858b860560db73eb53 ""
   (generated)
   "main.aux"

@@ -22,7 +22,7 @@ de ponte ($C_B$).
 \end{figure}
 
 Assim, como vemos na figura \ref{fig:sarADC_schematic}, o \textit{sub-array} monotónico, com os condensadores [$C_1 - C_5$],
-lida com os bits menos significativos (LSBs). Não inclui $C_{dl}$, que é um condensador programável para fazer ajustes
+lida com os bits menos significativos (LSBs) e inclui $C_{dl}$, que é um condensador programável para fazer ajustes
 e garantir a linearidade. O \textit{sub-array} "híbrido" (que não o é inteiramente por causa do $C_6$) e que contempla 
 os condensadores [$C_6 - C_{13_{a/b}}$] refere-se aos bits mais significativos (MSBs). É importante notar que, no exemplo 
 do artigo, as chaves com as notações de letras (a e b, especificamente) por uma questão de redundância: existem mais passos 
@@ -40,15 +40,49 @@ fase de \textit{sampling} ($\Phi_S$), em que é tomada a primeira decisão sobre
 estrutura dividida, mas aqui em três partes, no que seria um 5-1-5: os primeiros cinco bits são reservados ao \textit{sub-array} MSB, o 1 
 refere-se ao $C_6$, que está do lado dos MSBs, mas tem uma aparência mais monotónica que híbrida, e por fim o \textit{sub-array} LSB. 
 
-Partimos assim para a análise do \textit{array} MSB, e particularmente ao nó $V_{XP}$, já que a adaptação dos cálculos para $V_{XN}$ mostra-se 
-trivial. Seja $C_{MSB} = C_{MSB_{a}} + C_{MSB_{b}}$, e $C_{MSB_{a,b}} = \sum_{i = 7}^{11} C_{i_{a,b}}$. A partir desta expressão, podemos assumir que
-a carga associada ao nó $V_{XP}$ e à parte MSB do \textit{sub-array} na fase de \textit{sampling} pode ser dada por: 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/MSB_analysis.png}
+    \caption{Análise do \textit{sub-array} MSB, com os nós destacados.}
+    \label{fig:msb_analysis}
+\end{figure}
+
+Partimos assim para a análise do \textit{array} MSB, e particularmente ao nó genérico $V_{X}$, já que a adaptação dos cálculos quer para $V_{XN}$ como $V_{XP}$ mostra-se 
+trivial pela simetria do CDAC. Seja $C_{MSB} = C_{MSB_{a}} + C_{MSB_{b}}$, e $C_{MSB_{a,b}} = \sum_{i = 7}^{11} C_{i_{a,b}}$. Para auxílio dos cálculos, o nó destacado 
+a verde vai ser denominado $V_{aux}$, que na fase $\Phi_S$ é igual a 0; o nó associado à cor azul refere-se ao lado das chaves "a", e o nó a laranja associado às chaves "b". A partir 
+desta expressão, podemos assumir que a carga associada ao nó $V_{XP}$ e à parte MSB do \textit{sub-array} na fase de \textit{sampling} pode ser dada por: 
 
 \begin{equation}
-    Q^{\Phi_S} = C_{MSB_{a,b}} \times V_{IP}
+    \begin{aligned}
+        Q^{\Phi_S} & = C_{MSB_a} \left(V^{\Phi_S}_{X} - V_{REF_N}\right) + C_{MSB_b} \left(V^{\Phi_S}_{X} - V_{REF_P}\right) \\ 
+                     & + C_6 \left(V^{\Phi_S}_{X} - V_{REF_N}\right) \\ 
+                     & + C_B \left(V^{\Phi_S}_{X} - V^{\Phi_S}_{aux}\right) \\
+                   & = V_{I_{P,N}} \left(C_{MSB} + C_B\right) - V_{REF_N} \left(C_{MSB_a + C_6}\right) - V_{REF_P}C_{MSB_b}
+    \end{aligned}
+    \label{eq:carga_phase1}
 \end{equation}
 
-a tensão no nó $V_{XP}$ pode ser dada por
+ao passo que a carga na fase a seguir, $\Phi_n$, que é genérica, para que se aplique a todos os casos, é dada por 
+
+\begin{equation}
+    \begin{aligned}
+        Q^{\Phi_n} & = C_{MSB_a} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P} - \overline{SW} \cdot V_{REF_N}\right) + C_{MSB_b} \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_N} - \overline{SW} \cdot V_{REF_P}\right)\\
+                      & + C_6 \left(V^{\Phi_n}_{X} - SW \cdot V_{REF_P} - \overline{SW} \cdot V_{REF_N}\right) \\
+                      & + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right) \\ 
+                   & = \left(C_{MSB} + C_6\right)\left(V^{\Phi_n}_{X} - SW \cdot V_{REF_N} - \overline{SW} \cdot V_{REF_P}\right) + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right)
+    \end{aligned}
+    \label{eq:carga_phase2}
+\end{equation}
+
+É importante notar que a generalização implica a utilização do $SW$, que representa o \textit{switch control} associado ao bit em análise. Pela lei da conservação da carga, igualamos
+as equações \ref{eq:carga_phase1} a \ref{eq:carga_phase2} para obter
+
+\begin{equation}
+        V_{I_{P,N}} \left(C_{MSB} + C_B\right) - V_{REF_N} \left(C_{MSB_a + C_6}\right) - V_{REF_P}C_{MSB_b} = \left(C_{MSB} + C_6\right)\left(V^{\Phi_n}_{X} - SW \cdot V_{REF_N} - \overline{SW} \cdot V_{REF_P}\right) + C_B \left(V^{\Phi_n}_{X} - V^{\Phi_n}_{aux}\right)
+    \label{eq:conservacao_carga}
+\end{equation}
+
+
 
 \subsection{Modelação comportamental sem e com erros}
 \label{subsection:behavorial_modeling}
