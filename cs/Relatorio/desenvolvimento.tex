@@ -118,8 +118,26 @@ as equações \ref{eq:carga_phase1} a \ref{eq:carga_phase2} para obter
 \subsection{Análise Monte Carlo}
 \label{subsection:monte_carlo}
 
+Tendo em conta a variabilidade da capacitância dos condensadores no processo de fabrico, é necessário ter uma noção do comportamento do ADC perante esta possibilidade.
+Um dos métodos usados para a previsão do comportamento é a análise Monte Carlo. Nesta análise verificámos o comportamento do ADC perante a variação dos condensadores com um desvio padrão de 0\% a 0.12\%.
+Foram simulados 1000 casos para cada desvio padrão, com 10 desvio padrão diferentes, inseridos dentro do intervalo referido.
+Em cada caso foi retirado o valor da SNDR, que será registado de modo a obter uma distribuição da SNDR para cada desvio padrão. Para cada desvio padrão será calculada a SNDR máxima, média e mínima.
+Esta análise pode ser vista na figura \ref{fig:sndr_vs_mismatch}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/sndr_vs_mismatch.jpg}
+    \caption{Mismatch entre os condensadores e influência na SNDR.}
+    \label{fig:sndr_vs_mismatch}
+\end{figure}
+
+Como é expetável, a SNDR média diminui à medida que o desvio padrão aumenta, tendo uma queda de 2dB para um desvio padrão de 0.10\%.
+No entanto, esta queda é pequena em comparação com o pior caso neste desvio, que ronda os 7dB. A distância observada entre a SNDR média e a SNDR mínima indica que a probabilidade de uma queda acentuda da SNDR é relativamente baixa.
+
+
 \subsection{Comparação de resultados}
 \label{subsection:analise_e_discussao}
+
 
 \subsection{Estimativa de área e potência}
 \label{subsection:extra_analysis}
