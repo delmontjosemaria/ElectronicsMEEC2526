@@ -1,0 +1,12 @@
+\babel@toc {portuguese}{}\relax 
+\contentsline {section}{\numberline {1}Introdução}{2}{section.1}%
+\contentsline {section}{\numberline {2}Modelação do SAR ADC de 12 bits}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Arquitetura do conversor e redistribuição de carga}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Modelação comportamental sem e com erros}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Validação do modelo}{8}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Análise Monte Carlo}{10}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Estimativa de área e dissipação de potência}{11}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Conclusão}{12}{section.3}%
+\contentsline {section}{Refer\^encias}{13}{section.3}%
+\contentsline {section}{\numberline {4}Anexos}{14}{section.4}%
+\contentsfinish 
