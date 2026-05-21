@@ -4,8 +4,14 @@
 \section{Conclusão}
 \label{sec:conclusao}
 
-Podemos assim concluir que o objetivo de modelar com sucesso um SAR ADC foi atingido. Pudemos observar que a
-arquitetura de condensadores \textit{split} permitiu 
+
+Este projeto permitiu o desenvolvimento e a validação de um modelo comportamental de alto nível em Python para um SAR ADC de 12~bits a 100~MS/s baseado numa arquitetura \textit{split}-CDAC de topologia 5-1-5, tendo por referência o trabalho desenvolvido em \cite{manxin_etal}. A dedução rigorosa das expressões analíticas de redistribuição de carga com base na lei da conservação da carga revelou-se fundamental para mapear com precisão a evolução das tensões nos nós internos $V_{XP}$ e $V_{XN}$ ao longo do processo de aproximações sucessivas.
+
+A análise detalhada da matriz de condensadores dividida evidenciou o compromisso crítico entre a eficiência de área/energia e a sensibilidade a não-idealidades. Demonstrou-se que, embora o \textit{split}-CDAC reduza exponencialmente o número total de condensadores necessários face à abordagem binária convencional --- minimizando o consumo dinâmico dos \textit{switches} ---, introduz uma vulnerabilidade acrescida devido ao condensador de ponte ($C_B$). A comparação entre o valor ideal e fracionário $C_B = \frac{32}{31}\,C_u$ (que assegura linearidade perfeita e INL nula num modelo ideal) e o valor inteiro $C_B = 2\,C_u$ expôs a dicotomia clássica entre a viabilidade física de \textit{layout} microelectrónico e o aparecimento de erros de ganho sistemáticos entre os \textit{sub-arrays} MSB e LSB.
+
+Através da simulação de Monte Carlo com 1000 iterações, quantificou-se o impacto do \textit{mismatch} capacitivo estático (baseado na lei de Pelgrom) e do \textit{offset} do comparador nas métricas de linearidade (INL e DNL) e desempenho dinâmico (SNDR e ENOB). Observou-se uma degradação expectável e progressiva da SNDR média com o aumento do desvio padrão do erro, sublinhando que variações extremas (pior caso) podem comprometer severamente a integridade do sinal, embora apresentem baixa probabilidade de ocorrência.
+
+Por fim, os requisitos estipulados para uma linearidade de target de $10,5$~bits de ENOB permitiram extrair as restrições geométricas do circuito. Identificou-se que um desvio padrão máximo admissível de $\sigma_{max} \approx 0,120\%$ impõe uma área mínima de matriz de $13,75\,\mu\text{m}^2$, correspondendo a uma capacitância unitária $C_u$ de $5,58\text{~fF}$. Sob estas condições, a estimativa da potência dissipada pelo CDAC diferencial fixou-se em aproximadamente $144\,\mu\text{W}$. Conclui-se, assim, que o modelo de alto nível desenvolvido constitui uma ferramenta preditiva robusta e eficaz para o dimensionamento preliminar de conversores analógico-digitais SAR, validando os benefícios de baixo consumo e alta velocidade da arquitetura estudada.
 
 Ainda assim, deve-se ter em conta que o SAR ADC de \cite{manxin_etal}, ao contrário do conversor em análise, 
 conta com um bloco de correção digital de erros, o que permite obter resultados melhores que os obtidos. 

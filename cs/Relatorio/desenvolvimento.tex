@@ -150,31 +150,191 @@ o que nos permite isolar $V^{\Phi_n}_{aux}$, obtendo
     \label{eq:conservacao_cargaLSB2}
 \end{equation}
 
-Ao substituir na equação 
+Assim, o objetivo torna-se substituir o valor obtido na equação \ref{eq:conservacao_cargaLSB2} na equação \ref{eq:conservacao_cargaMSB2}.
+Começamos por expandir e simplificar a equação \ref{eq:conservacao_cargaMSB2}:
+
+\[V_{I_{P,N}} (C_{MSB} + C_B) = V^{\Phi_n}_{X}(C_{MSB_a} + C_6 + C_{MSB_b} + C_B) - SW(V_{REF_P} - V_{REF_N})(C_{MSB_a} + C_6 - C_{MSB_b}) - C_B V^{\Phi_n}_{aux}\] 
+
+Em seguida, para facilitar a substituição na parte final, multiplicamos à parte por $C_B$, obtendo 
+
+\[C_B V^{\Phi_n}_{aux} = \frac{C_B C_{LSB}}{C_{LSB_{tot}} + C_B}(SW \cdot V_{REF_P} - V_{REF_N}) + \frac{C_B^2}{C_{LSB_{tot}} + C_B}V^{\Phi_n}_{X} - \frac{C_B^2}{C_{LSB_{tot}} + C_B}V_{I_{P,N}}\]
+
+Substituindo finalmente, ficamos com 
+
+\begin{align}
+    V_{I_{P,N}} (C_{MSB} + C_B) 
+    = & \; V^{\Phi_n}_{X}(C_{MSB_a} + C_6 + C_{MSB_b} + C_B) \nonumber \\
+      & - SW(V_{REF_P} - V_{REF_N})(C_{MSB_a} + C_6 - C_{MSB_b}) \nonumber \\
+      & - \frac{C_B C_{LSB}}{C_{LSB_{tot}} + C_B}(SW \cdot V_{REF_P} - V_{REF_N}) \nonumber \\
+      & - \frac{C_B^2}{C_{LSB_{tot}} + C_B} V^{\Phi_n}_{X} \nonumber \\
+      & + \frac{C_B^2}{C_{LSB_{tot}} + C_B} V_{I_{P,N}} \nonumber \leftrightarrow
+\end{align}
+
+\begin{align}
+    \leftrightarrow V_{I_{P,N}} \left( C_{MSB} + C_B - \frac{C_B^2}{C_{LSB_{tot}} + C_B} \right) 
+    = & \; V^{\Phi_n}_{X} \left( C_{MSB_a} + C_6 + C_{MSB_b} + C_B - \frac{C_B^2}{C_{LSB_{tot}} + C_B} \right) \nonumber \\
+      & - SW(V_{REF_P} - V_{REF_N})(C_{MSB_a} + C_6 - C_{MSB_b}) \nonumber \\
+      & - \frac{C_B C_{LSB}}{C_{LSB_{tot}} + C_B}(SW \cdot V_{REF_P} - V_{REF_N}) \nonumber \leftrightarrow
+\end{align}
+
+\begin{align}
+    \leftrightarrow V^{\Phi_n}_{X} \left( C_{MSB_a} + C_6 + C_{MSB_b} + \frac{C_B C_{LSB_{tot}}}{C_{LSB_{tot}} + C_B} \right) 
+    = & \; V_{I_{P,N}} \left( C_{MSB} + \frac{C_B C_{LSB_{tot}}}{C_{LSB_{tot}} + C_B} \right) \nonumber \\
+      & + SW(V_{REF_P} - V_{REF_N})(C_{MSB_a} + C_6 - C_{MSB_b}) \nonumber \\
+      & + \frac{C_B C_{LSB}}{C_{LSB_{tot}} + C_B}(SW \cdot V_{REF_P} - V_{REF_N}) \nonumber
+\end{align}
+
+Considerando que $C_{eq} = C_{MSB_a} + C_6 + C_{MSB_b} + \frac{C_B C_{LSB_{tot}}}{C_{LSB_{tot}} + C_B}$, temos que
+
+\begin{align}
+    V^{\Phi_n}_{X} = \frac{V_{I_{P,N}} C_{eq} + SW(V_{REF_P} - V_{REF_N})(C_{MSB_a} + C_6 - C_{MSB_b}) + \frac{C_B C_{LSB}}{C_{LSB_{tot}} + C_B}(SW \cdot V_{REF_P} - V_{REF_N})}{C_{eq}}
+\end{align}
+
+Simplificando $V_{I_{P,N}} = V_{CM} \pm \frac{\Delta V_i}{2}$ (mais se for o nó P, menos se for o nó N) e $\alpha = \frac{C_B}{C_{LSB_{tot}} + C_B}$ como fator de atenuação
+devido à presença do $C_B$, temos
+
+\begin{equation}
+    V^{\Phi_n}_{X} = V_{CM} \pm \frac{\Delta V_i}{2} + \frac{1}{C_{eq}}\left(SW(V_{REF_P} - V_{REF_N})(C_{MSB_a} + C_6 - C_{MSB_b}) + \alpha (SW \cdot V_{REF_P} - V_{REF_N})C_{LSB}\right)
+    \label{eq:node_expression}
+\end{equation}
 
 \subsection{Modelação comportamental sem e com erros}
 \label{subsection:behavorial_modeling}
 
+Para validar o comportamento do SAR ADC, foi desenvolvido um modelo comportamental em Python. O modelo implementa,
+de forma discreta no tempo, o ciclo de amostragem e rotina de aproximações sucessivas descrita no \textit{paper}.
+
+A arquitetura do código segue três fases distintas:
+
+\begin{enumerate}
+    \item Definição da topologia do CDAC, incluindo os pesos binários dos \textit{sub-arrays} MSB e LSB, o $C_B$, o $C_6$ e as capacitâncias parasíticas $C_{pb}, C_{pl}$ e $C_{pm}$.
+    \item Introdução de erros através de distribuições gaussianas para o \textit{mismatch} dos condensadores e o offset do comparador
+    \item Extracção de métricas de desempenho, como a INL, DNL, SNDR e ENOB
+\end{enumerate}
+
+O \textit{matching} entre condensadores é um dos fatores limitantes da resolução de ADCs capacitivos. No modelo,
+assume-se que o desvio padrão relativo da capacitância segue a lei de Pelgrom:
+
+\[\sigma \left(\dfrac{\Delta C}{C}\right) = \dfrac{A_C}{\sqrt{W \cdot L}}\]
+
+Na prática, para um determinado desvio padrão $\sigma_C$, o valor real de cada condensador é dada por 
+
+\[C_{real} = C_{ideal} + C_{ideal} \cdot \sigma_c \cdot N(0,1)\]
+
+onde $N(0,1)$ é uma variável aleatória com distribuição normal padrão. 
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{IMAGENS/INL_DNL_0.jpg}
-    \caption{INL e DNL sem quaisquer erros.}
-    \label{fig:inl_dnl_0}
+    \includegraphics[width=0.8\textwidth]{IMAGENS/calcularCondensadores.png}
+    \caption{Cálculo dos valores dos condensadores}
+    \label{fig:capacitorsCalc}
+\end{figure}
+
+Conforme visto na figura \ref{fig:capacitorsCalc}, todos os condensadores contam com parâmetros não-ideais, 
+mas que para a validação do modelo sem erros são postos a zero, como se não estivessem lá. 
+
+É importante analisar a influência do condensador $C_B$. Pela fórmula teórica, 
+
+\[C_B = \frac{2^{N_{LSB}}}{2^{N_{LSB}} - 1} \cdot C_u = \frac{2^5}{2^5 - 1} \cdot C_u\]
+
+logo, considerando que $N_{LSB}$, para a abordagem 5-1-5 que escolhemos é 5, o tamanho ideal seria $\frac{32}{31} \cdot C_u$.
+Esta configuração assegura que a capacitância equivalente vista da matriz MSB mantém uma razão puramente binária. O peso do bit
+menos significativo do \textit{sub-array} MSB é exatamente igual a $1 LSB_{MSB} = 2^5 \cdot LSB_{total} = 32 LSB$. A transição entre
+o maior código do \textit{sub-array} LSB (00000 11111) e o primeiro código MSB (00001 00000) ocorre sem qualquer
+descontinuitade lógica, com uma INL nula. Porém, em termos de layout físico, fabricar um condensador com uma razão 
+não-inteira é extremamente difícil, a um ponto em que rouba a viabilidade. 
+
+Por isso, muitas vezes é preferível a abordagem por um valor inteiro ou aproximado por potências como é $C_B = 2 \cdot C_u$. Por 
+ser um múltiplo da unidade básica, o condensador $C_B$ pode ser desenhado de forma a emparelhar perfeitamente a geometria aos 
+restantes condensadores do \textit{array}, o que reduziria os erros aleatórios de fabrico. Por outro lado, alterar o valor de 
+$C_B$ para $2 \cdot C_u$ faz com que o fator de atenuação $\alpha$ da equação \ref{eq:node_expression} altere, e o ganho 
+do \textit{sub-array} MSB deixa de estar alinhado ao LSB, o que geraria erros de ganho fracionário sistemáticos. 
+
+Em seguida, a função \texttt{sar\_converter()} representa o processo de conversão de um dado valor de tensão 
+diferencial à entrada através da comparação das tensões $V_{XP}$ e $V_{XN}$. Durante a fase de amostragem, as 
+placas superiores dos condensadores são ligadas à tensão de modo comum $V_{CM} = \frac{V_{REF}}{2}$, ao passo 
+que as placas inferiores adquirem os sinais diferenciais. Em seguida, o algoritmo percorre sequencialmente o 
+\textit{array}, e para cada bit j, o procedimento passa por inspecionar o bit anterior e comutar o condensador 
+correspondente para $V_{REF_P}$ (Vref) ou $V_{REF_N}$, que para o nosso caso era GND. A tensão dos nós $V_{XP}$ 
+e $V_{XN}$ é atualizada com base na equação \ref{eq:node_expression}. Em seguida, é tomada uma decisão: se 
+$V_{XP} - V_{XN} + V_{off} > 0$, o bit j = 1. Caso contrário, é 0. Importante notar que o fator de atenuação 
+$\alpha$ da equação \ref{eq:node_expression} é o mesmo usado no código, considerando também a componente não-ideal
+para refletir o efeito do condensador \textit{bridge}. 
+
+Posteriormente, para obter a função de transferência estática \texttt{dout(Vin)}, o código percorre uma rampa
+de entrada de -Vref a Vref com uma resolução de 20 pontos por LSB, em que o vetor \texttt{codigos} armazena o 
+resultado decimal da conversão para cada ponto da rampa. A partir da função transferência, determinamos as tensões
+de transição $V_{trans}[k]$, o LSB real, DNL e INL. 
+
+Para avaliar o desempenho em regime dinâmico, o modelo aplica um sinal sinusoidal de entrada com frequência 
+$f_{in}$ escolhida de forma a ser incoerente com a frequência de amostragem $f_s$.
+
+\[f_{in} = \dfrac{M}{N_{FFT}} \cdot f_s\]
+
+em que M é um número primo. Assumimos $N_{FFT} = 2^{N_{bits} + 2}$ e M = 101. O sinal amostrado é em seguida 
+multiplicado por uma janela de Blackman para reduzir o \textit{spectral leakage}:
+
+\[w[n] = 0,42 - 0,5\cos\left(\dfrac{2 \pi n}{N - 1}\right) + 0,08\cos\left(\dfrac{4 \pi n}{N - 1}\right)\]
+
+A FFT permite-nos, em seguida, calcular a potência do sinal $P_s$, potência das harmónicas $P_d$, potência do 
+ruído ($P_n = P_{total} - P_s - P_d$), a relação sinal-ruído e distorção SNDR e o número efetivo de bits ENOB. 
+
+A função final do código executa uma análise de Monte Carlo com 1000 amostras, para diferentes valores de desvio 
+$\sigma \dfrac{\Delta C}{C}$, em que para cada chip e cada $\sigma$ são gerados novos valores de condensadores com 
+erros aleatórios, que simula a variabilidade no processo de fabrico. 
+
+\subsubsection{Validação do modelo}
+
+Para validar o modelo, avaliamos as métricas de desempenho citadas na subsecção \ref{subsection:behavorial_modeling}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/transferFunctionADC_com_real.jpg}
+    \caption{Função transferência ideal e função transferência de um ADC real.}
+    \label{fig:transferFunc}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{IMAGENS/weird_INL_DNL.jpg}
-    \caption{INL e DNL considerando o efeito dos erros.}
-    \label{fig:weird_inl_dnl}
+    \begin{subfigure}[b]{0.5\textwidth}
+        \includegraphics[width=\textwidth]{IMAGENS/INL_DNL_0.jpg}
+        \caption{INL e DNL com parâmetros não-ideais a 0.}
+        \label{fig:inl_dnl_0}
+    \end{subfigure}
+    \vfill
+    \begin{subfigure}[b]{0.5\textwidth}
+        \includegraphics[width=\textwidth]{IMAGENS/weird_INL_DNL.jpg}
+        \caption{INL e DNL com parâmetros não-ideais diferentes de 0.}
+        \label{fig:weird_inl_dnl}
+    \end{subfigure}
+    \caption{Análise da INL e DNL}
+    \label{fig:inl_dnl_analysis}
 \end{figure}
+
+Em condições absolutamente ideais, todos os condensadores possuem os valores
+nominais exatos ($C_j = 2^k \cdot C_u$). A função transferência apresenta 
+degraus de quantização perfeitamente uniformes com largura igual a 1 LSB. A 
+DNL e a INL em todos os códigos são zero, o que significa que tanto não há variação
+na largura dos intervalos de transição como o centro de cada degrau real coincide
+perfeitamente com a linha reta ideal que une a  origem ao fundo da escala do conversor.
+
+Quando introduzimos o erro estatístico de \textit{mismatch} capacitivo baseado no modelo de Pelgrom,
+a geometria real dos condensadores sofre desvios aleatórios, o que altera os pesos binários
+ideais da equação de redistribuição da carga. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{IMAGENS/INL_DNL_codigo.jpg}
-    \caption{INL e DNL do código.}
-    \label{fig:inl_dnl_codigo}
+    \includegraphics[width=0.8\textwidth]{IMAGENS/vxp_vs_vxn.jpg}
+    \caption{Evolução do nó $V_{XP}$ e do nó $V_{XN}$.}
+    \label{fig:vxp_vs_vxn}
 \end{figure}
+
+Pela natureza do método de aproximações sucessivas, a diferença $\Delta V = V_{XP} - V_{XN}$
+tende para zero a cada iteração, uma vez que o algoritmo minimiza o erro diferencial. As tennsões 
+absolutas $V_{XP}$ e $V_{XN}$ podem tender cada uma para valores dísparos do $V_{CM}$, na presença de 
+\textit{mismatch} ou \textit{offset}, ou até pelo facto de a arquitetura monotónica não ser capaz de 
+manter a tensão de modo comum fixa como a híbrida, mas em casos ideais a diferença anular-se-ia e as 
+tensões dos nós convergiriam para $V_{CM}$.
 
 \subsection{Análise Monte Carlo}
 \label{subsection:monte_carlo}
@@ -195,18 +355,40 @@ Esta análise pode ser vista na figura \ref{fig:sndr_vs_mismatch}.
 Como é expetável, a SNDR média diminui à medida que o desvio padrão aumenta, tendo uma queda de 2dB para um desvio padrão de 0,10\%.
 No entanto, esta queda é pequena em comparação com o pior caso neste desvio, que ronda os 7dB. A distância observada entre a SNDR média e a SNDR mínima indica que a probabilidade de uma queda acentuda da SNDR é relativamente baixa.
 
+\subsection{Estimativa de área e dissipação de potência}
 
-\subsection{Comparação de resultados}
-\label{subsection:analise_e_discussao}
-
-Ao comparar os resultados obtidos com os resultados do \textit{paper} de \cite{manxin_etal}, é possível observar a análise monte Carlo apresentada na figura \ref{fig:sndr_vs_mismatch} tem uma SNDR mais otimista em relação à apresentada no artigo.
-
-\subsection{Estimativa de área e potência}
-\label{subsection:extra_analysis}
+Para poder estimar a área e a dissipação de potência para um ENOB de 10,5 bits, servimo-nos da relação entre o SNDR e o ENOB dada por $ENOB = \dfrac{SNDR - 1,76}{6,02}$. É, assim, apenas necessário 
+encontrar o \textit{mismatch} associado ao ENOB solicitado.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{IMAGENS/vxp_vs_vxn.jpg}
-    \caption{Evolução do nó $V_{XP}$ e do nó $V_{XN}$.}
-    \label{fig:vxp_vs_vxn}
+    \includegraphics[width=0.8\textwidth]{IMAGENS/enob_capacitor_mismatch.png}
+    \caption{Mismatch entre os condensadores e relação com ENOB.}
+    \label{fig:enob_vs_mismatch}
 \end{figure}
+
+Conforme é possível observar na figura \ref{fig:enob_vs_mismatch}, o $\sigma_{max}$ é de aproximadamente 0,120\%. Utilizando a equação da reta da figura 4 
+do \textit{paper}, obtemos o valor da área, dado por
+
+\begin{equation}
+    \dfrac{0,120-0,01}{0,408} = \dfrac{1}{\sqrt{Area}}
+    \label{eq:areaCapacitor}
+\end{equation}
+
+Desenvolvendo, tem-se que a área é igual a $13,75~\mu m^2$. Como a referência seria de 6,5fF para um condensador de $16~\mu m^2$, a capacitância 
+do condensador unitário seria dada por 
+
+\[C_u = 13,75 \cdot 0,406 fF/\mu m^2 = 5,58fF\]
+
+Para a potência dissipada, consideramos o $C_{total} = 129 \cdot C_u \cdot 2 = 1440fJ$, considerando o dobro da capacitância total associada a um CDAC
+\textit{single-ended}. Pela fórmula 
+
+\begin{equation}
+    P_d \approx f_s * C_{tot} * V^2_{ref}
+    \label{eq:potDiss}
+\end{equation}
+
+Com $V_{REF} = 1V$, tem-se que $P_d \approx 100~MHz \cdot 1440~fF \cdot 1 \approx 144\mu W$.
+
+
+
