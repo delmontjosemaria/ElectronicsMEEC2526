@@ -1,8 +1,8 @@
 # Fdb version 4
-["bibtex main"] 0 "main.aux" "main.bbl" "main" 1779344727.74417 -1
+["bibtex main"] 1779344760.56124 "main.aux" "main.bbl" "main" 1779344760.85563 2
   "./referencias.bib" 1778963871 821 0069d48b628d5cdce48531f561b2529e ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/apalike.bst" 1291972791 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1779344726 6733 4cfff32defc4a044a84701783c16422f "pdflatex"
+  "main.aux" 1779344752 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
@@ -190,11 +190,11 @@
   "desenvolvimento.tex" 1779344592 23621 6172276773e6b9857c7d2d91445a1529 ""
   "introducao.tex" 1779308186 1921 961cd86018156e418a8524aeda8ea615 ""
   "lab1_V2.py" 1779339078 20425 bfc4705eef9a8e87a86c5bdcf2753632 ""
-  "main.aux" 1779344726 6733 4cfff32defc4a044a84701783c16422f "pdflatex"
-  "main.bbl" 1779344427 335 ed2945d23bd53de9ff47cec55d1ccb37 "bibtex main"
-  "main.out" 1779344726 1840 b4ae3737918dbf6e2fc87c466b4dae3c "pdflatex"
+  "main.aux" 1779344752 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.bbl" 1779344760 0 d41d8cd98f00b204e9800998ecf8427e "bibtex main"
+  "main.out" 0 -1 0 "pdflatex"
   "main.tex" 1779339627 743 e484d05a71b1f176e2f14200e9697a60 ""
-  "main.toc" 1779344726 923 1e5f4ae566ccaf81a9091922a7f375b8 "pdflatex"
+  "main.toc" 0 -1 0 "pdflatex"
   "referencias.tex" 1779008247 38 0c1c60d9fdf54c858b860560db73eb53 ""
   (generated)
   "main.aux"
