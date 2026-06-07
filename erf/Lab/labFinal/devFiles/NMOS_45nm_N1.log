@@ -1,0 +1,53 @@
+LTspice 24.1.10 for Windows
+Circuit: C:\Users\denpo\FCT\MEEC\ElectronicsMEEC2526\erf\Lab\labFinal\devFiles\NMOS_45nm_N1.net
+Start Time: Thu Jun  4 15:57:22 2026
+Options: logopinfo
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-05
+Gmin = 1.6455e-06
+Gmin = 1.76685e-07
+Gmin = 1.89714e-08
+Gmin = 2.03704e-09
+Gmin = 2.18725e-10
+Gmin = 2.34854e-11
+Gmin = 2.52173e-12
+Gmin = 2.70769e-13
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Semiconductor Device Operating Points:
+                        --- BSIM4 MOSFETS ---
+Name:       M1          M2          M3          M4
+Model:  nmos-bsim   nmos-bsim   nmos-bsim   nmos-bsim
+Id:      1.13e-03    9.65e-03    8.68e-03    8.20e-03
+Vgs:     6.82e-01    6.35e-01    8.03e-01    6.23e-01
+Vds:     1.72e+00    1.63e+00    2.21e+00    2.86e-01
+Vbs:    -5.68e-01    0.00e+00   -2.86e-01    0.00e+00
+Vth:     6.16e-01    4.71e-01    5.48e-01    4.71e-01
+Vdsat:   1.01e-01    1.60e-01    2.28e-01    1.52e-01
+Gm:      1.62e-02    9.19e-02    5.30e-02    8.25e-02
+Gds:     4.30e-05    2.86e-04    2.97e-04    7.72e-04
+Gmb      4.12e-03    2.94e-02    1.62e-02    2.63e-02
+Cbd:     1.20e-13    2.91e-13    1.17e-13    3.68e-13
+Cbs:     2.45e-13    6.40e-13    2.61e-13    6.40e-13
+
+
+Total elapsed time: 0.399 seconds.
+
+Files loaded:
+C:\Users\denpo\FCT\MEEC\ElectronicsMEEC2526\erf\Lab\labFinal\devFiles\NMOS_45nm_N1.net
+C:\Users\denpo\AppData\Local\LTspice\lib\cmp\standard.mos
+C:\Users\denpo\FCT\MEEC\ElectronicsMEEC2526\erf\Lab\labFinal\devFiles\CMOS_45nm.lib
+
