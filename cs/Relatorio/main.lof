@@ -1,0 +1,19 @@
+\babel@toc {portuguese}{}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Diagrama de blocos do canal de conversão A/D a ser modelado e simulado.}}{2}{figure.caption.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Diagrama de blocos do modulador $\Sigma \Delta $.}}{2}{figure.caption.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Parâmetros de simulação e inicialização de variáveis em Python.}}{7}{figure.caption.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Código do modelo implementado para o modulador.}}{8}{figure.caption.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Análise temporal da entrada versus saída do modulador.}}{9}{figure.caption.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Código do espectro comparativo de potência do sinal de saída para diferentes níveis de ruído térmico.}}{10}{figure.caption.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Espetro comparativo de potência do sinal de saída para diferentes níveis de ruído térmico.}}{10}{figure.caption.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Código para o cálculo do Dynamic Range e varrimento de amplitudes.}}{12}{figure.caption.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Curva característica de SNDR em função da amplitude e extração da Gama Dinâmica.}}{13}{figure.caption.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Atualização do modelo computacional para suportar o ganho finito ($\beta < 1$).}}{14}{figure.caption.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Gama Dinâmica e SNDR do modulador com integradores não-ideais (Ganho de 40 dB).}}{15}{figure.caption.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Resposta em frequência teórica do filtro Sinc$^3$ comparada com o Sinc$^1$, evidenciando os "zeros" de transmissão.}}{16}{figure.caption.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Código para a implementação do filtro digital de decimação Sinc$^3$.}}{16}{figure.caption.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Espetro de saída após processamento pelo filtro Sinc$^3$ e decimação $\times 116$.}}{17}{figure.caption.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Simulação do circuito do modulador completo baseado em Capacidades Comutadas no LTspice.}}{18}{figure.caption.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Análise espetral no LTspice do modulador para diferentes amplitudes do sinal de entrada.}}{21}{figure.caption.17}%
+\contentsfinish 
+\contentsfinish 

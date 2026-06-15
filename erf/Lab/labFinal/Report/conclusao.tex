@@ -1,29 +1,51 @@
-% ==============================================
-% ELEMENTO: CONCLUSÃO
-% ==============================================
+% ==========================================================================
 \section{Conclusão}
 \label{sec:conclusao}
+% ==========================================================================
 
-Após a realização deste trabalho, foi possível concluir com sucesso o projeto de um LNA para a banda ISM, atendendo aos requisitos de ganho, 
-estabilidade e \textit{noise figure} especificados. 
+Este trabalho permitiu concluir com sucesso o projeto e a análise comparativa de LNAs para aplicações
+de radiofrequência, cobrindo tanto a implementação com componentes discretos de alto desempenho como
+a integração em tecnologia CMOS em três nós tecnológicos distintos.
 
-Inicialmente, a definição do ponto de operação do transístor BFP420 permitiu estabelecer as condições de polarização adequadas, assegurando o 
-funcionamento na região ativa com compromisso razoável entre ganho e consumo. As simulações iniciais no LTspice forneceram os parâmetros S 
-necessários para as etapas seguintes, tendo em consideração a frequência de operação escolhida de $6~GHz$.
+Na primeira fase, o dimensionamento do LNA com o transístor bipolar BFP420 estabeleceu os
+fundamentos metodológicos do projeto RF: definição do ponto de operação estável na região ativa a
+6\,GHz, análise de estabilidade com recurso ao fator de Rollet ($K$) e ao AppCAD, e síntese de redes
+de adaptação por inspeção na Carta de Smith. Tanto a abordagem por componentes discretos ($LC$) como
+a modelação por linhas de transmissão com \textit{stubs} demonstraram um bom casamento de impedâncias
+($S_{11}$, $S_{22} < -10~\text{dB}$), tendo a transição para o Cadence permitido co-otimizar o ganho
+real (10{,}15\,dB) e a figura de ruído (2{,}26\,dB) com uma precisão que o LTspice não assegura,
+dado o impacto dos parasitas de layout.
 
-A análise de estabilidade, realizada com o auxílio do AppCAD, mostrou-se indispensável para evitar oscilações indesejadas. O cálculo dos coeficientes 
-de reflexão à entrada e à saída ($\Gamma_S$ e $\Gamma_L$, respectivamente) permitiu verificar a estabilidade condicional do dispositivo, 
-orientando as estratégias de adaptação pela carta de Smith, tanto para condensadores e bobinas como para linhas de transmissão e \textit{stubs},
-garantindo assim a maior transmissão de potência possível.
+A segunda fase, centrada no \textit{balun-LNA} em tecnologia CMOS com a arquitetura de
+Blaakmeer~\cite{blaakmeer2008}, aprofundou os aspetos específicos do dimensionamento integrado.
+Demonstrou-se que a adaptação de entrada a $50~\Omega$ pode ser obtida de forma ativa, através do
+controlo de $g_m$ no estágio CG, e que o mecanismo de \textit{admittance scaling} permite reduzir a figura de 
+ruído com rendimento marginal decrescente, mantendo o balanço diferencial. Os resultados a 65\,nm confirmaram
+quantitativamente este comportamento: a redução de NF de $N=1$ para $N=2$ é de 16\,\%, enquanto de
+$N=2{,}75$ para $N=3{,}5$ é apenas de 3{,}6\,\%, e a contribuição de $r_g$ ao nível de 7\,\%
+sinaliza o limite prático de rendimento do escalamento.
 
-A validação inicial no LTspice confirmou que, na frequência central escolhida, as redes de adaptação dimensionadas garantiam uma boa correspondência de impedâncias, 
-com $S_{11}$ como $S_{22}$ inferiores a $-10~dB$ e $S_{21}$ próximo do MAG. Já na transição para o ambiente Cadence, com a introdução de modelos não-ideais e efeitos 
-parasitas, constituiu um passo fundamental para aproximar a simulação da realidade e para as novas abordagens, que visavam a redução do ruído, um fator que não era contemplado
-na abordagem do LTSpice, e o compromisso entre o ganho e o ruído, respectivamente. 
+O estudo dos três nós tecnológicos revelou tendências fisicamente coerentes e pedagogicamente
+relevantes. Em 350\,nm, a validade das equações de canal longo garante boa previsibilidade analítica.
+Em 65\,nm, os efeitos de canal curto como saturação de velocidade, degradação da mobilidade e
+aumento de $r_g$ começam a limitar o desempenho, mas o modelo ainda suporta uma análise mista
+analítico-numérica. Em 45\,nm, a transcondutância entra no regime de saturação de velocidade
+descrito por~\eqref{eq:gm_vsat}, o ganho intrínseco colapsa para valores da ordem de 7, e a
+extração numérica pelo simulador BSIM4 torna-se o único referencial fiável. A inversão de ruído
+observada entre 65\,nm e 45\,nm, onde o nó mais avançado apresenta ligeiramente mais ruído total
+nas condições de polarização utilizadas, é um resultado particularmente expressivo, que demonstra
+que a progressão tecnológica não é automaticamente sinónimo de melhor desempenho RF sem otimização
+dedicada de polarização e geometria.
 
-A nova extração dos parâmetros S revelou desvios dos picos em relação aos resultados ideais (de aproximadamente $0,2~GHz$), sobretudo devido às capacitâncias e indutâncias 
-parasitas e às aproximações feitas por inspeção, ao invés do recurso a métodos mais computadorizados para a redução desse tipo de erros. 
+Do ponto de vista das especificações do projeto, os objetivos de $S_{11} < -10~\text{dB}$,
+$S_{22} < -10~\text{dB}$ e ganho $> 10~\text{dB}$ foram atingidos em 350\,nm e 65\,nm. Em 45\,nm,
+a compressão do ganho intrínseco e o aumento das perdas resistivas dificultam o cumprimento
+simultâneo de todas as especificações, ilustrando os desafios reais do projeto RF em nós nanométricos
+avançados.
 
-Em suma, este trabalho permitiu não só projetar um LNA funcional para a banda ISM, mas também adquirir competências práticas fundamentais como interpretação e aplicação da Carta de Smith outras
-compreensão da importância da estabilidade, do ruído e dos efeitos parasitas no projeto de radiofrequência. Os objetivos iniciais foram plenamente alcançados, ficando demonstrada a viabilidade do 
-circuito proposto.
+Em termos de comparação com o design bipolar, a solução CMOS integrada distingue-se pelo balun ativo
+sem indutores, pela largura de banda intrínseca superior e pela compatibilidade com processos digitais
+de larga escala, ao custo de maior complexidade de dimensionamento e maior sensibilidade à variabilidade
+de processo nos nós mais avançados. Os dois paradigmas são complementares: o BFP420 é a escolha para
+desempenho máximo em banda estreita com componentes discretos, enquanto as topologias CMOS são
+adequadas para integração wideband em transceivers multistandard modernos.

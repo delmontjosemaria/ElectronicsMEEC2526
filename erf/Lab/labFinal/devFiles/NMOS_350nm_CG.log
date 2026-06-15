@@ -1,0 +1,21 @@
+LTspice 24.1.10 for Windows
+Circuit: C:\Users\denpo\FCT\MEEC\ElectronicsMEEC2526\erf\Lab\labFinal\devFiles\NMOS_350nm_CG.net
+Start Time: Wed May 13 17:19:36 2026
+Options: logopinfo
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.191 seconds.
+
+Files loaded:
+C:\Users\denpo\FCT\MEEC\ElectronicsMEEC2526\erf\Lab\labFinal\devFiles\NMOS_350nm_CG.net
+C:\Users\denpo\AppData\Local\LTspice\lib\cmp\standard.mos
+C:\Users\denpo\FCT\MEEC\ElectronicsMEEC2526\erf\Lab\labFinal\devFiles\CMOS_350nm.lib
+

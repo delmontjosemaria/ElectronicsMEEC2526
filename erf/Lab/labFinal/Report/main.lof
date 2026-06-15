@@ -1,0 +1,45 @@
+\babel@toc {portuguese}{}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Circuito LNA.}}{4}{figure.caption.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Código usado para o dimensionamento do circuito de polarização do transistor.}}{5}{figure.caption.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Circuito do transistor BFP420 em LTspice.}}{6}{figure.caption.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Circuito simulado no LTspice.}}{6}{figure.caption.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Circuito simulado no LTspice.}}{7}{figure.caption.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Parâmetros S do transistor no LTspice.}}{7}{figure.caption.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Valores dos parâmetros S para as frequências de 1 GHz a 10 GHz.}}{8}{figure.caption.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Valor de K para as frequências de 1 GHz a 10 GHz.}}{8}{figure.caption.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Coeficientes de reflexão para $F = 6GHz$.}}{9}{figure.caption.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Carta de Smith para Condensadores e Bobinas}}{10}{figure.caption.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Circuito adaptado com Condensadores e Bobinas}}{11}{figure.caption.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Parâmetros S do circuito adaptado com Condensadores e Bobinas}}{11}{figure.caption.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Valores dos parâmetros S do circuito adaptado com Condensadores e Bobinas}}{12}{figure.caption.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Carta de Smith para Linhas e Stubs, $Z_{S}$}}{13}{figure.caption.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Carta de Smith para Linhas e Stubs, $Z_{L}$}}{14}{figure.caption.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Circuito adaptado com Linhas e Stubs}}{15}{figure.caption.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Parâmetros S do circuito adaptado com Linhas e Stubs}}{15}{figure.caption.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Valores dos parâmetros S do circuito adaptado com Linhas e Stubs}}{15}{figure.caption.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Análise do $\Gamma _{\text {min}}$, $NF_{\text {min}}$ e \texttt {rn} do LNA à frequência de 6 GHz.}}{16}{figure.caption.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Esquemático da adaptação com condensadores e bobinas no Cadence.}}{17}{figure.caption.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Comparação entre o $NF$ do circuito adaptado e o $NF_{\text {min}}$.}}{17}{figure.caption.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Ferramenta online \texttt {mcalc} para o cálculo de linhas de transmissão.}}{18}{figure.caption.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Esquemático adaptação com Linhas e Stubs no Cadence.}}{18}{figure.caption.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Comparação entre o $NF$ do circuito adaptado com Linhas e Stubs e o $NF_{\text {min}}$.}}{19}{figure.caption.24}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Análise dos círculos de ganho e do ruído do LNA à frequência de 6 GHz.}}{19}{figure.caption.25}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Circuito adaptado com Linhas e Stubs ajustado para ganho e ruído.}}{20}{figure.caption.26}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Características do circuito adaptado com Linhas e Stubs ajustado.}}{20}{figure.caption.27}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Circuito de referência estrutural para o desenvolvimento do LNA nas três tecnologias CMOS.}}{21}{figure.caption.28}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Configuração \textit {common-gate} e respetiva impedância de entrada intrínseca.}}{22}{figure.caption.29}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Configuração \textit {common-source} responsável pela inversão de fase na conversão diferencial.}}{23}{figure.caption.30}%
+\contentsline {figure}{\numberline {31}{\ignorespaces \textit {Buffer} diferencial de cargas ativas e respetiva topologia de impedância de saída.}}{24}{figure.caption.31}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Esquemático elétrico do LNA completo implementado em LTspice para tecnologia CMOS de 350\,nm.}}{24}{figure.caption.32}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Ruído, ponto de operação DC e parâmetros S para $N=1$ em CMOS de 350\,nm (100\,MHz--2\,GHz).}}{25}{figure.caption.33}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Ruído, ponto de operação DC e parâmetros S para $N=2$ em CMOS de 350\,nm (100\,MHz--2\,GHz).}}{26}{figure.caption.34}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Ruído, ponto de operação DC e parâmetros S para o fator de escala nominal do grupo $N=2{,}75$ em CMOS de 350\,nm (100\,MHz--2\,GHz).}}{27}{figure.caption.35}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Ruído, ponto de operação DC e parâmetros S para $N=3{,}5$ em CMOS de 350\,nm (100\,MHz--2\,GHz).}}{28}{figure.caption.36}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Esquemáticos hierárquicos do LNA validados em Cadence Virtuoso com modelos BSIM de 65\,nm.}}{29}{figure.caption.37}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Esquemático do LNA implementado em CMOS de 45\,nm para $N=1$.}}{33}{figure.caption.56}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Ruído, ponto de operação DC e parâmetros S para $N=1$ em CMOS de 45\,nm (banda de 10\,GHz).}}{34}{figure.caption.57}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Ruído, ponto de operação DC e parâmetros S para $N=2$ em CMOS de 45\,nm (10\,GHz).}}{35}{figure.caption.58}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Ruído, ponto de operação DC e parâmetros S para o fator de escala nominal $N=2{,}75$ em CMOS de 45\,nm (10\,GHz).}}{36}{figure.caption.59}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Ruído, ponto de operação DC e parâmetros S para $N=3{,}5$ em CMOS de 45\,nm (10\,GHz).}}{37}{figure.caption.60}%
+\contentsfinish 
+\contentsfinish 

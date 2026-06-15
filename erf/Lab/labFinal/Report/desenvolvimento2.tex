@@ -1,22 +1,30 @@
+% ==========================================================================
+% SECÇÃO 2 — Desenho do LNA com tecnologias CMOS – modelo BSIM
+% ==========================================================================
+
 \section{Desenho do LNA com tecnologias CMOS -- modelo BSIM}
 \label{sec:desenvolvimento2}
 
-Uma vez concluído o desenho do LNA com o transistor bipolar de tecnologia em disco BFP420, avançamos para a transição e 
-implementação em tecnologias CMOS. Cada circuito é projetado para operar numa frequência ou faixa de frequências distinta, 
-embora partilhem a mesma arquitetura de base, inspirada na proposta clássica de balun ativo de Blaakmeer~\cite{blaakmeer2008}. 
-Esta arquitetura combina uma montagem \textit{common-gate} (CG) como estágio de entrada não-inversora e uma montagem 
-\textit{common-source} (CS) como estágio inversor. Esta topologia diferencial ativa permite a conversão \textit{single-ended} 
-para diferencial (\textit{balun}) integrada, eliminando a necessidade de componentes passivos volumosos à entrada. Os estágios 
-de transcondutância são seguidos de um \textit{buffer} de cargas ativas responsável pela otimização do ganho, isolamento reverso 
-(\textit{reverse isolation}) e emparelhamento da impedância de saída para a figura de ruído (\textit{noise figure}) global do sistema, 
-conforme ilustrado na Figura~\ref{fig:LNA_E_Buffer}.
+Uma vez concluído o desenho do LNA com o transístor bipolar de junção BFP420, avança-se para a
+implementação de circuitos amplificadores de baixo ruído em tecnologia CMOS integrada. Cada
+circuito é dimensionado para uma faixa de frequências distinta, mas partilham a mesma arquitetura
+de base: o \textit{balun-LNA} proposto por Blaakmeer \textit{et al.}~\cite{blaakmeer2008}, que
+combina um estágio \textit{common-gate} (CG) e um estágio \textit{common-source} (CS) em paralelo.
+Esta topologia diferencial ativa realiza simultaneamente três funções de modo integrado:
+\textit{(i)}~a conversão de sinal \textit{single-ended} para diferencial (\textit{balun} ativo),
+eliminando a necessidade de componentes passivos de perdas elevadas à entrada do recetor;
+\textit{(ii)}~o cancelamento do ruído de canal do transístor CG, uma vez que a respetiva contribuição
+de ruído aparece em modo comum na saída diferencial; e \textit{(iii)}~o cancelamento da distorção não
+linear introduzida pelo mesmo estágio CG, já que a mesma condição de casamento de ganho requerida
+para o balun assegura também a supressão das componentes de intermodulação de segunda e terceira
+ordem~\cite{blaakmeer2008,bastos2014}.
 
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/blaakman_setup.png}
-        \caption{Arquitetura ativa balun-LNA proposta.}
+        \caption{Arquitetura \textit{balun-LNA} proposta.}
         \label{fig:LNA_noBuff}
     \end{subfigure}
     \hfill
@@ -30,133 +38,179 @@ conforme ilustrado na Figura~\ref{fig:LNA_E_Buffer}.
     \label{fig:LNA_E_Buffer}
 \end{figure}
 
-O processo de dimensionamento partilha uma metodologia sistemática comum às três tecnologias abordadas. Contudo, a diferença 
-fundamental reside nas dimensões características de cada nó tecnológico e na crescente relevância de efeitos de segundo ordem 
-e canal curto, que deixam de ser desprezáveis à medida que as dimensões geométricas diminuem. No contexto de radiofrequência 
-(RF), a adaptação de impedância às linhas de transmissão e interfaces de teste é sempre considerada uma restrição de projeto 
-prioritária, sendo o objetivo garantir o casamento de impedâncias de entrada e saída ao valor padrão de $50~\Omega$.
+O processo de dimensionamento partilha uma metodologia sistemática comum às três tecnologias
+abordadas: 350\,nm, 65\,nm e 45\,nm. A diferença fundamental reside não apenas nas dimensões
+características de cada nó tecnológico, mas na crescente relevância de efeitos de canal curto que
+deixam de ser desprezáveis com a redução geométrica. No contexto de radiofrequência, a adaptação de
+impedâncias às linhas de transmissão e interfaces de teste constitui uma restrição de projeto
+prioritária, sendo o objetivo assegurar o casamento de impedâncias de entrada e saída ao valor padrão
+de $50~\Omega$.
 
-\subsection*{Estágio \textit{common-gate}}
+Uma vantagem estrutural desta topologia relativamente ao LNA bipolar com redes passivas externas é
+que a adaptação de entrada a $50~\Omega$ é obtida de forma puramente ativa, controlando a
+transcondutância do estágio CG, sem necessidade de indutores ou redes $LC$ de casamento. Isto tem
+implicações diretas na área de \textit{die}, na largura de banda de operação e na facilidade de
+integração multi-norma~\cite{bastos2014}.
 
-A impedância de entrada vista a partir do terminal de \textit{source} do transistor NMOS em configuração \textit{common-gate} 
-é modelada analiticamente por
+% -------------------------------------------------------------------------
+\subsection*{Estágio \textit{common-gate} e a adaptação da entrada}
+% -------------------------------------------------------------------------
+
+A impedância de entrada vista a partir do terminal de \textit{source} do transístor NMOS em
+configuração \textit{common-gate} é modelada por
 
 \begin{equation}
     Z_{\text{in}} = \frac{1}{g_m + g_{ds} + g_{mb}},
     \label{eq:zin}
 \end{equation}
 
-onde se inclui explicitamente o contributo da transcondutância de substrato (efeito de corpo) $g_{mb}$. Este parâmetro assume 
-particular relevância nesta configuração uma vez que o terminal de \textit{bulk} se encontra tipicamente ligado ao potencial 
-de referência (\textit{ground}), não acompanhando a excursão de sinal do terminal de \textit{source} ($V_{BS} \neq 0$). O fator 
-dominante de projeto é a transcondutância de canal $g_m$, relacionada com a corrente de dreno em regime de saturação de canal 
-longo por
+onde $g_m$ é a transcondutância de canal, $g_{ds}$ a condutância de saída e $g_{mb}$ a
+transcondutância de substrato. Esta última assume particular relevância nesta configuração uma vez que
+o terminal de \textit{bulk} se encontra tipicamente ligado ao potencial de referência, criando uma
+tensão $V_{BS} \neq 0$ que ativa o efeito de corpo. Definindo o fator de efeito de corpo como
+$\eta = g_{mb}/g_m$, a condição de casamento de impedância de entrada simplifica-se para
+
+\begin{equation}
+    Z_{\text{in}} \approx \frac{1}{g_m(1 + \eta)},
+    \label{eq:zin_eta}
+\end{equation}
+
+o que implica que, para uma dada corrente de polarização, o valor efetivo de $g_m$ necessário para
+atingir $Z_{\text{in}} = 50~\Omega$ é inferior a $20~\text{mS}$, pois $g_{mb}$ contribui
+positivamente para a condutância total. Este efeito, tipicamente negligenciado em topologias de canal
+longo e em análises de primeira ordem, torna-se progressivamente mais significativo à medida que o nó
+tecnológico diminui.
+
+A transcondutância de canal é relacionada com a corrente de dreno em regime de saturação por
 
 \begin{equation}
     g_m = \frac{2 I_D}{V_{DS_{\text{sat}}}},
     \label{eq:gm}
 \end{equation}
 
-o que permite ajustar quantitativamente a impedância de entrada através da corrente de polarização DC, $I_{\text{bias}}$. Para 
-que o casamento de impedância de entrada perfeito a $Z_{\text{in}} = 50~\Omega$ seja assegurado, é necessário que o denominador 
-de~\eqref{eq:zin} convirja para a condutância alvo de $20~\text{mS}$. A tensão de \textit{bias} aplicada à \textit{gate} é fixada 
-estaticamente a metade da tensão de alimentação nominal ($V_{DD}/2$) para maximizar a gama de excursão de sinal (*headroom*). O 
-ganho de tensão em malha aberta deste estágio é expresso por
+permitindo ajustar a impedância de entrada através da corrente de polarização DC $I_{\text{bias}}$.
+A tensão de \textit{bias} aplicada à \textit{gate} é fixada tipicamente a $V_{DD}/2$, maximizando a
+gama de excursão dinâmica. O ganho de tensão em pequenos sinais do estágio CG é expresso por
 
 \begin{equation}
-    A_{v_1} = \frac{g_m}{g_{ds} + g_{CG}}, \quad \text{onde } g_{CG} = \frac{1}{R_{CG}},
+    A_{v_1} = \frac{g_m}{g_{ds} + g_{CG}}, \quad \text{com } g_{CG} = \frac{1}{R_{CG}},
     \label{eq:av1}
 \end{equation}
 
-indicando que o valor da resistência de carga ativa ou passiva $R_{CG}$ constitui o principal parâmetro de ajuste e otimização 
-do ganho de tensão. O procedimento de projeto consistiu em fixar um ganho-alvo equivalente ao Máximo Ganho Disponível (MAG) 
-previamente obtido com a tecnologia bipolar BFP420, aproximando os resultados iterativamente com base na matriz de parâmetros S 
-simulada.
+sendo $R_{CG}$ o principal parâmetro de ajuste do ganho. O procedimento de projeto consistiu em
+fixar um ganho-alvo equivalente ao MAG previamente obtido com o BFP420, aproximando os resultados
+iterativamente com base nos parâmetros S simulados.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.42\textwidth]{IMAGENS/CommonGateSetup.png}
-    \caption{Configuração \textit{common-gate} com realce da impedância de entrada intrínseca.}
+    \caption{Configuração \textit{common-gate} e respetiva impedância de entrada intrínseca.}
     \label{fig:commonGate}
 \end{figure}
 
-\subsection*{Estágio \textit{common-source}}
+% -------------------------------------------------------------------------
+\subsection*{Estágio \textit{common-source}, inversão de fase e Balun}
+% -------------------------------------------------------------------------
 
-O sinal de excitação de RF de entrada $V_{\text{in}}$ é partilhado em paralelo entre as duas configurações de transcondutância. 
-A montagem \textit{common-source} introduz a inversão de fase necessária à funcionalidade de balun, apresentando um ganho de 
-tensão de pequenos sinais dado por
+O sinal de excitação de RF é partilhado em paralelo entre as duas configurações de
+transcondutância. A montagem \textit{common-source} introduz a inversão de fase necessária à
+funcionalidade de balun, apresentando um ganho de tensão dado por
 
 \begin{equation}
-    A_{v_2} = -\frac{g_m}{g_{ds} + g_{CS}}, \quad \text{onde } g_{CS} = \frac{1}{R_{CS}}.
+    A_{v_2} = -\frac{g_m}{g_{ds} + g_{CS}}, \quad \text{com } g_{CS} = \frac{1}{R_{CS}}.
     \label{eq:av2}
 \end{equation}
 
-Para isolar os pontos de operação DC de polarização de cada estágio independente, é inserido um condensador de acoplamento de 
-valor elevado entre as duas montagens, mitigando interferências mútuas na rede de polarização. O equilíbrio de ganho diferencial 
-e o ajuste do ponto de operação neste estágio são realizados através da variação fina da tensão de \textit{gate}, controlando a 
-tensão de \textit{overdrive} $V_{OV} = V_{GS} - V_{th}$ e, por conseguinte, a densidade de corrente de dreno do dispositivo.
+Para assegurar a funcionalidade de balun e o cancelamento simultâneo de ruído e distorção, é
+necessário que os ganhos dos dois estágios sejam iguais em módulo, ou seja, $|A_{v_1}| = |A_{v_2}|$.
+A estratégia de \textit{admittance scaling} proposta em~\cite{blaakmeer2008} consiste em escalar a
+transcondutância do estágio CS por um fator $n$ e reduzir simultaneamente a resistência de carga
+$R_{CS}$ pelo mesmo fator ($g_{mCS} = n \cdot g_{mCG}$, $R_{CS} = R_{CG}/n$), mantendo o ganho
+diferencial equilibrado para qualquer valor de $n$. Este mecanismo é também o responsável pela
+redução da figura de ruído com o aumento de $n$, uma vez que a contribuição do estágio CS diminui
+na proporção $1/n$~\cite{blaakmeer2008}.
+
+Para isolar os circuitos de polarização DC de cada estágio, é inserido um condensador de acoplamento
+de valor elevado entre as duas configurações. O ajuste fino do ponto de operação do estágio CS é
+realizado através da variação da tensão de \textit{gate}, que controla a tensão de \textit{overdrive}
+$V_{OV} = V_{GS} - V_{th}$ e, consequentemente, a corrente de dreno.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.42\textwidth]{IMAGENS/CommonSourceSetup.png}
-    \caption{Configuração \textit{common-source} responsável pela inversão de fase na conversão diferencial.}
+    \caption{Configuração \textit{common-source} responsável pela inversão de fase na conversão
+    diferencial.}
     \label{fig:commonSource}
 \end{figure}
 
-O fator de escala geométrico $n$, aplicado de forma simétrica às dimensões de largura ($W$) dos transistores centrais do LNA, 
-permite estabelecer um compromisso ótimo (\textit{trade-off}) entre o ganho de transcondutância, as capacidades parasitas 
-intrínsecas e a figura de ruído. No âmbito deste projeto, o fator de escala nominal foi fixado em $n = 2{,}75$, tendo-se 
-posteriormente estendido a análise paramétrica aos valores de $n \in \{1;\ 2;\ 2{,}75;\ 3{,}5\}$ de modo a mapear a sensibilidade 
-do desempenho global face à variação da área ativa dos dispositivos.
+O fator de escala geométrico $n$ é aplicado às larguras ($W$) dos transístores, estabelecendo um
+compromisso entre ganho de transcondutância, capacidades parasitas intrínsecas e figura de ruído. O
+fator de escala nominal atribuído ao grupo é $n = 2{,}75$, tendo a análise sido estendida aos valores
+$n \in \{1;\ 2;\ 2{,}75;\ 3{,}5\}$ para mapear a sensibilidade do desempenho global.
 
+% -------------------------------------------------------------------------
 \subsection*{Estágio de saída com \textit{buffer} de cargas ativas}
+% -------------------------------------------------------------------------
 
-A impedância de saída de pequenos sinais do estágio de \textit{buffer} resulta do paralelo entre a impedância vista pelo dreno 
-do transistor inferior (fonte de corrente ativa) e a impedância de saída vista pela \textit{source} do transistor superior 
-(configuração seguidor de fonte ou \textit{source follower}):
+A impedância de saída do \textit{buffer} resulta do paralelo entre a impedância vista pelo dreno do
+transístor inferior e a impedância de saída vista pela \textit{source} do transístor superior:
 
 \begin{equation}
     Z_{\text{out}} = \frac{1}{g_{m_{\text{up}}} + g_{ds_{\text{up}}} + g_{ds_{\text{dn}}}}.
     \label{eq:zout}
 \end{equation}
 
-Esta configuração providencia um isolamento reverso elevado, minimizando os efeitos de carga do estágio de mistura posterior 
-sobre o núcleo amplificador do LNA, garantindo simultaneamente o casamento de saída para os $50~\Omega$ instrumentais através 
-do ajuste geométrico da transcondutância $g_{m_{\text{up}}}$.
+Esta configuração de \textit{source follower} providencia elevado isolamento reverso, minimizando o
+efeito de carga do estágio posterior sobre o núcleo amplificador, e assegura o casamento de saída a
+$50~\Omega$ através do ajuste geométrico de $g_{m_{\text{up}}}$. A substituição das resistências de
+carga por transístores PMOS, operando em triodo profundo ou na fronteira de saturação, permite
+aumentar a resistência incremental efetiva sem incrementar a queda de tensão DC, melhorando
+simultaneamente o ganho e a figura de ruído do conjunto~\cite{bastos2014}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.42\textwidth]{IMAGENS/BufferSetup.png}
-    \caption{\textit{Buffer} diferencial de cargas ativas e respetiva topologia de impedância de saída.}
+    \caption{\textit{Buffer} diferencial de cargas ativas e respetiva topologia de impedância de
+    saída.}
     \label{fig:bufferSetup}
 \end{figure}
 
-% ============================================================
-\subsection{CMOS de 350\,nm}
-% ============================================================
+A potência consumida pelo circuito completo é calculada como
 
-Na tecnologia de 350\,nm, o comprimento físico do canal apresenta dimensões superiores à escala de sub-mícron profundo, 
-permitindo classificar o dispositivo analógico como pertencente ao regime de canal longo. Consequentemente, as equações clássicas 
-de primeira ordem baseadas no modelo quadrático mantêm um elevado grau de previsibilidade e validade para o dimensionamento em RF.
- Os efeitos secundários de canal curto, tais como a saturação de velocidade e a modulação do comprimento de canal por DIBL (\textit{Drain-Induced Barrier Lowering}), exercem uma influência reduzida nas figuras de mérito do transístor.
+\begin{equation}
+    P_D = V_{DD} \times \sum_{k} I_{D_k},
+    \label{eq:pd}
+\end{equation}
+
+onde a soma percorre todos os transístores alimentados por $V_{DD}$. Os valores de $I_{D_k}$ para
+cada tecnologia são extraídos diretamente dos relatórios \texttt{.op} do simulador.
+
+% ==========================================================================
+\subsection{CMOS de 350\,nm}
+% ==========================================================================
+
+Na tecnologia de 350\,nm, o comprimento efetivo de canal situa-se na casa dos sub-mícron, mas ainda
+suficientemente longo para que as equações clássicas de primeira ordem mantenham boa validade para
+efeitos de dimensionamento. Os efeitos de canal curto, como a saturação de velocidade dos portadores, 
+e modulação do comprimento de canal têm impacto reduzido, e a mobilidade efetiva $\mu_{\text{eff}}$ não 
+difere significativamente do valor de \textit{bulk}. Este nó tecnológico é por isso considerado o caso de 
+referência, onde os resultados analíticos e os valores de simulação exibem a maior consistência mútua.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\textwidth]{IMAGENS/ltspice350nm/CMOS350nm_schematic.png}
-    \caption{Esquemático elétrico do LNA completo implementado na plataforma LTspice utilizando tecnologia CMOS de 350\,nm.}
+    \caption{Esquemático elétrico do LNA completo implementado em LTspice para tecnologia CMOS de
+    350\,nm.}
     \label{fig:350nmLNA}
 \end{figure}
 
-Os resultados relativos à resposta de ruído e aos pontos de operação DC do circuito polarizado são analisados de seguida para 
-cada fator de escala $n$. Nesta tecnologia, o desempenho espetral de ruído e as curvas de ganho foram extraídos via simulação AC 
-e as grandezas operacionais DC foram obtidas diretamente a partir do relatório \texttt{.op} gerado pelo motor SPICE. 
-
-Os resultados da simulação dos parâmetros S indicam que os coeficientes de reflexão à entrada ($S_{11}$) e à saída ($S_{22}$) se 
-situam consistentemente abaixo do limiar crítico de $-10\text{ dB}$ na banda de interesse, validando a metodologia de casamento 
-de impedâncias. Adicionalmente, verifica-se uma alteração incremental no perfil de desempenho à medida que o fator de escala é 
-majorado. Este comportamento decorre do facto de a variação geométrica da largura ($W$) redefinir as capacidades intrínsecas de 
-porta ($C_{gs}$, $C_{gd}$) e as condutâncias de saída ($g_{ds}$), deslocando ligeiramente o ponto ótimo de ruído e de adaptação 
-relativamente ao centro da banda projetada.
+Os resultados de ruído e os pontos de operação DC para cada fator de escala são apresentados de
+seguida. O espetro de densidade de ruído e os parâmetros S foram extraídos por simulação AC, enquanto
+os parâmetros operacionais DC provêm dos relatórios \texttt{.op}. Os coeficientes de reflexão
+$S_{11}$ e $S_{22}$ situam-se consistentemente abaixo de $-10~\text{dB}$ na banda de interesse em
+todos os fatores de escala, confirmando o casamento de impedâncias. O incremento de $n$ desloca
+ligeiramente o perfil de ruído e de adaptação, reflexo da alteração das capacidades intrínsecas
+$C_{gs}$ e $C_{gd}$ e das condutâncias de saída $g_{ds}$ com a variação de $W$.
 
 \subsubsection{Fator de escala \texorpdfstring{$N = 1$}{N=1}}
 
@@ -172,18 +226,18 @@ relativamente ao centro da banda projetada.
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice350nm/CMOS350nm_N1_DCop.png}
-        \caption{Ponto de operação DC do simulador.}
+        \caption{Ponto de operação DC.}
         \label{fig:op350_N1}
     \end{subfigure}
     \vskip\baselineskip
     \begin{subfigure}[c]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice350nm/CMOS350nm_N1_gainSparam.png}
-        \caption{Resposta em frequência dos parâmetros S.}
+        \caption{Parâmetros S em frequência.}
         \label{fig:gain350_N1}
     \end{subfigure}
-    \caption{Análise espetral de ruído, ponto de operação DC e coeficientes de transmissão/reflexão para $N=1$ em tecnologia CMOS 
-    de 350\,nm na gama de 100\,MHz a 2\,GHz.}
+    \caption{Ruído, ponto de operação DC e parâmetros S para $N=1$ em CMOS de 350\,nm
+    (100\,MHz--2\,GHz).}
 \end{figure}
 
 \subsubsection{Fator de escala \texorpdfstring{$N = 2$}{N=2}}
@@ -200,18 +254,18 @@ relativamente ao centro da banda projetada.
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice350nm/CMOS350nm_N2_DCop.png}
-        \caption{Ponto de operação DC do simulador.}
+        \caption{Ponto de operação DC.}
         \label{fig:op350_N2}
     \end{subfigure}
     \vskip\baselineskip
     \begin{subfigure}[c]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice350nm/CMOS350nm_N2_gainSparam.png}
-        \caption{Resposta em frequência dos parâmetros S.}
+        \caption{Parâmetros S em frequência.}
         \label{fig:gain350_N2}
     \end{subfigure}
-    \caption{Análise espetral de ruído, ponto de operação DC e coeficientes de transmissão/reflexão para $N=2$ em tecnologia CMOS 
-    de 350\,nm na gama de 100\,MHz a 2\,GHz.}
+    \caption{Ruído, ponto de operação DC e parâmetros S para $N=2$ em CMOS de 350\,nm
+    (100\,MHz--2\,GHz).}
 \end{figure}
 
 \subsubsection{Fator de escala \texorpdfstring{$N = 2{,}75$}{N=2.75}}
@@ -228,18 +282,18 @@ relativamente ao centro da banda projetada.
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice350nm/CMOS350nm_N275_DCop.png}
-        \caption{Ponto de operação DC do simulador.}
+        \caption{Ponto de operação DC.}
         \label{fig:op350_N275}
     \end{subfigure}
     \vskip\baselineskip
     \begin{subfigure}[c]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice350nm/CMOS350nm_N275_gainSparam.png}
-        \caption{Resposta em frequência dos parâmetros S.}
+        \caption{Parâmetros S em frequência.}
         \label{fig:gain350_N275}
     \end{subfigure}
-    \caption{Análise espetral de ruído, ponto de operação DC e coeficientes de transmissão/reflexão para o fator de escala de 
-    grupo $N=2{,}75$ em tecnologia CMOS de 350\,nm na gama de 100\,MHz a 2\,GHz.}
+    \caption{Ruído, ponto de operação DC e parâmetros S para o fator de escala nominal do grupo
+    $N=2{,}75$ em CMOS de 350\,nm (100\,MHz--2\,GHz).}
 \end{figure}
 
 \subsubsection{Fator de escala \texorpdfstring{$N = 3{,}5$}{N=3.5}}
@@ -256,38 +310,38 @@ relativamente ao centro da banda projetada.
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice350nm/CMOS350nm_N35_DCop.png}
-        \caption{Ponto de operação DC do simulador.}
+        \caption{Ponto de operação DC.}
         \label{fig:op350_N35}
     \end{subfigure}
     \vskip\baselineskip
     \begin{subfigure}[c]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice350nm/CMOS350nm_N35_gainSparam.png}
-        \caption{Resposta em frequência dos parâmetros S.}
+        \caption{Parâmetros S em frequência.}
         \label{fig:gain350_N35}
     \end{subfigure}
-    \caption{Análise espetral de ruído, ponto de operação DC e coeficientes de transmissão/reflexão para $N=3{,}5$ em tecnologia 
-    CMOS de 350\,nm na gama de 100\,MHz a 2\,GHz.}
+    \caption{Ruído, ponto de operação DC e parâmetros S para $N=3{,}5$ em CMOS de 350\,nm
+    (100\,MHz--2\,GHz).}
 \end{figure}
 
-% ============================================================
+% ==========================================================================
 \subsection{CMOS de 65\,nm}
-% ============================================================
+% ==========================================================================
 
-A tecnologia de 65\,nm representa o limiar crítico de transição entre o regime clássico de canal longo e o domínio de canal curto 
-profundo (*deep sub-micron*). Sob estas condições, o dimensionamento analítico baseado em equações de primeira ordem atua 
-meramente como uma aproximação elementar, uma vez que fenómenos físicos severos como a saturação de velocidade dos portadores de 
-carga, a degradação da mobilidade efetiva devido ao campo elétrico vertical intenso e o aumento resistivo da \textit{gate} 
-distribuída ($r_g$) passam a dominar as figuras de mérito de ruído e ganho. Por conseguinte, torna-se imperativo recorrer a uma 
-caracterização rigorosa das propriedades físicas DC e da repartição detalhada das fontes de ruído intrínsecas a este nó 
-tecnológico.
+O nó de 65\,nm representa o limiar crítico de transição entre o regime de canal longo e o domínio de
+canal curto profundo. As equações de primeira ordem ainda permitem uma
+estimativa razoável do ponto de polarização, mas fenómenos físicos relevantes como a saturação de
+velocidade dos portadores, a degradação da mobilidade efetiva pelo campo elétrico vertical, o DIBL e
+o aumento da resistência óhmica distribuída da porta de polissilício ($r_g$) passam a dominar as
+figuras de mérito de ruído e ganho. Por esta razão, justifica-se uma análise mais detalhada dos
+pontos de operação e das contribuições de ruído para este nó tecnológico.
 
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/cadence65nm/CMOS65_LNA_Lab1_Schematic.png}
-        \caption{Estágio de transcondutância core do LNA.}
+        \caption{Estágio de transcondutância \textit{core} do LNA.}
         \label{fig:LNA_65nm}
     \end{subfigure}
     \hfill
@@ -301,95 +355,94 @@ tecnológico.
     \begin{subfigure}[c]{0.50\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/cadence65nm/CMOS65_Schematic.png}
-        \caption{LNA integrado com o \textit{buffer} diferencial.}
+        \caption{LNA integrado com \textit{buffer} diferencial.}
         \label{fig:LNA_65nm_completo}
     \end{subfigure}
-    \caption{Arquitetura e esquemáticos hierárquicos do LNA validados em ambiente Cadence Virtuoso com modelos CMOS de 65\,nm.}
+    \caption{Esquemáticos hierárquicos do LNA validados em Cadence Virtuoso com modelos BSIM de
+    65\,nm.}
     \label{fig:LNA_65nm_schematics}
 \end{figure}
 
-Para cada fator de escala em análise, extraíram-se os parâmetros DC operacionais mais expressivos dos transistores M1 
-(núcleo \textit{common-source}) e M4 (\textit{common-gate}), integrados no bloco do LNA (instância I4), bem como dos dispositivos 
-M7 e M8 que constituem o \textit{buffer} diferencial (instância I5). Estes parâmetros foram compilados através da ferramenta de 
-análise \texttt{.op} do simulador Cadence Spectre. 
+Para cada fator de escala, foram extraídos os parâmetros DC dos transístores M4 (\textit{common-gate},
+instância I4) e M1 (\textit{common-source}, instância I4), bem como dos transístores M7 e M8 do
+\textit{buffer} diferencial (instância I5), através da análise \texttt{.op} do Cadence Spectre. O
+mapeamento das fontes de ruído foi gerado pela rotina \texttt{noiseSummary} a 5\,GHz.
 
-Paralelamente, o mapeamento quantitativo das fontes de ruído foi gerado a partir da rotina \texttt{noiseSummary}. A seleção destas 
-variáveis específicas permite validar cientificamente a estabilidade do ponto de polarização, a precisão do casamento de impedâncias 
-à entrada e o peso relativo de cada mecanismo físico na Figura de Ruído global, destacando o impacto de $g_{mb}$, $g_{ds}$ e a 
-resistência óhmica distribuída da porta de polissilício ($r_g$).
+A seleção dos parâmetros de M1 e M4 nas tabelas seguintes visa validar três aspetos fundamentais: a
+correção do ponto de polarização ($I_D$, $V_{GS}$, $V_{th}$, $V_{DS_{\text{sat}}}$), a precisão do
+casamento de entrada ($g_m$, $g_{mb}$, $g_{ds}$) via~\eqref{eq:zin_eta}, e o potencial de operação
+em alta frequência ($f_T$, ganho intrínseco $g_m/g_{ds}$). O parâmetro $f_T$, reportado pelo
+simulador como \texttt{fug}, corresponde à frequência de unidade de ganho de corrente e escala
+inversamente com as capacidades intrínsecas, sendo um indicador direto da viabilidade do transístor
+para RF.
 
 \subsubsection{Fator de escala \texorpdfstring{$N = 1$}{N=1}}
 
 \paragraph{Ponto de operação DC.}
 
-A Tabela~\ref{tab:op65_N1} resume os parâmetros operacionais de pequenos sinais correspondentes ao fator de escala $N=1$, 
-fornecidos diretamente pela simulação fundamentada nos modelos BSIM.
-
 \begin{table}[H]
 \centering
-\caption{Parâmetros de pequenos sinais e pontos de operação DC para $N=1$ em tecnologia CMOS de 65\,nm.}
+\caption{Parâmetros de pequenos sinais e DC para $N=1$ em CMOS de 65\,nm (Cadence Spectre).}
 \label{tab:op65_N1}
 \begin{tabular}{lccl}
 \hline
 \textbf{Parâmetro} & \textbf{M4 (CG)} & \textbf{M1 (CS)} & \textbf{Unidade} \\
 \hline
-$g_m$               & 16,69 & 17,66 & mS \\
-$g_{mb}$            & 1,511 & 1,63  & mS \\
-$g_{ds}$            & 1,782 & 2,20  & mS \\
-$I_D$               & 2,59  & 3,28  & mA \\
-$V_{GS}$            & 0,590 & 0,645 & V  \\
-$V_{th}$            & 0,393 & 0,402 & V  \\
-$V_{DS_{\text{sat}}}$ & 166,6 & 182 & mV \\
-$f_T$ (\texttt{fug}) & 119,9 & 125   & GHz \\
-Ganho Intrínseco ($g_m/g_{ds}$) & 9,368 & 8,036 & -- \\
+$g_m$                           & 16{,}69 & 17{,}66 & mS \\
+$g_{mb}$                        & 1{,}511 & 1{,}630 & mS \\
+$g_{ds}$                        & 1{,}782 & 2{,}198 & mS \\
+$I_D$                           & 2{,}590 & 3{,}283 & mA \\
+$V_{GS}$                        & 0{,}590 & 0{,}645 & V  \\
+$V_{th}$                        & 0{,}393 & 0{,}402 & V  \\
+$V_{DS_{\text{sat}}}$           & 166{,}6 & 182{,}0 & mV \\
+$f_T$ (\texttt{fug})            & 119{,}9 & 125{,}0 & GHz \\
+Ganho intrínseco ($g_m/g_{ds}$) & 9{,}368 & 8{,}036 & --  \\
 \hline
 \end{tabular}
 \end{table}
 
-Através da integração dos valores de transcondutância de canal ($g_m$), transcondutância de corpo ($g_{mb}$) e condutância de 
-dreno ($g_{ds}$) do dispositivo M1, valida-se a equação expandida da impedância de entrada:
+Aplicando a equação~\eqref{eq:zin_eta} com os valores de M4 (estágio CG), obtém-se
 
-\begin{equation}
-    Z_{\text{in}} = \frac{1}{g_m + g_{mb} + g_{ds}} \approx \frac{1}{g_m(1+\eta)}, \quad \text{onde } \eta = \frac{g_{mb}}{g_m}.
-    \label{eq:zin_65nm}
-\end{equation}
+\begin{equation*}
+    Z_{\text{in}} = \frac{1}{g_m + g_{mb} + g_{ds}}
+    = \frac{1}{(16{,}69 + 1{,}511 + 1{,}782) \times 10^{-3}}
+    \approx 50{,}0~\Omega,
+\end{equation*}
 
-Substituindo os valores extraídos para $N=1$, calcula-se analiticamente $Z_{\text{in}} \approx 50{,}04~\Omega$, apresentando um 
-fator de efeito de corpo medido de $\eta \approx 0{,}092$, o que atesta a precisão do casamento face à impedância de referência 
-da linha de transmissão.
+confirmando o casamento de entrada. O fator de efeito de corpo medido é $\eta = g_{mb}/g_m \approx
+0{,}091$, o que representa uma redução de aproximadamente 9\,\% na impedância de entrada face ao
+valor $1/g_m = 59{,}9~\Omega$ calculado sem considerar $g_{mb}$ e $g_{ds}$.
 
 \paragraph{Contribuições de ruído.}
 
-A Tabela~\ref{tab:noise65_N1} discrimina os principais componentes geradores de potência espectral de ruído à frequência de 
-projeto de 5\,GHz.
-
 \begin{table}[H]
 \centering
-\caption{Mapeamento e decomposição das principais fontes de contribuição de ruído para $N=1$ em CMOS de 65\,nm (frequência 
-central de 5\,GHz).}
+\caption{Decomposição das principais contribuições de ruído para $N=1$ em CMOS de 65\,nm a 5\,GHz.}
 \label{tab:noise65_N1}
 \begin{tabular}{llrr}
 \hline
-\textbf{Dispositivo} & \textbf{Parâmetro} & \textbf{Potência de Ruído (V\textsuperscript{2}/Hz)} & \textbf{\% do Total} \\
+\textbf{Dispositivo} & \textbf{Parâm.} & \textbf{Potência (V\textsuperscript{2}/Hz)} & \textbf{\% do Total} \\
 \hline
-\texttt{/PORT0}      & \texttt{rn} & 1,13466e-18 & 32,24\,\% \\
-\texttt{/I4/M1}      & \texttt{id} & 7,12213e-19 & 20,24\,\% \\
-\texttt{/I4/R0}      & \texttt{rn} & 4,43507e-19 & 12,60\,\% \\
-\texttt{/I4/R1}      & \texttt{rn} & 2,48865e-19 & 7,07\,\% \\
-\texttt{/PORT1}      & \texttt{rn} & 2,02505e-19 & 5,75\,\% \\
-\texttt{/I4/M1/rg}   & \texttt{rn} & 1,95063e-19 & 5,54\,\% \\
-\texttt{/I5/M8}      & \texttt{id} & 1,38653e-19 & 3,95\,\% \\
-\texttt{/I5/M7}      & \texttt{id} & 1,38653e-19 & 3,94\,\% \\
+\texttt{/PORT0}    & \texttt{rn} & 1{,}13466$\times 10^{-18}$ & 32{,}24\,\% \\
+\texttt{/I4/M1}    & \texttt{id} & 7{,}12213$\times 10^{-19}$ & 20{,}24\,\% \\
+\texttt{/I4/R0}    & \texttt{rn} & 4{,}43507$\times 10^{-19}$ & 12{,}60\,\% \\
+\texttt{/I4/R1}    & \texttt{rn} & 2{,}48865$\times 10^{-19}$ & 7{,}07\,\%  \\
+\texttt{/PORT1}    & \texttt{rn} & 2{,}02505$\times 10^{-19}$ & 5{,}75\,\%  \\
+\texttt{/I4/M1/rg} & \texttt{rn} & 1{,}95063$\times 10^{-19}$ & 5{,}54\,\%  \\
+\texttt{/I5/M8}    & \texttt{id} & 1{,}38868$\times 10^{-19}$ & 3{,}95\,\%  \\
+\texttt{/I5/M7}    & \texttt{id} & 1{,}38653$\times 10^{-19}$ & 3{,}94\,\%  \\
 \hline
-\textbf{Total}       &             & 3,51948e-18 & 100\,\% \\
+\textbf{Total}     &             & 3{,}51948$\times 10^{-18}$ & 100\,\%      \\
 \hline
 \end{tabular}
 \end{table}
 
-É imperativo observar que o contributo de \texttt{/I4/M1/rg} (associado à resistência distribuída da porta de polissilício de 
-M1) exibe uma expressão significativa ($5{,}54\,\%$) nesta escala nanométrica, divergindo por completo do comportamento observado 
-em 350\,nm, onde esta componente era virtualmente nula. Este aumento deve-se à contração geométrica da área de contacto de porta,
- elevando a resistência óhmica por unidade de largura. O predomínio da contribuição do gerador da fonte térmica externa \texttt{/PORT0} ($32{,}24\,\%$) demonstra que o LNA se encontra adequadamente otimizado, operando próximo do seu limite teórico minimal de ruído.
+O predomínio da contribuição de \texttt{/PORT0} ($32{,}24~\%$), correspondente ao ruído térmico da
+resistência de fonte $R_S = 50~\Omega$, é o indicador de que o LNA opera próximo do seu
+limite teórico mínimo de ruído, já que domina quando o amplificador introduz pouca
+degradação adicional. Destaca-se igualmente que a resistência distribuída de porta do transístor M1
+(\texttt{/I4/M1/rg}) contribui com 5{,}54\,\% do ruído total, uma fração inexistente em 350\,nm e
+que reflete a contração geométrica dos dedos de polissilício neste nó tecnológico.
 
 \subsubsection{Fator de escala \texorpdfstring{$N = 2$}{N=2}}
 
@@ -397,55 +450,62 @@ em 350\,nm, onde esta componente era virtualmente nula. Este aumento deve-se à 
 
 \begin{table}[H]
 \centering
-\caption{Parâmetros de pequenos sinais e pontos de operação DC para $N=2$ em tecnologia CMOS de 65\,nm.}
+\caption{Parâmetros de pequenos sinais e DC para $N=2$ em CMOS de 65\,nm.}
 \label{tab:op65_N2}
 \begin{tabular}{lccl}
 \hline
 \textbf{Parâmetro} & \textbf{M4 (CG)} & \textbf{M1 (CS)} & \textbf{Unidade} \\
 \hline
-$g_m$               & 16,69 & 34,78 & mS \\
-$g_{mb}$            & 1,511 & 3,205 & mS \\
-$g_{ds}$            & 1,782 & 4,572 & mS \\
-$I_D$               & 2,590 & 6,673 & mA \\
-$V_{GS}$            & 0,590 & 0,645 & V  \\
-$V_{th}$            & 0,393 & 0,398 & V  \\
-$V_{DS_{\text{sat}}}$ & 166,6 & 176   & mV \\
-$f_T$ (\texttt{fug}) & 119,9 & 124,1 & GHz \\
-Ganho Intrínseco ($g_m/g_{ds}$) & 9,368 & 7,606 & -- \\
+$g_m$                           & 16{,}69 & 34{,}78 & mS \\
+$g_{mb}$                        & 1{,}511 & 3{,}205 & mS \\
+$g_{ds}$                        & 1{,}782 & 4{,}572 & mS \\
+$I_D$                           & 2{,}590 & 6{,}673 & mA \\
+$V_{GS}$                        & 0{,}590 & 0{,}645 & V  \\
+$V_{th}$                        & 0{,}393 & 0{,}398 & V  \\
+$V_{DS_{\text{sat}}}$           & 166{,}6 & 176{,}0 & mV \\
+$f_T$ (\texttt{fug})            & 119{,}9 & 124{,}1 & GHz \\
+Ganho intrínseco ($g_m/g_{ds}$) & 9{,}368 & 7{,}606 & --  \\
 \hline
 \end{tabular}
 \end{table}
 
-A expansão geométrica proporcionada pelo incremento do fator de escala $N$ dita o sobredimensionamento da largura de canal ($W$) 
-nos transistores constituintes do \textit{buffer}. Esta alteração eleva o consumo energético DC total da rede, mas induz uma 
-redução proporcional na impedância ativa de saída $Z_{\text{out}}$, refinando o casamento para os $50~\Omega$ de carga na saída. 
-Os parâmetros operacionais centrais dos transistores de transcondutância M1 e M4 exibem estabilidade estrutural entre os diferentes 
-fatores de escala, o que comprova empiricamente que o estágio de acoplamento do \textit{buffer} de saída foi isolado com sucesso 
-do núcleo amplificador primário.
+Os parâmetros de M4 mantêm-se constantes face a $N=1$, confirmando que o estágio CG, e por
+conseguinte a adaptação de entrada, é independente do dimensionamento do \textit{buffer}. O
+aumento de $W$ em M1 (estágio CS) eleva $g_m$, $g_{mb}$ e $g_{ds}$ proporcionalmente, refletindo
+a escalabilidade linear esperada. A ligeira redução do ganho intrínseco ($8{,}036 \to 7{,}606$)
+resulta do aumento relativo de $g_{ds}$ com $W$, sendo coerente com a compressão da tensão de Early
+em canal curto.
 
 \paragraph{Contribuições de ruído.}
 
 \begin{table}[H]
 \centering
-\caption{Mapeamento e decomposição das principais fontes de contribuição de ruído para $N=2$ em CMOS de 65\,nm (frequência central de 5\,GHz).}
+\caption{Decomposição das principais contribuições de ruído para $N=2$ em CMOS de 65\,nm a 5\,GHz.}
 \label{tab:noise65_N2}
 \begin{tabular}{llrr}
 \hline
-\textbf{Dispositivo} & \textbf{Parâmetro} & \textbf{Potência de Ruído (V\textsuperscript{2}/Hz)} & \textbf{\% do Total} \\
+\textbf{Dispositivo} & \textbf{Parâm.} & \textbf{Potência (V\textsuperscript{2}/Hz)} & \textbf{\% do Total} \\
 \hline
-\texttt{/PORT0}      & \texttt{rn} & 1,1163e-18 & 38,01\,\% \\
-\texttt{/I4/R0}      & \texttt{rn} & 4,4332e-19 & 15,10\,\% \\
-\texttt{/I4/M1}      & \texttt{id} & 3,3144e-19 & 11,29\,\% \\
-\texttt{/PORT1}      & \texttt{rn} & 2,0341e-19 & 6,93\,\% \\
-\texttt{/I4/M1/rg}   & \texttt{rn} & 1,8352e-19 & 6,25\,\% \\
-\texttt{/I5/M8}      & \texttt{id} & 1,3942e-19 & 4,75\,\% \\
-\texttt{/I5/M7}      & \texttt{id} & 1,3928e-19 & 4,74\,\% \\
-\texttt{/I4/R1}      & \texttt{rn} & 1,2410e-19 & 4,23\,\% \\
+\texttt{/PORT0}    & \texttt{rn} & 1{,}1163$\times 10^{-18}$ & 38{,}01\,\% \\
+\texttt{/I4/R0}    & \texttt{rn} & 4{,}4332$\times 10^{-19}$ & 15{,}10\,\% \\
+\texttt{/I4/M1}    & \texttt{id} & 3{,}3144$\times 10^{-19}$ & 11{,}29\,\% \\
+\texttt{/PORT1}    & \texttt{rn} & 2{,}0341$\times 10^{-19}$ & 6{,}93\,\%  \\
+\texttt{/I4/M1/rg} & \texttt{rn} & 1{,}8352$\times 10^{-19}$ & 6{,}25\,\%  \\
+\texttt{/I5/M8}    & \texttt{id} & 1{,}3942$\times 10^{-19}$ & 4{,}75\,\%  \\
+\texttt{/I5/M7}    & \texttt{id} & 1{,}3928$\times 10^{-19}$ & 4{,}74\,\%  \\
+\texttt{/I4/R1}    & \texttt{rn} & 1{,}2410$\times 10^{-19}$ & 4{,}23\,\%  \\
 \hline
-\textbf{Total}       &             & 2,9369e-18 & 100\,\% \\
+\textbf{Total}     &             & 2{,}9369$\times 10^{-18}$ & 100\,\%      \\
 \hline
 \end{tabular}
 \end{table}
+
+A redução do ruído total de $3{,}52 \to 2{,}94 \times 10^{-18}~\text{V}^2/\text{Hz}$ com $N=2$
+reflete diretamente o mecanismo de \textit{admittance scaling}: a contribuição do estágio CS diminui
+em proporção a $1/n$, consistente com a previsão teórica de~\cite{blaakmeer2008}. O aumento da
+percentagem de \texttt{/PORT0} ($32 \to 38~\%$) não indica degradação. Pelo contrário, sinaliza
+que o ruído intrínseco do amplificador recuou e a fonte passou a ser a contribuição dominante, o que
+é o objetivo de design.
 
 \subsubsection{Fator de escala \texorpdfstring{$N = 2{,}75$}{N=2.75}}
 
@@ -453,21 +513,21 @@ do núcleo amplificador primário.
 
 \begin{table}[H]
 \centering
-\caption{Parâmetros de pequenos sinais e pontos de operação DC para $N=2{,}75$ em tecnologia CMOS de 65\,nm.}
+\caption{Parâmetros de pequenos sinais e DC para $N=2{,}75$ em CMOS de 65\,nm.}
 \label{tab:op65_N275}
 \begin{tabular}{lccl}
 \hline
 \textbf{Parâmetro} & \textbf{M4 (CG)} & \textbf{M1 (CS)} & \textbf{Unidade} \\
 \hline
-$g_m$               & 16,69 & 47,28 & mS \\
-$g_{mb}$            & 1,511 & 4,349 & mS \\
-$g_{ds}$            & 1,782 & 6,315 & mS \\
-$I_D$               & 2,590 & 9,201 & mA \\
-$V_{GS}$            & 0,590 & 0,645 & V  \\
-$V_{th}$            & 0,393 & 0,396 & V  \\
-$V_{DS_{\text{sat}}}$ & 166,6 & 170,7 & mV \\
-$f_T$ (\texttt{fug}) & 119,9 & 123   & GHz \\
-Ganho Intrínseco ($g_m/g_{ds}$) & 9,368 & 7,487 & -- \\
+$g_m$                           & 16{,}69 & 47{,}28 & mS \\
+$g_{mb}$                        & 1{,}511 & 4{,}349 & mS \\
+$g_{ds}$                        & 1{,}782 & 6{,}315 & mS \\
+$I_D$                           & 2{,}590 & 9{,}201 & mA \\
+$V_{GS}$                        & 0{,}590 & 0{,}645 & V  \\
+$V_{th}$                        & 0{,}393 & 0{,}396 & V  \\
+$V_{DS_{\text{sat}}}$           & 166{,}6 & 170{,}7 & mV \\
+$f_T$ (\texttt{fug})            & 119{,}9 & 123{,}0 & GHz \\
+Ganho intrínseco ($g_m/g_{ds}$) & 9{,}368 & 7{,}487 & --  \\
 \hline
 \end{tabular}
 \end{table}
@@ -476,31 +536,33 @@ Ganho Intrínseco ($g_m/g_{ds}$) & 9,368 & 7,487 & -- \\
 
 \begin{table}[H]
 \centering
-\caption{Mapeamento e decomposição das principais fontes de contribuição de ruído para $N=2{,}75$ em CMOS de 65\,nm (frequência 
-central de 5\,GHz).}
+\caption{Decomposição das principais contribuições de ruído para $N=2{,}75$ em CMOS de 65\,nm a
+5\,GHz.}
 \label{tab:noise65_N275}
 \begin{tabular}{llrr}
 \hline
-\textbf{Dispositivo} & \textbf{Parâmetro} & \textbf{Potência de Ruído (V\textsuperscript{2}/Hz)} & \textbf{\% do Total} \\
+\textbf{Dispositivo} & \textbf{Parâm.} & \textbf{Potência (V\textsuperscript{2}/Hz)} & \textbf{\% do Total} \\
 \hline
-\texttt{/PORT0}      & \texttt{rn} & 1,0945e-18 & 39,52\,\% \\
-\texttt{/I4/R0}      & \texttt{rn} & 4,4132e-19 & 15,93\,\% \\
-\texttt{/I4/M1}      & \texttt{id} & 2,2652e-19 & 8,18\,\% \\
-\texttt{/PORT1}      & \texttt{rn} & 2,0365e-19 & 7,35\,\% \\
-\texttt{/I4/M1/rg}   & \texttt{rn} & 1,8800e-19 & 6,79\,\% \\
-\texttt{/I5/M8}      & \texttt{id} & 1,3957e-19 & 5,04\,\% \\
-\texttt{/I5/M7}      & \texttt{id} & 1,3944e-19 & 5,03\,\% \\
-\texttt{/I4/R1}      & \texttt{rn} & 8,9288e-20 & 3,22\,\% \\
+\texttt{/PORT0}    & \texttt{rn} & 1{,}0945$\times 10^{-18}$ & 39{,}52\,\% \\
+\texttt{/I4/R0}    & \texttt{rn} & 4{,}4132$\times 10^{-19}$ & 15{,}93\,\% \\
+\texttt{/I4/M1}    & \texttt{id} & 2{,}2652$\times 10^{-19}$ & 8{,}18\,\%  \\
+\texttt{/PORT1}    & \texttt{rn} & 2{,}0365$\times 10^{-19}$ & 7{,}35\,\%  \\
+\texttt{/I4/M1/rg} & \texttt{rn} & 1{,}8800$\times 10^{-19}$ & 6{,}79\,\%  \\
+\texttt{/I5/M8}    & \texttt{id} & 1{,}3957$\times 10^{-19}$ & 5{,}04\,\%  \\
+\texttt{/I5/M7}    & \texttt{id} & 1{,}3944$\times 10^{-19}$ & 5{,}03\,\%  \\
+\texttt{/I4/R1}    & \texttt{rn} & 8{,}9288$\times 10^{-20}$ & 3{,}22\,\%  \\
 \hline
-\textbf{Total}       &             & 2,7696e-18 & 100\,\% \\
+\textbf{Total}     &             & 2{,}7696$\times 10^{-18}$ & 100\,\%      \\
 \hline
 \end{tabular}
 \end{table}
 
-Este fator de escala específico materializa a dimensão nominal otimizada selecionada pelo grupo de trabalho. Os dados evidenciam 
-que esta escolha consubstancia um ponto de operação altamente equilibrado entre a minimização da Figura de Ruído global e a 
-simetria de ganho diferencial, corroborando a hipótese analítica de que $N = 2{,}75$ atua como uma solução de engenharia superior 
-às dimensões de escala inteira standard.
+Este é o fator de escala nominal do grupo. Os resultados confirmam que $N=2{,}75$ representa um
+ponto de operação equilibrado: a contribuição de \texttt{/I4/M1 id} desceu para 8{,}18\,\% (contra
+20{,}24\,\% em $N=1$), ao passo que a percentagem de \texttt{/PORT0} atingiu 39{,}52\,\%, sinal de
+que o amplificador se aproxima do seu limite de ruído mínimo. Simultaneamente, a contribuição
+crescente de \texttt{/I4/M1/rg} (6{,}79\,\%) começa a sinalizar o regime em que o ruído resistivo
+de porta começa a limitar o benefício marginal de incrementar $N$ ainda mais.
 
 \subsubsection{Fator de escala \texorpdfstring{$N = 3{,}5$}{N=3.5}}
 
@@ -508,21 +570,21 @@ simetria de ganho diferencial, corroborando a hipótese analítica de que $N = 2
 
 \begin{table}[H]
 \centering
-\caption{Parâmetros de pequenos sinais e pontos de operação DC para $N=3{,}5$ em tecnologia CMOS de 65\,nm.}
+\caption{Parâmetros de pequenos sinais e DC para $N=3{,}5$ em CMOS de 65\,nm.}
 \label{tab:op65_N35}
 \begin{tabular}{lccl}
 \hline
 \textbf{Parâmetro} & \textbf{M4 (CG)} & \textbf{M1 (CS)} & \textbf{Unidade} \\
 \hline
-$g_m$               & 16,69 & 59,77 & mS \\
-$g_{mb}$            & 1,511 & 5,483 & mS \\
-$g_{ds}$            & 8,071 & 8,071 & mS \\
-$I_D$               & 2,590 & 11,77 & mA \\
-$V_{GS}$            & 0,590 & 0,645 & V  \\
-$V_{th}$            & 0,393 & 0,396 & V  \\
-$V_{DS_{\text{sat}}}$ & 166,6 & 164,8 & mV \\
-$f_T$ (\texttt{fug}) & 119,9 & 122,3 & GHz \\
-Ganho Intrínseco ($g_m/g_{ds}$) & 9,368 & 7,405 & -- \\
+$g_m$                           & 16{,}69 & 59{,}77 & mS \\
+$g_{mb}$                        & 1{,}511 & 5{,}483 & mS \\
+$g_{ds}$                        & 1{,}782 & 8{,}071 & mS \\
+$I_D$                           & 2{,}590 & 11{,}77 & mA \\
+$V_{GS}$                        & 0{,}590 & 0{,}645 & V  \\
+$V_{th}$                        & 0{,}393 & 0{,}396 & V  \\
+$V_{DS_{\text{sat}}}$           & 166{,}6 & 164{,}8 & mV \\
+$f_T$ (\texttt{fug})            & 119{,}9 & 122{,}3 & GHz \\
+Ganho intrínseco ($g_m/g_{ds}$) & 9{,}368 & 7{,}405 & --  \\
 \hline
 \end{tabular}
 \end{table}
@@ -531,75 +593,97 @@ Ganho Intrínseco ($g_m/g_{ds}$) & 9,368 & 7,405 & -- \\
 
 \begin{table}[H]
 \centering
-\caption{Mapeamento e decomposição das principais fontes de contribuição de ruído para $N=3{,}5$ em CMOS de 65\,nm (frequência 
-central de 5\,GHz).}
+\caption{Decomposição das principais contribuições de ruído para $N=3{,}5$ em CMOS de 65\,nm a
+5\,GHz.}
 \label{tab:noise65_N35}
 \begin{tabular}{llrr}
 \hline
-\textbf{Dispositivo} & \textbf{Parâmetro} & \textbf{Potência de Ruído (V\textsuperscript{2}/Hz)} & \textbf{\% do Total} \\
+\textbf{Dispositivo} & \textbf{Parâm.} & \textbf{Potência (V\textsuperscript{2}/Hz)} & \textbf{\% do Total} \\
 \hline
-\texttt{/PORT0}      & \texttt{rn} & 1,0717e-18 & 40,09\,\% \\
-\texttt{/I4/R0}      & \texttt{rn} & 4,3890e-19 & 16,42\,\% \\
-\texttt{/PORT1}      & \texttt{rn} & 2,0381e-19 & 7,63\,\% \\
-\texttt{/I4/M1/rg}   & \texttt{rn} & 1,9600e-19 & 7,33\,\% \\
-\texttt{/I4/M1}      & \texttt{id} & 1,6755e-19 & 6,27\,\% \\
-\texttt{/I5/M8}      & \texttt{id} & 1,3967e-19 & 5,23\,\% \\
-\texttt{/I5/M7}      & \texttt{id} & 1,3955e-19 & 5,22\,\% \\
-\texttt{/I4/R1}      & \texttt{rn} & 6,8915e-20 & 2,58\,\% \\
+\texttt{/PORT0}    & \texttt{rn} & 1{,}0717$\times 10^{-18}$ & 40{,}09\,\% \\
+\texttt{/I4/R0}    & \texttt{rn} & 4{,}3890$\times 10^{-19}$ & 16{,}42\,\% \\
+\texttt{/PORT1}    & \texttt{rn} & 2{,}0381$\times 10^{-19}$ & 7{,}63\,\%  \\
+\texttt{/I4/M1/rg} & \texttt{rn} & 1{,}9600$\times 10^{-19}$ & 7{,}33\,\%  \\
+\texttt{/I4/M1}    & \texttt{id} & 1{,}6755$\times 10^{-19}$ & 6{,}27\,\%  \\
+\texttt{/I5/M8}    & \texttt{id} & 1{,}3967$\times 10^{-19}$ & 5{,}23\,\%  \\
+\texttt{/I5/M7}    & \texttt{id} & 1{,}3955$\times 10^{-19}$ & 5{,}22\,\%  \\
+\texttt{/I4/R1}    & \texttt{rn} & 6{,}8915$\times 10^{-20}$ & 2{,}58\,\%  \\
 \hline
-\textbf{Total}       &             & 2,6729e-18 & 100\,\% \\
+\textbf{Total}     &             & 2{,}6729$\times 10^{-18}$ & 100\,\%      \\
 \hline
 \end{tabular}
 \end{table}
 
-\paragraph{Síntese comparativa aos 65\,nm.}
+Em $N=3{,}5$, a contribuição de \texttt{/I4/M1/rg} supera pela primeira vez a de \texttt{/I4/M1 id}
+(7{,}33\,\% vs.\ 6{,}27\,\%), assinalando que o ruído resistivo de porta se tornou o mecanismo
+intrínseco dominante ao transístor. Este cruzamento define o limite prático de rendimento marginal
+do aumento de $N$: incrementos adicionais de escala geométrica reduzem o ruído térmico de canal mas
+aumentam o ruído de porta em proporção similar, anulando o benefício teórico.
 
-A Tabela~\ref{tab:comp65} estabelece uma plataforma de comparação quantitativa do desempenho do circuito variando parametricamente 
-o fator de escala geométrico $N$. O ruído total indicado corresponde ao valor ponderado de \textit{spot noise} extraído à 
-frequência de calibração de 5\,GHz.
+\paragraph{Síntese comparativa dos 65\,nm.}
+
+A Tabela~\ref{tab:comp65} consolida as figuras de mérito de ruído dos quatro fatores de escala,
+permitindo uma leitura transversal da evolução do desempenho.
 
 \begin{table}[H]
 \centering
-\caption{Análise comparativa das figuras de mérito em função do fator de escala $N$ para o nó tecnológico CMOS de 65\,nm.}
+\caption{Análise comparativa em função do fator de escala $N$ para CMOS de 65\,nm (5\,GHz).}
 \label{tab:comp65}
 \begin{tabular}{cccccc}
 \hline
-$N$ & $g_m^\text{M1}$ (mS) & $g_{mb}^\text{M1}$ (mS) & $g_{ds}^\text{M1}$ (mS) & Ruído Total (V\textsuperscript{2}/Hz) & \% \texttt{M1/rg} \\
+$N$ & $g_m^{\text{M1}}$ (mS) & $g_{mb}^{\text{M1}}$ (mS) & $g_{ds}^{\text{M1}}$ (mS) &
+Ruído Total (V\textsuperscript{2}/Hz) & \% \texttt{M1/rg} \\
 \hline
-1    & 17,66 & 1,630 & 2,200 & 3.51948e-18 & 5.54 \\
-2    & 34,78 & 3,205 & 4,572 & 2.93689e-18 & 6.25 \\
-2,75 & 47,28 & 4,349 & 6,315 & 2.76958e-18 & 6.79 \\
-3,5  & 59,77 & 5,483 & 8,071 & 2.67285e-18 & 7.33 \\
+1     & 17{,}66 & 1{,}630 & 2{,}198 & $3{,}519 \times 10^{-18}$ & 5{,}54 \\
+2     & 34{,}78 & 3{,}205 & 4{,}572 & $2{,}937 \times 10^{-18}$ & 6{,}25 \\
+2{,}75 & 47{,}28 & 4{,}349 & 6{,}315 & $2{,}770 \times 10^{-18}$ & 6{,}79 \\
+3{,}5 & 59{,}77 & 5{,}483 & 8{,}071 & $2{,}673 \times 10^{-18}$ & 7{,}33 \\
 \hline
 \end{tabular}
 \end{table}
 
-A partir da análise dos dados compilados, constata-se que a manipulação do parâmetro $N$ atua diretamente sobre a impedância de saída de sinal do \textit{buffer}, exercendo uma influência secundária na modulação da densidade espetral de ruído total. Este comportamento justifica-se pelo facto de os transistores ativos do bloco do \textit{buffer} representarem uma fatia contida de menos de 10\,\% da potência total de ruído injetada para as extensões extremas do fator de escala $N$. Adicionalmente, o casamento de impedância de entrada (integralmente governado pelo perfil de polarização estável de M1 e M4) preserva uma excelente constância operativa, o que corrobora a independência de projeto do estágio \textit{common-gate} face às variações dimensionais introduzidas a jusante no bloco de isolor reverso.
+Os dados revelam que o ruído total decresce monotonicamente com $N$, mas com ganho marginal
+decrescente: a redução de $N=1$ para $N=2$ representa uma melhoria de 16\,\%, enquanto de $N=2{,}75$
+para $N=3{,}5$ a melhoria é de apenas 3{,}6\,\%. Este comportamento valida a previsão teórica de que
+a redução de NF segue uma lei de retornos decrescentes com $n$~\cite{blaakmeer2008}. O aumento
+simultâneo da percentagem de \texttt{M1/rg} indica que, para valores de $N$ superiores a 3{,}5, o
+ruído de porta limitaria progressivamente os ganhos obtidos com o escalamento adicional. A estabilidade
+da $Z_{\text{in}}$ ao longo de todos os fatores de escala ($\approx 50~\Omega$) confirma a
+independência do estágio CG face ao dimensionamento do \textit{buffer}.
 
-% ============================================================
+% ==========================================================================
 \subsection{CMOS de 45\,nm}
-% ============================================================
+% ==========================================================================
 
-Na tecnologia nanométrica de 45\,nm, a validade analítica das formulações clássicas de canal longo, descritas anteriormente em~\eqref{eq:gm} e~\eqref{eq:av1}, cessa por completo, revelando-se inadequada para modelar os transistores em RF. O comprimento efetivo de canal nesta tecnologia situa-se na ordem estrita dos 35--40\,nm devido aos efeitos de difusão lateral ($L_{\text{eff}} = L - 2\Delta L_{\text{int}} - \Delta L_x$). Sob a ação de campos elétricos longitudinais de elevada magnitude, os portadores de carga (eletrões) sofrem o fenómeno de **Saturação de Velocidade** ($v_{\text{sat}}$) numa fase muito precoce da condução. Neste regime assintótico, a transcondutância de canal satura, sendo modelada por:
+Na tecnologia de 45\,nm, a validade das formulações analíticas de canal longo~\eqref{eq:gm}
+e~\eqref{eq:av1} cessa por completo. O comprimento efetivo de canal situa-se na ordem dos 35--40\,nm
+($L_{\text{eff}} = L - 2\Delta L_{\text{int}} - \Delta L_x$), um regime em que os portadores de
+carga atingem a velocidade de saturação $v_{\text{sat}}$ a campos elétricos longitudinais
+relativamente baixos. Neste limite assintótico, a transcondutância satura para
 
 \begin{equation}
     g_m \approx W \cdot C_{ox} \cdot v_{\text{sat}},
     \label{eq:gm_vsat}
 \end{equation}
 
-demonstrando uma dependência puramente linear face à largura geométrica $W$ do dispositivo e uma marcada insensibilidade em relação à tensão de \textit{overdrive} de porta $V_{GS}$. Adicionalmente, os efeitos de modulação de canal e confinamento de carga provocam uma elevação drástica da condutância de saída $g_{ds}$ (reduzindo a Tensão de Early para a ordem de $V_A \sim 1{,}5$\,V no modelo preditivo BSIM4). Esta quebra degrada severamente o ganho intrínseco do transístor (*self-gain*, $g_m/g_{ds}$) e introduz desvios significativos nas equações preditivas de $Z_{\text{in}}$. Torna-se, por isso, indispensável que o processo de extração e validação do ponto de funcionamento assente estritamente nos dados numéricos gerados pela simulação do modelo BSIM4, o qual incorpora com elevada fidelidade as matrizes de tunelamento e efeitos quânticos de canal curto.
+tornando-se essencialmente proporcional a $W$ e independente de $V_{GS}$. Simultaneamente, a
+reduzida tensão de Early ($V_A \sim 1{,}5$\,V no modelo BSIM4 em uso, conforme o parâmetro
+\texttt{vearly = 1.494} extraído do \texttt{.op}) eleva significativamente $g_{ds}$, comprimindo o
+ganho intrínseco $g_m/g_{ds}$ e introduzindo desvios não negligenciáveis no cálculo de primeira
+ordem de $Z_{\text{in}}$. A extração de parâmetros deve por isso basear-se exclusivamente nos dados
+do simulador BSIM4.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\textwidth]{IMAGENS/ltspice45nm/CMOS45nm_N1_schematic.png}
-    \caption{Esquemático estrutural do LNA implementado em tecnologia CMOS de 45\,nm para o fator de escala unitário ($N=1$).}
+    \caption{Esquemático do LNA implementado em CMOS de 45\,nm para $N=1$.}
     \label{fig:45nmLNA}
 \end{figure}
 
-Em analogia com o procedimento implementado para o nó de 350\,nm, as características espetrais de ruído e os coeficientes de 
-transmissão foram mapeados a partir das curvas de simulação de pequenos sinais. Os parâmetros óhmicos e condutâncias DC 
-correspondentes foram extraídos dos ficheiros de relatório \texttt{.op} do simulador, dado que o nível de complexidade matemática 
-do modelo BSIM4 impossibilita qualquer aproximação analítica elementar de primeira ordem.
+Em analogia com o procedimento de 350\,nm, o espetro de ruído e os parâmetros S são apresentados via
+curvas de simulação e os parâmetros DC via relatórios \texttt{.op}. Dado que o modelo BSIM4 incorpora
+saturação de velocidade, DIBL, corrente de gate, efeito de substrato e tunelamento de óxido, a
+análise tabelar analítica de primeira ordem seria insuficiente para este nó tecnológico.
 
 \subsubsection{Fator de escala \texorpdfstring{$N = 1$}{N=1}}
 
@@ -615,18 +699,18 @@ do modelo BSIM4 impossibilita qualquer aproximação analítica elementar de pri
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice45nm/CMOS45nm_N1_DCop.png}
-        \caption{Ponto de operação DC do simulador.}
+        \caption{Ponto de operação DC.}
         \label{fig:op45_N1}
     \end{subfigure}
     \vskip\baselineskip
     \begin{subfigure}[c]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice45nm/CMOS45nm_N1_gainSparam.png}
-        \caption{Resposta em frequência dos parâmetros S.}
+        \caption{Parâmetros S em frequência.}
         \label{fig:gain45_N1}
     \end{subfigure}
-    \caption{Análise espetral de ruído, ponto de operação DC e coeficientes de transmissão/reflexão para $N=1$ em tecnologia 
-    CMOS de 45\,nm alinhado à frequência central de 10\,GHz.}
+    \caption{Ruído, ponto de operação DC e parâmetros S para $N=1$ em CMOS de 45\,nm (banda de
+    10\,GHz).}
 \end{figure}
 
 \subsubsection{Fator de escala \texorpdfstring{$N = 2$}{N=2}}
@@ -643,18 +727,17 @@ do modelo BSIM4 impossibilita qualquer aproximação analítica elementar de pri
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice45nm/CMOS45nm_N2_DCop.png}
-        \caption{Ponto de operação DC do simulador.}
+        \caption{Ponto de operação DC.}
         \label{fig:op45_N2}
     \end{subfigure}
     \vskip\baselineskip
     \begin{subfigure}[c]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice45nm/CMOS45nm_N2_gainSparam.png}
-        \caption{Resposta em frequência dos parâmetros S.}
+        \caption{Parâmetros S em frequência.}
         \label{fig:gain45_N2}
     \end{subfigure}
-    \caption{Análise espetral de ruído, ponto de operação DC e coeficientes de transmissão/reflexão para $N=2$ em tecnologia 
-    CMOS de 45\,nm alinhado para a frequência central de 10\,GHz.}
+    \caption{Ruído, ponto de operação DC e parâmetros S para $N=2$ em CMOS de 45\,nm (10\,GHz).}
 \end{figure}
 
 \subsubsection{Fator de escala \texorpdfstring{$N = 2{,}75$}{N=2.75}}
@@ -671,18 +754,18 @@ do modelo BSIM4 impossibilita qualquer aproximação analítica elementar de pri
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice45nm/CMOS45nm_N275_DCop.png}
-        \caption{Ponto de operação DC do simulador.}
+        \caption{Ponto de operação DC.}
         \label{fig:op45_N275}
     \end{subfigure}
     \vskip\baselineskip
     \begin{subfigure}[c]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice45nm/CMOS45nm_N275_gainSparam.png}
-        \caption{Resposta em frequência dos parâmetros S.}
+        \caption{Parâmetros S em frequência.}
         \label{fig:gain45_N275}
     \end{subfigure}
-    \caption{Análise espetral de ruído, ponto de operação DC e coeficientes de transmissão/reflexão para o fator de escala 
-    nominal $N=2{,}75$ em tecnologia CMOS de 45\,nm alinhado para a frequência central de 10\,GHz.}
+    \caption{Ruído, ponto de operação DC e parâmetros S para o fator de escala nominal $N=2{,}75$
+    em CMOS de 45\,nm (10\,GHz).}
 \end{figure}
 
 \subsubsection{Fator de escala \texorpdfstring{$N = 3{,}5$}{N=3.5}}
@@ -699,66 +782,108 @@ do modelo BSIM4 impossibilita qualquer aproximação analítica elementar de pri
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice45nm/CMOS45nm_N35_DCop.png}
-        \caption{Ponto de operação DC do simulador.}
+        \caption{Ponto de operação DC.}
         \label{fig:op45_N35}
     \end{subfigure}
     \vskip\baselineskip
     \begin{subfigure}[c]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{IMAGENS/ltspice45nm/CMOS45nm_N35_gainSparam.png}
-        \caption{Resposta em frequência dos parâmetros S.}
+        \caption{Parâmetros S em frequência.}
         \label{fig:gain45_N35}
     \end{subfigure}
-    \caption{Análise espetral de ruído, ponto de operação DC e coeficientes de transmissão/reflexão para $N=3{,}5$ em tecnologia 
-    CMOS de 45\,nm alinhado para a frequência central de 10\,GHz.}
+    \caption{Ruído, ponto de operação DC e parâmetros S para $N=3{,}5$ em CMOS de 45\,nm (10\,GHz).}
 \end{figure}
 
-% ============================================================
+% ==========================================================================
 \subsection{Comparação dos desempenhos das tecnologias CMOS}
-% ============================================================
+% ==========================================================================
 
-A Tabela~\ref{tab:comp_tecnologias} sintetiza e cruza os parâmetros de desempenho mais relevantes medidos para as três tecnologias 
-CMOS sob o fator de escala de referência fixado em $N = 2{,}75$. Considerando que o consumo energético é calculado a partir de
-
-\begin{equation}
-    P_D = V_{DD} \times \sum_{1}^{N_{M,V_{DD}}} I_D
-\end{equation}
-
-em que os valores para a equação se encontram nas figuras~\ref{fig:op350_N275}, \ref{fig:op45_N275} e os .op extraídos do Cadence para a tecnologia de 65nm. 
+A Tabela~\ref{tab:comp_tecnologias} apresenta os parâmetros de desempenho globais medidos para as
+três tecnologias ao fator de escala de referência $N = 2{,}75$. A potência consumida é calculada
+conforme~\eqref{eq:pd}, com os valores de $I_D$ extraídos das Figuras~\ref{fig:op350_N275}
+e~\ref{fig:op45_N275} e dos dados \texttt{.op} do Cadence para 65\,nm.
 
 \begin{table}[H]
 \centering
-\caption{Matriz comparativa de desempenho global entre os nós tecnológicos CMOS para o ponto operativo $N = 2{,}75$.}
+\caption{Comparação de desempenho entre os três nós tecnológicos CMOS para $N = 2{,}75$.}
 \label{tab:comp_tecnologias}
 \begin{tabular}{lcccc}
 \hline
-\textbf{Parâmetro}        & \textbf{350\,nm} & \textbf{65\,nm} & \textbf{45\,nm} & \textbf{Unidade} \\
+\textbf{Parâmetro}       & \textbf{350\,nm} & \textbf{65\,nm} & \textbf{45\,nm} & \textbf{Unidade} \\
 \hline
-Potência Consumida         & 18,83     &  17,40   & 6,338    & mW \\
-Ganho ($S_{21}$)           & 10,53     & 7,378   & 2,012    & dB \\
-Ruído Total                & 5,17038e-18      & 2.76958e-18 & 2,93664e-18 & V\textsuperscript{2}/Hz \\
-\hline,
+$V_{DD}$                 & 3{,}0 & 1{,}2 & 1{,}0 & V \\
+Potência Consumida       & 18{,}83 & 17{,}40 & 6{,}338 & mW \\
+Ganho ($S_{21}$)         & 10{,}53 & 7{,}378 & 2{,}012 & dB \\
+Ruído Total              & $5{,}170 \times 10^{-18}$ & $2{,}770 \times 10^{-18}$ & $2{,}937 \times 10^{-18}$ & V\textsuperscript{2}/Hz \\
+Banda de operação        & 0{,}1--2 & 5 & 10 & GHz \\
+\hline
 \end{tabular}
 \end{table}
 
-A análise comparativa entre os nós tecnológicos coloca em evidência as tendências fundamentais da física de semicondutores 
-amplamente documentadas na literatura analógica. À medida que o comprimento nominal do canal encolhe, a frequência de transição 
-$f_T$ experimenta uma subida substancial, reflexo direto da redução drástica das capacidades parasitas intrínsecas dos terminais 
-ativos. Esta aceleração é altamente vantajosa para a operação na banda de micro-ondas e RF de alta frequência. 
+A análise comparativa revela também que com a redução da dimensão da tecnologia, 
+a frequência de transição $f_T$ aumenta substancialmente como consequência direta da redução das 
+capacidades parasitas intrínsecas $C_{gs}$ e $C_{gd}$, tornando os transístores progressivamente 
+mais adequados para operação em bandas de micro-ondas.
 
-Contudo, este benefício é severamente contrabalançado pela degradação do ganho intrínseco ($g_m/g_{ds}$), ditado pelo acoplamento 
-eletrostático imperfeito do canal, e pelo incremento expressivo da condutância de substrato ($g_{mb}$). Em termos práticos, a 
-relevância assumida por $g_{mb}$ nos nós de 65\,nm e 45\,nm redesenha por completo o cálculo de $Z_{\text{in}}$, como formulado 
-em~\eqref{eq:zin_65nm}. A consequência direta é que o casamento de entrada deixa de estar indexado em exclusivo à variável $g_m$, 
-exigindo o controlo rigoroso do efeito de corpo.
+Contudo, este benefício é acompanhado de compromissos severos. A degradação do ganho intrínseco
+$g_m/g_{ds}$, que passa de valores da ordem de 100--200 em 350\,nm para 7--9 em 65\,nm e valores
+ainda inferiores em 45\,nm, reflete o aumento de $g_{ds}$ com o encurtamento do canal. Este fenómeno impacta 
+diretamente o ganho disponível do LNA e a robustez do casamento de impedâncias. Em paralelo, o peso crescente 
+de $g_{mb}$ nos nós mais avançados altera a relação entre $g_m$ e $Z_{\text{in}}$, conforme~\eqref{eq:zin_eta}, 
+tornando a adaptação de entrada mais sensível à variabilidade de processo.
 
-Sob a perspetiva da modelação do ruído, a contração da tensão de alimentação ($V_{DD}$) associada a uma maior densidade de 
-corrente eleva o ruído térmico induzido no dreno (\textit{channel thermal noise}). Em simultâneo, o ruído resistivo induzido na porta 
-(governado por $r_g$) escala de importância devido à diminuição da espessura física do óxido e da largura dos dedos de polissilício. 
-A Figura de Ruído total do LNA balun passa a ser condicionada por imperfeições e acoplamentos internos que eram estatisticamente
-irrelevantes na tecnologia madura de canal longo de 350\,nm.
+Do ponto de vista do ruído, a redução de $V_{DD}$ e o aumento da densidade de corrente favorecem o
+ruído térmico de canal, enquanto o ruído resistivo de porta ($r_g$) ganha expressão com a miniaturização
+dos dedos de polissilício. A figura de ruído global passa a ser limitada por mecanismos intrínsecos ao
+transístor que eram irrelevantes em 350\,nm.
 
-Em suma, a transição para modelos avançados BSIM4 em 45\,nm e 65\,nm dita que o processo clássico de dimensionamento em papel se 
-torne um vetor puramente indicativo e inicial. O cumprimento estrito das metas de projeto, especificamente $Z_{\text{in}} = 
-50~\Omega$ e imunidade ao ruído, requer necessariamente o recurso a fluxos de simulação iterativos assistidos por computador, 
-calibrando as geometrias face às condutâncias parasitas não-lineares reportadas pelo simulador.
+A inversão observada entre 65\,nm e 45\,nm no ruído total ($2{,}770 \to 2{,}937 \times 10^{-18}$) é
+particularmente relevante: apesar de o nó de 45\,nm ser tecnologicamente mais avançado, o maior peso
+de $g_{ds}$, a degradação do ganho e o aumento relativo do ruído de canal em regime de saturação de
+velocidade resultam num desempenho de ruído marginalmente inferior ao de 65\,nm nestas condições de
+polarização. Este resultado sublinha que a simples transição para um nó mais avançado não garante
+automaticamente melhor desempenho em RF, já que a otimização de polarização e de dimensionamento torna-se
+cada vez mais crítica e dependente de iterações de simulação.
+
+Em suma, a transição para modelos BSIM4 em 45\,nm e 65\,nm dita que o processo de dimensionamento
+analítico se torne meramente indicativo. O cumprimento estrito das especificações do projeto, com
+$S_{11} < -10~\text{dB}$, $S_{22} < -10~\text{dB}$, $F < 3~\text{dB}$, ganho $> 10~\text{dB}$, que 
+requer fluxos de simulação iterativos, calibrando as geometrias face às condutâncias parasitas
+reportadas pelo simulador.
+
+% ==========================================================================
+\subsection{Comparação entre o Design Bipolar (BFP420) e as Tecnologias CMOS}
+\label{sub:comparacao_bipolar_cmos}
+% ==========================================================================
+
+A transição do LNA com transístor bipolar BFP420 para as implementações em tecnologia CMOS evidencia
+os compromissos clássicos de engenharia de RF entre topologias discretas de alto desempenho e
+arquiteturas integradas em larga escala.
+
+\textbf{Adaptação de impedâncias.} No LNA BFP420, a adaptação a $50~\Omega$ exigiu o dimensionamento
+explícito de redes passivas externas ($LC$ ou linhas de transmissão com \textit{stubs}), calculadas
+com o auxílio da Carta de Smith e refinadas no Cadence. Na topologia CMOS de Blaakmeer, a adaptação
+de entrada é realizada de forma ativa e intrínseca, controlando a corrente de polarização $I_{\text{bias}}$
+para ajustar $g_m$, sem redes passivas volumosas. Esta característica confere à solução CMOS uma
+largura de banda de operação inerentemente superior, cobrindo simultaneamente as bandas de 100\,MHz a
+2\,GHz (350\,nm), 5\,GHz (65\,nm) e 10\,GHz (45\,nm).
+
+\textbf{Ganho e figura de ruído.} O LNA BFP420 otimizado no Cadence atingiu um ganho de 10{,}15\,dB
+e uma NF de 2{,}26\,dB a 6\,GHz, próximo do $NF_{\text{min}}$ do transístor. As topologias CMOS,
+com o mecanismo de \textit{admittance scaling} e cancelamento de ruído, permitem controlar a NF
+através de $N$, mas operam com ganho tipicamente mais reduzido para os nós menores, especialmente em
+45\,nm onde o ganho intrínseco $g_m/g_{ds}$ é severamente comprimido.
+
+\textbf{Efeitos de escala e nós tecnológicos.} O BFP420, sendo um transístor discreto de alta
+frequência para uma banda estreita (6\,GHz), opera próximo do seu limite de estabilidade, exigindo
+correntes elevadas para garantir $K > 1$. As tecnologias CMOS demonstraram forte dependência do fator
+$N$ e dos efeitos de canal curto: a transição de 350\,nm para 45\,nm aumenta $f_T$, mas introduz
+compromissos em ganho, linearidade e sensibilidade do ponto de polarização à variabilidade de processo.
+
+\textbf{Integração e área.} A solução CMOS integrada ocupa uma área de \textit{die} muito inferior à
+solução discreta, elimina os indutores externos e é compatível com processos CMOS digitais padrão.
+O \textit{balun} ativo integrado substitui um componente passivo volumoso e intrinsecamente de banda
+estreita, sendo esta uma das principais vantagens estruturais da arquitetura proposta por Blaakmeer
+\textit{et al.}~\cite{blaakmeer2008} e posteriormente validada com cargas ativas por Bastos
+\textit{et al.}~\cite{bastos2014}.
