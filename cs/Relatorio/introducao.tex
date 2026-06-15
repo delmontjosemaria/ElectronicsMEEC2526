@@ -1,0 +1,50 @@
+% ==============================================
+% SEÇÃO: INTRODUÇÃO
+% ==============================================
+\section{Introdução}
+\label{sec:introducao}
+
+A conversão de sinais analógicos para digitais é um dos pilares fundamentais dos sistemas modernos de
+aquisição e processamento de informação. Entre as várias arquiteturas disponíveis, os moduladores
+Sigma-Delta ($\Sigma\Delta$) destacam-se pela sua elevada resolução e eficiência na conversão de sinais de
+baixa frequência, sendo a escolha de eleição para aplicações de áudio e voz. Estes conversores operam com
+quantização de baixíssima resolução (tipicamente 1 bit), limitação que é compensada pelo uso de uma elevada
+taxa de sobamostragem (Oversampling Ratio - OSR) e por técnicas de formatação de ruído (Noise Shaping), que
+deslocam a energia do ruído de quantização para altas frequências, fora da banda útil do sinal.
+
+Neste trabalho é estudado, modelado e simulado um canal de conversão A/D focado na gama de voz, com uma
+largura de banda de 20 kHz e uma tensão máxima de entrada de 1 Vrms, conforme ilustrado no diagrama de
+blocos da Figura seguinte.
+
+\vspace{0.5cm}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/Diagrama_de_blocos_AD.png}
+    \caption{Diagrama de blocos do canal de conversão A/D a ser modelado e simulado.}
+    \label{fig:diagrama_blocos}
+\end{figure}
+
+O núcleo deste sistema de conversão é um modulador $\Sigma\Delta$ de segunda ordem. 
+Esta arquitetura está estruturada com base em dois integradores em cascata seguidos por um
+quantizador de 1 bit, utilizando realimentação para garantir a estabilidade da malha e a
+eficácia da filtragem espacial do ruído.
+
+\vspace{0.5cm}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/Diagrama_de_blocos_modulador.png}
+    \caption{Diagrama de blocos do modulador $\Sigma\Delta$.}
+    \label{fig:diagrama_blocos_modulador}
+\end{figure}
+
+
+O desempenho do sistema é avaliado através da métrica SNDR (Signal-to-Noise and Distortion Ratio), obtida via
+análise espetral (FFT) do fluxo de bits de saída. Numa fase posterior, o processamento digital é completado
+através da passagem do sinal binário por um filtro digital passa-baixo de decimação - implementado como um
+filtro de 3ª ordem - de modo a atenuar o ruído de alta frequência e reduzir a taxa de amostragem
+para o limite de Nyquist.
+
+Por fim, o trabalho explora a degradação e os limites do conversor, avaliando o impacto do ganho finito
+dos AMPOP's e extraindo a Gama Dinâmica (DR) do sistema, através do varrimento
+da amplitude do sinal de entrada. Esta análise permite aferir não só a resolução efetiva máxima do modulador,
+mas também a sua robustez face a sinais de baixa potência.

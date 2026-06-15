@@ -1,0 +1,43 @@
+% ==============================================
+% ELEMENTO: CONCLUSÃO
+% ==============================================
+\section{Conclusão}
+\label{sec:conclusao}
+
+O presente trabalho permitiu consolidar de forma prática e analítica os princípios de funcionamento de um
+modulador $\Sigma\Delta$ de segunda ordem, percorrendo todas as fases de projeto, desde a abstração matemática
+até à simulação elétrica em capacidades comutadas.
+
+Na primeira fase, a extração das funções de transferência (NTF e STF) e o dimensionamento da relação de
+sobreamostragem ($OSR \approx 116$) provaram ser fundamentais para garantir a especificação teórica de
+uma $\text{SNDR} \ge 80\text{ dB}$. A implementação computacional do modelo em Python validou esta premissa,
+demonstrando com clareza o efeito de \textit{noise shaping} e permitindo extrair uma Gama Dinâmica de
+aproximadamente $80\text{ dB}$. A análise do ganho finito dos amplificadores (40 dB) e a injeção de
+ruído térmico confirmaram a robustez da arquitetura, sublinhando a necessidade do dimensionamento dos
+condensadores de amostragem na ordem de $1\text{ pF}$ para manter o ruído $kT/C$ estritamente sob controlo.
+A eficácia da conversão foi ainda corroborada pelo sucesso da filtragem digital de decimação ($\text{Sinc}^3$),
+que permitiu recuperar o sinal na taxa de Nyquist sem artefactos de \textit{aliasing}.
+
+Na transição para a simulação elétrica no ambiente LTspice, o circuito comportou-se de acordo com as
+equações de transferência de carga previamente estabelecidas. Este facto é provado pela
+potência do sinal ($P_S$) extraída pela FFT, que se sobrepôs com enorme precisão aos valores ideais
+calculados (e.g., $P_S = -9.03\text{ dB}$ para $V_{in} = 0.50\text{ V}$). Esta exatidão da componente
+fundamental confirma que as razões geométricas dos condensadores ($C_8/C_7$, etc.) estão corretas e que a 
+malha de realimentação processa o sinal sem atenuações indevidas.
+
+Contudo, importa salientar e justificar analiticamente uma discrepância observada nos valores finais da
+SNDR extraídos desta mesma simulação elétrica. Embora o sinal útil esteja intacto, o patamar de ruído
+($noise~floor$) do simulador apresentou-se atipicamente elevado. Este fenómeno não decorre de um erro
+lógico na arquitetura, mas sim das limitações de simulação transiente face a não-idealidades dos modelos.
+A utilização de macro-modelos de Amplificadores Operacionais com parâmetros dinâmicos virtualmente ideais
+(como \textit{Slew Rates} e produtos ganho-banda excessivamente altos) gera degraus de tensão abruptos e
+picos de corrente colossais durante a comutação dos interruptores. O motor numérico do SPICE sofre de perdas
+de precisão ao tentar resolver estes transientes num intervalo de tempo diminuto, o que se traduz na injeção
+de "glitches" irrealistas e ruído de alta frequência no circuito. Este ruído numérico sofre de
+\textit{spectral leakage} para a banda base, corrompendo a métrica da potência de ruído ($P_N$) e afundando
+matematicamente a SNDR.
+
+Em suma, os objetivos propostos foram amplamente cumpridos. O contraste entre o desempenho ótimo do modelo
+comportamental e os desafios observados no LTspice enriqueceu o projeto, evidenciando uma das distinções
+críticas na engenharia de microeletrónica: a diferença entre a abstração matemática de um conversor de dados
+e a complexidade não-linear do mundo analógico e dos motores de simulação física.

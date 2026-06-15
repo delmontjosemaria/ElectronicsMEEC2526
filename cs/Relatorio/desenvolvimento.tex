@@ -1,0 +1,754 @@
+% ==============================================
+% ELEMENTO: DESENVOLVIMENTO
+% ==============================================
+\section{Desenvolvimento}
+\label{sec:desenvolvimento}
+
+% ----- Alinea a) -----
+\subsection{Contas Teóricas}
+\subsubsection{Dedução da NTF e STF}
+
+O primeiro passo deste trabalho é deduzir as funções de transferência de ruído (NTF) e de sinal (STF) do
+sistema $\Sigma\Delta$ de segunda ordem apresentado no enunciado.
+Para isso, iniciaremos a análise a partir do diagrama de blocos fornecido, utilizando as relações entre os
+sinais em cada estágio do sistema.
+
+\textbf{Equações iniciais do diagrama de blocos:}
+\begin{align*}
+    V_{out1} &= (V_{in} - b_1 V_{out}) \frac{k_1 z^{-1}}{1 - \beta z^{-1}} \\
+    V_{out2} &= (V_{out1} - b_2 V_{out}) \frac{k_2 z^{-1}}{1 - \beta z^{-1}} \\
+    V_{out}  &= V_{NQ} + V_{out2}
+\end{align*}
+
+Com estas equaç~eos separadas, vamos juntá-las para osbter o $V_{out}$ em função de $V_{in}$ e $V_{NQ}$, o que nos
+permitirá deduzir as funções de transferência desejadas.
+
+\textbf{Substituição e desenvolvimento algébrico:}
+\[
+V_{out} = V_{NQ} + \left[ (V_{in} - b_1 V_{out}) \frac{k_1 z^{-1}}{1 - \beta z^{-1}} - b_2 V_{out} \right] \frac{k_2 z^{-1}}{1 - \beta z^{-1}} \iff
+\]
+
+\begin{align*}
+    &\iff V_{out} = V_{NQ} + \left( V_{in} \frac{k_1 z^{-1}}{1 - \beta z^{-1}} - b_1 V_{out} \frac{k_1 z^{-1}}{1 - \beta z^{-1}} - b_2 V_{out} \right) \frac{k_2 z^{-1}}{1 - \beta z^{-1}} \\[1.5ex]
+    &\iff V_{out} = V_{NQ} + \left( V_{in} \frac{k_1 z^{-1}}{1 - \beta z^{-1}} - V_{out} \left( \frac{b_1 k_1 z^{-1}}{1 - \beta z^{-1}} + b_2 \right) \right) \frac{k_2 z^{-1}}{1 - \beta z^{-1}} \\[1.5ex]
+    &\iff V_{out} = V_{NQ} + V_{in} \frac{k_1 k_2 z^{-2}}{(1 - \beta z^{-1})^2} - V_{out} \frac{b_1 k_1 k_2 z^{-2}}{(1 - \beta z^{-1})^2} - V_{out} \frac{b_2 k_2 z^{-1}}{1 - \beta z^{-1}} \\[1.5ex]
+    &\iff V_{out} (1 - \beta z^{-1})^2 = V_{NQ} (1 - \beta z^{-1})^2 + V_{in} k_1 k_2 z^{-2} - V_{out} b_1 k_1 k_2 z^{-2} - V_{out} (b_2 k_2 z^{-1})(1 - \beta z^{-1}) \\[1.5ex]
+    &\iff V_{out} \left[ (1 - \beta z^{-1})^2 + b_1 k_1 k_2 z^{-2} + (b_2 k_2 z^{-1})(1 - \beta z^{-1}) \right] = V_{NQ} (1 - \beta z^{-1})^2 + V_{in} k_1 k_2 z^{-2} \\[1.5ex]
+\end{align*}
+
+Assim, ficamos com:
+\begin{align*}
+    &V_{out} = V_{NQ} \frac{(1 - \beta z^{-1})^2}{(1 - \beta z^{-1})^2 + b_1 k_1 k_2 z^{-2} + (b_2 k_2 z^{-1})(1 - \beta z^{-1})} + V_{in} \frac{k_1 k_2 z^{-2}}{(1 - \beta z^{-1})^2 + b_1 k_1 k_2 z^{-2} + (b_2 k_2 z^{-1})(1 - \beta z^{-1})} \\[1.5ex]
+\end{align*}
+
+\textbf{Funções de Transferência Finais:}
+\begin{align*}
+    NTF\big|_{V_{in}=0} &= \frac{(1 - \beta z^{-1})^2}{(1 - \beta z^{-1})^2 + k_1 k_2 b_1 z^{-2} + b_2 k_2 z^{-1} - b_2 k_2 \beta z^{-2}} \\[2ex]
+    STF\big|_{V_{NQ}=0} &= \frac{k_1 k_2 z^{-2}}{(1 - \beta z^{-1})^2 + k_1 k_2 b_1 z^{-2} + b_2 k_2 z^{-1} - b_2 k_2 \beta z^{-2}}
+\end{align*}
+
+% ----- Alinea b) -----
+\vspace{0.5cm}
+\subsubsection{Dedução da quantization noise power}
+Para obtermos a expressão da potência do ruído de quantização à saída do modulador se esta saída
+($d_{out}$) for filtrada por um filtro passa-baixo ideal com uma frequência de corte igual a $B$, consideramos os seguintes valroes:
+
+\begin{center}
+    $\beta = 1$, $h_1 = h_2 = 1$, $b_1 = 1$ e $b_2 = 2$
+\end{center}
+
+e ficamos com as seguintes função de transferência para o ruído de quantização:
+
+\[ NTF(z) = \frac{(1 - z^{-1})^2}{(1 - z^{-1})^2 + z^{-2} + 2z^{-1} - 2z^{-2}} \]
+
+\[ NTF(z) = \frac{(1 - z^{-1})^2}{1 - 2z^{-1} + z^{-2} + z^{-2} + 2z^{-1} - 2z^{-2}} = (1 - z^{-1})^2 \]
+
+Para calcular-mos a potência do ruído de quantização filtrado, precisamos integrar a densidade espectral de
+potência do ruído de quantização multiplicada pelo módulo ao quadrado da função de transferência de ruído (NTF) sobre a banda útil $[-B, B]$.
+A densidade espetral de potência do ruído de quantização original é dada por:
+\[ S_{NQ}(f) = \frac{V_{NQ}^2}{f_s} \implies \text{Como } V_{NQ}^2 = \frac{V_{LSB}^2}{12} \implies S_{NQ}(f) = \frac{V_{LSB}^2}{12f_s} \]
+
+Substituindo na equação da potência de ruído na banda útil $[-B, B]$ com $z = e^{j\frac{2\pi f}{f_s}}$:
+
+\[ V_{Qf(rms)}^2 = \int_{-B}^{B} S_{NQ}(f) \cdot |NTF(f)|^2 \, df \]
+
+\[ V_{Qf(rms)}^2 = \int_{-B}^{B} \frac{V_{LSB}^2}{12f_s} \cdot \left| (1 - z^{-1})^2 \right|^2 \, df \]
+
+\[ V_{Qf(rms)}^2 = \int_{-B}^{B} \frac{V_{LSB}^2}{12f_s} \cdot \left| 1 - e^{-j\frac{2\pi f}{f_s}} \right|^4 \, df \]
+
+Aplicando a aproximação por série de Taylor para a exponencial ($e^x \approx 1 + x$ quando $f \ll f_s$):
+\[ 1 - e^{-j\frac{2\pi f}{f_s}} \approx 1 - \left(1 - j\frac{2\pi f}{f_s}\right) = j\frac{2\pi f}{f_s} \]
+
+Desenvolvendo o módulo elevado à quarta potência:
+\[ \left| j\frac{2\pi f}{f_s} \right|^4 = \left(\frac{2\pi f}{f_s}\right)^4 = \frac{16\pi^4 f^4}{f_s^4} \]
+
+Substituindo este resultado de volta na função integral com alinhamento puramente central:
+
+\begin{gather*}
+    \iff V_{Qf}^2 = \int_{-B}^{B} \frac{V_{LSB}^2}{12f_s} \cdot \frac{16\pi^4 f^4}{f_s^4} \, df \\[2ex]
+    \iff V_{Qf}^2 = \frac{V_{LSB}^2}{12f_s} \cdot \frac{16\pi^4}{f_s^4} \int_{-B}^{B} f^4 \, df \\[2ex]
+    \iff V_{NQ}^2 = \frac{V_{LSB}^2}{12f_s} \cdot \frac{16\pi^4}{f_s^4} \cdot \left[ \frac{f^5}{5} \right]_{-B}^{B} \\[2ex]
+    \iff V_{NQ}^2 = \frac{V_{LSB}^2}{12f_s} \cdot \frac{16\pi^4}{f_s^4} \cdot \left( \frac{B^5}{5} - \left(-\frac{B^5}{5}\right) \right) \\[2ex]
+    \iff V_{NQ}^2 = \frac{V_{LSB}^2}{12f_s} \cdot \frac{16\pi^4}{f_s^4} \cdot \frac{2B^5}{5} \\[2ex]
+    \iff V_{NQ}^2 = \frac{V_{LSB}^2 \cdot 16\pi^4 \cdot 2B^5}{60 f_s^5}
+\end{gather*}
+
+Definindo a relação de sobreamostragem ($OSR$):
+\[ OSR = \frac{f_s}{2B} \iff \frac{1}{OSR} = \frac{2B}{f_s} \implies \frac{1}{OSR^5} = \frac{32B^5}{f_s^5} \]
+
+Reorganizando os coeficientes da nossa expressão final para isolar este termo:
+
+\[ V_{NQ}^2 = \frac{V_{LSB}^2 \cdot \pi^4}{60} \cdot \left(\frac{32B^5}{f_s^5}\right) \]
+
+\[ \iff V_{NQ}^2 = \frac{V_{LSB}^2 \cdot \pi^4}{60} \cdot \frac{1}{OSR^5} \]
+
+
+% ----- Alinea c) -----
+\vspace{0.5cm}
+\subsubsection{Dimensionamento do OSR para $SNR \ge 80 \text{ dB}$}
+Usando a expressão obtida para a potência do ruído de quantização filtrado, podemos agora determinar o valor
+mínimo de $OSR$ necessário para garantir que a relação sinal-ruído (SNR) seja maior ou igual a 80 dB,
+considerando as condições de entrada e banda especificadas.
+
+\textbf{Dados iniciais:}
+\[ SNR \ge 80 \text{ dB}, \quad V_{in} = \frac{V_R}{2}, \quad B = 20 \text{ kHz}, \quad P_{Na} = 3 \times P_{NQ}\]
+
+A relação da potência do sinal com o ruído total (de quantização $P_{NQ}$ e térmico $P_{Na}$) é dada por:
+\[ SNR = 10 \log_{10} \left( \frac{P_s}{P_{Na} + P_{Nt}} \right) \]
+
+Considerando a especificação do problema $P_{Na} = 3 \times P_{NQ}$, o ruído total passa a ser $4 P_{NQ}$:
+\[ SNR = 10 \log_{10} \left( \frac{P_s}{4 P_{NQ}} \right) \]
+
+\[ \iff 80 = 10 \log_{10} \left( \frac{P_s}{4 P_{NQ}} \right) \]
+
+A potência do sinal sinusoidal de entrada $P_s$ é:
+\[ P_s = \frac{V_{in}^2}{2} \iff P_s = \frac{\left(\frac{V_R}{2}\right)^2}{2} \]
+
+Substituindo $P_s$ e a expressão de $P_{NQ}$ deduzida anteriormente:
+\[ 80 = 10 \log_{10} \left( \frac{\frac{\left(\frac{V_R}{2}\right)^2}{2}}{\frac{4 \cdot V_{LSB}^2 \cdot \pi^4}{60 \cdot OSR^5}} \right) \iff 8 = \log_{10} \left( \frac{V_R^2 \cdot 60 \cdot OSR^5}{32 \cdot V_{LSB}^2 \cdot \pi^4} \right) \]
+
+Sabendo que para um quantizador de 1 bit com saídas $+V_R$ ou $-V_R$, a gama dinâmica total define o passo de quantização como $V_{LSB} = 2V_R$:
+\begin{gather*}
+    \iff 8 = \log_{10} \left( \frac{V_R^2 \cdot 60 \cdot OSR^5}{32 \cdot \pi^4 \cdot (2V_R)^2} \right) \\[2ex]
+    \iff 8 = \log_{10} \left( \frac{60 \cdot OSR^5}{32 \cdot \pi^4 \cdot 4} \right) \\[2ex]
+    \iff 10^8 = \frac{60 \cdot OSR^5}{128 \cdot \pi^4} \\[2ex]
+    \iff OSR = \sqrt[5]{\frac{10^8 \cdot 128 \cdot \pi^4}{60}} \\[2ex]
+    \iff OSR \approx 115.753
+\end{gather*}
+
+
+
+% ----- Parâmetros de Simulação Iniciais -----
+\newpage
+\subsection{Simulações}
+\subsubsection{Parâmetros de Simulação Iniciais}
+
+Para a simulação de alto nível do sistema $\Sigma\Delta$ de segunda ordem, foram definidos e calculados os
+parâmetros iniciais ilustrados na Figura \ref{fig:parametros_iniciais}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/parametros_iniciais.png}
+    \caption{Parâmetros de simulação e inicialização de variáveis em Python.}
+    \label{fig:parametros_iniciais}
+\end{figure}
+
+Além dos valores intrínsecos às especificações do projeto e derivados teoricamente nas alíneas anteriores
+(tais como $V_r$, $V_{lsb}$, $V_{amp}$, $B$, $OSR$ e $f_s$), foi prestada especial atenção à definição da
+frequência do sinal de teste e ao vetor de tempo. 
+
+Tendo em conta que o guião sugere um sinal de entrada na ordem de $1\text{ kHz}$, optou-se por implementar
+a técnica de amostragem coerente (\textit{coherent sampling}). O algoritmo desenvolvido calcula o número de
+ciclos inteiros ($k$) mais próximo para a janela de tempo desejada e,
+em seguida, reajusta ligeiramente a frequência de entrada ($f_{in}$) e o próprio número de amostras. 
+
+Este reajuste garante que a sinusoide de teste encaixa perfeitamente no vetor de amostragem, começando e
+acabando exatamente na mesma fase. Este passo é estritamente essencial para maximizar a precisão da
+Transformada Rápida de Fourier (FFT), eliminando na totalidade o fenómeno de fuga espetral (\textit{spectral leakage}) e
+dispensando, nesta fase, o uso de janelas matemáticas (como a de Blackman-Harris).
+
+Como se pode observar pela análise do código, a tradução destes conceitos para o ambiente de simulação foi implementada em quatro blocos lógicos:
+
+\begin{itemize}
+    \item \textbf{Sobreamostragem e Decimação:} Numa primeira fase, definimos a taxa de amostragem ($f_s$)
+    com base na banda ($B$) e no fator $OSR$. Implementamos de imediato o cálculo do fator de decimação
+    (\texttt{D\_decimacao}) e da nova taxa de amostragem (\texttt{fs\_new}) porque estes valores são
+    essenciais para alinhar a resolução temporal com o filtro digital da etapa final do projeto.
+    \vspace{0.2cm}
+    \item \textbf{Amostragem Coerente:} Em vez de definir um número arbitrário de amostras totais,
+    definimos que queremos exatamente 5000 amostras \textit{após} a decimação. Isto define o vetor total
+    $n$ da simulação. De seguida, o algoritmo calcula os ciclos teóricos para $1\text{ kHz}$ e força esse
+    número a ser um inteiro rigoroso (\texttt{k\_new}). Implementamos o recálculo da frequência real
+    (\texttt{fsinal}) de forma inversamente proporcional a este inteiro, porque só assim garantimos que
+    a onda sinusoidal preenche perfeitamente a nossa janela de FFT, sem espalhar energia por múltiplos
+    \textit{bins} espetrais.
+    \vspace{0.2cm}
+    \item \textbf{Parâmetros da Arquitetura:} Atribuímos os valores de hardware da malha de realimentação
+    ($b_1 = 1$, $b_2 = 2$) e definimos a amplitude de teste ($V_{amp} = V_r / 2$). Implementamos esta
+    amplitude específica porque nos garante que o modulador opera na sua zona de excelência linear, com
+    uma margem segura antes de atingir o limite de saturação (\textit{overload}) do quantizador.
+    \vspace{0.2cm}
+    \item \textbf{Injeção de Ruído (\textit{Dither}):} Na geração do vetor temporal do sinal de entrada
+    discreto (\texttt{Vin\_d}), não criamos apenas uma sinusoide pura; adicionamos intencionalmente uma
+    magnitude ínfima de ruído aleatório (\texttt{np.random.randn(n) * (2**-12)}). Implementamos esta adição
+    (\textit{dither}) porque, num simulador puramente matemático, a ausência de ruído térmico pode fazer
+    com que o modulador $\Sigma\Delta$ crie padrões repetitivos e gere tons falsos (\textit{idle tones} e
+    \textit{limit cycles}). O \textit{dither} quebra essa periodicidade, aproximando o nosso modelo digital
+    da realidade física de um circuito eletrónico.
+\end{itemize}
+
+
+% ----- Alinea d) -----
+\vspace{0.2cm}
+\subsubsection{Modelo para o modulador}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/modulador_ideal_codigo.png}
+    \caption{Código do modelo implementado para o modulador.}
+    \label{fig:modulador_codigo_ideal}
+\end{figure}
+
+Com base no diagrama de blocos do modulador,
+procedeu-se primeiramente à extração das equações para cada estágio do sistema. Considerando o
+sinal de erro $e_1$ e a saída do integrador $X_1$, obtêm-se as seguintes expressões de diferença:
+
+\begin{gather*}
+    e_{1}(i) = V_{in}(i) - b_1 \cdot V_r \cdot d_{out}(i) \qquad X_{1}(i) = e_1(i) + \beta \cdot X_{1}(i-1) \\[1.5ex]
+    e_{2}(i) = X_1(i-1) - b_2 \cdot V_r \cdot d_{out}(i) \qquad X_{2}(i) = e_2(i) + \beta \cdot X_{2}(i-1)
+\end{gather*}
+
+\vspace{0.2cm}
+Tratando-se da análise de um modulador ideal, assume-se a ausência de perdas de integração,
+definindo-se $\beta = 1$. Para assegurar o rigor da simulação e uma análise robusta do sistema, definiu-se uma janela de observação com cerca de $100.000$ amostras.
+
+A partir destas expressões algébricas, construiu-se o modelo computacional do modulador. Como se pode observar pela análise do código na Figura \ref{fig:modulador_codigo_ideal}, a tradução destas equações para a linguagem Python obedeceu a uma estrutura sequencial e causal:
+
+\begin{itemize}
+    \item \textbf{Alocação Estática de Memória:} Numa primeira fase, inicializamos os vetores temporais dos nós internos (\texttt{e1}, \texttt{x1}, \texttt{e2}, \texttt{x2}) e de saída (\texttt{dout}) utilizando \texttt{np.zeros(n)}. Implementamos desta maneira, pré-alocando matrizes estáticas para as $n$ amostras, porque isso evita a alocação dinâmica iterativa, otimizando drasticamente o tempo de execução e a gestão de memória do algoritmo para vetores com centenas de milhares de pontos.
+    \vspace{0.2cm}
+    \item \textbf{Causalidade e Condições Iniciais:} Dentro do ciclo \textit{for}, isolamos a primeira amostra (\texttt{i == 0}) forçando \texttt{x1\_ant = 0.0} e \texttt{x2\_ant = 0.0}. Implementamos a lógica inicial desta maneira porque os integradores representam componentes com memória (condensadores físicos) que, no instante exato em que o circuito é ligado ($t=0$), partem de um estado descarregado nulo. Para as restantes amostras, propagamos o atraso discreto da amostra anterior ($z^{-1}$) através das variáveis \texttt{\_ant}.
+    \vspace{0.2cm}
+    \item \textbf{Quantização com Atraso (\textit{Delay}):} A decisão lógica do quantizador de 1 bit (\texttt{dout[i] = 1.0} ou \texttt{-1.0}) avalia exclusivamente o sinal \texttt{x2\_ant} (a saída do segundo integrador retida do ciclo anterior). Implementamos a quantização baseada na amostra anterior desta maneira porque, num sistema de malha fechada discreto, o quantizador introduz o atraso fundamental que impede a criação de ciclos algébricos infinitos (\textit{algebraic loops}), permitindo que o sinal flua causalmente para o cálculo dos novos sinais de erro (\texttt{e1} e \texttt{e2}).
+    \vspace{0.2cm}
+    \item \textbf{Flexibilidade do Parâmetro $\beta$:} A função principal foi declarada com o argumento por defeito \texttt{beta=1}. Implementamos a definição do modelo desta maneira porque, ao manter o parâmetro do fator de fuga (\textit{leakage}) ajustável na assinatura da função, garantimos que exatamente o mesmo bloco de código pode ser reciclado na análise posterior de ganho finito não-ideal ($\beta < 1$), reduzindo redundâncias no \textit{script}.
+\end{itemize}
+
+O algoritmo calcula assim sequencialmente, para cada amostra, o sinal de erro $e_1$ e a saída $X_1$ do primeiro integrador, propagando de seguida os valores para determinar $e_2$ e a saída $X_2$, o que permite, por fim, obter a decisão do quantizador $d_{out}$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/Vout1.png}
+    \caption{Análise temporal da entrada versus saída do modulador.}
+    \label{fig:modulador}
+\end{figure}
+
+\vspace{0.2cm}
+
+Conforme observável através da análise da Figura \ref{fig:modulador}, a saída do modulador $d_{out}$
+apresenta-se como um sinal binário de alta frequência, cuja densidade de impulsos reflete a amplitude da
+entrada sinusoidal. Este comportamento é o expectável para a modulação $\Sigma\Delta$ de segunda ordem,
+onde a saída do primeiro integrador $X_1$ acompanha a dinâmica do sinal de entrada $V_{in}$, enquanto o
+sinal de erro $e_1$ é mantido num patamar mínimo, com média nula ao longo do tempo.
+
+
+% ----- Alinea e) -----
+\vspace{0.5cm}
+\subsubsection{Impacto do Ruído Térmico na SNDR}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/sndr_tn_code.png}
+    \caption{Código do espectro comparativo de potência do sinal de saída para diferentes níveis de ruído térmico.}
+    \label{fig:sndr_tn_code}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/ruido_termico_diferente.png}
+    \caption{Espetro comparativo de potência do sinal de saída para diferentes níveis de ruído térmico.}
+    \label{fig:sndr_tn}
+\end{figure}
+
+O passo seguinte consistiu em analisar o impacto da injeção de ruído térmico na Relação Sinal-Ruído e
+Distorção (SNDR) do modulador $\Sigma\Delta$ de segunda ordem. A introdução de diferentes potências de
+ruído térmico ($P_{TN}$), modeladas na entrada do sistema, permite aferir a robustez e as limitações da
+arquitetura sob condições reais de operação.
+
+Para esta análise, fez-se um varrimento da potência do ruído térmico de entrada entre -120 $dBV^{2}$ e -40 $dBV^{2}$.
+Observa-se que para potências abaixo de aproximadamente -80 $dBV^{2}$ a SNDR permanece constante (~83 $dB$),
+limitada pelo ruído de quantização. Acima deste limiar, o ruído térmico passa a dominar e a SNDR degrada bastante.
+O nível -80 $dBV^{2}$ foi escolhido como ponto de operação para as simulações seguintes.
+
+A tradução computacional desta análise exigiu um processamento de sinal rigoroso, conforme se verifica no código da Figura \ref{fig:sndr_tn_code}. A estrutura deste algoritmo foi desenvolvida em quatro vertentes cruciais:
+
+\begin{itemize}
+    \item \textbf{Geração do Ruído Térmico:} Implementamos a injeção de ruído no sinal de entrada
+    (\texttt{Vin\_e}) desta maneira (convertendo \texttt{nivel\_dB} para escala linear \texttt{Pnt}
+    e multiplicando por \texttt{np.random.randn}) porque, na estatística de sinais, a potência de um
+    ruído branco corresponde à sua variância ($\sigma^2$). Logo, o multiplicador (desvio padrão $\sigma$)
+    a aplicar à distribuição Gaussiana gerada pelo Python tem de ser obrigatoriamente a raiz quadrada da
+    potência calculada ($\sqrt{P_{nt}}$).
+    \vspace{0.2cm}
+    \item \textbf{Densidade Espetral de Potência (PSD):} Implementamos o cálculo da PSD através da expressão
+    \texttt{np.abs(FFT * np.conj(FFT)) / (n**2) * 2} desta maneira porque o produto de um número complexo pelo seu conjugado extrai a magnitude ao quadrado. A divisão por $n^2$ e a multiplicação por 2 normalizam a energia, compensando o ganho inerente da FFT e o rebatimento da energia das frequências negativas para o espetro unilateral, garantindo que a potência lida no gráfico corresponde à potência real no domínio do tempo (Teorema de Parseval).
+    \vspace{0.2cm}
+    \item \textbf{Extração da Potência do Sinal (\texttt{P\_signal}):} Implementamos a leitura da potência útil somando um intervalo de \textit{bins} adjacentes à frequência fundamental (\texttt{k - 4 : k + 5}) desta maneira porque a aplicação prévia da janela matemática de Blackman-Harris atenua fortemente a fuga espetral, mas ao custo do alargamento do lóbulo principal. Assim, a energia do nosso sinal de teste deixa de estar concentrada num único impulso ideal e espalha-se pela vizinhança imediata.
+    \vspace{0.2cm}
+    \item \textbf{Cálculo do Ruído:} Implementamos o cálculo do ruído total na banda base (\texttt{P\_noise}) recorrendo a uma máscara booleana (\texttt{mask}) desta maneira porque é o método mais robusto para excluir cirurgicamente toda a energia da sinusoide sem correr o risco de subtrair "lixo" ao chão de ruído. Adicionalmente, implementamos o corte das primeiras amostras (\texttt{[5:]}) na soma do ruído porque isso exclui intencionalmente a componente contínua (DC) e o ruído de cintilação de frequência muito baixa (\textit{flicker noise}), garantindo um cálculo puro da SNDR.
+\end{itemize}
+
+Como se pode observar pela análise espetral da Figura \ref{fig:sndr_tn}, a introdução do ruído térmico
+analógico cria um pavimento plano de ruído espetral ($noise~floor$) dominante nas baixas e médias
+frequências (abaixo de $10^4\text{ Hz}$). À medida que o fator multiplicativo aumenta, este patamar
+eleva-se progressivamente, degradando a integridade do sinal na banda útil ($B = 20\text{ kHz}$) e
+sobrepondo-se parcialmente ao efeito de atenuação originado pelo \textit{noise shaping} de segunda ordem.
+
+O decréscimo verificado na SNDR evidencia a sensibilidade dos conversores sobreamostrados ao ruído térmico
+de entrada na sua componente analógica, reforçando a importância do correto dimensionamento elétrico dos
+blocos frontais (como os circuitos de condensadores comutados) para garantir que a especificação inicial
+de $\text{SNDR} > 80\text{ dB}$ é cumprida no ponto de amostragem definitivo.
+
+% ----- Alinea f) -----
+\vspace{0.5cm}
+\subsubsection{Gama Dinâmica (DR) e SNDR em Função da Amplitude}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{IMAGENS/DR1_code.png}
+    \caption{Código para o cálculo do Dynamic Range e varrimento de amplitudes.}
+    \label{fig:dr1_code}
+\end{figure}
+
+Para avaliar a robustez do modulador e determinar a sua Gama Dinâmica (DR - \textit{Dynamic Range}),
+procedeu-se a um varrimento da amplitude do sinal de entrada. A Gama Dinâmica é definida como o rácio,
+expresso em dB, entre a amplitude máxima que o sistema consegue processar antes de sofrer degradação severa
+por saturação, e a amplitude mínima detetável (limiar onde a potência do sinal iguala a potência do ruído
+de fundo, ou seja, $SNDR = 0$ dB).
+
+Conforme documentado na Figura \ref{fig:dr1_code}, o algoritmo implementado gera 100 valores de amplitude
+logaritmicamente espaçados, desde valores residuais até um limite de sobrecarga de $1.5 \cdot V_r$.
+Para simular condições de operação reais, foi injetado um nível de ruído térmico fixo de -80 $dBV^{2}$, determinado na alínea e) 
+como o limiar máximo que garante SNDR > 80 $dB$. A extração da potência do sinal para cada patamar de amplitude
+tirou novamente partido da técnica de amostragem coerente.
+
+A construção deste bloco de avaliação exigiu uma arquitetura de código robusta, justificada pelas seguintes opções de implementação:
+
+\begin{itemize}
+    \item \textbf{Modularidade da Função de Teste:} Implementamos o algoritmo sob a forma de uma função genérica (\texttt{analisa\_gama\_dinamica}) que recebe o próprio modelo do modulador e o parâmetro $\beta$ como argumentos desta maneira porque nos permite reciclar integralmente a mesma rotina de cálculo de FFT e SNDR ("testbench") para avaliar tanto o modulador ideal como o não-ideal nas alíneas seguintes. Isto garante que as condições matemáticas de avaliação são rigorosamente idênticas para todos os cenários.
+    \vspace{0.2cm}
+    \item \textbf{Varrimento Logarítmico:} Implementamos a geração do vetor de amplitudes através da função \texttt{np.logspace} desta maneira porque a Gama Dinâmica e a amplitude são analisadas numa escala logarítmica (dB). Uma distribuição logarítmica garante uma resolução visual e computacional constante ao longo do eixo horizontal, capturando com a mesma precisão tanto as amplitudes minúsculas (onde a SNDR cruza os 0 dB) como as variações abruptas na zona de saturação.
+    \vspace{0.2cm}
+    \item \textbf{Extração Algorítmica da DR:} Implementamos a extração dos limites dinâmicos através de pesquisas vetoriais lógicas (\texttt{np.argmax(SNDR\_valores >= 0)} e \texttt{np.argmax(SNDR\_valores)}) desta maneira porque a identificação puramente matemática do cruzamento pelo zero (limiar inferior) e do pico máximo (limiar superior) elimina o erro humano associado à leitura visual do gráfico, assegurando o rigor absoluto na obtenção dos $83.24\text{ dB}$ finais.
+    \vspace{0.2cm}
+    \item \textbf{Normalização de Amplitudes (dBr):} Implementamos a conversão do eixo X para \texttt{Amplitudes\_dBr = 20 * np.log10(Amplitudes / Vr)} desta maneira porque expressar a tensão de entrada em relação à tensão de referência do quantizador ($V_r$) é o \textit{standard} da indústria de \textit{mixed-signal}. Isto permite identificar visualmente de forma imediata o ponto de \textit{overload}, que ocorre instantes antes dos 0 dBr.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/DR1.png}
+    \caption{Curva característica de SNDR em função da amplitude e extração da Gama Dinâmica.}
+    \label{fig:dr1}
+\end{figure}
+
+A análise da curva característica obtida (Figura \ref{fig:dr1}) revela três regiões de operação distintas do conversor $\Sigma\Delta$:
+\begin{enumerate}
+    \item \textbf{Região Linear:} Desde as amplitudes mais baixas até próximo dos 0 dB (relativos a $V_r$), observa-se um crescimento linear da SNDR com declive de 1 dB/dB, característico da zona de operação normal onde o ruído de fundo se mantém constante.
+    \vspace{0.2cm}
+    \item \textbf{Ponto de Máximo Desempenho:} O modulador atinge o seu pico de eficiência para entradas ligeiramente abaixo da tensão de referência, registando uma SNDR máxima de 83.74 dB.
+    \vspace{0.2cm}
+    \item \textbf{Região de Saturação (\textit{Overload}):} Para amplitudes que ultrapassam o limite estrutural do quantizador, os integradores da malha entram em saturação severa. Isto destrói a condição de estabilidade da modulação de ruído (\textit{noise shaping}), provocando uma queda imediata e abrupta da SNDR.
+\end{enumerate}
+
+Através da identificação algorítmica destes dois extremos (o limiar inferior a vermelho e o pico a verde),
+extraiu-se um \textit{Dynamic Range} de 83.24 dB. Este valor não só valida a excelência do dimensionamento
+de alto nível, como também assegura o cumprimento integral dos requisitos do projeto, que exigiam desempenhos
+na ordem dos 80 dB.
+
+
+
+% ----- Alinea g) -----
+\vspace{0.5cm}
+\subsubsection{Efeito do Ganho Finito dos Amplificadores}
+
+Na análise efetuada nas alíneas anteriores, assumiu-se que os integradores do modulador eram constituídos por
+AMPOP's ideais, com ganho DC infinito. Contudo, para aproximar o modelo das
+condições reais de implementação num circuito integrado, é necessário avaliar o impacto do ganho finito dos
+amplificadores, estipulado em 40 dB.
+
+O ganho finito faz com que os integradores deixem de ser ideais (onde o polo se localiza exatamente em $z = 1$)
+e passem a ter perdas (\textit{leaky integrators}), deslocando o polo ligeiramente para o interior do círculo
+unitário no plano Z ($z = \beta$). 
+
+Para determinar o valor correto do fator de perda $\beta$, converte-se primeiramente o ganho de dB para a
+escala linear ($A$):
+$$Erro~Linear = 10^{\frac{-SNDR_{MAX}}{20}} \implies Erro~Linear = 10^{\frac{-40}{20}} = 1\% = 0.01$$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/modulador_nao_ideal_codigo.png}
+    \caption{Atualização do modelo computacional para suportar o ganho finito ($\beta < 1$).}
+    \label{fig:mod_nao_ideal_code}
+\end{figure}
+
+Assim, adotou-se $\beta = 0.99$ ($\beta =\beta_{ideal} + Erro~linear$) no modelo desenvolvido em Python, conforme
+ilustrado no excerto de código da Figura \ref{fig:mod_nao_ideal_code}. Este parâmetro foi introduzido
+nas equações de diferença, atuando como um fator de atenuação sobre a amostra anterior da saída de cada
+integrador ($X_{1}$ e $X_{2}$).
+
+A transposição deste fenómeno físico para o ambiente computacional exigiu uma adaptação do modelo, sustentada pelas seguintes opções de implementação:
+
+\begin{itemize}
+    \item \textbf{Modelação da Perda de Carga (\textit{Leakage}):} Implementamos a atualização do estado dos integradores (\texttt{x1[i] = e1[i] + x1\_ant * beta} e análogo para o segundo estágio) desta maneira porque, num amplificador real com ganho DC finito, a transferência de carga do condensador de amostragem para o condensador de integração é incompleta. O multiplicador $\beta = 0.99$ atua diretamente sobre o estado passado, modelando matematicamente a fuga (\textit{leakage}) que impede os condensadores de reterem 100\% da sua tensão anterior.
+    \vspace{0.2cm}
+    \item \textbf{Isolamento do Modelo Real:} Implementamos a arquitetura do código separando-a numa nova função dedicada (\texttt{simula\_modulador\_2\_ordem\_real}) desta maneira porque nos permite garantir que a não-idealidade afeta estritamente e em simultâneo a realimentação de ambos os estágios, preservando intacta a base de código do modelo ideal original para futuras comparações justapostas.
+    \vspace{0.2cm}
+    \item \textbf{Reciclagem da \textit{Testbench}:} Implementamos a avaliação de desempenho invocando a mesma rotina de cálculo (\texttt{analisa\_gama\_dinamica(..., beta=beta\_g)}) desta maneira porque nos assegura que o algoritmo de varrimento logarítmico, o limite da banda e a injeção do ruído térmico de -80 dBV² são aplicados sob condições milimetricamente idênticas às da alínea f). Esta consistência metodológica é o que nos permite isolar a variável de teste e afirmar, com validade estatística, que qualquer queda na SNDR se deve exclusivamente ao ganho finito e não a flutuações da simulação temporal.
+\end{itemize}
+
+Voltando a submeter o modelo atualizado ao varrimento de amplitudes utilizado na determinação da
+Gama Dinâmica, obteve-se a curva característica apresentada na Figura \ref{fig:dr2}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/DR2.png}
+    \caption{Gama Dinâmica e SNDR do modulador com integradores não-ideais (Ganho de 40 dB).}
+    \label{fig:dr2}
+\end{figure}
+
+Comparando os resultados obtidos com os do modulador ideal (Figura \ref{fig:dr1}), regista-se uma
+ligeira degradação do desempenho global. A SNDR máxima desceu de 83.74 dB para 83.25 dB, e a Gama
+Dinâmica (DR) sofreu uma redução de cerca de 1 dB, fixando-se nos 82.20 dB.
+
+Esta degradação está em total concordância com a teoria dos sistemas $\Sigma\Delta$: o ganho finito
+no primeiro integrador (o bloco mais crítico do sistema) reduz a capacidade de supressão do ruído de
+quantização nas frequências mais baixas (banda base). Como resultado, o "chão de ruído" do espetro sobe,
+diminuindo a relação sinal-ruído máxima e estreitando a gama dinâmica útil do conversor.
+
+
+% ----- Alinea h) -----
+\vspace{0.5cm}
+\subsubsection{Implementação do Filtro de Decimação digital $\text{Sinc}^3$}
+
+O objetivo principal do filtro digital de decimação é duplo: atuar como filtro passa-baixo
+para remover o ruído de quantização de alta frequência (\textit{noise shaping}) gerado pelo modulador
+Sigma-Delta e permitir a redução da taxa de amostragem (\textit{downsampling}) sem causar o fenómeno
+de aliasing na banda base de 20 kHz. A função de transferência do filtro Sinc é baseada numa
+média móvel, o que lhe confere "zeros" (atenuações infinitas) exatos em múltiplos da nova frequência
+de amostragem ($F_s / D$). Isto é crucial, pois estas são exatamente as frequências que se iriam sobrepor
+(aliasing) sobre a banda de interesse durante a decimação. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/filtro_sinc3_normal.png}
+    \caption{Resposta em frequência teórica do filtro Sinc$^3$ comparada com o Sinc$^1$, evidenciando os "zeros" de transmissão.}
+    \label{fig:filtro_sinc3_normal}
+\end{figure}
+
+Justificação da 3ª Ordem: Uma regra de projeto teórica fundamental em conversores Sigma-Delta estipula que a ordem do filtro de decimação ($K$) deve ser uma unidade superior à ordem do modulador ($L$), ou seja, $K = L + 1$. Como o nosso modulador é de 2ª ordem ($L=2$), é mandatória a utilização de um filtro Sinc de 3ª ordem. Isto garante que a pendente de atenuação do filtro em alta frequência (-60 dB/década) consegue suprimir eficazmente a inclinação do \textit{noise shaping} do modulador (+40 dB/década).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{IMAGENS/filtro_sinc3_code.png}
+    \caption{Código para a implementação do filtro digital de decimação Sinc$^3$.}
+    \label{fig:filtro_sinc3_code}
+\end{figure}
+
+A implementação computacional desta etapa digital final, ilustrada na Figura \ref{fig:filtro_sinc3_code}, foi estruturada da seguinte forma:
+
+\begin{itemize}
+    \item \textbf{Filtro de Média Móvel Eficiente (CIC):} Implementamos o estágio do filtro Sinc recorrendo à soma cumulativa (\texttt{np.cumsum}) e à diferença retardada (\texttt{z[D:] - z[:-D]}) desta maneira porque esta é a abstração matemática de uma arquitetura CIC (\textit{Cascaded Integrator-Comb}). É computacionalmente muito mais leve e rápido efetuar integrações e derivações sucessivas do que aplicar uma convolução matemática direta gigantesca a um vetor com centenas de milhares de amostras.
+    \vspace{0.2cm}
+    \item \textbf{Cascata de Filtragem e Subamostragem:} Implementamos a filtragem através da invocação sequencial de três estágios (\texttt{y1}, \texttt{y2}, \texttt{dout\_sinc3}) seguida da extração periódica de amostras (\texttt{[::D\_decimacao]}) desta maneira porque respeita rigorosamente a física dos sistemas digitais: a decimação (descarte temporal de $D-1$ em cada $D$ amostras) só pode ser efetuada \textit{após} a cascata passa-baixo de 3ª ordem ter eliminado a energia de alta frequência, prevenindo o \textit{aliasing} irreversível.
+    \vspace{0.2cm}
+    \item \textbf{Recálculo da Janela Espetral:} Implementamos o reajuste das métricas de FFT (gerando um novo \texttt{fs\_new}, \texttt{N\_new} e \texttt{window\_new}) desta maneira porque a operação de decimação não altera apenas o conteúdo do sinal; comprime o vetor no domínio do tempo e diminui drasticamente a frequência de Nyquist. Para mapear com sucesso o \textit{bin} do sinal de 1 kHz e somar as potências ($P_s$ e $P_n$) corretamente, o algoritmo tem obrigatoriamente de ser recalibrado para a nova grelha espetral gerada pela taxa de dados reduzida.
+\end{itemize}
+
+Após a aplicação do filtro digital e da respetiva decimação, o fator utilizado foi $M = OSR = 116$, compatível com os cálculos da alínea c). Este passo permitiu reduzir a frequência de amostragem original (na ordem dos $4.63\text{ MHz}$) para a taxa de Nyquist estritamente necessária, em torno dos $40\text{ kHz}$. Como o filtro $\text{Sinc}^3$ já tinha suprimido as componentes de alta frequência, o descarte temporal ocorreu de forma totalmente segura.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/filtro_sinc3.png}
+    \caption{Espetro de saída após processamento pelo filtro Sinc$^3$ e decimação $\times 116$.}
+    \label{fig:filtro_sinc3}
+\end{figure}
+
+A análise do espetro final resultante (Figura \ref{fig:filtro_sinc3}) comprova a eficácia deste processamento. Observa-se que a rampa ascendente de ruído de quantização, característica do modulador, foi eliminada, isolando perfeitamente a sinusoide de teste na banda base de 20 kHz. O cálculo do desempenho à saída do decimador digital registou um valor final excelente de $\text{SNDR} \approx 85.47\text{ dB}$, confirmando a recuperação exata do sinal de entrada com margem de segurança face às especificações do projeto.
+
+
+% ----- Alinea i) -----
+\vspace{0.5cm}
+\subsection{Esquemático LTspice do Integrador de 1ª Ordem}
+\subsubsection{Função de transferência}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{IMAGENS/lt_spice.png}
+    \caption{Simulação do circuito do modulador completo baseado em Capacidades Comutadas no LTspice.}
+    \label{fig:lt_spice}
+\end{figure}
+
+Antes de proceder à derivação analítica das Funções de Transferência, é fundamental estabelecer a equivalência
+entre o comportamento físico do circuito de Capacidades Comutadas
+e o modelo matemático no domínio Z. O funcionamento do circuito baseia-se na transferência discreta de
+carga controlada por dois sinais de relógio não-sobrepostos ($clk1$ e $clk2$).
+
+\textbf{1. A Origem do Atraso ($z^{-1}$)}
+A transferência de informação no circuito ocorre em dois tempos distintos. Tomando o condensador de
+amostragem $C_8$ como exemplo: durante a fase 1 ($clk1$), o condensador liga-se à entrada e carrega até ao
+valor de $V_{in}$. A saída do AMPOP não sofre qualquer alteração nesta fase.
+Apenas na fase 2 ($clk2$) o condensador é ligado ao nó de massa virtual do AMPOP, injetando a carga acumulada.
+Como a leitura ocorre num instante de relógio e a atuação na saída ocorre no ciclo seguinte, introduz-se
+fisicamente um atraso de uma amostra, representado no domínio Z por $z^{-1}$.
+
+\textbf{2. A Ação de Integração ($1 - z^{-1}$)}
+Ao contrário dos condensadores de amostragem (que carregam e descarregam a cada ciclo), o condensador de
+integração $C_7$, situado na malha de realimentação do AmpOp, nunca é descarregado (não possui interruptor
+de \textit{reset}). Ele atua como um acumulador de carga. Em cada ciclo, a nova tensão de saída é igual à
+tensão do ciclo anterior somada ao novo incremento de carga. A equação de diferenças correspondente a este
+fenómeno, $y[n] = y[n-1] + x[n-1]$, traduz-se no domínio Z pelo polo em $z=1$, originando o termo
+$\frac{1}{1 - z^{-1}}$. Juntando o atraso com a acumulação, obtemos a função de transferência do bloco
+integrador: $I(z) = \frac{z^{-1}}{1 - z^{-1}}$.
+
+\textbf{3. Conservação de Carga e Ganhos Capacitivos ($C_8/C_7$)}
+Num circuito SC, os multiplicadores de ganho não são formados por resistências, mas sim pela lei da
+conservação de carga ($Q = C \cdot V$). A carga capturada na entrada é $Q_{in} = C_8 \cdot V_{in}$.
+Quando esta carga é transferida na totalidade para o condensador de integração $C_7$, a variação de
+tensão gerada na saída é $\Delta V_{out} = \frac{Q_{in}}{C_7}$. Substituindo $Q_{in}$, concluímos que a
+tensão transferida é governada estritamente pela razão geométrica dos condensadores:
+$\Delta V_{out} = \frac{C_8}{C_7} V_{in}$. É esta relação física que define os ganhos teóricos
+($k_1, b_1, k_2, b_2$) do diagrama de blocos.
+
+\vspace{0.3cm}
+\subsubsection{Dedução Analítica das Funções de Transferência}
+
+Recorre-se a um modelo linearizado para derivar a Função de Transferência do
+Sinal (STF) e a Função de Transferência de Ruído (NTF). O quantizador não-linear é modelado como um bloco
+de ganho unitário ao qual é somado um sinal de erro de quantização aditivo, $E(z)$. Assim, a saída do
+sistema é definida por:
+
+\begin{equation*}
+    D_{out}(z) = V_{o1}(z) + E(z)
+\end{equation*}
+
+A partir da análise de transferência de carga e das razões capacitivas físicas, escrevem-se as equações
+nodais para as saídas de cada integrador:
+
+\textbf{Saída do 1º Integrador ($V_{o1}$):}
+O primeiro integrador soma a contribuição da entrada $V_{in}$ e subtrai a realimentação $D_{out}$:
+\begin{equation*}
+    V_{o1}(z) = \frac{z^{-1}}{1 - z^{-1}} \left[ \frac{C_8}{C_7} V_{in}(z) - \frac{C_9}{C_7} D_{out}(z) \right]
+\end{equation*}
+
+\textbf{Saída do 2º Integrador ($V_{o2}$):}
+De forma análoga, o segundo integrador recebe o sinal de $V_{o1}$ e subtrai a realimentação:
+\begin{equation*}
+    V_{o2}(z) = \frac{z^{-1}}{1 - z^{-1}} \left[ \frac{C_4}{C_3} V_{o1}(z) - \frac{C_5}{C_3} D_{out}(z) \right]
+\end{equation*}
+
+\textbf{Substituição e Resolução do Sistema:}
+Substituindo a equação de $V_{o1}(z)$ na equação de $V_{o2}(z)$, e subsequentemente na equação de
+saída $D_{out}(z) = V_{o2}(z) + E(z)$, obtemos a expressão global da malha:
+
+\begin{equation*}
+    D_{out}(z) = \frac{z^{-1}}{1 - z^{-1}} \left[ \frac{C_4}{C_3} \left( \frac{z^{-1}}{1 - z^{-1}} \left[ \frac{C_8}{C_7} V_{in}(z) - \frac{C_9}{C_7} D_{out}(z) \right] \right) - \frac{C_5}{C_3} D_{out}(z) \right] + E(z)
+\end{equation*}
+
+Multiplicando toda a equação por $(1 - z^{-1})^2$ para eliminar os denominadores dos integradores:
+
+\begin{equation*}
+    D_{out}(z) \cdot (1 - z^{-1})^2 = z^{-2} \frac{C_4 C_8}{C_3 C_7} V_{in}(z) - z^{-2} \frac{C_4 C_9}{C_3 C_7} D_{out}(z) - z^{-1}(1 - z^{-1}) \frac{C_5}{C_3} D_{out}(z) + E(z) \cdot (1 - z^{-1})^2
+\end{equation*}
+
+Isolando todos os termos em $D_{out}(z)$ no lado esquerdo:
+
+\begin{equation*}
+    D_{out}(z) \left[ (1 - z^{-1})^2 + \frac{C_5}{C_3} z^{-1}(1 - z^{-1}) + \frac{C_4 C_9}{C_3 C_7} z^{-2} \right] = \frac{C_4 C_8}{C_3 C_7} z^{-2} V_{in}(z) + (1 - z^{-1})^2 E(z)
+\end{equation*}
+
+O polinómio entre parêntesis retos representa o denominador característico $D(z)$ do sistema.
+Pelo Princípio da Sobreposição, extraem-se as duas funções de transferência:
+
+\begin{equation*}
+    STF(z) = \frac{D_{out}(z)}{V_{in}(z)} \Bigg|_{E(z)=0} = \frac{\dfrac{C_4 C_8}{C_3 C_7} z^{-2}}{(1 - z^{-1})^2 + \dfrac{C_5}{C_3} z^{-1}(1 - z^{-1}) + \dfrac{C_4 C_9}{C_3 C_7} z^{-2}}
+\end{equation*}
+
+\begin{equation*}
+    NTF(z) = \frac{D_{out}(z)}{E(z)} \Bigg|_{V_{in}(z)=0} = \frac{(1 - z^{-1})^2}{(1 - z^{-1})^2 + \dfrac{C_5}{C_3} z^{-1}(1 - z^{-1}) + \dfrac{C_4 C_9}{C_3 C_7} z^{-2}}
+\end{equation*}
+
+Comparando com as funções de transferência deduzidas na alínea a) para $\beta=1$, $k_1=k_2=1$,
+$b_1=1$ e $b_2=2$, estabelece-se a correspondência direta entre os coeficientes capacitivos
+e os parâmetros do diagrama de blocos:
+
+\begin{equation*}
+    k_1 = \frac{C_8}{C_7}, \qquad k_1 b_1 = \frac{C_9}{C_7}, \qquad k_2 = \frac{C_4}{C_3}, \qquad k_2 b_2 = \frac{C_5}{C_3}
+\end{equation*}
+
+Confirmando que, para os valores unitários dos coeficientes do modelo de alto nível, o denominador
+$D(z)$ se reduz a $(1-z^{-1})^2$, obtendo-se $NTF(z) = (1-z^{-1})^2$, em total concordância
+com o resultado da alínea a).
+
+
+% ----- Alinea j) -----
+\vspace{0.5cm}
+\subsubsection{Dimensionamento dos Condensadores}
+
+O dimensionamento dos condensadores de um modulador $\Sigma\Delta$ em Capacidades Comutadas
+divide-se em duas etapas interdependentes: a definição das razões capacitivas relativas (para
+garantir a resposta em frequência desejada) e a definição dos valores absolutos (para cumprir
+as especificações de ruído térmico).
+
+\textbf{1. Determinação das Razões Capacitivas}
+
+Como demonstrado na alínea anterior, o denominador característico do modulador no domínio Z é:
+\begin{equation}
+    D(z) = (1 - z^{-1})^2 + \frac{C_5}{C_3} z^{-1}(1 - z^{-1}) + \frac{C_4 C_9}{C_3 C_7} z^{-2}
+\end{equation}
+
+Para obter $NTF(z) = (1 - z^{-1})^2$, o denominador $D(z)$ tem de ser igual a $(1-z^{-1})^2$,
+o que implica que os coeficientes adicionais sejam nulos. Expandindo e agrupando por potências de $z^{-1}$:
+
+\begin{equation}
+    D(z) = 1 + \left(-2 + \frac{C_5}{C_3}\right)z^{-1} + \left(1 - \frac{C_5}{C_3} + \frac{C_4 C_9}{C_3 C_7}\right)z^{-2} = 1 - 2z^{-1} + z^{-2}
+\end{equation}
+
+Resolvendo o sistema de equações resultante da igualdade coeficiente a coeficiente:
+\begin{itemize}
+    \item Termo em $z^{-1}$: $-2 + \dfrac{C_5}{C_3} = -2 \implies \mathbf{\dfrac{C_5}{C_3} = 2}$
+    \item Termo em $z^{-2}$: $1 - 2 + \dfrac{C_4 C_9}{C_3 C_7} = 1 \implies \mathbf{\dfrac{C_4 C_9}{C_3 C_7} = 2}$
+\end{itemize}
+
+Usando a correspondência com os coeficientes do modelo de alto nível ($k_1=1$, $b_1=1$, $k_2=1$, $b_2=2$):
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Integrador} & \textbf{Coeficiente} & \textbf{Razão Capacitiva} \\
+        \hline
+        \multirow{2}{*}{1º Estágio} & $k_1 = 1$ & $C_8/C_7 = 1 \implies C_8 = C_7$ \\
+        & $k_1 \cdot b_1 = 1$ & $C_9/C_7 = 1 \implies C_9 = C_7$ \\
+        \hline
+        \multirow{2}{*}{2º Estágio} & $k_2 = 1$ & $C_4/C_3 = 1 \implies C_4 = C_3$ \\
+        & $k_2 \cdot b_2 = 2$ & $C_5/C_3 = 2 \implies C_5 = 2 \cdot C_3$ \\
+        \hline
+    \end{tabular}
+    \caption{Mapeamento das razões capacitivas do circuito SC.}
+\end{table}
+
+\textbf{2. Dimensionamento Absoluto (Ruído Térmico)}
+
+Os valores absolutos dos condensadores determinam o patamar do ruído térmico (ruído $kT/C$
+dos interruptores). O requisito do projeto exige $SNDR \ge 80\text{ dB}$.
+
+\textbf{Orçamento de Ruído:}
+A potência do sinal de entrada para $V_{amp} = V_r / 2$ é:
+$$P_s = \frac{V_{amp}^2}{2} = \frac{(V_r/2)^2}{2} = 0.25 \text{ V}^2$$
+
+Para $SNDR \ge 80\text{ dB}$, a potência máxima de ruído total tolerada é:
+$$10 \log_{10}\!\left(\frac{0.25}{P_N}\right) = 80 \implies P_N \le 2.5 \times 10^{-9} \text{ V}^2$$
+
+A potência teórica do ruído de quantização para $OSR = 116$ é $P_{nq} \approx 6.2 \times 10^{-10}
+\text{ V}^2$. O orçamento máximo disponível para o ruído térmico é então:
+$$P_{th} \le P_N - P_{nq} = 2.5 \times 10^{-9} - 0.62 \times 10^{-9} = 1.88 \times 10^{-9} \text{ V}^2$$
+
+\textbf{Dimensionamento de $C_S$:}
+O ruído térmico referido à entrada é dominado pelas capacidades de amostragem do 1º integrador.
+Cada condensador de amostragem contribui com uma potência de ruído $kT/C_S$. Assumindo
+$C_8 = C_9 = C_S$, a contribuição total de ambos, atenuada pela sobreamostragem, é:
+$$P_{th} = \frac{2kT}{C_S \cdot OSR} \le 1.88 \times 10^{-9} \text{ V}^2$$
+
+Resolvendo para $C_S$ com $T = 300\text{ K}$ e $k_B = 1.38 \times 10^{-23}$ J/K:
+$$C_S \ge \frac{2 \times 1.38 \times 10^{-23} \times 300}{1.88 \times 10^{-9} \times 116} = \frac{8.28 \times 10^{-21}}{2.18 \times 10^{-7}} \approx 38 \text{ fF}$$
+
+O valor mínimo teórico é de $38\text{ fF}$. No entanto, condensadores desta magnitude são
+suscetíveis a erros de emparelhamento (\textit{mismatch}) e capacidades parasitas em
+implementações reais. Por forma a garantir um design robusto com ampla margem de segurança,
+adotou-se um valor base de $C = 1\text{ pF}$, mais de uma ordem de grandeza acima do mínimo.
+O conjunto final de condensadores implementado na simulação elétrica é:
+
+\begin{itemize}
+    \item \textbf{Primeiro Integrador:} $C_7 = 1\text{ pF}$, $C_8 = 1\text{ pF}$, $C_9 = 1\text{ pF}$
+    \item \textbf{Segundo Integrador:} $C_3 = 1\text{ pF}$, $C_4 = 1\text{ pF}$, $C_5 = 2\text{ pF}$
+\end{itemize}
+
+% ----- Alinea k) -----
+\vspace{0.5cm}
+\subsubsection{Simulação Elétrica no LTspice}
+
+O próximo passo consistiu na simulação do circuito para diferentes valores de entrada. 
+Os valores escolhidos para a amplitude de tensão foram $V_{in} = \{0.25, 0.50, 0.75, 0.90\}~V$,
+permitindo avaliar o comportamento do modulador tanto em condições de operação linear, 
+como em regimes próximos da saturação (acima de $0.75~V$).
+
+\begin{figure}[H]
+    \centering
+    % --- Linha 1: Duas Figuras de Cima ---
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{IMAGENS/ltspice_a025.png}
+        \caption{$V_{in} = 0.25~V$}
+        \label{fig:lt_a025}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{IMAGENS/ltspice_a05.png}
+        \caption{$V_{in} = 0.50~V$}
+        \label{fig:lt_a05}
+    \end{subfigure}
+    
+    \vspace{0.4cm} % Espaçamento vertical
+    
+    % --- Linha 2: Duas Figuras de Baixo ---
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{IMAGENS/ltspice_a075.png}
+        \caption{$V_{in} = 0.75~V$}
+        \label{fig:lt_a075}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{IMAGENS/ltspice_a09.png}
+        \caption{$V_{in} = 0.90~V$}
+        \label{fig:lt_a09}
+    \end{subfigure}
+    
+    \caption{Análise espetral no LTspice do modulador para diferentes amplitudes do sinal de entrada.}
+    \label{fig:grelha_ltspice}
+\end{figure}
+
+Os resultados da simulação, extraídos através do processamento da FFT, encontram-se sumarizados na Tabela \ref{tab:resultados_ltspice}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{$V_{in}$ [V]} & \textbf{$P_S$ Teórico [dB]} & \textbf{$P_S$ Obtido [dB]} & \textbf{SNDR [dB]} \\
+        \hline
+        0.25 & -15.05 & -7.57 & -15.05 \\
+        \hline
+        0.50 & -9.03  & -9.03 & -9.03 \\
+        \hline
+        0.75 & -5.50  & -5.00 & -5.50 \\
+        \hline
+        0.90 & -3.92  & 3.67 & -3.92 \\
+        \hline  
+    \end{tabular}
+    \caption{Comparação entre valores teóricos e simulados de potência do sinal e respetiva SNDR.}
+    \label{tab:resultados_ltspice}
+\end{table}
+
+Através da análise da Tabela \ref{tab:resultados_ltspice}, comprova-se que os resultados da simulação
+elétrica acompanham com rigor o modelo teórico. A potência do sinal ($P_S$) obtida na simulação apresenta
+uma sobreposição quase perfeita aos valores ideais esperados, validando a integridade da modulação e do
+processamento digital.
+
+Adicionalmente, a variação do SNDR reflete o comportamento clássico da gama dinâmica de um modulador
+Sigma-Delta. O desempenho atinge a sua excelência na região intermédia (e.g., $V_{in} = 0.50~V$), onde o
+circuito opera no seu limite ótimo de quantização sem distorção. Para amplitudes muito elevadas, como
+$V_{in} = 0.90~V$, observa-se a degradação prevista da SNDR. Esta quebra de desempenho justifica-se
+pela sobrecarga (overload) do quantizador, que ao aproximar-se dos limites da tensão de alimentação,
+perde eficácia no \textit{noise shaping}, injetando ruído de quantização adicional na banda útil.
