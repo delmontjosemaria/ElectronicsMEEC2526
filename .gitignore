@@ -1,0 +1,14 @@
+﻿# LaTeX generated files
+*.aux
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.out
+*.pdf
+*.synctex.gz
+*.toc
+
+# IDEs
+.vscode/
+.DS_Store
