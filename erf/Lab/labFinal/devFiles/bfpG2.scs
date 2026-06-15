@@ -1,0 +1,17 @@
+// simulator lang=spice
+simulator lang=spectre
+model bfpG2 bjt type=npn 
++ is=0.20045e-15     	bf=72.534   	nf=1.2432    
++ vaf=28.383         	ikf=0.48731     ise=19.049e-15             
++ ne=2.0518   		br=7.8287   	nr=1.3325
++ var=19.705     	ikr=0.69141 	isc=0.019237e-15
++ nc=1.1724   		rb=8.5757    	irb=0.72983e-3  
++ rbm=3.4849		re=0.31111	rc=0.10105
++ cje=1.8063e-15  	vje=0.8051	mje=0.46576
++ tf=6.7661e-12		xtf=0.42199	vtf=0.23794 
++ itf=1e-3		ptf=0 		cjc=234.53e-15
++ vjc=0.81969		mjc=0.30232	xcjc=0.3
++ tr=2.3249e-9 		cjs=0		vjs=0.75
++ mjs=0			xtb=0		eg=1.11
++ xti=3			fc=0.73234		
+

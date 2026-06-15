@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+
+\bibitem{bastos2014}
+Ivan Bastos, Lu{\'i}s~B. Oliveira, Jo{\~a}o Goes, and Manuel Silva.
+\newblock A low power balun {LNA} with active loads for gain and noise figure
+  optimization.
+\newblock {\em Analog Integrated Circuits and Signal Processing},
+  81(3):693--702, 2014.
+
+\bibitem{blaakmeer2008}
+Stephan~C. Blaakmeer, Eric A.~M. Klumperink, Domine M.~W. Leenaerts, and Bram
+  Nauta.
+\newblock Wideband balun-{LNA} with simultaneous output balancing,
+  noise-canceling and distortion-canceling.
+\newblock {\em {IEEE} Journal of Solid-State Circuits}, 43(6):1341--1350, 2008.
+
+\end{thebibliography}

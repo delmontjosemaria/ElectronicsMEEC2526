@@ -1,0 +1,48 @@
+LTspice 24.1.10 for Windows
+Circuit: C:\Users\migue\Desktop\1º Ano - 2º Semestre\ERf\Lab2\LTspice\NMOS_350nm_CG.net
+Start Time: Wed May 13 16:25:33 2026
+Options: logopinfo
+solver = Normal
+Maximum thread count: 8
+tnom = 27
+temp = 27
+method = modified trap
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- BSIM3 MOSFETS ---
+Name:         M1          M2
+Model:    nmos-bsim   nmos-bsim
+Id:        1.14e-03    1.16e-02
+Vgs:       8.35e-01    1.25e+00
+Vds:       1.87e+00    2.96e-01
+Vbs:      -4.15e-01    0.00e+00
+Vth:       6.60e-01    5.40e-01
+Vdsat:     1.46e-01    4.67e-01
+Gm:        1.46e-02    1.97e-02
+Gds:       8.14e-05    2.56e-02
+Gmb        3.52e-03    5.80e-03
+Cbd:       0.00e+00    0.00e+00
+Cbs:       0.00e+00    0.00e+00
+Cgsov:     9.79e-14    9.79e-14
+Cgdov:     9.79e-14    9.79e-14
+Cgbov:     6.99e-19    6.99e-19
+dQgdVgb:   1.07e-12    1.22e-12
+dQgdVdb:  -9.78e-14   -3.44e-13
+dQgdVsb:  -9.06e-13   -8.50e-13
+dQddVgb:  -4.61e-13   -5.78e-13
+dQddVdb:   9.78e-14    3.12e-13
+dQddVsb:   4.58e-13    4.12e-13
+dQbdVgb:  -1.47e-13   -6.17e-14
+dQbdVdb:   1.14e-17   -1.81e-13
+dQbdVsb:  -1.08e-13   -7.08e-14
+
+
+Total elapsed time: 0.358 seconds.
+
+Files loaded:
+C:\Users\migue\Desktop\1º Ano - 2º Semestre\ERf\Lab2\LTspice\NMOS_350nm_CG.net
+C:\Users\migue\AppData\Local\LTspice\lib\cmp\standard.mos
+C:\Users\migue\Desktop\1º Ano - 2º Semestre\ERf\Lab2\LTspice\CMOS_350nm.lib
+

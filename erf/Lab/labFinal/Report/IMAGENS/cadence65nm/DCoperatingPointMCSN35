@@ -1,0 +1,183 @@
+
+signal            OP("/I4/M1" "??")
+
+Ctype                 2.147G        
+Dtsh                  NaN           
+Iavl                  NaN           
+OPdef                 2.147G        
+SDint                 2.147G        
+SDop                 -1             
+Tk                    NaN           
+beff                378.7m          
+betaeff             408m            
+cbb                   6.767f        
+cbd                 571.4a          
+cbdbo               571.4a          
+cbg                   2.275f        
+cbgbo                 2.275f        
+cbs                  -9.613f        
+cbsbo                -9.613f        
+cdb                  -1.022f        
+cdd                  23.52f         
+cddbo              -661.8a          
+cdg                 -37f            
+cdgbo               -12.81f         
+cds                  14.49f         
+cdsbo                14.49f         
+cgb                  -4.258f        
+cgd                 -22.85f         
+cgdbo                 1.333f        
+cgg                  77.79f         
+cggbo                29.33f         
+cgs                 -50.68f         
+cgsbo               -26.4f          
+cjd                   0             
+cjs                   0             
+cm                    NaN           
+cmb                   NaN           
+cmx                   NaN           
+co                    NaN           
+covlgb                0             
+covlgd               24.19f         
+covlgs               24.28f         
+csb                  -1.487f        
+csd                  -1.243f        
+csg                 -43.07f         
+css                  45.8f          
+dtemp                 0             
+fqslim                NaN           
+ft                    NaN           
+fug                 122.3G          
+gbd                   1p            
+gbs                   1p            
+gds                   8.071m        
+gm                   59.77m         
+gmb                   5.483m        
+gmbs                  5.483m        
+gmoveri               NaN           
+gmoverid              5.079         
+go                    NaN           
+ib                    NaN           
+ibe                -529.5f          
+ibulk              -861.6a          
+id                   11.77m         
+idb                 523.6f          
+ide                  11.77m         
+ids                  11.77m         
+ig                    NaN           
+igb                 833.8a          
+igbacc              833.8a          
+igbinv              622.8y          
+igcd                 34.56p         
+igcs                 39.85p         
+igd                 246.5f          
+igdt                 93.35p         
+ige                  93.35p         
+igidl                 0             
+igisl                 0             
+igs                  18.69p         
+is                    NaN           
+isb                   5.09f         
+ise                 -11.77m         
+isub                 27.87a         
+pro_Gamma             0             
+pwr                   6.102m        
+qb                   -8.12f         
+qbi                  -8.12f         
+qd                   -3.8f          
+qdi                  -3.8f          
+qg                   18.4f          
+qgdovl              282a            
+qgi                  18.4f          
+qgsovl                1.241f        
+qjd                   0             
+qjs                   0             
+qs                   -6.475f        
+qsi                  -6.475f        
+rdeff               776.3m          
+region                2             
+reversed              0             
+rgate                 0             
+rgbd                  0             
+ron                  44.06          
+rout                123.9           
+rseff               775.5m          
+self_gain             7.405         
+tau1                  NaN           
+trise                 0             
+ueff                 22.99m         
+vbs                  -5.09m         
+vdb                 523.6m          
+vds                 518.5m          
+vdsat               164.8m          
+vdsat_marg            NaN           
+vdss                164.8m          
+vearly                1.458         
+vgb                 650m            
+vgd                 126.4m          
+vgs                 644.9m          
+vgt                 249.3m          
+vsat_marg           353.6m          
+vsb                   5.09m         
+vth                 395.6m          
+vth0                  NaN           
+vth_drive             NaN           
+
+signal                    OP("I4.M1.rd" "??")       OP("I4.M1.rg" "??")       OP
+("I4.M1.rdb" "??")      OP("I4.M1.rsb" "??")      OP("I4.M1.rs" "??")       OP("
+I4.M1.rb" "??")   
+i                            11.77m                    93.35p                   
+  2.094p                   20.4f                    -11.77m                    -
+2.644p                
+pwr                          46.55u                   129.5z                    
+ 28.85y                     2.738e-27                59.9u                    48
+6y                    
+res                         336.1m                     14.86                    
+  6.577                     6.577                   432.5m                     6
+9.5                   
+trise                         NaN                       NaN                     
+  NaN                       NaN                       NaN                       
+NaN                   
+v                             3.955m                    1.387n                  
+ 13.77p                   134.2f                     -5.09m                  -18
+3.8p                  
+
+signal                    OP("I4.M1.cds_m" "??")    OP("I4.M1.cgs_m" "??")    OP
+("I4.M1.cgd_m" "??")
+cap                          13.23f                     3.371f                  
+  1.632f                
+trise                         NaN                       NaN                     
+  NaN                   
+
+signal                    OP("I4.M1.ddd" "??")      OP("I4.M1.dsg" "??")      OP
+("I4.M1.ddg" "??")      OP("I4.M1.dss" "??")  
+cap                          10.12f                     1.184e-33               
+997.5e-36                  13.52f                 
+capp                        341a                       15.21f                   
+  9.885f                  406a                    
+cd                           10.46f                    15.21f                   
+  9.885f                   13.92f                 
+ctotal                       10.46f                    15.21f                   
+  9.885f                   13.92f                 
+gd                            2.837e-159              550.2e-189                
+279.6e-180                  6.281e-168            
+i                            -3.87a                   -36.81a                   
+-32.72a                    -4.354a                
+pwr                           2.026a                  187.4z                    
+ 17.13a                    22.16z                 
+qd                           -5.924f                  -77.56a                   
+ -6.022f                  -70.95a                 
+region                        0                         1                       
+  0                         1                     
+region0                       0                         0                       
+  0                         0                     
+res                         352.5e156                   1.817e186               
+  3.577e177               159.2e165               
+resp                      in                        in                        in
+                        in                        
+trise                         NaN                       NaN                     
+  NaN                       NaN                   
+v                          -523.6m                     -5.09m                  -
+523.6m                     -5.09m                 
+vdio                       -523.6m                     -5.09m                  -
+523.6m                     -5.09m                 

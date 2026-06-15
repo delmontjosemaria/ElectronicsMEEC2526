@@ -1,0 +1,29 @@
+
+Device       Param    Noise Contribution    % Of Total
+
+/PORT0       rn       1.11633e-18           38.01     
+/I4/R0       rn       4.43324e-19           15.10     
+/I4/M1       id       3.31445e-19           11.29     
+/PORT1       rn       2.03412e-19           6.93      
+/I4/M1/rg    rn       1.83515e-19           6.25      
+/I5/M8       id       1.39419e-19           4.75      
+/I5/M7       id       1.39275e-19           4.74      
+/I4/R1       rn       1.24103e-19           4.23      
+/I4/M4       id       4.9014e-20            1.67      
+/I5/M8/rg    rn       3.65409e-20           1.24      
+/I5/M7/rg    rn       3.54549e-20           1.21      
+/I4/M1       rs       2.84834e-20           0.97      
+/I4/M1/rs    rn       1.58152e-20           0.54      
+/I4/M4/rg    rn       1.18173e-20           0.40      
+/I5/M7       rs       1.09178e-20           0.37      
+/I5/M8       rs       1.08893e-20           0.37      
+/I4/M1/rb    rn       1.06808e-20           0.36      
+/I5/R2       rn       8.86648e-21           0.30      
+/I5/M8/rs    rn       6.04058e-21           0.21      
+/I5/M7/rs    rn       5.9288e-21            0.20      
+
+Spot Noise Summary (in V^2/Hz) at 5G Hz Sorted By Noise Contributors
+Total Summarized Noise = 2.93689e-18
+No input referred noise available
+The above noise summary info is for sp_noise data
+
