@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1783903559.06526 "main.aux" "main.bbl" "main" 1783903952.3064 0
+["bibtex main"] 1783903559.06526 "main.aux" "main.bbl" "main" 1783904468.44426 0
   "./referencias.bib" 1781563904 1559 891c7daf4ea6036aa3d742cba280d074 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1783903951 30489 745d52e1fc3ca869c9d3446730b42a58 "pdflatex"
+  "main.aux" 1783904467 30489 745d52e1fc3ca869c9d3446730b42a58 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1783903941.67397 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" "main.pdf" "main" 1783903952.30719 0
+["pdflatex"] 1783904458.0464 "c:/Users/denpo/FCT/MEEC/ElectronicsMEEC2526/erf/Lab/labFinal/Report/main.tex" "main.pdf" "main" 1783904468.445 0
   "C:/Users/denpo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1780894043 94578 3d7812996b5e70e7dd3d06c67bb78c06 ""
   "C:/Users/denpo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1766267780 13333512 126b710cd2ad74c195a58a310fbc7402 ""
   "C:/Users/denpo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -249,14 +249,14 @@
   "conclusao.tex" 1781563904 4089 75d291dbf70a45723e44106de8564065 ""
   "config.tex" 1778450315 4312 8d8c23f22d53b13aab2768cb3d799bf0 ""
   "desenvolvimento1.tex" 1781542780 31923 a5a4f0c48b6f83badf1fb080aae0ccae ""
-  "desenvolvimento2.tex" 1783903934 45032 f615421031a4141e03909d3ca84d1add ""
+  "desenvolvimento2.tex" 1783904450 45032 a8ebc5ab06b6e7c79dd519c06e9a6e7a ""
   "introducao.tex" 1778449350 2950 94a866b3ee56d9e9d61f0ca4bd9415df ""
-  "main.aux" 1783903951 30489 745d52e1fc3ca869c9d3446730b42a58 "pdflatex"
+  "main.aux" 1783904467 30489 745d52e1fc3ca869c9d3446730b42a58 "pdflatex"
   "main.bbl" 1783903559 644 6a3c3af651b0e62cb582370ba5cd2ce4 "bibtex main"
-  "main.lof" 1783903951 6395 00baa15d41b20ba616a1dbfc5bb85a4c "pdflatex"
-  "main.out" 1783903951 7772 4d7c019cc40fd5aada461d81557b6573 "pdflatex"
+  "main.lof" 1783904467 6395 00baa15d41b20ba616a1dbfc5bb85a4c "pdflatex"
+  "main.out" 1783904467 7772 4d7c019cc40fd5aada461d81557b6573 "pdflatex"
   "main.tex" 1781563904 957 d50e35bec44758c17b8634fb2a8092ca ""
-  "main.toc" 1783903951 4158 b80f6a07601a3f006a32d96f1bb4d9d4 "pdflatex"
+  "main.toc" 1783904467 4158 b80f6a07601a3f006a32d96f1bb4d9d4 "pdflatex"
   (generated)
   "main.aux"
   "main.lof"
